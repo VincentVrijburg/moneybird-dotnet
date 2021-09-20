@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CF6A8D47-9435-4F37-9909-F8E348BDA395}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{269B1F02-804B-4224-AA0C-4470614F11B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moneybird.Net", "src\Moneybird.Net\Moneybird.Net.csproj", "{1B49532E-B30A-451E-A472-5887A3571870}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moneybird.Net.Tests", "tests\Moneybird.Net.Tests\Moneybird.Net.Tests.csproj", "{7B6C7E5E-6223-418D-A351-DDDB2462134C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1B49532E-B30A-451E-A472-5887A3571870} = {CF6A8D47-9435-4F37-9909-F8E348BDA395}
+		{7B6C7E5E-6223-418D-A351-DDDB2462134C} = {269B1F02-804B-4224-AA0C-4470614F11B4}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B49532E-B30A-451E-A472-5887A3571870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B49532E-B30A-451E-A472-5887A3571870}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B49532E-B30A-451E-A472-5887A3571870}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B49532E-B30A-451E-A472-5887A3571870}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B6C7E5E-6223-418D-A351-DDDB2462134C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B6C7E5E-6223-418D-A351-DDDB2462134C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B6C7E5E-6223-418D-A351-DDDB2462134C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B6C7E5E-6223-418D-A351-DDDB2462134C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
