@@ -12,11 +12,19 @@ using Moneybird.Net.Authentication.Utils;
 
 namespace Moneybird.Net.Authentication
 {
+    /// <summary>
+    /// Default implementation of the IMoneybirdAuthenticator interface.
+    /// </summary>
+    /// <seealso cref="Moneybird.Net.Authentication.Interfaces.IMoneybirdAuthenticator" />
     public class MoneybirdAuthenticator : IMoneybirdAuthenticator, IDisposable
     {
         private readonly MoneybirdConfig _config;
         private readonly HttpClient _httpClient;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MoneybirdAuthenticator"/> class.
+        /// </summary>
+        /// <param name="config">The Moneybird configuration.</param>
         public MoneybirdAuthenticator(MoneybirdConfig config)
         {
             ArgumentGuard.NotNull(config, nameof(config));
@@ -27,12 +35,13 @@ namespace Moneybird.Net.Authentication
             
             _config = config;
 
-            _httpClient = new HttpClient()
+            _httpClient = new HttpClient
             {
                 BaseAddress = new Uri(_config.AuthUri)
             };
         }
         
+        /// <inheritdoc />
         public Uri GetRequestTokenUri(IEnumerable<AuthScope> scopes = default)
         {
             var scopeString = StringUtils.GetScopeString(scopes);
@@ -43,6 +52,7 @@ namespace Moneybird.Net.Authentication
             return new Uri(_httpClient.BaseAddress, $"authorize?{requestTokenString}");
         }
 
+        /// <inheritdoc />
         public async Task<AccessToken> GetAccessTokenAsync(string requestToken, CancellationToken cancellationToken = default)
         {
             ArgumentGuard.NotNull(requestToken, nameof(requestToken));
@@ -51,6 +61,7 @@ namespace Moneybird.Net.Authentication
             return await RequestAccessTokenAsync(accessTokenString, cancellationToken);
         }
 
+        /// <inheritdoc />
         public async Task<AccessToken> RefreshAccessTokenAsync(string refreshToken, CancellationToken cancellationToken = default)
         {
             ArgumentGuard.NotNull(refreshToken, nameof(refreshToken));
