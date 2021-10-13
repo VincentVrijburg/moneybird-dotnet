@@ -13,7 +13,9 @@ namespace Moneybird.Net.Tests.Authentication.Models
         [Fact]
         public void AccessToken_Serializing_Deserializing_Should_Remain_Correct()
         {
-            var accessToken = new Fixture().Create<AccessToken>();
+            // Create fictional model, excluding the ignored properties.
+            var fixture = new Fixture();
+            var accessToken = fixture.Build<AccessToken>().Without(p => p.ExpiresIn).Without(p => p.IsExpired).Create();
             
             // Fix the scope string since AutoFixture will produce a random string not bound by the AuthScope restrictions.
             accessToken.Scope = $"{AuthScope.SalesInvoices.ToString().ToSnakeCase()} {AuthScope.Bank.ToString().ToSnakeCase()}";
