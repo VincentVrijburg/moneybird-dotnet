@@ -49,6 +49,6 @@ namespace Moneybird.Net.Authentication.Models
             /// As of now, the token does not expire (as described in the official <a href="https://developer.moneybird.com/authentication">documentation</a>).
             /// </summary>
             [JsonIgnore]
-            public bool IsExpired { get; }
+            public bool IsExpired { get; set; }
         }
 }

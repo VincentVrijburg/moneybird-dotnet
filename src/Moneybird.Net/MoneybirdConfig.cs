@@ -38,17 +38,7 @@ namespace Moneybird.Net
         /// Initializes a new instance of the <see cref="MoneybirdConfig"/> class.
         /// </summary>
         public MoneybirdConfig() 
-            : this (ApiUriDefault, AuthUriDefault, null, null, RedirectUriDefault)
-        {
-        }
-        
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MoneybirdConfig"/> class.
-        /// </summary>
-        /// <param name="clientId">The client id.</param>
-        /// <param name="clientSecret">The client secret.</param>
-        public MoneybirdConfig(string clientId, string clientSecret) 
-            : this (ApiUriDefault, AuthUriDefault, clientId, clientSecret, RedirectUriDefault)
+            : this (null, null)
         {
         }
 
@@ -58,20 +48,9 @@ namespace Moneybird.Net
         /// <param name="clientId">The client id.</param>
         /// <param name="clientSecret">The client secret.</param>
         /// <param name="redirectUri">The redirect uri.</param>
-        public MoneybirdConfig(string clientId, string clientSecret, string redirectUri)
-            : this (ApiUriDefault, AuthUriDefault, clientId, clientSecret, redirectUri)
-        {
-        }
-        
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MoneybirdConfig"/> class.
-        /// </summary>
-        /// <param name="clientId">The client id.</param>
-        /// <param name="clientSecret">The client secret.</param>
-        /// <param name="redirectUri">The redirect uri.</param>
         /// <param name="apiUri">The api uri.</param>
         /// <param name="authUri">The auth uri.</param>
-        public MoneybirdConfig(string clientId, string clientSecret, string redirectUri, string apiUri, string authUri)
+        public MoneybirdConfig(string clientId, string clientSecret, string redirectUri = RedirectUriDefault, string apiUri = ApiUriDefault, string authUri = AuthUriDefault)
         {
             ClientId = clientId;
             ClientSecret = clientSecret;
