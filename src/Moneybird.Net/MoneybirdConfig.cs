@@ -5,7 +5,7 @@ namespace Moneybird.Net
     /// </summary>
     public class MoneybirdConfig
     {
-        private const string ApiUriDefault = "https://moneybird.com/api/";
+        private const string ApiUriDefault = "https://moneybird.com/api/v2/";
         private const string AuthUriDefault = "https://moneybird.com/oauth/";
         private const string RedirectUriDefault = "urn:ietf:wg:oauth:2.0:oob";
 
