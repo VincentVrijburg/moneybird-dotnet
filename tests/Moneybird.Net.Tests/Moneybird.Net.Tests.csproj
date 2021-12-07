@@ -27,10 +27,14 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="Responses\accessToken.json" />
-      <Content Include="Responses\accessToken.json">
+      <Content Include="Responses\Authentication\accessToken.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <Content Include="Responses\Endpoints\Administration\administrationList.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Responses\accessToken.json" />
+      <None Remove="Responses\AdministrationEndpoint\administrationList.json" />
     </ItemGroup>
 
     <ItemGroup>

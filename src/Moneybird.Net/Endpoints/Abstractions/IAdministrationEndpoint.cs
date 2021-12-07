@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Moneybird.Net.Endpoints.Administrations.Models;
 
@@ -6,9 +7,10 @@ namespace Moneybird.Net.Endpoints.Abstractions
     public interface IAdministrationEndpoint
     {
         /// <summary>
-        /// Get list of all the administrations.
+        /// Get list of all the administrations by access token.
         /// </summary>
-        /// <returns>An administration list.</returns>
-        Task<AdministrationList> GetAdministrationsAsync(string accessToken);
+        /// <param name="accessToken">The access token.</param>
+        /// <returns>A list of administration objects.</returns>
+        Task<List<Administration>> GetAdministrationsAsync(string accessToken);
     }
 }
