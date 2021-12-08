@@ -36,6 +36,9 @@ PM> Install-Package Moneybird.Net
 
 ### Client
 
+## Roadmap
+See our [roadmap](ROADMAP.md) for an overview of what we are planning to work on and in what time frame.
+
 ## Versioning
 This project uses [Semver v2.0](https://semver.org/spec/v2.0.0.html) and is currently in initial development.
 
