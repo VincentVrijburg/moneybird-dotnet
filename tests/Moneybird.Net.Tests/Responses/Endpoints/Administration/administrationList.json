@@ -1,6 +1,6 @@
 [
   {
-    "id": 123,
+    "id": "123",
     "name": "Parkietje B.V.",
     "language": "nl",
     "currency": "EUR",
@@ -8,7 +8,7 @@
     "time_zone": "Europe/Amsterdam"
   },
   {
-    "id": 456,
+    "id": "456",
     "name": "Parakeet LLC.",
     "language": "en",
     "currency": "USD",
