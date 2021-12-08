@@ -39,6 +39,6 @@ namespace Moneybird.Net.Endpoints.Administrations.Models
         /// Gets or sets the time zone value.
         /// </summary>
         [JsonPropertyName("time_zone")]
-        public TimeZoneInfo TimeZone { get; set; }
+        public string TimeZone { get; set; }
     }
 }

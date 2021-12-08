@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Moneybird.Net.Endpoints.Abstractions;
@@ -19,13 +20,13 @@ namespace Moneybird.Net.Endpoints.Administrations
             _config = config;
         }
         
-        public async Task<AdministrationList> GetAdministrationsAsync(string accessToken)
+        public async Task<List<Administration>> GetAdministrationsAsync(string accessToken)
         {
             var responseJson = await _requester
                 .CreateGetRequestAsync(_config.ApiUri, AdministrationsUri, accessToken)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<AdministrationList>(responseJson);
+            return JsonSerializer.Deserialize<List<Administration>>(responseJson);
         }
     }
 }
