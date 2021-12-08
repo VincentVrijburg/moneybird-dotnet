@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.2 | 2021-12-08
+* Revise administration model object (bugfix).
+
 ## 0.1.1 | 2021-12-08
 * Add testing for the administrations endpoint.
 * Improve paths for test response objects.
