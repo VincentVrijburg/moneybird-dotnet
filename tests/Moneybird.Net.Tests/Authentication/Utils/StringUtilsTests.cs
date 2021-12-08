@@ -64,7 +64,7 @@ namespace Moneybird.Net.Tests.Authentication.Utils
         [Fact]
         public async void GetRefreshTokenString_Returns_CorrectString()
         {
-            var accessTokenJson = await File.ReadAllTextAsync("Responses/accessToken.json");
+            var accessTokenJson = await File.ReadAllTextAsync("./Responses/Authentication/accessToken.json");
             var accessToken = JsonSerializer.Deserialize<AccessToken>(accessTokenJson);
             
             Assert.NotNull(accessToken);
