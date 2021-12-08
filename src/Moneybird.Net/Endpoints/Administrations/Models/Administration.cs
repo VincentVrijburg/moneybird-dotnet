@@ -9,7 +9,7 @@ namespace Moneybird.Net.Endpoints.Administrations.Models
         /// Gets or sets the id value.
         /// </summary>
         [JsonPropertyName("id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
         
         /// <summary>
         /// Gets or sets the name value.
