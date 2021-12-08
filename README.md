@@ -15,6 +15,7 @@ Moneybird client for .NET Framework and .NET (Core).
   - [Usage](#usage)
     - [Authenticator](#authenticator)
     - [Client](#client)
+  - [Roadmap](#roadmap)
   - [Versioning](#versioning)
   - [License](#license)
   - [Disclaimer](#disclaimer)
