@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.3 | 2021-12-23
+* Revise authenticator namespace (bugfix).
+
 ## 0.1.2 | 2021-12-08
 * Revise administration model object (bugfix).
 

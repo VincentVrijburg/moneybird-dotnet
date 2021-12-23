@@ -1,5 +1,6 @@
 # Moneybird.Net
 
+[![.NET Standard](https://img.shields.io/badge/.NET%20Standard-2.0-purple)](https://docs.microsoft.com/en-us/dotnet/standard/net-standard)
 [![build](https://github.com/VincentVrijburg/moneybird-dotnet/actions/workflows/build.yml/badge.svg)](https://github.com/VincentVrijburg/moneybird-dotnet/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/VincentVrijburg/moneybird-dotnet/branch/develop/graph/badge.svg?token=3ESKQK1JUZ)](https://codecov.io/gh/VincentVrijburg/moneybird-dotnet)
 [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Moneybird.Net)](https://www.nuget.org/packages/Moneybird.Net/)
@@ -15,6 +16,7 @@ Moneybird client for .NET Framework and .NET (Core).
   - [Usage](#usage)
     - [Authenticator](#authenticator)
     - [Client](#client)
+  - [Roadmap](#roadmap)
   - [Versioning](#versioning)
   - [License](#license)
   - [Disclaimer](#disclaimer)
@@ -35,6 +37,9 @@ PM> Install-Package Moneybird.Net
 ### Authenticator
 
 ### Client
+
+## Roadmap
+See our [roadmap](ROADMAP.md) for an overview of what we are planning to work on and in what time frame.
 
 ## Versioning
 This project uses [Semver v2.0](https://semver.org/spec/v2.0.0.html) and is currently in initial development.
