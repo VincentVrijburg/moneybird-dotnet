@@ -5,8 +5,8 @@ using System.Text;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using Moneybird.Net.Authentication.Abstractions;
 using Moneybird.Net.Authentication.Enums;
-using Moneybird.Net.Authentication.Interfaces;
 using Moneybird.Net.Authentication.Models;
 using Moneybird.Net.Authentication.Utils;
 
@@ -15,7 +15,7 @@ namespace Moneybird.Net.Authentication
     /// <summary>
     /// Default implementation of the IMoneybirdAuthenticator interface.
     /// </summary>
-    /// <seealso cref="Moneybird.Net.Authentication.Interfaces.IMoneybirdAuthenticator" />
+    /// <seealso cref="IMoneybirdAuthenticator" />
     public class MoneybirdAuthenticator : IMoneybirdAuthenticator, IDisposable
     {
         private readonly MoneybirdConfig _config;
@@ -34,7 +34,6 @@ namespace Moneybird.Net.Authentication
             ArgumentGuard.NotNullNorEmpty(config.RedirectUri, nameof(config.RedirectUri));
             
             _config = config;
-
             _httpClient = new HttpClient
             {
                 BaseAddress = new Uri(_config.AuthUri)

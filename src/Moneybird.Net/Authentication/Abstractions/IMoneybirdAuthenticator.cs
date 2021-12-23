@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Moneybird.Net.Authentication.Enums;
 using Moneybird.Net.Authentication.Models;
 
-namespace Moneybird.Net.Authentication.Interfaces
+namespace Moneybird.Net.Authentication.Abstractions
 {
     /// <summary>
     /// The Moneybird authenticator.
