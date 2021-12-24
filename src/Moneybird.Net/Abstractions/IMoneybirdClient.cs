@@ -8,5 +8,10 @@ namespace Moneybird.Net.Abstractions
         /// The Administration Endpoint.
         /// </summary>
         IAdministrationEndpoint Administration { get; }
+        
+        /// <summary>
+        /// The Contact Endpoint.
+        /// </summary>
+        IContactEndpoint Contact { get; }
     }
 }
