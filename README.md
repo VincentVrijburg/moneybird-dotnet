@@ -34,7 +34,53 @@ PM> Install-Package Moneybird.Net
 ## Usage
 *Usage instructions will get updated as the project matures*
 
+### Configuration
+For both the authenticator and the client, an instance of the moneybird configuration is required.
+
+*Note: both options will create an instance with the default api url and default authentication url values assigned.*
+
+#### Option 1
+In case you DO NOT need to use the OAuth functionality, you can create the default config as follows.
+
+```csharp
+var moneybirdConfig = new MoneybirdConfig();
+```
+
+#### Option 2
+In case you DO need to use the OAuth functionality, you can create a custom config as follows.
+
+```csharp
+var moneybirdConfig = new MoneybirdConfig("YOUR_CLIENT_ID", "YOUR_CLIENT_SECRET", "YOUR_REDIRECT_URI");
+```
+
 ### Authenticator
+In order to access the resources of foreign administrations, you first need to authenticate the user.
+
+The main entry point to the authentication endpoint can be established as follows
+```csharp
+using var authenticator = new MoneybirdAuthenticator(moneybirdConfig);
+```
+
+#### Request token uri
+```csharp
+// An array of scopes you need access to.
+var scopes = new[] {AuthScope.SalesInvoices, AuthScope.Bank};
+var uri = authenticator.GetRequestTokenUri(scopes);
+```
+
+Redirect the user to this uri to get the actual request token.
+
+#### Request access token
+```csharp
+// Pass the request token to request the access token
+var accessToken = authenticator.GetAccessTokenAsync(requestToken);
+```
+
+#### Refresh access token
+```csharp
+// Pass the refresh token from the access token object to refresh the access token
+var accessToken = authenticator.RefreshAccessTokenAsync(refreshToken);
+```
 
 ### Client
 
