@@ -72,13 +72,13 @@ Redirect the user to this uri to get the actual request token.
 
 #### Request access token
 ```csharp
-// Pass the request token to request the access token
+// Pass the request token to request the access token.
 var accessToken = await authenticator.GetAccessTokenAsync(requestToken);
 ```
 
 #### Refresh access token
 ```csharp
-// Pass the refresh token from the access token object to refresh the access token
+// Pass the refresh token from the access token object to refresh the access token.
 var accessToken = await authenticator.RefreshAccessTokenAsync(refreshToken);
 ```
 
