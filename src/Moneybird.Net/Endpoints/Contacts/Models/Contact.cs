@@ -92,7 +92,7 @@ namespace Moneybird.Net.Endpoints.Contacts.Models
         public string SepaMandateId { get; set; }
 
         [JsonPropertyName("sepa_mandate_date")]
-        public object SepaMandateDate { get; set; }
+        public DateTime? SepaMandateDate { get; set; }
 
         [JsonPropertyName("sepa_sequence_type")]
         public ContactSepaSequenceType SepaSequenceType { get; set; }
@@ -107,10 +107,10 @@ namespace Moneybird.Net.Endpoints.Contacts.Models
         public object CreditCardType { get; set; }
 
         [JsonPropertyName("tax_number_validated_at")]
-        public DateTime TaxNumberValidatedAt { get; set; }
+        public DateTime? TaxNumberValidatedAt { get; set; }
 
         [JsonPropertyName("tax_number_valid")]
-        public bool TaxNumberValid { get; set; }
+        public bool? TaxNumberValid { get; set; }
 
         [JsonPropertyName("invoice_workflow_id")]
         public string InvoiceWorkflowId { get; set; }

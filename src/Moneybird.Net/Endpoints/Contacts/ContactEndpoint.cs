@@ -153,7 +153,7 @@ namespace Moneybird.Net.Endpoints.Contacts
             var relativeUrl = string.Format(ContactsIdNotesUri, administrationId, contactId);
             var body = JsonSerializer.Serialize(options);
             var responseJson = await _requester
-                .CreatePatchRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
+                .CreatePostRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
                 .ConfigureAwait(false);
 
             return JsonSerializer.Deserialize<ContactNote>(responseJson);
@@ -184,7 +184,7 @@ namespace Moneybird.Net.Endpoints.Contacts
             var relativeUrl = string.Format(ContactsIdPeopleUri, administrationId, contactId);
             var body = JsonSerializer.Serialize(options);
             var responseJson = await _requester
-                .CreatePatchRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
+                .CreatePostRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
                 .ConfigureAwait(false);
 
             return JsonSerializer.Deserialize<ContactPerson>(responseJson);

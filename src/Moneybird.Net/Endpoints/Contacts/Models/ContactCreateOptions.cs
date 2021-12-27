@@ -88,10 +88,10 @@ namespace Moneybird.Net.Endpoints.Contacts.Models
         public string SiIdentifier { get; set; }
         
         [JsonPropertyName("invoice_workflow_id")]
-        public int InvoiceWorkflowId { get; set; }
+        public string InvoiceWorkflowId { get; set; }
         
         [JsonPropertyName("estimate_workflow_id")]
-        public int EstimateWorkflowId { get; set; }
+        public string EstimateWorkflowId { get; set; }
         
         [JsonPropertyName("email_ubl")]
         public bool EmailUbl { get; set; }

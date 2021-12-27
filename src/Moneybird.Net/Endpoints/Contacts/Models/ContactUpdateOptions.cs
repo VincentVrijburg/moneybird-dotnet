@@ -85,10 +85,10 @@ namespace Moneybird.Net.Endpoints.Contacts.Models
         public ContactSepaSequenceType SepaSequenceType { get; set; }
 
         [JsonPropertyName("invoice_workflow_id")]
-        public int InvoiceWorkflowId { get; set; }
+        public string InvoiceWorkflowId { get; set; }
         
         [JsonPropertyName("estimate_workflow_id")]
-        public int EstimateWorkflowId { get; set; }
+        public string EstimateWorkflowId { get; set; }
 
         [JsonPropertyName("si_identifier_type")]
         public string SiIdentifierTypeType { get; set; }

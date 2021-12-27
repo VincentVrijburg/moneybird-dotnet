@@ -10,7 +10,7 @@ using Moneybird.Net.Http;
 using Moq;
 using Xunit;
 
-namespace Moneybird.Net.Tests.Endpoints
+namespace Moneybird.Net.Tests.Endpoints.Administrations
 {
     public class AdministrationEndpointTests : CommonTestBase
     {

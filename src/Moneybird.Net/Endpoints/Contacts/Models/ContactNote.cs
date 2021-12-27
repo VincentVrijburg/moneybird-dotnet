@@ -18,7 +18,7 @@ namespace Moneybird.Net.Endpoints.Contacts.Models
         public string EntityType { get; set; }
         
         [JsonPropertyName("user_id")]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         
         [JsonPropertyName("assignee_id")]
         public string AssigneeId { get; set; }
@@ -30,7 +30,7 @@ namespace Moneybird.Net.Endpoints.Contacts.Models
         public string Note { get; set; }
         
         [JsonPropertyName("completed_at")]
-        public DateTime CompletedAt { get; set; }
+        public DateTime? CompletedAt { get; set; }
         
         [JsonPropertyName("completed_by_id")]
         public string CompletedById { get; set; }
@@ -38,6 +38,8 @@ namespace Moneybird.Net.Endpoints.Contacts.Models
         [JsonPropertyName("todo_type")]
         public string TodoType { get; set; }
         
+        // TODO: Check documentation to understand what this data field is meant for.
+        [JsonIgnore]
         [JsonPropertyName("data")]
         public object Data { get; set; }
         

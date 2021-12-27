@@ -1,5 +1,3 @@
-using System;
-
 namespace Moneybird.Net.Tests
 {
     public class CommonTestBase
