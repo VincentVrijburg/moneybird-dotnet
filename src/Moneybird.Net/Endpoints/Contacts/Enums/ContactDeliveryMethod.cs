@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+// ReSharper disable IdentifierTypo
 
 namespace Moneybird.Net.Endpoints.Contacts.Enums
 {
