@@ -5,9 +5,10 @@ using System.Text.Json;
 using FluentAssertions;
 using Moneybird.Net.Endpoints.Abstractions;
 using Moneybird.Net.Endpoints.Contacts;
-using Moneybird.Net.Endpoints.Contacts.Enums;
 using Moneybird.Net.Endpoints.Contacts.Models;
+using Moneybird.Net.Entities.Contacts;
 using Moneybird.Net.Http;
+using Moneybird.Net.Misc;
 using Moq;
 using Xunit;
 
@@ -16,6 +17,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
     public class ContactEndpointTests : ContactTestBase
     {
         private static Mock<IRequester> _requester;
+        private readonly MoneybirdConfig _config;
         private readonly IContactEndpoint _contactEndpoint;
 
         private const string GetContactsResponsePath = "./Responses/Endpoints/Contacts/getContacts.json";
@@ -29,7 +31,8 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
         public ContactEndpointTests()
         {  
             _requester = new Mock<IRequester>();
-            _contactEndpoint = new ContactEndpoint(new MoneybirdConfig(), _requester.Object);
+            _config = new MoneybirdConfig();
+            _contactEndpoint = new ContactEndpoint(_config, _requester.Object);
         }
         
         [Fact]
@@ -220,42 +223,45 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             var contactJson = await File.ReadAllTextAsync(NewContactResponsePath);
             var contactCreateOptions = new ContactCreateOptions
             {
-                CompanyName = "MoneyBird B.V.",
-                Firstname = "John",
-                Lastname = "Doe",
-                Address1 = "Moutlaan 35",
-                Address2 = "",
-                ZipCode = "7523MC",
-                City = "Enschede",
-                CountryCode = "NL",
-                Phone = "0612345678",
-                DeliveryMethod = ContactDeliveryMethod.Email,
-                CustomerId = "1",
-                TaxNumber = "NL012345678B01",
-                ChamberOfCommerce = "58209344",
-                BankAccount = "Bank account",
-                EmailUbl = true,
-                SendInvoicesToAttention = "John Doe",
-                SendInvoicesToEmail = "johndoe@moneybird.nl",
-                SendEstimatesToAttention = "John Doe",
-                SendEstimatesToEmail = "johndoe@moneybird.nl",
-                SepaActive = false,
-                SepaIban = "NL13TEST0123456789",
-                SepaIbanAccountName = "Test account name",
-                SepaBic = "TESTNL2A",
-                SepaMandateId = "0123456789",
-                SepaMandateDate = "2021-12-27T15:10:44.770Z",
-                SepaSequenceType = ContactSepaSequenceType.RCUR,
-                InvoiceWorkflowId = "292669868098208840",
-                EstimateWorkflowId = "292669868131763278",
-                SiIdentifier = "",
-                SiIdentifierTypeType = null,
-                CreateEvent = true,
-                DirectDebit = false,
-                CustomFieldsAttributes = null
+                Contact = new ContactCreateItem
+                {
+                    CompanyName = "MoneyBird B.V.",
+                    Firstname = "John",
+                    Lastname = "Doe",
+                    Address1 = "Moutlaan 35",
+                    Address2 = "",
+                    ZipCode = "7523MC",
+                    City = "Enschede",
+                    CountryCode = "NL",
+                    Phone = "0612345678",
+                    DeliveryMethod = DeliveryMethod.Email,
+                    CustomerId = "1",
+                    TaxNumber = "NL012345678B01",
+                    ChamberOfCommerce = "58209344",
+                    BankAccount = "Bank account",
+                    EmailUbl = true,
+                    SendInvoicesToAttention = "John Doe",
+                    SendInvoicesToEmail = "johndoe@moneybird.nl",
+                    SendEstimatesToAttention = "John Doe",
+                    SendEstimatesToEmail = "johndoe@moneybird.nl",
+                    SepaActive = false,
+                    SepaIban = "NL13TEST0123456789",
+                    SepaIbanAccountName = "Test account name",
+                    SepaBic = "TESTNL2A",
+                    SepaMandateId = "0123456789",
+                    SepaMandateDate = "2021-12-27T15:10:44.770Z",
+                    SepaSequenceType = SepaSequenceType.RCUR,
+                    InvoiceWorkflowId = "292669868098208840",
+                    EstimateWorkflowId = "292669868131763278",
+                    SiIdentifier = "",
+                    SiIdentifierTypeType = null,
+                    CreateEvent = true,
+                    DirectDebit = false,
+                    CustomFieldsAttributes = null
+                }
             };
             
-            var serializedContactCreateOptions = JsonSerializer.Serialize(contactCreateOptions);
+            var serializedContactCreateOptions = JsonSerializer.Serialize(contactCreateOptions, _config.SerializerOptions);
         
             _requester.Setup(moq => moq.CreatePostRequestAsync(It.IsAny<string>(), It.IsAny<string>(), 
                     It.IsAny<string>(), It.Is<string>(s => s.Equals(serializedContactCreateOptions)), It.IsAny<List<string>>()))
@@ -276,41 +282,44 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             var contactJson = await File.ReadAllTextAsync(GetContactResponsePath);
             var contactUpdateOptions = new ContactUpdateOptions
             {
-                CompanyName = "MoneyBird B.V.",
-                Firstname = "John",
-                Lastname = "Doe",
-                Address1 = "Moutlaan 35",
-                Address2 = "",
-                ZipCode = "7523MC",
-                City = "Enschede",
-                CountryCode = "NL",
-                Phone = "0612345678",
-                DeliveryMethod = ContactDeliveryMethod.Email,
-                CustomerId = "1",
-                TaxNumber = "NL012345678B01",
-                ChamberOfCommerce = "58209344",
-                BankAccount = "Bank account",
-                EmailUbl = true,
-                SendInvoicesToAttention = "John Doe",
-                SendInvoicesToEmail = "johndoe@moneybird.nl",
-                SendEstimatesToAttention = "John Doe",
-                SendEstimatesToEmail = "johndoe@moneybird.nl",
-                SepaActive = false,
-                SepaIban = "NL13TEST0123456789",
-                SepaIbanAccountName = "Test accountname",
-                SepaBic = "TESTNL2A",
-                SepaMandateId = "0123456789",
-                SepaMandateDate = "2021-12-27T15:10:44.770Z",
-                SepaSequenceType = ContactSepaSequenceType.RCUR,
-                InvoiceWorkflowId = "292669868098208840",
-                EstimateWorkflowId = "292669868131763278",
-                SiIdentifier = "",
-                SiIdentifierTypeType = null,
-                DirectDebit = false,
-                CustomFieldsAttributes = null
+                Contact = new ContactUpdateItem
+                {
+                    CompanyName = "MoneyBird B.V.",
+                    Firstname = "John",
+                    Lastname = "Doe",
+                    Address1 = "Moutlaan 35",
+                    Address2 = "",
+                    ZipCode = "7523MC",
+                    City = "Enschede",
+                    CountryCode = "NL",
+                    Phone = "0612345678",
+                    DeliveryMethod = DeliveryMethod.Email,
+                    CustomerId = "1",
+                    TaxNumber = "NL012345678B01",
+                    ChamberOfCommerce = "58209344",
+                    BankAccount = "Bank account",
+                    EmailUbl = true,
+                    SendInvoicesToAttention = "John Doe",
+                    SendInvoicesToEmail = "johndoe@moneybird.nl",
+                    SendEstimatesToAttention = "John Doe",
+                    SendEstimatesToEmail = "johndoe@moneybird.nl",
+                    SepaActive = false,
+                    SepaIban = "NL13TEST0123456789",
+                    SepaIbanAccountName = "Test accountname",
+                    SepaBic = "TESTNL2A",
+                    SepaMandateId = "0123456789",
+                    SepaMandateDate = "2021-12-27T15:10:44.770Z",
+                    SepaSequenceType = SepaSequenceType.RCUR,
+                    InvoiceWorkflowId = "292669868098208840",
+                    EstimateWorkflowId = "292669868131763278",
+                    SiIdentifier = "",
+                    SiIdentifierTypeType = null,
+                    DirectDebit = false,
+                    CustomFieldsAttributes = null
+                }
             };
             
-            var serializedContactUpdateOptions = JsonSerializer.Serialize(contactUpdateOptions);
+            var serializedContactUpdateOptions = JsonSerializer.Serialize(contactUpdateOptions, _config.SerializerOptions);
         
             _requester.Setup(moq => moq.CreatePatchRequestAsync(It.IsAny<string>(), It.IsAny<string>(), 
                     It.IsAny<string>(), It.Is<string>(s => s.Equals(serializedContactUpdateOptions)), It.IsAny<List<string>>()))

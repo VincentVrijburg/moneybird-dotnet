@@ -5,7 +5,7 @@ using System.Text.Json;
 using FluentAssertions;
 using Moneybird.Net.Endpoints.Abstractions;
 using Moneybird.Net.Endpoints.Administrations;
-using Moneybird.Net.Endpoints.Administrations.Models;
+using Moneybird.Net.Entities.Administrations;
 using Moneybird.Net.Http;
 using Moq;
 using Xunit;

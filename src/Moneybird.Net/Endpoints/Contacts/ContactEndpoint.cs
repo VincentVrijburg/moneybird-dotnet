@@ -3,6 +3,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Moneybird.Net.Endpoints.Abstractions;
 using Moneybird.Net.Endpoints.Contacts.Models;
+using Moneybird.Net.Entities.Contacts;
 using Moneybird.Net.Extensions;
 using Moneybird.Net.Http;
 
@@ -36,7 +37,7 @@ namespace Moneybird.Net.Endpoints.Contacts
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<IEnumerable<Contact>>(responseJson);
+            return JsonSerializer.Deserialize<IEnumerable<Contact>>(responseJson, _config.SerializerOptions);
         }
 
         public async Task<IEnumerable<Contact>> GetContactsAsync(string administrationId, string accessToken, ContactFilterOptions options)
@@ -54,7 +55,7 @@ namespace Moneybird.Net.Endpoints.Contacts
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken, paramValues)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<IEnumerable<Contact>>(responseJson);
+            return JsonSerializer.Deserialize<IEnumerable<Contact>>(responseJson, _config.SerializerOptions);
         }
 
         public async Task<IEnumerable<SynchronizationContact>> GetSynchronizationContactsAsync(string administrationId, string accessToken)
@@ -64,7 +65,7 @@ namespace Moneybird.Net.Endpoints.Contacts
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<IEnumerable<SynchronizationContact>>(responseJson);
+            return JsonSerializer.Deserialize<IEnumerable<SynchronizationContact>>(responseJson, _config.SerializerOptions);
         }
 
         public async Task<IEnumerable<SynchronizationContact>> GetSynchronizationContactsAsync(string administrationId, string accessToken, ContactFilterOptions options)
@@ -82,18 +83,18 @@ namespace Moneybird.Net.Endpoints.Contacts
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken, paramValues)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<IEnumerable<SynchronizationContact>>(responseJson);
+            return JsonSerializer.Deserialize<IEnumerable<SynchronizationContact>>(responseJson, _config.SerializerOptions);
         }
 
         public async Task<IEnumerable<Contact>> GetContactsByIdsAsync(string administrationId, string accessToken, ContactListOptions options)
         {
             var relativeUrl = string.Format(ContactsSynchronizationUri, administrationId);
-            var body = JsonSerializer.Serialize(options);
+            var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
             var responseJson = await _requester
                 .CreatePostRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<IEnumerable<Contact>>(responseJson);
+            return JsonSerializer.Deserialize<IEnumerable<Contact>>(responseJson, _config.SerializerOptions);
         }
 
         public async Task<Contact> GetContactByIdAsync(string administrationId, string contactId, string accessToken)
@@ -103,7 +104,7 @@ namespace Moneybird.Net.Endpoints.Contacts
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<Contact>(responseJson);
+            return JsonSerializer.Deserialize<Contact>(responseJson, _config.SerializerOptions);
         }
 
         public async Task<Contact> GetContactByCustomerIdAsync(string administrationId, string customerId, string accessToken)
@@ -113,29 +114,29 @@ namespace Moneybird.Net.Endpoints.Contacts
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<Contact>(responseJson);
+            return JsonSerializer.Deserialize<Contact>(responseJson, _config.SerializerOptions);
         }
 
         public async Task<Contact> CreateContactAsync(string administrationId, ContactCreateOptions options, string accessToken)
         {
             var relativeUrl = string.Format(ContactsUri, administrationId);
-            var body = JsonSerializer.Serialize(options);
+            var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
             var responseJson = await _requester
                 .CreatePostRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<Contact>(responseJson);
+            return JsonSerializer.Deserialize<Contact>(responseJson, _config.SerializerOptions);
         }
 
         public async Task<Contact> UpdateContactByIdAsync(string administrationId, string contactId, ContactUpdateOptions options, string accessToken)
         {
             var relativeUrl = string.Format(ContactsIdUri, administrationId, contactId);
-            var body = JsonSerializer.Serialize(options);
+            var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
             var responseJson = await _requester
                 .CreatePatchRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<Contact>(responseJson);
+            return JsonSerializer.Deserialize<Contact>(responseJson, _config.SerializerOptions);
         }
 
         public async Task<bool> DeleteContactByIdAsync(string administrationId, string contactId, string accessToken)
@@ -151,12 +152,12 @@ namespace Moneybird.Net.Endpoints.Contacts
         public async Task<ContactNote> CreateContactNoteAsync(string administrationId, string contactId, ContactNoteCreateOptions options, string accessToken)
         {
             var relativeUrl = string.Format(ContactsIdNotesUri, administrationId, contactId);
-            var body = JsonSerializer.Serialize(options);
+            var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
             var responseJson = await _requester
                 .CreatePostRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<ContactNote>(responseJson);
+            return JsonSerializer.Deserialize<ContactNote>(responseJson, _config.SerializerOptions);
         }
 
         public async Task<bool> DeleteContactNoteByIdAsync(string administrationId, string contactId, string noteId, string accessToken)
@@ -176,29 +177,29 @@ namespace Moneybird.Net.Endpoints.Contacts
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<ContactPerson>(responseJson);
+            return JsonSerializer.Deserialize<ContactPerson>(responseJson, _config.SerializerOptions);
         }
 
         public async Task<ContactPerson> CreateContactPersonAsync(string administrationId, string contactId, ContactPersonCreateOptions options, string accessToken)
         {
             var relativeUrl = string.Format(ContactsIdPeopleUri, administrationId, contactId);
-            var body = JsonSerializer.Serialize(options);
+            var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
             var responseJson = await _requester
                 .CreatePostRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<ContactPerson>(responseJson);
+            return JsonSerializer.Deserialize<ContactPerson>(responseJson, _config.SerializerOptions);
         }
 
         public async Task<ContactPerson> UpdateContactPersonByIdAsync(string administrationId, string contactId, string contactPersonId, ContactPersonUpdateOptions options, string accessToken)
         {
             var relativeUrl = string.Format(ContactsIdPeopleIdUri, administrationId, contactId, contactPersonId);
-            var body = JsonSerializer.Serialize(options);
+            var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
             var responseJson = await _requester
                 .CreatePatchRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<ContactPerson>(responseJson);
+            return JsonSerializer.Deserialize<ContactPerson>(responseJson, _config.SerializerOptions);
         }
 
         public async Task<bool> DeleteContactPersonByIdAsync(string administrationId, string contactId, string contactPersonId, string accessToken)

@@ -1,7 +1,7 @@
 using System;
 using System.Text.Json.Serialization;
 
-namespace Moneybird.Net.Endpoints.Contacts.Models
+namespace Moneybird.Net.Entities.Contacts
 {
     public class ContactPerson
     {

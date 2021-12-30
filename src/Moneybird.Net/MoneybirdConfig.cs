@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 namespace Moneybird.Net
 {
     /// <summary>
@@ -33,6 +35,8 @@ namespace Moneybird.Net
         /// Gets or sets the auth uri.
         /// </summary>
         public string AuthUri { get; set; }
+        
+        public JsonSerializerOptions SerializerOptions { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MoneybirdConfig"/> class.
@@ -57,6 +61,11 @@ namespace Moneybird.Net
             RedirectUri = redirectUri;
             ApiUri = apiUri;
             AuthUri = authUri;
+
+            SerializerOptions = new JsonSerializerOptions
+            {
+                IgnoreNullValues = true
+            };
         }
     }
 }

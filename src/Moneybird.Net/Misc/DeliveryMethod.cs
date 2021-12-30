@@ -1,10 +1,11 @@
 using System.Text.Json.Serialization;
+
 // ReSharper disable IdentifierTypo
 
-namespace Moneybird.Net.Endpoints.Contacts.Enums
+namespace Moneybird.Net.Misc
 {
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum ContactDeliveryMethod
+    public enum DeliveryMethod
     {
         Email,
         Simplerinvoicing,

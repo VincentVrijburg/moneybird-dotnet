@@ -1,7 +1,6 @@
-using System;
 using System.Text.Json.Serialization;
 
-namespace Moneybird.Net.Endpoints.Administrations.Models
+namespace Moneybird.Net.Entities.Administrations
 {
     public class Administration
     {

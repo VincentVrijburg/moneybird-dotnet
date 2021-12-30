@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using Moneybird.Net.Endpoints.Contacts.Enums;
+using Moneybird.Net.Misc;
 
-namespace Moneybird.Net.Endpoints.Contacts.Models
+namespace Moneybird.Net.Entities.Contacts
 {
     public class Contact
     {
@@ -41,7 +41,7 @@ namespace Moneybird.Net.Endpoints.Contacts.Models
         public string Phone { get; set; }
 
         [JsonPropertyName("delivery_method")]
-        public ContactDeliveryMethod DeliveryMethod { get; set; }
+        public DeliveryMethod DeliveryMethod { get; set; }
 
         [JsonPropertyName("customer_id")]
         public string CustomerId { get; set; }
@@ -95,7 +95,7 @@ namespace Moneybird.Net.Endpoints.Contacts.Models
         public DateTime? SepaMandateDate { get; set; }
 
         [JsonPropertyName("sepa_sequence_type")]
-        public ContactSepaSequenceType SepaSequenceType { get; set; }
+        public SepaSequenceType SepaSequenceType { get; set; }
 
         [JsonPropertyName("credit_card_number")]
         public string CreditCardNumber { get; set; }
