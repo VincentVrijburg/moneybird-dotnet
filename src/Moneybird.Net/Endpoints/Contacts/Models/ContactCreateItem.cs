@@ -62,7 +62,7 @@ namespace Moneybird.Net.Endpoints.Contacts.Models
         public string SendEstimatesToEmail { get; set; }
         
         [JsonPropertyName("sepa_active")]
-        public bool SepaActive { get; set; }
+        public bool? SepaActive { get; set; }
 
         [JsonPropertyName("sepa_iban")]
         public string SepaIban { get; set; }
@@ -95,15 +95,15 @@ namespace Moneybird.Net.Endpoints.Contacts.Models
         public string EstimateWorkflowId { get; set; }
         
         [JsonPropertyName("email_ubl")]
-        public bool EmailUbl { get; set; }
+        public bool? EmailUbl { get; set; }
         
         [JsonPropertyName("direct_debit")]
-        public bool DirectDebit { get; set; }
+        public bool? DirectDebit { get; set; }
          
         [JsonPropertyName("custom_fields_attributes")]
         public List<ContactCustomFieldsAttribute> CustomFieldsAttributes { get; set; }
          
         [JsonPropertyName("create_event")]
-        public bool CreateEvent { get; set; }
+        public bool? CreateEvent { get; set; }
     }
 }

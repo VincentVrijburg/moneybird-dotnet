@@ -350,9 +350,12 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             var contactNoteJson = await File.ReadAllTextAsync(NewContactNoteResponsePath);
             var contactNoteCreateOptions = new ContactNoteCreateOptions
             {
-                Note = "Text of the note",
-                Todo = true,
-                AssigneeId = "340087760888006110"
+                Note = new ContactNoteCreateItem
+                {
+                    Note = "Text of the note",
+                    Todo = true,
+                    AssigneeId = "340087760888006110"
+                }
             };
             
             var serializedContactNoteCreateOptions = JsonSerializer.Serialize(contactNoteCreateOptions);
@@ -403,12 +406,15 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             var contactPersonJson = await File.ReadAllTextAsync(NewContactPersonResponsePath);
             var contactPersonCreateOptions = new ContactPersonCreateOptions()
             {
-                Firstname = "John",
-                Lastname = "Doe",
-                Phone = "06123455678",
-                Email = "example@moneybird.nl",
-                Department = "Administratie",
-                ContactId = ContactId // TODO: Check if this is required since it is in the path as well.
+                ContactPerson = new ContactPersonCreateItem
+                {
+                    Firstname = "John",
+                    Lastname = "Doe",
+                    Phone = "06123455678",
+                    Email = "example@moneybird.nl",
+                    Department = "Administratie",
+                    ContactId = ContactId
+                }
             };
             
             var serializedContactPersonCreateOptions = JsonSerializer.Serialize(contactPersonCreateOptions);
@@ -432,12 +438,15 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             var contactPersonJson = await File.ReadAllTextAsync(NewContactPersonResponsePath);
             var contactPersonUpdateOptions = new ContactPersonUpdateOptions
             {
-                Firstname = "John",
-                Lastname = "Doe",
-                Phone = "06123455678",
-                Email = "example@moneybird.nl",
-                Department = "Administratie",
-                ContactId = ContactId // TODO: Check if this is required since it is in the path as well.
+                ContactPerson = new ContactPersonUpdateItem
+                {
+                    Firstname = "John",
+                    Lastname = "Doe",
+                    Phone = "06123455678",
+                    Email = "example@moneybird.nl",
+                    Department = "Administratie",
+                    ContactId = ContactId
+                }
             };
             
             var serializedContactPersonUpdateOptions = JsonSerializer.Serialize(contactPersonUpdateOptions);
