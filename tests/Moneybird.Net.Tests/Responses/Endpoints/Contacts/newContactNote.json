@@ -1,0 +1,17 @@
+{
+  "id": "340087760940434912",
+  "administration_id": "281289699686381606",
+  "entity_id": "342252923703526899",
+  "entity_type": "Contact",
+  "user_id": "16385529506268",
+  "assignee_id": "340087760888006110",
+  "todo": true,
+  "note": "Text of the note",
+  "completed_at": null,
+  "completed_by_id": null,
+  "todo_type": null,
+  "data": {
+  },
+  "created_at": "2021-12-03T17:36:24.651Z",
+  "updated_at": "2021-12-03T17:36:24.651Z"
+}

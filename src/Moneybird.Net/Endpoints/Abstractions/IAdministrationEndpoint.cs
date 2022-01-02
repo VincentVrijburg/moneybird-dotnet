@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Moneybird.Net.Endpoints.Administrations.Models;
+using Moneybird.Net.Entities.Administrations;
 
 namespace Moneybird.Net.Endpoints.Abstractions
 {
