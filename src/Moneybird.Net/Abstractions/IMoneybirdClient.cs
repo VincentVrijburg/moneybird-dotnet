@@ -5,8 +5,13 @@ namespace Moneybird.Net.Abstractions
     public interface IMoneybirdClient
     {
         /// <summary>
-        /// The Account Endpoint.
+        /// The Administration Endpoint.
         /// </summary>
         IAdministrationEndpoint Administration { get; }
+        
+        /// <summary>
+        /// The Contact Endpoint.
+        /// </summary>
+        IContactEndpoint Contact { get; }
     }
 }

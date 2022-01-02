@@ -2,14 +2,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using FluentAssertions;
 using Moneybird.Net.Endpoints.Abstractions;
 using Moneybird.Net.Endpoints.Administrations;
-using Moneybird.Net.Endpoints.Administrations.Models;
+using Moneybird.Net.Entities.Administrations;
 using Moneybird.Net.Http;
 using Moq;
 using Xunit;
 
-namespace Moneybird.Net.Tests.Endpoints
+namespace Moneybird.Net.Tests.Endpoints.Administrations
 {
     public class AdministrationEndpointTests : CommonTestBase
     {
@@ -19,7 +20,7 @@ namespace Moneybird.Net.Tests.Endpoints
         private const string ResponsePath = "./Responses/Endpoints/Administration/administrationList.json";
 
         public AdministrationEndpointTests()
-        {
+        {  
             _requester = new Mock<IRequester>();
             _administrationEndpoint = new AdministrationEndpoint(new MoneybirdConfig(), _requester.Object);
         }
@@ -43,12 +44,8 @@ namespace Moneybird.Net.Tests.Endpoints
             {
                 var administration = administrationList.FirstOrDefault(a => a.Id == actualAdministration.Id);
                 Assert.NotNull(administration);
-                
-                Assert.Equal(administration.Name, actualAdministration.Name);
-                Assert.Equal(administration.Language, actualAdministration.Language);
-                Assert.Equal(administration.Currency, actualAdministration.Currency);
-                Assert.Equal(administration.Country, actualAdministration.Country);
-                Assert.Equal(administration.TimeZone, actualAdministration.TimeZone);
+
+                administration.Should().BeEquivalentTo(actualAdministration);
             }
         }
     }
