@@ -4,12 +4,18 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Misc
 {
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+    /// <summary>
+    /// Delivery method.
+    /// </summary>
     public enum DeliveryMethod
     {
+        [JsonPropertyName("Email")]
         Email,
+        [JsonPropertyName("Simplerinvoicing")]
         Simplerinvoicing,
+        [JsonPropertyName("Post")]
         Post,
+        [JsonPropertyName("Manual")]
         Manual
     }
 }

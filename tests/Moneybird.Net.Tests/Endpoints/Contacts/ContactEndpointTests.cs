@@ -43,7 +43,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
                 It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(contactListJson);
             
-            var contactList = JsonSerializer.Deserialize<List<Contact>>(contactListJson);
+            var contactList = JsonSerializer.Deserialize<List<Contact>>(contactListJson, _config.SerializerOptions);
             Assert.NotNull(contactList);
 
             var actualContacts = await _contactEndpoint.GetContactsAsync(AdministrationId, AccessToken);
@@ -68,7 +68,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
                 It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(contactListJson);
             
-            var contactList = JsonSerializer.Deserialize<List<Contact>>(contactListJson);
+            var contactList = JsonSerializer.Deserialize<List<Contact>>(contactListJson, _config.SerializerOptions);
             Assert.NotNull(contactList);
 
             var contactFilterOptions = new ContactFilterOptions
@@ -103,13 +103,13 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
                     "622071342065956775"
                 }
             };
-            var serializedContactListOptions = JsonSerializer.Serialize(contactListOptions);
+            var serializedContactListOptions = JsonSerializer.Serialize(contactListOptions, _config.SerializerOptions);
             
             _requester.Setup(moq => moq.CreatePostRequestAsync(It.IsAny<string>(), It.IsAny<string>(), 
                 It.IsAny<string>(), It.Is<string>(s => s.Equals(serializedContactListOptions)), It.IsAny<List<string>>()))
                 .ReturnsAsync(contactListByIdsJson);
             
-            var contactListByIds = JsonSerializer.Deserialize<List<Contact>>(contactListByIdsJson);
+            var contactListByIds = JsonSerializer.Deserialize<List<Contact>>(contactListByIdsJson, _config.SerializerOptions);
             Assert.NotNull(contactListByIds);
 
             var actualContactsByIds = await _contactEndpoint.GetContactsByIdsAsync(AdministrationId, AccessToken, contactListOptions);
@@ -134,7 +134,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
                 It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(synchronizationContactListJson);
             
-            var synchronizationContactList = JsonSerializer.Deserialize<List<SynchronizationContact>>(synchronizationContactListJson);
+            var synchronizationContactList = JsonSerializer.Deserialize<List<SynchronizationContact>>(synchronizationContactListJson, _config.SerializerOptions);
             Assert.NotNull(synchronizationContactList);
 
             var actualSynchronizationContacts = await _contactEndpoint.GetSynchronizationContactsAsync(AdministrationId, AccessToken);
@@ -159,7 +159,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
                 It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(synchronizationContactListJson);
             
-            var synchronizationContactList = JsonSerializer.Deserialize<List<SynchronizationContact>>(synchronizationContactListJson);
+            var synchronizationContactList = JsonSerializer.Deserialize<List<SynchronizationContact>>(synchronizationContactListJson, _config.SerializerOptions);
             Assert.NotNull(synchronizationContactList);
 
             var contactFilterOptions = new ContactFilterOptions
@@ -191,7 +191,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
                 It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(contactJson);
             
-            var contact = JsonSerializer.Deserialize<Contact>(contactJson);
+            var contact = JsonSerializer.Deserialize<Contact>(contactJson, _config.SerializerOptions);
             Assert.NotNull(contact);
 
             var actualContact = await _contactEndpoint.GetContactByIdAsync(AdministrationId, ContactId, AccessToken);
@@ -208,7 +208,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
                 It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(contactJson);
             
-            var contact = JsonSerializer.Deserialize<Contact>(contactJson);
+            var contact = JsonSerializer.Deserialize<Contact>(contactJson, _config.SerializerOptions);
             Assert.NotNull(contact);
 
             var actualContact = await _contactEndpoint.GetContactByCustomerIdAsync(AdministrationId, CustomerId, AccessToken);
@@ -267,7 +267,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
                     It.IsAny<string>(), It.Is<string>(s => s.Equals(serializedContactCreateOptions)), It.IsAny<List<string>>()))
                 .ReturnsAsync(contactJson);
         
-            var contact = JsonSerializer.Deserialize<Contact>(contactJson);
+            var contact = JsonSerializer.Deserialize<Contact>(contactJson, _config.SerializerOptions);
             Assert.NotNull(contact);
 
             var actualContact = await _contactEndpoint.CreateContactAsync(AdministrationId, contactCreateOptions, AccessToken);
@@ -325,7 +325,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
                     It.IsAny<string>(), It.Is<string>(s => s.Equals(serializedContactUpdateOptions)), It.IsAny<List<string>>()))
                 .ReturnsAsync(contactJson);
         
-            var contact = JsonSerializer.Deserialize<Contact>(contactJson);
+            var contact = JsonSerializer.Deserialize<Contact>(contactJson, _config.SerializerOptions);
             Assert.NotNull(contact);
 
             var actualContact = await _contactEndpoint.UpdateContactByIdAsync(AdministrationId, ContactId, contactUpdateOptions, AccessToken);
@@ -358,13 +358,13 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
                 }
             };
             
-            var serializedContactNoteCreateOptions = JsonSerializer.Serialize(contactNoteCreateOptions);
+            var serializedContactNoteCreateOptions = JsonSerializer.Serialize(contactNoteCreateOptions, _config.SerializerOptions);
         
             _requester.Setup(moq => moq.CreatePostRequestAsync(It.IsAny<string>(), It.IsAny<string>(), 
                     It.IsAny<string>(), It.Is<string>(s => s.Equals(serializedContactNoteCreateOptions)), It.IsAny<List<string>>()))
                 .ReturnsAsync(contactNoteJson);
         
-            var contactNote = JsonSerializer.Deserialize<ContactNote>(contactNoteJson);
+            var contactNote = JsonSerializer.Deserialize<ContactNote>(contactNoteJson, _config.SerializerOptions);
             Assert.NotNull(contactNote);
 
             var actualContactNote = await _contactEndpoint.CreateContactNoteAsync(AdministrationId, ContactId, contactNoteCreateOptions, AccessToken);
@@ -391,7 +391,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
                 It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(contactPersonJson);
             
-            var contactPerson = JsonSerializer.Deserialize<ContactPerson>(contactPersonJson);
+            var contactPerson = JsonSerializer.Deserialize<ContactPerson>(contactPersonJson, _config.SerializerOptions);
             Assert.NotNull(contactPerson);
 
             var actualContactPerson = await _contactEndpoint.GetContactPersonByIdAsync(AdministrationId, ContactId, ContactPersonId, AccessToken);
@@ -404,7 +404,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
         public async void CreateContactPersonAsync_ByAccessToken_Returns_NewContactPerson()
         {
             var contactPersonJson = await File.ReadAllTextAsync(NewContactPersonResponsePath);
-            var contactPersonCreateOptions = new ContactPersonCreateOptions()
+            var contactPersonCreateOptions = new ContactPersonCreateOptions
             {
                 ContactPerson = new ContactPersonCreateItem
                 {
@@ -417,13 +417,13 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
                 }
             };
             
-            var serializedContactPersonCreateOptions = JsonSerializer.Serialize(contactPersonCreateOptions);
+            var serializedContactPersonCreateOptions = JsonSerializer.Serialize(contactPersonCreateOptions, _config.SerializerOptions);
         
             _requester.Setup(moq => moq.CreatePostRequestAsync(It.IsAny<string>(), It.IsAny<string>(), 
                     It.IsAny<string>(), It.Is<string>(s => s.Equals(serializedContactPersonCreateOptions)), It.IsAny<List<string>>()))
                 .ReturnsAsync(contactPersonJson);
         
-            var contactPerson = JsonSerializer.Deserialize<ContactPerson>(contactPersonJson);
+            var contactPerson = JsonSerializer.Deserialize<ContactPerson>(contactPersonJson, _config.SerializerOptions);
             Assert.NotNull(contactPerson);
 
             var actualContactPerson = await _contactEndpoint.CreateContactPersonAsync(AdministrationId, ContactId, contactPersonCreateOptions, AccessToken);
@@ -449,13 +449,13 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
                 }
             };
             
-            var serializedContactPersonUpdateOptions = JsonSerializer.Serialize(contactPersonUpdateOptions);
+            var serializedContactPersonUpdateOptions = JsonSerializer.Serialize(contactPersonUpdateOptions, _config.SerializerOptions);
         
             _requester.Setup(moq => moq.CreatePatchRequestAsync(It.IsAny<string>(), It.IsAny<string>(), 
                     It.IsAny<string>(), It.Is<string>(s => s.Equals(serializedContactPersonUpdateOptions)), It.IsAny<List<string>>()))
                 .ReturnsAsync(contactPersonJson);
         
-            var contactPerson = JsonSerializer.Deserialize<ContactPerson>(contactPersonJson);
+            var contactPerson = JsonSerializer.Deserialize<ContactPerson>(contactPersonJson, _config.SerializerOptions);
             Assert.NotNull(contactPerson);
 
             var actualContactPerson = await _contactEndpoint.UpdateContactPersonByIdAsync(AdministrationId, ContactId, ContactPersonId, contactPersonUpdateOptions, AccessToken);
