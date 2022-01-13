@@ -2,6 +2,7 @@ using Moneybird.Net.Abstractions;
 using Moneybird.Net.Endpoints.Abstractions;
 using Moneybird.Net.Endpoints.Administrations;
 using Moneybird.Net.Endpoints.Contacts;
+using Moneybird.Net.Endpoints.CustomFields;
 using Moneybird.Net.Http;
 
 namespace Moneybird.Net
@@ -13,6 +14,7 @@ namespace Moneybird.Net
 
         public IAdministrationEndpoint Administration { get; }
         public IContactEndpoint Contact { get; }
+        public ICustomFieldEndpoint CustomField { get; }
 
         /// <summary>
         /// Get the instance of MoneybirdClient.
@@ -40,6 +42,7 @@ namespace Moneybird.Net
             
             Administration = new AdministrationEndpoint(_config, requester);
             Contact = new ContactEndpoint(_config, requester);
+            CustomField = new CustomFieldEndpoint(_config, requester);
         }
     }
 }
