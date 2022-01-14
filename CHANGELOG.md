@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.0 | 2022-01-14
+* Add support for `Custom fields` endpoint.
+
 ## 0.2.0 | 2022-01-02
 * Add support for `Contacts` endpoint.
 * Change namespaces of models and entities.

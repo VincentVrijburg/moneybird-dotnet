@@ -15,14 +15,16 @@ namespace Moneybird.Net.Tests.Endpoints.Administrations
     public class AdministrationEndpointTests : CommonTestBase
     {
         private static Mock<IRequester> _requester;
+        private readonly MoneybirdConfig _config;
         private readonly IAdministrationEndpoint _administrationEndpoint;
 
-        private const string ResponsePath = "./Responses/Endpoints/Administration/administrationList.json";
+        private const string ResponsePath = "./Responses/Endpoints/Administration/getAdministrations.json";
 
         public AdministrationEndpointTests()
         {  
             _requester = new Mock<IRequester>();
-            _administrationEndpoint = new AdministrationEndpoint(new MoneybirdConfig(), _requester.Object);
+            _config = new MoneybirdConfig();
+            _administrationEndpoint = new AdministrationEndpoint(_config, _requester.Object);
         }
 
         [Fact]
@@ -33,10 +35,10 @@ namespace Moneybird.Net.Tests.Endpoints.Administrations
             _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
                             It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(administrationListJson);
             
-            var administrationList = JsonSerializer.Deserialize<List<Administration>>(administrationListJson);
+            var administrationList = JsonSerializer.Deserialize<List<Administration>>(administrationListJson, _config.SerializerOptions);
             Assert.NotNull(administrationList);
 
-            var actualAdministrationList = await _administrationEndpoint.GetAdministrationsAsync(accessToken: AccessToken);
+            var actualAdministrationList = await _administrationEndpoint.GetAdministrationsAsync(AccessToken);
             Assert.NotNull(actualAdministrationList);
             
             Assert.Equal(administrationList.Count, actualAdministrationList.Count);
