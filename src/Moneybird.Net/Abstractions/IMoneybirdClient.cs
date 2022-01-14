@@ -13,5 +13,10 @@ namespace Moneybird.Net.Abstractions
         /// The Contact Endpoint.
         /// </summary>
         IContactEndpoint Contact { get; }
+        
+        /// <summary>
+        /// The CustomField Endpoint.
+        /// </summary>
+        ICustomFieldEndpoint CustomField { get; }
     }
 }
