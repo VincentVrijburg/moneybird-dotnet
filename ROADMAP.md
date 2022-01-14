@@ -19,7 +19,7 @@ The goal is to provide a stable version that has the basic functionality to inte
 - [ ] Support for the resource endpoints
   - [x] Administration
   - [x] Contacts
-  - [ ] Custom fields
+  - [x] Custom fields
   - [ ] Document styles
   - [ ] Documents: General documents
   - [ ] Documents: General journal documents
