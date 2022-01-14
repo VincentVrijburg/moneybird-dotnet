@@ -13,6 +13,7 @@ namespace Moneybird.Net.Tests
             // TODO: Expand this test case as new endpoints get supported.
             Assert.NotNull(moneybirdClient.Administration);
             Assert.NotNull(moneybirdClient.Contact);
+            Assert.NotNull(moneybirdClient.CustomField);
         }
         
         [Fact]
