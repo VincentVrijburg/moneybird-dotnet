@@ -18,8 +18,8 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [x] Refreshing the access token
 - [ ] Support for the resource endpoints
   - [x] Administration
-  - [ ] Contacts
-  - [ ] Custom fields
+  - [x] Contacts
+  - [x] Custom fields
   - [ ] Document styles
   - [ ] Documents: General documents
   - [ ] Documents: General journal documents
