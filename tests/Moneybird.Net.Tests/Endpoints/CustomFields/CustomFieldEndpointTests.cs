@@ -28,7 +28,7 @@ namespace Moneybird.Net.Tests.Endpoints.CustomFields
         }
         
         [Fact]
-        public async void GetAdministrationListAsync_ByAccessToken_Returns_AdministrationList()
+        public async void GetCustomFieldsAsync_ByAccessToken_Returns_CustomFieldList()
         {
             var customFieldListJson = await File.ReadAllTextAsync(ResponsePath);
             
