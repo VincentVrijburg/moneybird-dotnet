@@ -68,6 +68,10 @@
       <Content Include="Responses\Endpoints\CustomFields\getCustomFields.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Responses\Endpoints\DocumentStyles\getDocumentStyles.json" />
+      <Content Include="Responses\Endpoints\DocumentStyles\getDocumentStyles.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
