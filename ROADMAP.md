@@ -20,7 +20,7 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [x] Administration
   - [x] Contacts
   - [x] Custom fields
-  - [ ] Document styles
+  - [x] Document styles
   - [ ] Documents: General documents
   - [ ] Documents: General journal documents
   - [ ] Documents: Purchase invoices

@@ -84,6 +84,45 @@ var accessToken = await authenticator.RefreshAccessTokenAsync(refreshToken);
 
 ### Client
 
+In order to access the API, an instance of the moneybird configuration is required.
+
+#### Create entry point
+```csharp
+
+var client = MoneybirdClient.GetInstance(config);
+
+```
+
+#### Request data
+
+See the example below to learn how to request a list of administrations.
+
+```csharp
+
+try
+{
+  var administrations = await client.Administration.GetAdministrationsAsync("{ACCESS_TOKEN}");
+  var id = administrations[0].Id;
+  var name = administrations[0].Name;
+  var language = administrations[0].Language;
+  var currency = administrations[0].Currency;
+}
+catch (MoneybirdException ex)
+{
+  // Handle the exception however you want.
+}
+
+```
+
+#### Supported data classes
+
+The following data classes are currently supported and accessible through the client:
+
+- Administration
+- Contact
+- CustomField
+- DocumentStyle
+
 ## Roadmap
 See our [roadmap](ROADMAP.md) for an overview of what we are planning to work on and in what time frame.
 

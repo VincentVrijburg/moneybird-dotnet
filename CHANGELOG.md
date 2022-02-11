@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.0 | 2022-02-11
+* Add support for `Document styles` endpoint.
+
 ## 0.3.0 | 2022-01-14
 * Add support for `Custom fields` endpoint.
 
