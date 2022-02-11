@@ -1,0 +1,114 @@
+[
+  {
+    "id": "322056714472916933",
+    "administration_id": "322056713748350877",
+    "name": "Standaard",
+    "identity_id": "322056714608183250",
+    "default": true,
+    "logo_hash": null,
+    "logo_container_full_width": false,
+    "logo_display_width": 50,
+    "logo_position": "right",
+    "background_hash": null,
+    "paper_size": "A4",
+    "address_position": "left",
+    "font_size": 9,
+    "font_family": "lucida_grande",
+    "print_on_stationery": false,
+    "custom_css": null,
+    "invoice_sender_address": [
+      {
+        "field": "company_name",
+        "bold": true
+      },
+      {
+        "field": "address"
+      },
+      {
+        "field": "newline"
+      },
+      {
+        "field": "email"
+      },
+      {
+        "field": "phone"
+      },
+      {
+        "field": "newline"
+      },
+      {
+        "field": "chamber_of_commerce",
+        "label": true
+      },
+      {
+        "field": "tax_number",
+        "label": true
+      },
+      {
+        "field": "bank_account_number",
+        "label": true
+      }
+    ],
+    "invoice_metadata_left": [
+      {
+        "field": "reference"
+      }
+    ],
+    "invoice_metadata_right": [
+      {
+        "field": "invoice_date"
+      },
+      {
+        "field": "due_date"
+      }
+    ],
+    "estimate_sender_address": [
+      {
+        "field": "company_name",
+        "bold": true
+      },
+      {
+        "field": "address"
+      },
+      {
+        "field": "newline"
+      },
+      {
+        "field": "email"
+      },
+      {
+        "field": "phone"
+      },
+      {
+        "field": "newline"
+      },
+      {
+        "field": "chamber_of_commerce",
+        "label": true
+      },
+      {
+        "field": "tax_number",
+        "label": true
+      },
+      {
+        "field": "bank_account_number",
+        "label": true
+      }
+    ],
+    "estimate_metadata_left": [
+      {
+        "field": "reference"
+      }
+    ],
+    "estimate_metadata_right": [
+      {
+        "field": "estimate_date"
+      },
+      {
+        "field": "due_date"
+      }
+    ],
+    "created_at": "2021-05-18T17:00:38.867Z",
+    "updated_at": "2021-05-18T17:00:40.323Z"
+  }
+]
