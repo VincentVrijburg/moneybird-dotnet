@@ -4,7 +4,7 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>9</LangVersion>
         <PackageId>Moneybird.Net</PackageId>
-        <Version>0.3.0</Version>
+        <Version>0.4.1</Version>
         <Authors>Vincent Vrijburg</Authors>
         <Description>A wrapper for the Moneybird API.</Description>
         <Copyright>Copyright © Vincent Vrijburg 2021</Copyright>
