@@ -16,7 +16,6 @@ namespace Moneybird.Net
         public IAdministrationEndpoint Administration { get; }
         public IContactEndpoint Contact { get; }
         public ICustomFieldEndpoint CustomField { get; }
-        
         public IDocumentStyleEndpoint DocumentStyle { get; }
 
         /// <summary>

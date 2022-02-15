@@ -14,6 +14,7 @@ namespace Moneybird.Net.Tests
             Assert.NotNull(moneybirdClient.Administration);
             Assert.NotNull(moneybirdClient.Contact);
             Assert.NotNull(moneybirdClient.CustomField);
+            Assert.NotNull(moneybirdClient.DocumentStyle);
         }
         
         [Fact]
