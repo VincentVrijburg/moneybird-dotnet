@@ -18,5 +18,10 @@ namespace Moneybird.Net.Abstractions
         /// The CustomField Endpoint.
         /// </summary>
         ICustomFieldEndpoint CustomField { get; }
+        
+        /// <summary>
+        /// The DocumentStyle Endpoint.
+        /// </summary>
+        IDocumentStyleEndpoint DocumentStyle { get; }
     }
 }
