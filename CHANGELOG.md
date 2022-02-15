@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.1 | 2022-02-15
+* Fix access for `Document styles` endpoint.
+
 ## 0.4.0 | 2022-02-11
 * Add support for `Document styles` endpoint.
 
