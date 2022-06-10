@@ -4,6 +4,7 @@ using Moneybird.Net.Endpoints.Administrations;
 using Moneybird.Net.Endpoints.Contacts;
 using Moneybird.Net.Endpoints.CustomFields;
 using Moneybird.Net.Endpoints.DocumentStyles;
+using Moneybird.Net.Endpoints.GeneralDocuments;
 using Moneybird.Net.Http;
 
 namespace Moneybird.Net
@@ -17,6 +18,8 @@ namespace Moneybird.Net
         public IContactEndpoint Contact { get; }
         public ICustomFieldEndpoint CustomField { get; }
         public IDocumentStyleEndpoint DocumentStyle { get; }
+        
+        public IGeneralDocumentEndpoint GeneralDocument { get; }
 
         /// <summary>
         /// Get the instance of MoneybirdClient.
@@ -46,6 +49,7 @@ namespace Moneybird.Net
             Contact = new ContactEndpoint(_config, requester);
             CustomField = new CustomFieldEndpoint(_config, requester);
             DocumentStyle = new DocumentStyleEndpoint(_config, requester);
+            GeneralDocument = new GeneralDocumentEndpoint(_config, requester);
         }
     }
 }

@@ -72,6 +72,10 @@
       <Content Include="Responses\Endpoints\DocumentStyles\getDocumentStyles.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Responses\Endpoints\GeneralDocuments\getSynchronizationDocuments.json" />
+      <Content Include="Responses\Endpoints\GeneralDocuments\getSynchronizationDocuments.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
