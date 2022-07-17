@@ -45,7 +45,7 @@ namespace Moneybird.Net.Entities.DocumentStyles
         [JsonPropertyName("font_size")]
         public int FontSize { get; set; }
         
-        [JsonPropertyName("font_familiy")]
+        [JsonPropertyName("font_family")]
         public string FontFamiliy { get; set; }
         
         [JsonPropertyName("print_on_stationery")]
