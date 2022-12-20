@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.5.0 | 2022-12-20
+* Add support for `Workflows` endpoint.
+
 ## 0.4.1 | 2022-02-15
 * Fix access for `Document styles` endpoint.
 

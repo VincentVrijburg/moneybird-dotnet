@@ -44,6 +44,6 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [ ] Users
   - [ ] Verifications
   - [ ] Webhooks
-  - [ ] Workflows 
+  - [x] Workflows 
 
 Once the features above are implemented (and ticked-off) we will release the first version in this range (i.e. v1.0.0).
