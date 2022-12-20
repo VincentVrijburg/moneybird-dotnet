@@ -14,8 +14,17 @@ Moneybird client for .NET Framework and .NET (Core).
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
+    - [Configuration](#configuration)
+      - [Option 1](#option-1)
+      - [Option 2](#option-2)
     - [Authenticator](#authenticator)
+      - [Request token uri](#request-token-uri)
+      - [Request access token](#request-access-token)
+      - [Refresh access token](#refresh-access-token)
     - [Client](#client)
+      - [Create entry point](#create-entry-point)
+      - [Request data](#request-data)
+      - [Supported data classes](#supported-data-classes)
   - [Roadmap](#roadmap)
   - [Versioning](#versioning)
   - [License](#license)
@@ -122,6 +131,7 @@ The following data classes are currently supported and accessible through the cl
 - Contact
 - CustomField
 - DocumentStyle
+- Workflow
 
 ## Roadmap
 See our [roadmap](ROADMAP.md) for an overview of what we are planning to work on and in what time frame.

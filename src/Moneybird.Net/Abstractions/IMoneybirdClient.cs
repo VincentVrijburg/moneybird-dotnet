@@ -23,5 +23,10 @@ namespace Moneybird.Net.Abstractions
         /// The DocumentStyle Endpoint.
         /// </summary>
         IDocumentStyleEndpoint DocumentStyle { get; }
+        
+        /// <summary>
+        /// The Workflow Endpoint.
+        /// </summary>
+        IWorkflowEndpoint Workflow { get; }
     }
 }

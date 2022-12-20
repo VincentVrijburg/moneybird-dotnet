@@ -72,6 +72,10 @@
       <Content Include="Responses\Endpoints\DocumentStyles\getDocumentStyles.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Responses\Endpoints\Workflows\getWorkflows.json" />
+      <Content Include="Responses\Endpoints\Workflows\getWorkflows.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
