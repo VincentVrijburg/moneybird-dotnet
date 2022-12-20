@@ -1,9 +1,9 @@
 using System;
 using System.Text.Json.Serialization;
 
-namespace Moneybird.Net.Entities.Contacts
+namespace Moneybird.Net.Entities.Common
 {
-    public class ContactNote
+    public class Note
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -27,7 +27,7 @@ namespace Moneybird.Net.Entities.Contacts
         public bool Todo { get; set; }
         
         [JsonPropertyName("note")]
-        public string Note { get; set; }
+        public string Value { get; set; }
         
         [JsonPropertyName("completed_at")]
         public DateTime? CompletedAt { get; set; }

@@ -76,6 +76,18 @@
       <Content Include="Responses\Endpoints\GeneralDocuments\getSynchronizationDocuments.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Responses\Endpoints\GeneralDocuments\getDocumentsByIds.json" />
+      <Content Include="Responses\Endpoints\GeneralDocuments\getDocumentsByIds.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Responses\Endpoints\GeneralDocuments\getDocuments.json" />
+      <Content Include="Responses\Endpoints\GeneralDocuments\getDocuments.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Responses\Endpoints\GeneralDocuments\getDocument.json" />
+      <Content Include="Responses\Endpoints\GeneralDocuments\getDocument.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>

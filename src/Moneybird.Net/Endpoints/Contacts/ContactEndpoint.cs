@@ -3,6 +3,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Moneybird.Net.Endpoints.Abstractions;
 using Moneybird.Net.Endpoints.Contacts.Models;
+using Moneybird.Net.Entities.Common;
 using Moneybird.Net.Entities.Contacts;
 using Moneybird.Net.Extensions;
 using Moneybird.Net.Http;
@@ -149,7 +150,7 @@ namespace Moneybird.Net.Endpoints.Contacts
             return response;
         }
 
-        public async Task<ContactNote> CreateContactNoteAsync(string administrationId, string contactId, ContactNoteCreateOptions options, string accessToken)
+        public async Task<Note> CreateContactNoteAsync(string administrationId, string contactId, ContactNoteCreateOptions options, string accessToken)
         {
             var relativeUrl = string.Format(ContactsIdNotesUri, administrationId, contactId);
             var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
@@ -157,7 +158,7 @@ namespace Moneybird.Net.Endpoints.Contacts
                 .CreatePostRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<ContactNote>(responseJson, _config.SerializerOptions);
+            return JsonSerializer.Deserialize<Note>(responseJson, _config.SerializerOptions);
         }
 
         public async Task<bool> DeleteContactNoteByIdAsync(string administrationId, string contactId, string noteId, string accessToken)

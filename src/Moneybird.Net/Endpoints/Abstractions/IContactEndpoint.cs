@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Moneybird.Net.Endpoints.Contacts.Models;
+using Moneybird.Net.Entities.Common;
 using Moneybird.Net.Entities.Contacts;
 
 namespace Moneybird.Net.Endpoints.Abstractions
@@ -17,7 +18,7 @@ namespace Moneybird.Net.Endpoints.Abstractions
         Task<Contact> CreateContactAsync(string administrationId, ContactCreateOptions item, string accessToken);
         Task<Contact> UpdateContactByIdAsync(string administrationId, string contactId, ContactUpdateOptions options, string accessToken);
         Task<bool> DeleteContactByIdAsync(string administrationId, string contactId, string accessToken);
-        Task<ContactNote> CreateContactNoteAsync(string administrationId, string contactId, ContactNoteCreateOptions options, string accessToken);
+        Task<Note> CreateContactNoteAsync(string administrationId, string contactId, ContactNoteCreateOptions options, string accessToken);
         Task<bool> DeleteContactNoteByIdAsync(string administrationId, string contactId, string noteId, string accessToken);
         Task<ContactPerson> GetContactPersonByIdAsync(string administrationId, string contactId, string contactPersonId, string accessToken);
         Task<ContactPerson> CreateContactPersonAsync(string administrationId, string contactId, ContactPersonCreateOptions options, string accessToken);
