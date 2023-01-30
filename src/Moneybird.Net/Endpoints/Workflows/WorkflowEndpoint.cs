@@ -18,8 +18,8 @@ namespace Moneybird.Net.Endpoints.Workflows
         {
             _requester = requester;
             _config = config;
-            
         }
+        
         public async Task<List<Workflow>> GetWorkflowsAsync(string administrationId, string accessToken)
         {
             var relativeUrl = string.Format(WorkflowsUri, administrationId);
