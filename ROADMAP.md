@@ -41,7 +41,7 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [ ] Subscriptions
   - [ ] Tax rates
   - [ ] Time entries
-  - [ ] Users
+  - [x] Users
   - [ ] Verifications
   - [ ] Webhooks
   - [x] Workflows 
