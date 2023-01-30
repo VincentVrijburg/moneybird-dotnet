@@ -65,11 +65,7 @@ namespace Moneybird.Net
 
             SerializerOptions = new JsonSerializerOptions
             {
-                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-                Converters =
-                {
-                    new JsonStringEnumConverter()
-                }
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
             };
         }
     }

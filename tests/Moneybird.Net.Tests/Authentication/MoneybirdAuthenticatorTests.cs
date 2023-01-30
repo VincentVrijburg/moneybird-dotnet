@@ -1,9 +1,7 @@
 using System;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Text.Json;
 using System.Threading;
-using System.Threading.Tasks;
 using Moneybird.Net.Authentication;
 using Moneybird.Net.Authentication.Abstractions;
 using Moneybird.Net.Authentication.Enums;

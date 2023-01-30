@@ -5,6 +5,7 @@ namespace Moneybird.Net.Misc
     /// <summary>
     /// Custom field sources.
     /// </summary>
+    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
     public enum Source
     {
         [JsonPropertyName("sales_invoices")]

@@ -2,7 +2,20 @@
   {
     "id": "343816698730645144",
     "administration_id": "322056713748350877",
-    "name": "Test field",
+    "name": "custom_field_8f01722a7efd90c84f1d",
     "source": "contact"
+  },
+  {
+    "id": "343816698730645145",
+    "administration_id": "322056713748350877",
+    "name": "custom_field_8f01722a7efd90c84f1e",
+    "source": "sales_invoices"
+  }
+,
+  {
+    "id": "343816698730645146",
+    "administration_id": "322056713748350877",
+    "name": "custom_field_8f01722a7efd90c84f1f",
+    "source": "identity"
   }
 ]

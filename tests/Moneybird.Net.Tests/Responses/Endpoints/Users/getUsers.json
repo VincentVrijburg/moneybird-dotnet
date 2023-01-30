@@ -1,0 +1,34 @@
+[
+  {
+    "id": "370130884897015578",
+    "name": "Mo Neybird",
+    "created_at": "2022-10-31T08:19:00.354Z",
+    "updated_at": "2022-10-31T08:19:00.488Z",
+    "email": "info@moneybird.nl",
+    "email_validated": true,
+    "language": "nl",
+    "time_zone": "Europe/Amsterdam",
+    "permissions": [
+      "sales_invoices",
+      "documents",
+      "estimates",
+      "bank",
+      "settings",
+      "ownership",
+      "time_entries"
+    ]
+  },
+  {
+    "id": "370131086877918579",
+    "name": "John Doe",
+    "created_at": "2022-10-31T08:22:12.980Z",
+    "updated_at": "2022-10-31T08:22:12.987Z",
+    "email": "john+3@doe.nl",
+    "email_validated": true,
+    "language": "nl",
+    "time_zone": "Europe/Amsterdam",
+    "permissions": [
+      "time_entries"
+    ]
+  }
+]
