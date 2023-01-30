@@ -131,6 +131,7 @@ The following data classes are currently supported and accessible through the cl
 - Contact
 - CustomField
 - DocumentStyle
+- User
 - Workflow
 
 ## Roadmap

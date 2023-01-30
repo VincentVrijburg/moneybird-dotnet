@@ -8,6 +8,7 @@ namespace Moneybird.Net.Misc
     /// <summary>
     /// Sepa sequence types.
     /// </summary>
+    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
     public enum SepaSequenceType
     {
         [JsonPropertyName("RCUR")]

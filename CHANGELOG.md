@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.0 | 2023-01-30
+* Add support for `Users` endpoint.
+* Add `Macross.Json.Extensions` dependency for enum conversions.
+
 ## 0.5.0 | 2022-12-20
 * Add support for `Workflows` endpoint.
 
