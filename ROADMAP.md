@@ -42,7 +42,7 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [ ] Tax rates
   - [ ] Time entries
   - [x] Users
-  - [ ] Verifications
+  - [x] Verifications
   - [ ] Webhooks
   - [x] Workflows 
 
