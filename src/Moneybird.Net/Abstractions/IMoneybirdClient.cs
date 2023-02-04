@@ -30,6 +30,11 @@ namespace Moneybird.Net.Abstractions
         IUserEndpoint User { get; }
         
         /// <summary>
+        /// The Verification Endpoint.
+        /// </summary>
+        IVerificationEndpoint Verification { get; }
+        
+        /// <summary>
         /// The Workflow Endpoint.
         /// </summary>
         IWorkflowEndpoint Workflow { get; }

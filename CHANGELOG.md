@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.7.0 | 2022-02-04
+* Add support for `Verifications` endpoint.
+
 ## 0.6.0 | 2023-01-30
 * Add support for `Users` endpoint.
 * Add `Macross.Json.Extensions` dependency for enum conversions.
