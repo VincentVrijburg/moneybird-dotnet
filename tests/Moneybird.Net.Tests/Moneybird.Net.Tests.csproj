@@ -73,11 +73,34 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
       <None Remove="Responses\Endpoints\Workflows\getWorkflows.json" />
+      <Content Include="Responses\Endpoints\Verifications\getVerificationAllPending.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
       <Content Include="Responses\Endpoints\Workflows\getWorkflows.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
       <None Remove="Responses\Endpoints\Users\getUsers.json" />
       <Content Include="Responses\Endpoints\Users\getUsers.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Responses\Endpoints\Verifications\getVerification.json" />
+      <Content Include="Responses\Endpoints\Verifications\getVerification.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Responses\Endpoints\Verifications\getVerificationBankPending.json" />
+      <Content Include="Responses\Endpoints\Verifications\getVerificationBankPending.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Responses\Endpoints\Verifications\getVerificationCommercePending.json" />
+      <Content Include="Responses\Endpoints\Verifications\getVerificationCommercePending.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Responses\Endpoints\Verifications\getVerificationEmailPending.json" />
+      <Content Include="Responses\Endpoints\Verifications\getVerificationEmailPending.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Responses\Endpoints\Verifications\getVerificationTaxPending.json" />
+      <Content Include="Responses\Endpoints\Verifications\getVerificationTaxPending.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
     </ItemGroup>

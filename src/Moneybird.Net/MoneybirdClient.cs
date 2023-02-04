@@ -5,6 +5,7 @@ using Moneybird.Net.Endpoints.Contacts;
 using Moneybird.Net.Endpoints.CustomFields;
 using Moneybird.Net.Endpoints.DocumentStyles;
 using Moneybird.Net.Endpoints.Users;
+using Moneybird.Net.Endpoints.Verifications;
 using Moneybird.Net.Endpoints.Workflows;
 using Moneybird.Net.Http;
 
@@ -20,6 +21,7 @@ namespace Moneybird.Net
         public ICustomFieldEndpoint CustomField { get; }
         public IDocumentStyleEndpoint DocumentStyle { get; }
         public IUserEndpoint User { get; }
+        public IVerificationEndpoint Verification { get; }
         public IWorkflowEndpoint Workflow { get; }
 
         /// <summary>
@@ -51,6 +53,7 @@ namespace Moneybird.Net
             CustomField = new CustomFieldEndpoint(_config, requester);
             DocumentStyle = new DocumentStyleEndpoint(_config, requester);
             User = new UserEndpoint(_config, requester);
+            Verification = new VerificationEndpoint(_config, requester);
             Workflow = new WorkflowEndpoint(_config, requester);
         }
     }
