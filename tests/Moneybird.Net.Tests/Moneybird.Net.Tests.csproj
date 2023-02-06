@@ -103,6 +103,10 @@
       <Content Include="Responses\Endpoints\Verifications\getVerificationTaxPending.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="Responses\Endpoints\Payments\getPayment.json" />
+      <Content Include="Responses\Endpoints\Payments\getPayment.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
