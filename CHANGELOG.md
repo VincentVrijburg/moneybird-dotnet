@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.8.0 | 2022-02-06
+* Add support for `Payments` endpoint.
+
 ## 0.7.0 | 2022-02-04
 * Add support for `Verifications` endpoint.
 
