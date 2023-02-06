@@ -34,6 +34,7 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [ ] Identities
   - [ ] Import mappings
   - [ ] Ledger accounts
+  - [x] Payments
   - [ ] Products
   - [ ] Projects
   - [ ] Recurring sales invoices

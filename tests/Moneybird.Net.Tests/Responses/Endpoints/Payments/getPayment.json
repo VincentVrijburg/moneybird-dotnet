@@ -1,0 +1,20 @@
+{
+  "id": "370131013361206478",
+  "administration_id": "281289699686381606",
+  "invoice_type": "SalesInvoice",
+  "invoice_id": "370131013156734145",
+  "financial_account_id": "370131013348623561",
+  "user_id": "262969831844742919",
+  "payment_transaction_id": null,
+  "transaction_identifier": null,
+  "price": "363.0",
+  "price_base": "363.0",
+  "payment_date": "2022-10-31",
+  "credit_invoice_id": null,
+  "financial_mutation_id": "370131013357012173",
+  "ledger_account_id": "370131013340234952",
+  "linked_payment_id": null,
+  "manual_payment_action": null,
+  "created_at": "2022-10-31T08:21:02.867Z",
+  "updated_at": "2022-10-31T08:21:02.867Z"
+}

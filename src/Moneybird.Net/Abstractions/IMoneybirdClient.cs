@@ -25,6 +25,11 @@ namespace Moneybird.Net.Abstractions
         IDocumentStyleEndpoint DocumentStyle { get; }
         
         /// <summary>
+        /// The Payment Endpoint.
+        /// </summary>
+        IPaymentEndpoint Payment { get; }
+        
+        /// <summary>
         /// The User Endpoint.
         /// </summary>
         IUserEndpoint User { get; }
