@@ -21,7 +21,7 @@ namespace Moneybird.Net.Entities.Payments
         public string FinancialAccountId { get; set; }
 
         [JsonPropertyName("user_id")]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         [JsonPropertyName("payment_transaction_id")]
         public object PaymentTransactionId { get; set; }
@@ -36,7 +36,7 @@ namespace Moneybird.Net.Entities.Payments
         public string PriceBase { get; set; }
 
         [JsonPropertyName("payment_date")]
-        public string PaymentDate { get; set; }
+        public DateTime PaymentDate { get; set; }
 
         [JsonPropertyName("credit_invoice_id")]
         public object CreditInvoiceId { get; set; }
