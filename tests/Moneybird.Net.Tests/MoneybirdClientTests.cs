@@ -1,4 +1,7 @@
+using System.Net.Http;
 using Moneybird.Net.Abstractions;
+using Moq;
+using Moq.Protected;
 using Xunit;
 
 namespace Moneybird.Net.Tests
@@ -44,8 +47,21 @@ namespace Moneybird.Net.Tests
             var secondConfig = new MoneybirdConfig();
             var secondMoneybirdClient = MoneybirdClient.GetInstance(secondConfig);
             Assert.NotNull(secondMoneybirdClient);
-            
+
+            Assert.NotSame(firstMoneybirdClient.Config, secondMoneybirdClient.Config);
             Assert.NotSame(firstMoneybirdClient, secondMoneybirdClient);
+        }
+
+        [Fact]
+        public void Dispose_Disposes_HttpClient()
+        {
+            var config = new MoneybirdConfig();
+            var mock = new Mock<HttpClient>();
+
+            var moneybirdClient = new MoneybirdClient(config, mock.Object);
+            moneybirdClient.Dispose();
+
+            mock.Protected().Verify("Dispose", Times.Once(), args: true);
         }
     }
 }

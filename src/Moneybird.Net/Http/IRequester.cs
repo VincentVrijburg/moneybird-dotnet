@@ -1,9 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Moneybird.Net.Http
 {
-    public interface IRequester
+    public interface IRequester : IDisposable
     {
         /// <summary>
         /// Create a get request and send it asynchronously to the Moneybird api.
