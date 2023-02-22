@@ -27,90 +27,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="Responses\Authentication\accessToken.json">
+      <Content Include="Responses\**\*.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
-      <Content Include="Responses\Endpoints\Administration\getAdministrations.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="Responses\Endpoints\Contacts\getContact.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="Responses\Endpoints\Contacts\getSynchronizationContacts.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Responses\accessToken.json" />
-      <None Remove="Responses\AdministrationEndpoint\administrationList.json" />
-      <None Remove="Responses\Endpoints\Contacts\contactList.json" />
-      <None Remove="Responses\Endpoints\Contacts\contactListByIds.json" />
-      <None Remove="Responses\Endpoints\Contacts\contactById.json" />
-      <None Remove="Responses\Endpoints\Contacts\contactPersonById.json" />
-      <Content Include="Responses\Endpoints\Contacts\getContactPerson.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Responses\Endpoints\Contacts\newContact.json" />
-      <Content Include="Responses\Endpoints\Contacts\newContact.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Responses\Endpoints\Contacts\newContactNote.json" />
-      <Content Include="Responses\Endpoints\Contacts\newContactNote.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Responses\Endpoints\Contacts\newContactPerson.json" />
-      <Content Include="Responses\Endpoints\Contacts\newContactPerson.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Responses\Endpoints\Contacts\getContacts.json" />
-      <Content Include="Responses\Endpoints\Contacts\getContacts.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Responses\Endpoints\CustomFields\getCustomFields.json" />
-      <Content Include="Responses\Endpoints\CustomFields\getCustomFields.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Responses\Endpoints\DocumentStyles\getDocumentStyles.json" />
-      <Content Include="Responses\Endpoints\DocumentStyles\getDocumentStyles.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Responses\Endpoints\Workflows\getWorkflows.json" />
-      <Content Include="Responses\Endpoints\Verifications\getVerificationAllPending.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="Responses\Endpoints\Workflows\getWorkflows.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Responses\Endpoints\Users\getUsers.json" />
-      <Content Include="Responses\Endpoints\Users\getUsers.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Responses\Endpoints\Verifications\getVerification.json" />
-      <Content Include="Responses\Endpoints\Verifications\getVerification.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Responses\Endpoints\Verifications\getVerificationBankPending.json" />
-      <Content Include="Responses\Endpoints\Verifications\getVerificationBankPending.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Responses\Endpoints\Verifications\getVerificationCommercePending.json" />
-      <Content Include="Responses\Endpoints\Verifications\getVerificationCommercePending.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Responses\Endpoints\Verifications\getVerificationEmailPending.json" />
-      <Content Include="Responses\Endpoints\Verifications\getVerificationEmailPending.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Responses\Endpoints\Verifications\getVerificationTaxPending.json" />
-      <Content Include="Responses\Endpoints\Verifications\getVerificationTaxPending.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <None Remove="Responses\Endpoints\Payments\getPayment.json" />
-      <Content Include="Responses\Endpoints\Payments\getPayment.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Http" />
     </ItemGroup>
 
 </Project>
