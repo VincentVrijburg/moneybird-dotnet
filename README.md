@@ -22,7 +22,8 @@ Moneybird client for .NET Framework and .NET (Core).
       - [Request access token](#request-access-token)
       - [Refresh access token](#refresh-access-token)
     - [Client](#client)
-      - [Create entry point](#create-entry-point)
+      - [Create singleton entry point](#create-singleton-entry-point)
+      - [Create disposable entry point](#create-disposable-entry-point)
       - [Request data](#request-data)
       - [Supported data classes](#supported-data-classes)
   - [Roadmap](#roadmap)
@@ -95,10 +96,18 @@ var accessToken = await authenticator.RefreshAccessTokenAsync(refreshToken);
 
 In order to access the API, an instance of the moneybird configuration is required.
 
-#### Create entry point
+#### Create singleton entry point
 ```csharp
 
 var client = MoneybirdClient.GetInstance(config);
+
+```
+
+#### Create disposable entry point
+```csharp
+
+using var moneybirdClient = new MoneybirdClient(config);
+using var moneybirdClient = new MoneybirdClient(config, httpClient);
 
 ```
 

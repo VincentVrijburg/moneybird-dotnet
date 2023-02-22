@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -8,9 +9,10 @@ using System.Threading.Tasks;
 
 namespace Moneybird.Net.Http
 {
-    public abstract class RequesterBase
+    public abstract class RequesterBase : IDisposable
     {
         private readonly HttpClient _httpClient;
+
         private static List<HttpStatusCode> _httpStatusCodeResponses = new(){
             HttpStatusCode.BadRequest, HttpStatusCode.Unauthorized,
             HttpStatusCode.PaymentRequired, HttpStatusCode.Forbidden,
@@ -19,12 +21,9 @@ namespace Moneybird.Net.Http
             (HttpStatusCode) 429, HttpStatusCode.InternalServerError
         };
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RequesterBase"/> class.
-        /// </summary>
-        protected RequesterBase()
+        protected RequesterBase(HttpClient httpClient)
         {
-            _httpClient = new HttpClient();
+            _httpClient = httpClient;
         }
         
         protected async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request)
@@ -98,6 +97,20 @@ namespace Moneybird.Net.Http
             {
                 return await content.ReadAsStringAsync().ConfigureAwait(false);
             }
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _httpClient.Dispose();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }

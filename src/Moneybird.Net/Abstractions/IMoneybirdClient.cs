@@ -1,8 +1,9 @@
+using System;
 using Moneybird.Net.Endpoints.Abstractions;
 
 namespace Moneybird.Net.Abstractions
 {
-    public interface IMoneybirdClient
+    public interface IMoneybirdClient : IDisposable
     {
         /// <summary>
         /// The Administration Endpoint.
