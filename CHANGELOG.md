@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.1 | 2022-02-22
+* Fix race condition for configurations.
+* Add public constructor with optional argument for HttpClient.
+
 ## 0.8.0 | 2022-02-06
 * Add support for `Payments` endpoint.
 
