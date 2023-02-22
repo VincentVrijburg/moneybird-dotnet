@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -7,6 +8,11 @@ namespace Moneybird.Net.Http
 {
     public class Requester : RequesterBase, IRequester
     {
+        public Requester(HttpClient httpClient)
+            : base(httpClient)
+        {
+        }
+
         public async Task<string> CreateGetRequestAsync(string host, string relativeUrl, string accessToken, List<string> queryParameters = null)
         {
             var request = ConstructRequest(host, relativeUrl, accessToken, queryParameters, HttpMethod.Get);

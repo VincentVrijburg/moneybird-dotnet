@@ -1,3 +1,5 @@
+using System;
+using System.Net.Http;
 using Moneybird.Net.Abstractions;
 using Moneybird.Net.Endpoints.Abstractions;
 using Moneybird.Net.Endpoints.Administrations;
@@ -15,8 +17,10 @@ namespace Moneybird.Net
     public class MoneybirdClient : IMoneybirdClient
     {
         private static MoneybirdClient _instance;
-        private static MoneybirdConfig _config;
 
+        private readonly Requester _requester;
+
+        internal MoneybirdConfig Config { get; }
         public IAdministrationEndpoint Administration { get; }
         public IContactEndpoint Contact { get; }
         public ICustomFieldEndpoint CustomField { get; }
@@ -36,28 +40,44 @@ namespace Moneybird.Net
         public static MoneybirdClient GetInstance(MoneybirdConfig config)
         {
             ArgumentGuard.NotNull(config, nameof(config));
+
+            var instance = _instance;
             
-            if (_instance == null || !_config.Equals(config))
+            if (instance?.Config != config)
             {
-                _config = config;
-                _instance = new MoneybirdClient();
+                instance = new MoneybirdClient(config);
+                _instance = instance;
             }
             
-            return _instance;
+            return instance;
         }
         
-        private MoneybirdClient()
+        public MoneybirdClient(MoneybirdConfig config, HttpClient client = null)
         {
-            var requester = new Requester();
-            
-            Administration = new AdministrationEndpoint(_config, requester);
-            Contact = new ContactEndpoint(_config, requester);
-            CustomField = new CustomFieldEndpoint(_config, requester);
-            DocumentStyle = new DocumentStyleEndpoint(_config, requester);
-            Payment = new PaymentEndpoint(_config, requester);
-            User = new UserEndpoint(_config, requester);
-            Verification = new VerificationEndpoint(_config, requester);
-            Workflow = new WorkflowEndpoint(_config, requester);
+            Config = config;
+            _requester = new Requester(client ?? new HttpClient());
+            Administration = new AdministrationEndpoint(Config, _requester);
+            Contact = new ContactEndpoint(Config, _requester);
+            CustomField = new CustomFieldEndpoint(Config, _requester);
+            DocumentStyle = new DocumentStyleEndpoint(Config, _requester);
+            Payment = new PaymentEndpoint(Config, _requester);
+            User = new UserEndpoint(Config, _requester);
+            Verification = new VerificationEndpoint(Config, _requester);
+            Workflow = new WorkflowEndpoint(Config, _requester);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _requester.Dispose();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }
