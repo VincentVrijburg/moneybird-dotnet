@@ -1,0 +1,45 @@
+[
+  {
+    "id": "370130885126653740",
+    "administration_id": "123",
+    "name": "Algemene kosten",
+    "account_type": "expenses",
+    "account_id": null,
+    "parent_id": null,
+    "created_at": "2022-10-31T08:19:00.570Z",
+    "updated_at": "2022-10-31T08:19:00.570Z",
+    "allowed_document_types": [
+      "purchase_invoice",
+      "financial_mutation",
+      "general_journal_document"
+    ]
+  },
+  {
+    "id": "370130885170693944",
+    "administration_id": "123",
+    "name": "Betaalde en/of ontvangen btw",
+    "account_type": "current_liabilities",
+    "account_id": null,
+    "parent_id": "370130885125605155",
+    "created_at": "2022-10-31T08:19:00.615Z",
+    "updated_at": "2022-10-31T08:19:00.615Z",
+    "allowed_document_types": [
+      "financial_mutation",
+      "general_journal_document"
+    ]
+  },
+  {
+    "id": "370130885125605155",
+    "administration_id": "123",
+    "name": "Btw",
+    "account_type": "current_liabilities",
+    "account_id": null,
+    "parent_id": null,
+    "created_at": "2022-10-31T08:19:00.570Z",
+    "updated_at": "2022-10-31T08:19:00.570Z",
+    "allowed_document_types": [
+      "financial_mutation",
+      "general_journal_document"
+    ]
+  }
+]

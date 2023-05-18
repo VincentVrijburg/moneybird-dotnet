@@ -44,5 +44,25 @@ namespace Moneybird.Net.Abstractions
         /// The Workflow Endpoint.
         /// </summary>
         IWorkflowEndpoint Workflow { get; }
+
+        /// <summary>
+        /// The SaleInvoice Endpoint.
+        /// </summary>
+        ISaleInvoiceEndpoint SaleInvoice { get; }
+
+        /// <summary>
+        /// The TaxRate Endpoint.
+        /// </summary>
+        ITaxRateEndpoint TaxRate { get; }
+
+        /// <summary>
+        /// The LedgerAccount Endpoint.
+        /// </summary>
+        ILedgerAccountEndpoint LedgerAccount { get; }
+
+        /// <summary>
+        /// The ExternalSaleInvoice Endpoint.
+        /// </summary>
+        IExternalSaleInvoiceEndpoint ExternalSaleInvoice { get; }
     }
 }
