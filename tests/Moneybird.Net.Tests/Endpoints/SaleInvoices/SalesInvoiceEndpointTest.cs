@@ -11,23 +11,23 @@ using Xunit;
 
 namespace Moneybird.Net.Tests.Endpoints.SaleInvoices;
 
-public class SaleInvoiceEndpointTest : CommonTestBase
+public class SalesInvoiceEndpointTest : CommonTestBase
 {
     private static Mock<IRequester> _requester;
     private readonly MoneybirdConfig _config;
-    private readonly SalesInvoiceEndpoint _taxRateEndpoint;
+    private readonly SalesInvoiceEndpoint _salesInvoiceEndpoint;
     
     private const string ResponsePath = "./Responses/Endpoints/SaleInvoices/postSaleInvoice.json";
 
-    public SaleInvoiceEndpointTest()
+    public SalesInvoiceEndpointTest()
     {
         _requester = new Mock<IRequester>();
         _config = new MoneybirdConfig();
-        _taxRateEndpoint = new SalesInvoiceEndpoint(_config, _requester.Object);
+        _salesInvoiceEndpoint = new SalesInvoiceEndpoint(_config, _requester.Object);
     }
     
     [Fact]
-    public async void GetTaxRatesAsync_ByAccessToken_Returns_TaxRates()
+    public async void CreateSalesInvoiceAsync_ByAccessToken_Returns_SalesInvoice()
     {
         var options = new SalesInvoiceCreateOptions
         {
@@ -57,7 +57,7 @@ public class SaleInvoiceEndpointTest : CommonTestBase
         var saleInvoice = JsonSerializer.Deserialize<SalesInvoice>(createResponse, _config.SerializerOptions);
         Assert.NotNull(saleInvoice);
 
-        var actualSaleInvoice = await _taxRateEndpoint.CreateSaleInvoiceAsync(AdministrationId, options, AccessToken);
+        var actualSaleInvoice = await _salesInvoiceEndpoint.CreateSaleInvoiceAsync(AdministrationId, options, AccessToken);
         Assert.NotNull(actualSaleInvoice);
 
         saleInvoice.Should().BeEquivalentTo(actualSaleInvoice);
