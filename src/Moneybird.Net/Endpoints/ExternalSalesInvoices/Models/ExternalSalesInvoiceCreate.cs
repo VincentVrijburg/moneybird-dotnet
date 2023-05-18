@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using Moneybird.Net.Entities.SaleInvoices;
 
-namespace Moneybird.Net.Entities.ExternalSaleInvoices
+namespace Moneybird.Net.Endpoints.ExternalSalesInvoices.Models
 {
-    public class ExternalSaleInvoiceCreate
+    public class ExternalSalesInvoiceCreate
     {
         /// <summary>
         /// Should be a valid contact id.
@@ -38,6 +37,6 @@ namespace Moneybird.Net.Entities.ExternalSaleInvoices
         public string SourceUrl { get; set; }
 
         [JsonPropertyName("details_attributes")]
-        public IReadOnlyList<ExternalSaleInvoiceCreateDetail> DetailsAttributes { get; set; }
+        public IReadOnlyList<ExternalSalesInvoiceCreateDetail> DetailsAttributes { get; set; }
     }
 }

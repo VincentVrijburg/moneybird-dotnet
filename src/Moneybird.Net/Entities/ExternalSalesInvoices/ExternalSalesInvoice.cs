@@ -3,69 +3,11 @@ using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Moneybird.Net.Entities.Contacts;
 using Moneybird.Net.Entities.Payments;
-using Moneybird.Net.Entities.SaleInvoices;
+using Moneybird.Net.Entities.SalesInvoices;
 
-namespace Moneybird.Net.Entities.ExternalSaleInvoices
+namespace Moneybird.Net.Entities.ExternalSalesInvoices
 {
-    public class ExternalSaleInvoiceDetail
-    {
-        [JsonPropertyName("id")]
-        public string Id { get; set; }
-
-        [JsonPropertyName("administration_id")]
-        public string AdministrationId { get; set; }
-
-        [JsonPropertyName("tax_rate_id")]
-        public string TaxRateId { get; set; }
-
-        [JsonPropertyName("ledger_account_id")]
-        public string LedgerAccountId { get; set; }
-
-        [JsonPropertyName("project_id")]
-        public string ProjectId { get; set; }
-
-        [JsonPropertyName("product_id")]
-        public string ProductId { get; set; }
-
-        [JsonPropertyName("amount")]
-        public string Amount { get; set; }
-
-        [JsonPropertyName("amount_decimal")]
-        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-        public double AmountDecimal { get; set; }
-
-        [JsonPropertyName("description")]
-        public string Description { get; set; }
-
-        [JsonPropertyName("price")]
-        public string Price { get; set; }
-
-        [JsonPropertyName("period")]
-        public string Period { get; set; }
-
-        [JsonPropertyName("row_order")]
-        public int RowOrder { get; set; }
-
-        [JsonPropertyName("total_price_excl_tax_with_discount")]
-        public string TotalPriceExclTaxWithDiscount { get; set; }
-
-        [JsonPropertyName("total_price_excl_tax_with_discount_base")]
-        public string TotalPriceExclTaxWithDiscountBase { get; set; }
-
-        [JsonPropertyName("tax_report_reference")]
-        public List<string> TaxReportReference { get; set; }
-
-        [JsonPropertyName("mandatory_tax_text")]
-        public string MandatoryTaxText { get; set; }
-
-        [JsonPropertyName("created_at")]
-        public DateTime CreatedAt { get; set; }
-
-        [JsonPropertyName("updated_at")]
-        public DateTime UpdatedAt { get; set; }
-    }
-
-    public class ExternalSaleInvoice
+    public class ExternalSalesInvoice
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -107,7 +49,7 @@ namespace Moneybird.Net.Entities.ExternalSaleInvoices
         public int Version { get; set; }
 
         [JsonPropertyName("details")]
-        public List<SaleInvoiceDetail> Details { get; set; }
+        public List<SalesInvoiceDetail> Details { get; set; }
 
         [JsonPropertyName("payments")]
         public List<Payment> Payments { get; set; }
@@ -159,33 +101,9 @@ namespace Moneybird.Net.Entities.ExternalSaleInvoices
         public string PaymentUrl { get; set; }
 
         [JsonPropertyName("custom_fields")]
-        public List<ExternalSaleInvoiceCustomField> CustomFields { get; set; }
+        public List<ExternalSalesInvoiceCustomField> CustomFields { get; set; }
 
         [JsonPropertyName("tax_totals")]
-        public List<ExternalSaleInvoiceTaxTotal> TaxTotals { get; set; }
+        public List<SalesInvoiceTaxTotal> TaxTotals { get; set; }
     }
-
-    public class ExternalSaleInvoiceTaxTotal
-    {
-        [JsonPropertyName("tax_rate_id")]
-        public string TaxRateId { get; set; }
-
-        [JsonPropertyName("taxable_amount")]
-        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-        public double TaxableAmount { get; set; }
-
-        [JsonPropertyName("taxable_amount_base")]
-        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-        public double TaxableAmountBase { get; set; }
-
-        [JsonPropertyName("tax_amount")]
-        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-        public double TaxAmount { get; set; }
-
-        [JsonPropertyName("tax_amount_base")]
-        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-        public double TaxAmountBase { get; set; }
-    }
-
-
 }

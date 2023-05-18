@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Moneybird.Net.Entities.SaleInvoices
+namespace Moneybird.Net.Endpoints.SalesInvoices.Models
 {
-    public class SaleInvoiceCreateDetail
+    public class SalesInvoiceCreateDetail
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

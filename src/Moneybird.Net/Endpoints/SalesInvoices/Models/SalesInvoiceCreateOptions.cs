@@ -1,14 +1,14 @@
 using System.Text.Json.Serialization;
 
-namespace Moneybird.Net.Entities.SaleInvoices
+namespace Moneybird.Net.Endpoints.SalesInvoices.Models
 {
     /// <remarks>
     /// https://developer.moneybird.com/api/sales_invoices/#post_sales_invoices
     /// </remarks>
-    public class SaleInvoiceCreateOptions
+    public class SalesInvoiceCreateOptions
     {
         [JsonPropertyName("sales_invoice")]
-        public SaleInvoiceCreate SaleInvoice { get; set; }
+        public SalesInvoiceCreate SalesInvoice { get; set; }
 
         [JsonPropertyName("from_checkout")]
         public bool? FromCheckout { get; set; }

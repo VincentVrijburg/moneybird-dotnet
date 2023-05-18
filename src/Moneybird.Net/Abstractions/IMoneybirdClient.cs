@@ -48,7 +48,7 @@ namespace Moneybird.Net.Abstractions
         /// <summary>
         /// The SaleInvoice Endpoint.
         /// </summary>
-        ISaleInvoiceEndpoint SaleInvoice { get; }
+        ISalesInvoiceEndpoint SalesInvoice { get; }
 
         /// <summary>
         /// The TaxRate Endpoint.
@@ -63,6 +63,6 @@ namespace Moneybird.Net.Abstractions
         /// <summary>
         /// The ExternalSaleInvoice Endpoint.
         /// </summary>
-        IExternalSaleInvoiceEndpoint ExternalSaleInvoice { get; }
+        IExternalSalesInvoiceEndpoint ExternalSalesInvoice { get; }
     }
 }

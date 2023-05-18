@@ -1,9 +1,10 @@
 using System.Threading.Tasks;
-using Moneybird.Net.Entities.SaleInvoices;
+using Moneybird.Net.Endpoints.SalesInvoices.Models;
+using Moneybird.Net.Entities.SalesInvoices;
 
 namespace Moneybird.Net.Endpoints.Abstractions
 {
-    public interface ISaleInvoiceEndpoint
+    public interface ISalesInvoiceEndpoint
     {
         /// <summary>
         /// Create a new sale invoice.
@@ -11,9 +12,9 @@ namespace Moneybird.Net.Endpoints.Abstractions
         /// <param name="administrationId">The administration id.</param>
         /// <param name="options">The sale invoice to create.</param>
         /// <param name="accessToken">The access token.</param>
-        Task<SaleInvoice> CreateSaleInvoice(
+        Task<SalesInvoice> CreateSaleInvoiceAsync(
             string administrationId,
-            SaleInvoiceCreateOptions options,
+            SalesInvoiceCreateOptions options,
             string accessToken);
     }
 }

@@ -1,12 +1,10 @@
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text.Json;
 using FluentAssertions;
-using Moneybird.Net.Endpoints.SaleInvoices;
-using Moneybird.Net.Endpoints.TaxRates;
-using Moneybird.Net.Entities.SaleInvoices;
-using Moneybird.Net.Entities.TaxRates;
+using Moneybird.Net.Endpoints.SalesInvoices;
+using Moneybird.Net.Endpoints.SalesInvoices.Models;
+using Moneybird.Net.Entities.SalesInvoices;
 using Moneybird.Net.Http;
 using Moq;
 using Xunit;
@@ -17,7 +15,7 @@ public class SaleInvoiceEndpointTest : CommonTestBase
 {
     private static Mock<IRequester> _requester;
     private readonly MoneybirdConfig _config;
-    private readonly SaleInvoiceEndpoint _taxRateEndpoint;
+    private readonly SalesInvoiceEndpoint _taxRateEndpoint;
     
     private const string ResponsePath = "./Responses/Endpoints/SaleInvoices/postSaleInvoice.json";
 
@@ -25,20 +23,20 @@ public class SaleInvoiceEndpointTest : CommonTestBase
     {
         _requester = new Mock<IRequester>();
         _config = new MoneybirdConfig();
-        _taxRateEndpoint = new SaleInvoiceEndpoint(_config, _requester.Object);
+        _taxRateEndpoint = new SalesInvoiceEndpoint(_config, _requester.Object);
     }
     
     [Fact]
     public async void GetTaxRatesAsync_ByAccessToken_Returns_TaxRates()
     {
-        var options = new SaleInvoiceCreateOptions
+        var options = new SalesInvoiceCreateOptions
         {
-            SaleInvoice = new SaleInvoiceCreate
+            SalesInvoice = new SalesInvoiceCreate
             {
                 Reference = "30052",
                 ContactId = "370131045504255127",
                 Currency = "USD",
-                DetailsAttributes = new List<SaleInvoiceCreateDetail>
+                DetailsAttributes = new List<SalesInvoiceCreateDetail>
                 {
                     new()
                     {
@@ -56,10 +54,10 @@ public class SaleInvoiceEndpointTest : CommonTestBase
                 It.IsAny<string>(), It.IsAny<string>(), It.IsAny<List<string>>()))
             .ReturnsAsync(createResponse);
 
-        var saleInvoice = JsonSerializer.Deserialize<SaleInvoice>(createResponse, _config.SerializerOptions);
+        var saleInvoice = JsonSerializer.Deserialize<SalesInvoice>(createResponse, _config.SerializerOptions);
         Assert.NotNull(saleInvoice);
 
-        var actualSaleInvoice = await _taxRateEndpoint.CreateSaleInvoice(AdministrationId, options, AccessToken);
+        var actualSaleInvoice = await _taxRateEndpoint.CreateSaleInvoiceAsync(AdministrationId, options, AccessToken);
         Assert.NotNull(actualSaleInvoice);
 
         saleInvoice.Should().BeEquivalentTo(actualSaleInvoice);

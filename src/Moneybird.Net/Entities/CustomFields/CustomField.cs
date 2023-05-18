@@ -1,5 +1,4 @@
 using System.Text.Json.Serialization;
-using Moneybird.Net.Misc;
 
 namespace Moneybird.Net.Entities.CustomFields
 {
@@ -15,6 +14,6 @@ namespace Moneybird.Net.Entities.CustomFields
         public string Name { get; set; }
 
         [JsonPropertyName("source")]
-        public Source Source { get; set; }
+        public CustomFieldSource CustomFieldSource { get; set; }
     }
 }

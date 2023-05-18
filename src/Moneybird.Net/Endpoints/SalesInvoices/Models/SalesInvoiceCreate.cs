@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using Moneybird.Net.Entities.SalesInvoices;
 
-namespace Moneybird.Net.Entities.SaleInvoices
+namespace Moneybird.Net.Endpoints.SalesInvoices.Models
 {
-    public class SaleInvoiceCreate
+    public class SalesInvoiceCreate
     {
         /// <summary>
         /// Should be a valid contact id.
@@ -66,9 +67,9 @@ namespace Moneybird.Net.Entities.SaleInvoices
         public double? Discount { get; set; }
 
         [JsonPropertyName("details_attributes")]
-        public IReadOnlyList<SaleInvoiceCreateDetail> DetailsAttributes { get; set; }
+        public IReadOnlyList<SalesInvoiceCreateDetail> DetailsAttributes { get; set; }
 
         [JsonPropertyName("custom_fields_attributes")]
-        public IReadOnlyList<SaleInvoiceCustomField> CustomFieldsAttributes { get; set; }
+        public IReadOnlyList<SalesInvoiceCustomField> CustomFieldsAttributes { get; set; }
     }
 }

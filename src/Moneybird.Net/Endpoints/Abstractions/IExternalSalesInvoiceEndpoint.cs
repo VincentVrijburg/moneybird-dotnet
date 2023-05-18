@@ -1,10 +1,11 @@
 using System.IO;
 using System.Threading.Tasks;
-using Moneybird.Net.Entities.ExternalSaleInvoices;
+using Moneybird.Net.Endpoints.ExternalSalesInvoices.Models;
+using Moneybird.Net.Entities.ExternalSalesInvoices;
 
 namespace Moneybird.Net.Endpoints.Abstractions
 {
-    public interface IExternalSaleInvoiceEndpoint
+    public interface IExternalSalesInvoiceEndpoint
     {
         /// <summary>
         /// Create a new external sale invoice.
@@ -12,9 +13,9 @@ namespace Moneybird.Net.Endpoints.Abstractions
         /// <param name="administrationId">The administration id.</param>
         /// <param name="options">The external sale invoice to create.</param>
         /// <param name="accessToken">The access token.</param>
-        Task<ExternalSaleInvoice> CreateSaleInvoice(
+        Task<ExternalSalesInvoice> CreateSaleInvoiceAsync(
             string administrationId,
-            ExternalSaleInvoiceCreateOptions options,
+            ExternalSalesInvoiceCreateOptions options,
             string accessToken);
 
         /// <summary>
@@ -25,7 +26,7 @@ namespace Moneybird.Net.Endpoints.Abstractions
         /// <param name="body">The file to attach.</param>
         /// <param name="accessToken">The access token.</param>
         /// <param name="fileName">The file name. Defaults to "invoice.pdf".</param>
-        Task AddAttachment(string administrationId,
+        Task AddAttachmentAsync(string administrationId,
             string id,
             Stream body,
             string accessToken,

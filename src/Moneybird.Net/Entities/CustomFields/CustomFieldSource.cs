@@ -1,12 +1,12 @@
 using System.Text.Json.Serialization;
 
-namespace Moneybird.Net.Misc
+namespace Moneybird.Net.Entities.CustomFields
 {
     /// <summary>
     /// Custom field sources.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumMemberConverter))]
-    public enum Source
+    public enum CustomFieldSource
     {
         [JsonPropertyName("sales_invoices")]
         SalesInvoices,

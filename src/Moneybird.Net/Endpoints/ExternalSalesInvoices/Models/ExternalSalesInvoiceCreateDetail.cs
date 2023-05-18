@@ -1,8 +1,8 @@
 using System.Text.Json.Serialization;
 
-namespace Moneybird.Net.Entities.ExternalSaleInvoices
+namespace Moneybird.Net.Endpoints.ExternalSalesInvoices.Models
 {
-    public class ExternalSaleInvoiceCreateDetail
+    public class ExternalSalesInvoiceCreateDetail
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }
