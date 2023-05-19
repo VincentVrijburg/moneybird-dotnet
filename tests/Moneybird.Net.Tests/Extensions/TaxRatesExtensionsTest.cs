@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Moneybird.Net.Endpoints.TaxRates.Models;
 using Moneybird.Net.Entities.TaxRates;
 using Moneybird.Net.Extensions;
@@ -67,6 +68,22 @@ public class TaxRatesExtensionsTest
         };
 
         var expectedString = $"filter=tax_rate_type:{taxRateType}";
+        var actualString = options.GetFilterString();
+            
+        Assert.Equal(expectedString, actualString);
+    }
+    
+    [Fact]
+    public void GetFilterString_FromTaxRatesFilterOptions_StateOnly_Returns_CorrectString()
+    {
+        var taxRateType = new List<TaxRateType> { TaxRateType.PurchaseInvoice, TaxRateType.SalesInvoice };
+            
+        var options = new TaxRateFilterOptions
+        {
+            State = taxRateType
+        };
+
+        var expectedString = $"filter=state:{string.Join("|", taxRateType)}";
         var actualString = options.GetFilterString();
             
         Assert.Equal(expectedString, actualString);
@@ -159,6 +176,7 @@ public class TaxRatesExtensionsTest
         const string partialName = "Bird";
         const int percentage = 21;
         const TaxRateType taxRateType = TaxRateType.All;
+        var state = new List<TaxRateType> { TaxRateType.PurchaseInvoice, TaxRateType.SalesInvoice };
         const string country = "NL";
         const bool showTax = true;
         const bool active = true;
@@ -171,6 +189,7 @@ public class TaxRatesExtensionsTest
             PartialName = partialName,
             Percentage = percentage,
             TaxRateType = taxRateType,
+            State = state,
             Country = country,
             ShowTax = showTax,
             Active = active,
@@ -182,6 +201,7 @@ public class TaxRatesExtensionsTest
                              $"partial_name:{partialName}," +
                              $"percentage:{percentage}," +
                              $"tax_rate_type:{taxRateType}," +
+                             $"state:{string.Join("|", state)}," +
                              $"country:{country}," +
                              $"show_tax:{showTax}," +
                              $"active:{active}," +

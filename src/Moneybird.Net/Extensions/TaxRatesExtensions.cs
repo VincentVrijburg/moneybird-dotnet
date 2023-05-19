@@ -30,6 +30,11 @@ namespace Moneybird.Net.Extensions
                 filterValues.Add($"tax_rate_type:{options.TaxRateType.Value}");
             }
             
+            if (options.State != null && options.State.Any())
+            {
+                filterValues.Add($"state:{string.Join("|", options.State)}");
+            }
+            
             if (!string.IsNullOrEmpty(options.Country))
             {
                 filterValues.Add($"country:{options.Country}");

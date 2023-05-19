@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Moneybird.Net.Entities.TaxRates;
 
 namespace Moneybird.Net.Endpoints.TaxRates.Models
@@ -13,6 +14,8 @@ namespace Moneybird.Net.Endpoints.TaxRates.Models
         
         public TaxRateType? TaxRateType { get; set; }
         
+        public IReadOnlyCollection<TaxRateType> State { get; set; }
+
         public string Country { get; set; }
         
         public bool? ShowTax { get; set; }
