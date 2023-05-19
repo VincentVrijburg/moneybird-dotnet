@@ -4,7 +4,7 @@ namespace Moneybird.Net.Endpoints.ExternalSalesInvoices.Models
 {
     public class ExternalSalesInvoiceFilterOptions
     {
-        public SalesInvoiceState? State { get; set; }
+        public ExternalSalesInvoiceState? State { get; set; }
         
         public SalesInvoicePeriod? Period { get; set; }
         

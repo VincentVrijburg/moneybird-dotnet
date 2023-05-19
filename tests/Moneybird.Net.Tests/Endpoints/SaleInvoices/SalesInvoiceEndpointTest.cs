@@ -17,7 +17,7 @@ public class SalesInvoiceEndpointTest : CommonTestBase
     private readonly MoneybirdConfig _config;
     private readonly SalesInvoiceEndpoint _salesInvoiceEndpoint;
     
-    private const string ResponsePath = "./Responses/Endpoints/SaleInvoices/postSaleInvoice.json";
+    private const string ResponsePath = "./Responses/Endpoints/SalesInvoices/postSalesInvoice.json";
 
     public SalesInvoiceEndpointTest()
     {

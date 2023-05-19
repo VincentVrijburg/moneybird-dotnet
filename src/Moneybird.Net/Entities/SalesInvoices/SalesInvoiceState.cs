@@ -8,16 +8,28 @@ namespace Moneybird.Net.Entities.SalesInvoices
         [JsonPropertyName("all")]
         All,
         
-        [JsonPropertyName("new")]
-        New,
+        [JsonPropertyName("draft")]
+        Draft,
         
         [JsonPropertyName("open")]
         Open,
         
+        [JsonPropertyName("scheduled")]
+        Scheduled,
+        
+        [JsonPropertyName("pending_payment")]
+        PendingPayment,
+        
         [JsonPropertyName("late")]
         Late,
         
+        [JsonPropertyName("reminded")]
+        Reminded,
+        
         [JsonPropertyName("paid")]
-        Paid
+        Paid,
+        
+        [JsonPropertyName("uncollectible")]
+        Uncollectible,
     }
 }
