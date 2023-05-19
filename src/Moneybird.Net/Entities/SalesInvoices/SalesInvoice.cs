@@ -45,7 +45,7 @@ namespace Moneybird.Net.Entities.SalesInvoices
         public int DraftId { get; set; }
 
         [JsonPropertyName("state")]
-        public string State { get; set; }
+        public SalesInvoiceState State { get; set; }
 
         [JsonPropertyName("invoice_date")]
         public string InvoiceDate { get; set; }

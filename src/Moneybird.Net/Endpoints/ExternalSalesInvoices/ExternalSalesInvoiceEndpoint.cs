@@ -1,17 +1,20 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Moneybird.Net.Endpoints.Abstractions;
 using Moneybird.Net.Endpoints.ExternalSalesInvoices.Models;
 using Moneybird.Net.Entities.ExternalSalesInvoices;
+using Moneybird.Net.Extensions;
 using Moneybird.Net.Http;
 
 namespace Moneybird.Net.Endpoints.ExternalSalesInvoices
 {
     public class ExternalSalesInvoiceEndpoint : IExternalSalesInvoiceEndpoint
     {
-        private const string CreateExternalSaleInvoiceEndpoint = "/{0}/external_sales_invoices.json";
-        private const string UploadExternalSaleInvoiceAttachmentEndpoint = "/{0}/external_sales_invoices/{1}/attachment";
+        private const string ExternalSalesInvoiceUri = "/{0}/external_sales_invoices.json";
+        private const string ExternalSalesInvoiceIdUri = "/{0}/external_sales_invoices/{1}.json";
+        private const string ExternalSalesInvoiceAttachmentUri = "/{0}/external_sales_invoices/{1}/attachment";
 
         private readonly MoneybirdConfig _config;
         private readonly IRequester _requester;
@@ -22,12 +25,56 @@ namespace Moneybird.Net.Endpoints.ExternalSalesInvoices
             _requester = requester;
         }
 
-        public async Task<ExternalSalesInvoice> CreateSaleInvoiceAsync(
+        public async Task<List<ExternalSalesInvoice>> GetSalesInvoicesAsync(string administrationId, string accessToken)
+        {
+            var relativeUrl = string.Format(ExternalSalesInvoiceUri, administrationId);
+            var responseJson = await _requester
+                .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
+                .ConfigureAwait(false);
+
+            return JsonSerializer.Deserialize<List<ExternalSalesInvoice>>(responseJson, _config.SerializerOptions);
+        }
+
+        public async Task<List<ExternalSalesInvoice>> GetSalesInvoicesAsync(
+            string administrationId,
+            string accessToken,
+            ExternalSalesInvoiceFilterOptions options)
+        {
+            List<string> paramValues = null;
+                        
+            var filterString = options.GetFilterString();
+            if (!string.IsNullOrEmpty(filterString))
+            {
+                paramValues = new List<string> { $"filter={filterString}" };
+            }
+            
+            var relativeUrl = string.Format(ExternalSalesInvoiceUri, administrationId);
+            var responseJson = await _requester
+                .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken, paramValues)
+                .ConfigureAwait(false);
+
+            return JsonSerializer.Deserialize<List<ExternalSalesInvoice>>(responseJson, _config.SerializerOptions);
+        }
+
+        public async Task<ExternalSalesInvoice> GetSalesInvoiceByIdAsync(
+            string administrationId,
+            string salesInvoiceId,
+            string accessToken)
+        {
+            var relativeUrl = string.Format(ExternalSalesInvoiceIdUri, administrationId, salesInvoiceId);
+            var responseJson = await _requester
+                .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
+                .ConfigureAwait(false);
+
+            return JsonSerializer.Deserialize<ExternalSalesInvoice>(responseJson, _config.SerializerOptions);
+        }
+
+        public async Task<ExternalSalesInvoice> CreateSalesInvoiceAsync(
             string administrationId,
             ExternalSalesInvoiceCreateOptions options,
             string accessToken)
         {
-            var relativeUrl = string.Format(CreateExternalSaleInvoiceEndpoint, administrationId);
+            var relativeUrl = string.Format(ExternalSalesInvoiceUri, administrationId);
             var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
 
             var response = await _requester
@@ -44,7 +91,7 @@ namespace Moneybird.Net.Endpoints.ExternalSalesInvoices
             string accessToken,
             string fileName = "invoice.pdf")
         {
-            var relativeUrl = string.Format(UploadExternalSaleInvoiceAttachmentEndpoint, administrationId, id);
+            var relativeUrl = string.Format(ExternalSalesInvoiceAttachmentUri, administrationId, id);
 
             await _requester
                 .CreatePostFileRequestAsync(_config.ApiUri, relativeUrl, accessToken, fileName, body)

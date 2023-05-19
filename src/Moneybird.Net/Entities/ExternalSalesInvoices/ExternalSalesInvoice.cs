@@ -22,7 +22,7 @@ namespace Moneybird.Net.Entities.ExternalSalesInvoices
         public Contact Contact { get; set; }
 
         [JsonPropertyName("state")]
-        public string State { get; set; }
+        public SalesInvoiceState State { get; set; }
 
         [JsonPropertyName("date")]
         public string Date { get; set; }
