@@ -39,11 +39,12 @@ public class LedgerAccountEndpointTest : CommonTestBase
         var ledgerAccountList = JsonSerializer.Deserialize<List<LedgerAccount>>(ledgerAccountListJson, _config.SerializerOptions);
         Assert.NotNull(ledgerAccountList);
 
-        var actualLedgerAccountList = await _ledgerAccountEndpoint.GetLedgerAccountsAsync(AdministrationId, AccessToken);
+        var actualLedgerAccountList = await _ledgerAccountEndpoint.GetAsync(AdministrationId, AccessToken);
         Assert.NotNull(actualLedgerAccountList);
 
-        Assert.Equal(ledgerAccountList.Count, actualLedgerAccountList.Count);
-        foreach (var actualLedgerAccount in actualLedgerAccountList)
+        var actualLedgerAccounts = actualLedgerAccountList.ToList();
+        Assert.Equal(ledgerAccountList.Count, actualLedgerAccounts.Count);
+        foreach (var actualLedgerAccount in actualLedgerAccounts)
         {
             var ledgerAccount = ledgerAccountList.FirstOrDefault(w => w.Id == actualLedgerAccount.Id);
             Assert.NotNull(ledgerAccount);

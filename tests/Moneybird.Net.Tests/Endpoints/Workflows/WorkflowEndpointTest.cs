@@ -37,11 +37,12 @@ namespace Moneybird.Net.Tests.Endpoints.Workflows
             var workflowList = JsonSerializer.Deserialize<List<Workflow>>(workflowListJson, _config.SerializerOptions);
             Assert.NotNull(workflowList);
 
-            var actualWorkflowList = await _workflowEndpoint.GetWorkflowsAsync(AdministrationId, AccessToken);
+            var actualWorkflowList = await _workflowEndpoint.GetAsync(AdministrationId, AccessToken);
             Assert.NotNull(actualWorkflowList);
-            
-            Assert.Equal(workflowList.Count, actualWorkflowList.Count);
-            foreach (var actualWorkflow in actualWorkflowList)
+
+            var actualWorkflows = actualWorkflowList.ToList();
+            Assert.Equal(workflowList.Count, actualWorkflows.Count);
+            foreach (var actualWorkflow in actualWorkflows)
             {
                 var workflow = workflowList.FirstOrDefault(w => w.Id == actualWorkflow.Id);
                 Assert.NotNull(workflow);

@@ -20,14 +20,14 @@ namespace Moneybird.Net.Endpoints.LegderAccounts
             _config = config;
         }
 
-        public async Task<List<LedgerAccount>> GetLedgerAccountsAsync(string administrationId, string accessToken)
+        public async Task<IEnumerable<LedgerAccount>> GetAsync(string administrationId, string accessToken)
         {
             var relativeUrl = string.Format(LedgerAccountsUri, administrationId);
             var responseJson = await _requester
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<List<LedgerAccount>>(responseJson, _config.SerializerOptions);
+            return JsonSerializer.Deserialize<IEnumerable<LedgerAccount>>(responseJson, _config.SerializerOptions);
         }
     }
 }

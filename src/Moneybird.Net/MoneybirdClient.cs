@@ -22,7 +22,6 @@ namespace Moneybird.Net
         private static MoneybirdClient _instance;
 
         private readonly Requester _requester;
-        private IExternalSaleInvoiceEndpoint _saleInvoice;
 
         internal MoneybirdConfig Config { get; }
         public IAdministrationEndpoint Administration { get; }

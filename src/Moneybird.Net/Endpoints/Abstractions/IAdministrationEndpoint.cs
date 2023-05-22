@@ -11,6 +11,6 @@ namespace Moneybird.Net.Endpoints.Abstractions
         /// </summary>
         /// <param name="accessToken">The access token.</param>
         /// <returns>A list of administration objects.</returns>
-        Task<List<Administration>> GetAdministrationsAsync(string accessToken);
+        Task<IEnumerable<Administration>> GetAsync(string accessToken);
     }
 }

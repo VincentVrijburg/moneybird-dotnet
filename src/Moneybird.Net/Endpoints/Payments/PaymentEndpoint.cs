@@ -19,9 +19,9 @@ namespace Moneybird.Net.Endpoints.Payments
             _config = config;
         }
         
-        public async Task<Payment> GetPaymentByIdAsync(string administrationId, string paymentId, string accessToken)
+        public async Task<Payment> GetByIdAsync(string administrationId, string entityId, string accessToken)
         {
-            var relativeUrl = string.Format(PaymentsIdUri, administrationId, paymentId);
+            var relativeUrl = string.Format(PaymentsIdUri, administrationId, entityId);
             var responseJson = await _requester
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);

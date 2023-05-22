@@ -21,14 +21,14 @@ namespace Moneybird.Net.Endpoints.TaxRates
             _config = config;
         }
 
-        public async Task<List<TaxRate>> GetTaxRates(string administrationId, string accessToken)
+        public async Task<IEnumerable<TaxRate>> GetAsync(string administrationId, string accessToken)
         {
             var relativeUrl = string.Format(TaxRatesUri, administrationId);
             var responseJson = await _requester
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<List<TaxRate>>(responseJson, _config.SerializerOptions);
+            return JsonSerializer.Deserialize<IEnumerable<TaxRate>>(responseJson, _config.SerializerOptions);
         }
     }
 }

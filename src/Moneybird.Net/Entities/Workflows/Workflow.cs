@@ -4,7 +4,7 @@ using Moneybird.Net.Misc;
 
 namespace Moneybird.Net.Entities.Workflows
 {
-    public class Workflow
+    public class Workflow : IMoneybirdEntity
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

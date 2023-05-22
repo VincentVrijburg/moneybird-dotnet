@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.LedgerAccounts
 {
-    public class LedgerAccount
+    public class LedgerAccount : IMoneybirdEntity
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }
