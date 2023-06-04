@@ -1,0 +1,138 @@
+{
+  "id": "369764545640531624",
+  "administration_id": "281289699686381606",
+  "contact_id": "369764545553499813",
+  "contact": {
+    "id": "369764545553499813",
+    "administration_id": "281289699686381606",
+    "company_name": "Foobar Holding B.V.",
+    "firstname": "",
+    "lastname": "",
+    "address1": "Hoofdstraat 12",
+    "address2": "",
+    "zipcode": "1234AB",
+    "city": "Amsterdam",
+    "country": "NL",
+    "phone": "",
+    "delivery_method": "Email",
+    "customer_id": "1",
+    "tax_number": "",
+    "chamber_of_commerce": "",
+    "bank_account": "",
+    "attention": "",
+    "email": "info@example.com",
+    "email_ubl": true,
+    "send_invoices_to_attention": "",
+    "send_invoices_to_email": "info@example.com",
+    "send_estimates_to_attention": "",
+    "send_estimates_to_email": "info@example.com",
+    "sepa_active": false,
+    "sepa_iban": "",
+    "sepa_iban_account_name": "",
+    "sepa_bic": "",
+    "sepa_mandate_id": "",
+    "sepa_mandate_date": null,
+    "sepa_sequence_type": "RCUR",
+    "credit_card_number": "",
+    "credit_card_reference": "",
+    "credit_card_type": null,
+    "tax_number_validated_at": null,
+    "tax_number_valid": null,
+    "invoice_workflow_id": null,
+    "estimate_workflow_id": null,
+    "si_identifier": "",
+    "si_identifier_type": null,
+    "moneybird_payments_mandate": false,
+    "created_at": "2022-10-27T07:16:11.931Z",
+    "updated_at": "2022-10-27T07:16:11.931Z",
+    "version": 1666854971,
+    "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/ad6118f0266de528ad08491bafa39affe0605b2bceceb23f18b35844594973d4/all",
+    "notes": [
+
+    ],
+    "custom_fields": [
+
+    ],
+    "contact_people": [
+
+    ]
+  },
+  "date": "2022-10-27",
+  "state": "open",
+  "due_date": null,
+  "reference": "30052",
+  "entry_number": 1,
+  "origin": "api",
+  "source": null,
+  "source_url": null,
+  "currency": "EUR",
+  "paid_at": null,
+  "created_at": "2022-10-27T07:16:12.015Z",
+  "updated_at": "2022-10-27T07:16:12.019Z",
+  "version": 1666854972,
+  "details": [
+    {
+      "id": "369764545642628777",
+      "administration_id": "281289699686381606",
+      "tax_rate_id": "369764439469065326",
+      "ledger_account_id": "369764439364207706",
+      "project_id": null,
+      "product_id": null,
+      "amount": null,
+      "amount_decimal": "1.0",
+      "description": "Rocking Chair",
+      "price": "129.95",
+      "period": null,
+      "row_order": 0,
+      "total_price_excl_tax_with_discount": "129.95",
+      "total_price_excl_tax_with_discount_base": "129.95",
+      "tax_report_reference": [
+        "NL/1a"
+      ],
+      "mandatory_tax_text": null,
+      "created_at": "2022-10-27T07:16:12.017Z",
+      "updated_at": "2022-10-27T07:16:12.017Z"
+    }
+  ],
+  "payments": [
+
+  ],
+  "total_paid": "0.0",
+  "total_unpaid": "157.24",
+  "total_unpaid_base": "157.24",
+  "prices_are_incl_tax": false,
+  "total_price_excl_tax": "129.95",
+  "total_price_excl_tax_base": "129.95",
+  "total_price_incl_tax": "157.24",
+  "total_price_incl_tax_base": "157.24",
+  "marked_dubious_on": null,
+  "marked_uncollectible_on": null,
+  "notes": [
+
+  ],
+  "attachments": [
+
+  ],
+  "events": [
+    {
+      "administration_id": "281289699686381606",
+      "user_id": 16668548704389,
+      "action": "external_sales_invoice_created",
+      "link_entity_id": null,
+      "link_entity_type": null,
+      "data": {
+      },
+      "created_at": "2022-10-27T07:16:12.021Z",
+      "updated_at": "2022-10-27T07:16:12.021Z"
+    }
+  ],
+  "tax_totals": [
+    {
+      "tax_rate_id": "369764439469065326",
+      "taxable_amount": "129.95",
+      "taxable_amount_base": "129.95",
+      "tax_amount": "27.29",
+      "tax_amount_base": "27.29"
+    }
+  ]
+}

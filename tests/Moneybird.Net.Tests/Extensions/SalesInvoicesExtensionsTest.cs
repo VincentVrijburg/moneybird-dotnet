@@ -27,7 +27,7 @@ public class SalesInvoicesExtensionsTest
     [Fact]
     public void GetFilterString_FromSalesInvoiceFilterOptions_PeriodOnly_Returns_CorrectString()
     {
-        const SalesInvoicePeriod period = SalesInvoicePeriod.ThisYear;
+        const string period = "ThisYear";
             
         var options = new SalesInvoiceFilterOptions
         {
@@ -140,7 +140,7 @@ public class SalesInvoicesExtensionsTest
     public void GetFilterString_FromSalesInvoiceFilterOptions_All_Returns_CorrectString()
     {
         const SalesInvoiceState state = SalesInvoiceState.All;
-        const SalesInvoicePeriod period = SalesInvoicePeriod.ThisYear;
+        const string period = "ThisYear";
         const string reference = "test";
         const int contactId = 10;
         const int recurringSalesInvoiceId = 100;

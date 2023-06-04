@@ -4,7 +4,7 @@
   "contact_id": "370131045504255127",
   "contact": {
     "id": "370131045504255127",
-    "administration_id": "123",
+    "administration_id": "281289699686381606",
     "company_name": "Foobar Holding B.V.",
     "firstname": "",
     "lastname": "",
@@ -56,7 +56,7 @@
     "contact_people": [
       {
         "id": "370131045521032346",
-        "administration_id": "123",
+        "administration_id": "281289699686381606",
         "firstname": "Jan",
         "lastname": "Janssen",
         "phone": "123-456-2346",
@@ -98,7 +98,7 @@
   "details": [
     {
       "id": "370131045848188068",
-      "administration_id": "123",
+      "administration_id": "281289699686381606",
       "tax_rate_id": "370131045760107682",
       "ledger_account_id": "370130885125605157",
       "project_id": null,
@@ -149,7 +149,7 @@
   ],
   "events": [
     {
-      "administration_id": "123",
+      "administration_id": "281289699686381606",
       "user_id": 16672043409172,
       "action": "sales_invoice_created",
       "link_entity_id": null,

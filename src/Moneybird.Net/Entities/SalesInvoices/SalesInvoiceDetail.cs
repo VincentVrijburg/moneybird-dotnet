@@ -38,7 +38,7 @@ namespace Moneybird.Net.Entities.SalesInvoices
         public string Price { get; set; }
 
         [JsonPropertyName("period")]
-        public SalesInvoicePeriod? Period { get; set; }
+        public string Period { get; set; }
 
         [JsonPropertyName("row_order")]
         public int RowOrder { get; set; }

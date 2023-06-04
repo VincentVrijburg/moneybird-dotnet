@@ -277,7 +277,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
         }
         
         [Fact]
-        public async void UpdateContactAsync_ByAccessToken_Returns_NewContact()
+        public async void UpdateContactAsync_ByAccessToken_Returns_UpdatedContact()
         {
             var contactJson = await File.ReadAllTextAsync(GetContactResponsePath);
             var contactUpdateOptions = new ContactUpdateOptions
@@ -315,7 +315,14 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
                     SiIdentifier = "",
                     SiIdentifierTypeType = null,
                     DirectDebit = false,
-                    CustomFieldsAttributes = null
+                    CustomFieldsAttributes = new List<ContactCustomFieldsAttribute>
+                    {
+                        new ()
+                        {
+                            Id = 1,
+                            Value = "Custom contact field"
+                        }
+                    }
                 }
             };
             

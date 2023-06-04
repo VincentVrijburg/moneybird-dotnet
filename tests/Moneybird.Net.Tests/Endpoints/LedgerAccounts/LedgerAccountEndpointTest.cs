@@ -126,7 +126,9 @@ public class LedgerAccountEndpointTest : LedgerAccountTestBase
                     DocumentType.SalesInvoice,
                     DocumentType.FinancialMutation,
                     DocumentType.GeneralJournalDocument
-                }
+                },
+                ParentId = null,
+                Description = null
             }
         };
         

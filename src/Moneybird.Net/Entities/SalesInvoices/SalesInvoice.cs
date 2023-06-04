@@ -24,7 +24,7 @@ namespace Moneybird.Net.Entities.SalesInvoices
         public string ContactPersonId { get; set; }
 
         [JsonPropertyName("contact_person")]
-        public string ContactPerson { get; set; }
+        public ContactPerson ContactPerson { get; set; }
 
         [JsonPropertyName("invoice_id")]
         public string InvoiceId { get; set; }
@@ -42,7 +42,7 @@ namespace Moneybird.Net.Entities.SalesInvoices
         public string IdentityId { get; set; }
 
         [JsonPropertyName("draft_id")]
-        public int DraftId { get; set; }
+        public int? DraftId { get; set; }
 
         [JsonPropertyName("state")]
         public SalesInvoiceState State { get; set; }

@@ -8,7 +8,7 @@ namespace Moneybird.Net.Endpoints.ExternalSalesInvoices.Models
     {
         public ExternalSalesInvoiceState? State { get; set; }
         
-        public SalesInvoicePeriod? Period { get; set; }
+        public string Period { get; set; }
         
         public int? ContactId { get; set; }
     }

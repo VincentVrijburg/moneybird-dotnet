@@ -74,6 +74,27 @@ namespace Moneybird.Net.Endpoints.ExternalSalesInvoices
 
             return JsonSerializer.Deserialize<ExternalSalesInvoice>(response, _config.SerializerOptions);
         }
+        
+        public async Task<ExternalSalesInvoice> UpdateByIdAsync(string administrationId, string externalSalesInvoiceId, ExternalSalesInvoiceUpdateOptions options, string accessToken)
+        {
+            var relativeUrl = string.Format(ExternalSalesInvoiceIdUri, administrationId, externalSalesInvoiceId);
+            var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
+            var responseJson = await _requester
+                .CreatePatchRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
+                .ConfigureAwait(false);
+
+            return JsonSerializer.Deserialize<ExternalSalesInvoice>(responseJson, _config.SerializerOptions);
+        }
+        
+        public async Task<bool> DeleteByIdAsync(string administrationId, string externalSalesInvoiceId, string accessToken)
+        {
+            var relativeUrl = string.Format(ExternalSalesInvoiceIdUri, administrationId, externalSalesInvoiceId);
+            var response = await _requester
+                .CreateDeleteRequestAsync(_config.ApiUri, relativeUrl, accessToken)
+                .ConfigureAwait(false);
+
+            return response;
+        }
 
         public async Task AddAttachmentAsync(string administrationId, string externalSalesInvoiceId, Stream body, string accessToken, string fileName = "invoice.pdf")
         {

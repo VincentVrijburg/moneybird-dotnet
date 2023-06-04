@@ -27,7 +27,7 @@ public class ExternalSalesInvoicesExtensionsTest
     [Fact]
     public void GetFilterString_FromExternalSalesInvoiceFilterOptions_PeriodOnly_Returns_CorrectString()
     {
-        const SalesInvoicePeriod period = SalesInvoicePeriod.ThisYear;
+        const string period = "ThisYear";
             
         var options = new ExternalSalesInvoiceFilterOptions
         {
@@ -60,7 +60,7 @@ public class ExternalSalesInvoicesExtensionsTest
     public void GetFilterString_FromExternalSalesInvoiceFilterOptions_All_Returns_CorrectString()
     {
         const ExternalSalesInvoiceState state = ExternalSalesInvoiceState.All;
-        const SalesInvoicePeriod period = SalesInvoicePeriod.ThisYear;
+        const string period = "ThisYear";
         const int contactId = 10;
             
         var options = new ExternalSalesInvoiceFilterOptions

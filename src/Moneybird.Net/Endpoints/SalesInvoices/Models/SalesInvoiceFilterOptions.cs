@@ -8,7 +8,7 @@ namespace Moneybird.Net.Endpoints.SalesInvoices.Models
     {
         public SalesInvoiceState? State { get; set; }
         
-        public SalesInvoicePeriod? Period { get; set; }
+        public string Period { get; set; }
         
         public string Reference { get; set; }
 

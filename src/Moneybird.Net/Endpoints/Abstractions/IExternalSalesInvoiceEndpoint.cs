@@ -10,7 +10,9 @@ namespace Moneybird.Net.Endpoints.Abstractions
         IReadEndpoint<ExternalSalesInvoice>,
         IReadFilterEndpoint<ExternalSalesInvoice, ExternalSalesInvoiceFilterOptions>,
         IGetEndpoint<ExternalSalesInvoice>,
-        ICreateEndpoint<ExternalSalesInvoice, ExternalSalesInvoiceCreateOptions>
+        ICreateEndpoint<ExternalSalesInvoice, ExternalSalesInvoiceCreateOptions>,
+        IUpdateEndpoint<ExternalSalesInvoice, ExternalSalesInvoiceUpdateOptions>,
+        IDeleteEndpoint
     {
         /// <summary>
         /// Add an attachment to an external sales invoice.

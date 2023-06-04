@@ -15,9 +15,9 @@ namespace Moneybird.Net.Extensions
                 filterValues.Add($"state:{options.State.Value}");
             }
             
-            if (options.Period.HasValue)
+            if (!string.IsNullOrEmpty(options.Period))
             {
-                filterValues.Add($"period:{options.Period.Value}");
+                filterValues.Add($"period:{options.Period}");
             }
             
             if (options.ContactId.HasValue)
