@@ -1,9 +1,16 @@
+using System.Threading.Tasks;
+using Moneybird.Net.Endpoints.LegderAccounts.Models;
 using Moneybird.Net.Endpoints.Abstractions.Common;
 using Moneybird.Net.Entities.LedgerAccounts;
 
 namespace Moneybird.Net.Endpoints.Abstractions
 {
-    public interface ILedgerAccountEndpoint : IReadEndpoint<LedgerAccount>
+    public interface ILedgerAccountEndpoint :
+        IReadEndpoint<LedgerAccount>,
+        IGetEndpoint<LedgerAccount>,
+        ICreateEndpoint<LedgerAccount, LedgerAccountCreateOptions>,
+        IUpdateEndpoint<LedgerAccount, LedgerAccountUpdateOptions>,
+        IDeleteEndpoint
     {
     }
 }

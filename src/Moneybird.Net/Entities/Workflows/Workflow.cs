@@ -1,6 +1,5 @@
 using System;
 using System.Text.Json.Serialization;
-using Moneybird.Net.Misc;
 
 namespace Moneybird.Net.Entities.Workflows
 {

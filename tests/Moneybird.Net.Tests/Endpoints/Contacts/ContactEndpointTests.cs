@@ -77,7 +77,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
                 LastName = "Doe"
             };
             
-            var actualContacts = await _contactEndpoint.GetContactsAsync(AdministrationId, AccessToken, contactFilterOptions);
+            var actualContacts = await _contactEndpoint.GetAsync(AdministrationId, AccessToken, contactFilterOptions);
             Assert.NotNull(actualContacts);
 
             var actualContactList = actualContacts.ToList();
@@ -270,14 +270,14 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             var contact = JsonSerializer.Deserialize<Contact>(contactJson, _config.SerializerOptions);
             Assert.NotNull(contact);
 
-            var actualContact = await _contactEndpoint.CreateContactAsync(AdministrationId, contactCreateOptions, AccessToken);
+            var actualContact = await _contactEndpoint.CreateAsync(AdministrationId, contactCreateOptions, AccessToken);
             Assert.NotNull(actualContact);
 
             contact.Should().BeEquivalentTo(actualContact);
         }
         
         [Fact]
-        public async void UpdateContactAsync_ByAccessToken_Returns_NewContact()
+        public async void UpdateContactAsync_ByAccessToken_Returns_UpdatedContact()
         {
             var contactJson = await File.ReadAllTextAsync(GetContactResponsePath);
             var contactUpdateOptions = new ContactUpdateOptions
@@ -315,7 +315,14 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
                     SiIdentifier = "",
                     SiIdentifierTypeType = null,
                     DirectDebit = false,
-                    CustomFieldsAttributes = null
+                    CustomFieldsAttributes = new List<ContactCustomFieldsAttribute>
+                    {
+                        new ()
+                        {
+                            Id = 1,
+                            Value = "Custom contact field"
+                        }
+                    }
                 }
             };
             
@@ -328,7 +335,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             var contact = JsonSerializer.Deserialize<Contact>(contactJson, _config.SerializerOptions);
             Assert.NotNull(contact);
 
-            var actualContact = await _contactEndpoint.UpdateContactByIdAsync(AdministrationId, ContactId, contactUpdateOptions, AccessToken);
+            var actualContact = await _contactEndpoint.UpdateByIdAsync(AdministrationId, ContactId, contactUpdateOptions, AccessToken);
             Assert.NotNull(actualContact);
 
             contact.Should().BeEquivalentTo(actualContact);

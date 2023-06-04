@@ -13,14 +13,21 @@ namespace Moneybird.Net.Http
         {
         }
 
-        public async Task<string> CreateGetRequestAsync(string host, string relativeUrl, string accessToken, List<string> queryParameters = null)
+        public async Task<string> CreateGetRequestAsync(string host,
+            string relativeUrl,
+            string accessToken,
+            List<string> queryParameters = null)
         {
             var request = ConstructRequest(host, relativeUrl, accessToken, queryParameters, HttpMethod.Get);
             var response = await SendAsync(request).ConfigureAwait(false);
             return await GetResponseContentAsync(response).ConfigureAwait(false);
         }
 
-        public async Task<string> CreatePostRequestAsync(string host, string relativeUrl, string accessToken, string body, List<string> queryParameters = null)
+        public async Task<string> CreatePostRequestAsync(string host,
+            string relativeUrl,
+            string accessToken,
+            string body,
+            List<string> queryParameters = null)
         {
             var request = ConstructRequest(host, relativeUrl, accessToken, queryParameters, HttpMethod.Post);
             request.Content = new StringContent(body, Encoding.UTF8, "application/json");
@@ -48,7 +55,11 @@ namespace Moneybird.Net.Http
             response.EnsureSuccessStatusCode();
         }
 
-        public async Task<string> CreatePatchRequestAsync(string host, string relativeUrl, string accessToken, string body, List<string> queryParameters = null)
+        public async Task<string> CreatePatchRequestAsync(string host,
+            string relativeUrl,
+            string accessToken,
+            string body,
+            List<string> queryParameters = null)
         {
             var request = ConstructRequest(host, relativeUrl, accessToken, queryParameters, new HttpMethod("PATCH"));
             request.Content = new StringContent(body, Encoding.UTF8, "application/json");
@@ -57,7 +68,10 @@ namespace Moneybird.Net.Http
             return await GetResponseContentAsync(response).ConfigureAwait(false);
         }
 
-        public async Task<bool> CreateDeleteRequestAsync(string host, string relativeUrl, string accessToken, List<string> queryParameters = null)
+        public async Task<bool> CreateDeleteRequestAsync(string host,
+            string relativeUrl,
+            string accessToken,
+            List<string> queryParameters = null)
         {
             var request = ConstructRequest(host, relativeUrl, accessToken, queryParameters, HttpMethod.Delete);
             var response = await SendAsync(request).ConfigureAwait(false);

@@ -1,0 +1,535 @@
+[
+  {
+    "id": "369764582665750305",
+    "administration_id": "281289699686381606",
+    "contact_id": "369764581997807377",
+    "contact": {
+      "id": "369764581997807377",
+      "administration_id": "281289699686381606",
+      "company_name": "Foobar Holding B.V.",
+      "firstname": "",
+      "lastname": "",
+      "address1": "Hoofdstraat 12",
+      "address2": "",
+      "zipcode": "1234AB",
+      "city": "Amsterdam",
+      "country": "NL",
+      "phone": "",
+      "delivery_method": "Email",
+      "customer_id": "1",
+      "tax_number": "",
+      "chamber_of_commerce": "",
+      "bank_account": "",
+      "attention": "",
+      "email": "info@example.com",
+      "email_ubl": true,
+      "send_invoices_to_attention": "",
+      "send_invoices_to_email": "info@example.com",
+      "send_estimates_to_attention": "",
+      "send_estimates_to_email": "info@example.com",
+      "sepa_active": false,
+      "sepa_iban": "",
+      "sepa_iban_account_name": "",
+      "sepa_bic": "",
+      "sepa_mandate_id": "",
+      "sepa_mandate_date": null,
+      "sepa_sequence_type": "RCUR",
+      "credit_card_number": "",
+      "credit_card_reference": "",
+      "credit_card_type": null,
+      "tax_number_validated_at": null,
+      "tax_number_valid": null,
+      "invoice_workflow_id": null,
+      "estimate_workflow_id": null,
+      "si_identifier": "",
+      "si_identifier_type": null,
+      "moneybird_payments_mandate": false,
+      "created_at": "2022-10-27T07:16:46.687Z",
+      "updated_at": "2022-10-27T07:16:46.687Z",
+      "version": 1666855006,
+      "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823/all",
+      "notes": [
+
+      ],
+      "custom_fields": [
+
+      ],
+      "contact_people": [
+
+      ]
+    },
+    "contact_person_id": null,
+    "contact_person": null,
+    "invoice_id": "2022-0003",
+    "recurring_sales_invoice_id": null,
+    "workflow_id": "369764439669343349",
+    "document_style_id": "369764439814046847",
+    "identity_id": "369764439509959796",
+    "draft_id": null,
+    "state": "open",
+    "invoice_date": "2022-10-27",
+    "due_date": "2022-11-10",
+    "payment_conditions": "We verzoeken u vriendelijk het bovenstaande bedrag van {document.total_price} voor {document.due_date} te voldoen op onze bankrekening onder vermelding van de omschrijving {document.payment_reference}. Voor vragen kunt u contact opnemen per e-mail.",
+    "payment_reference": "RF470000000000000WCG7YQRS",
+    "short_payment_reference": "RF47WCG7YQRS",
+    "reference": "Project X",
+    "language": "nl",
+    "currency": "EUR",
+    "discount": "0.0",
+    "original_sales_invoice_id": null,
+    "paused": false,
+    "paid_at": null,
+    "sent_at": "2022-10-27",
+    "created_at": "2022-10-27T07:16:47.324Z",
+    "updated_at": "2022-10-27T07:16:47.511Z",
+    "public_view_code": "371261",
+    "public_view_code_expires_at": "2023-01-27T07:16:47.418Z",
+    "version": 1666855007,
+    "details": [
+      {
+        "id": "369764582667847458",
+        "administration_id": "281289699686381606",
+        "tax_rate_id": "369764439469065326",
+        "ledger_account_id": "369764439364207706",
+        "project_id": null,
+        "product_id": null,
+        "amount": "1 x",
+        "amount_decimal": "1.0",
+        "description": "Project X",
+        "price": "300.0",
+        "period": null,
+        "row_order": 1,
+        "total_price_excl_tax_with_discount": "300.0",
+        "total_price_excl_tax_with_discount_base": "300.0",
+        "tax_report_reference": [
+          "NL/1a"
+        ],
+        "mandatory_tax_text": null,
+        "created_at": "2022-10-27T07:16:47.327Z",
+        "updated_at": "2022-10-27T07:16:47.509Z"
+      }
+    ],
+    "payments": [
+
+    ],
+    "total_paid": "0.0",
+    "total_unpaid": "363.0",
+    "total_unpaid_base": "363.0",
+    "prices_are_incl_tax": false,
+    "total_price_excl_tax": "300.0",
+    "total_price_excl_tax_base": "300.0",
+    "total_price_incl_tax": "363.0",
+    "total_price_incl_tax_base": "363.0",
+    "total_discount": "0.0",
+    "marked_dubious_on": null,
+    "marked_uncollectible_on": null,
+    "reminder_count": 0,
+    "next_reminder": "2022-11-10",
+    "original_estimate_id": null,
+    "url": "http://moneybird.dev/123/sales_invoices/9a3d4182e59f73172ea526f9d46cc38fc39ada210f0dc73d33c00ee9b9f1b6a9/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823",
+    "payment_url": "http://moneybird.dev/123/online_sales_invoices/9a3d4182e59f73172ea526f9d46cc38fc39ada210f0dc73d33c00ee9b9f1b6a9/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823/pay_invoice",
+    "custom_fields": [
+
+    ],
+    "notes": [
+
+    ],
+    "attachments": [
+
+    ],
+    "events": [
+      {
+        "administration_id": "281289699686381606",
+        "user_id": 16668548704389,
+        "action": "sales_invoice_created",
+        "link_entity_id": null,
+        "link_entity_type": null,
+        "data": {
+        },
+        "created_at": "2022-10-27T07:16:47.334Z",
+        "updated_at": "2022-10-27T07:16:47.334Z"
+      },
+      {
+        "administration_id": "281289699686381606",
+        "user_id": 16668548704389,
+        "action": "sales_invoice_send_email",
+        "link_entity_id": null,
+        "link_entity_type": null,
+        "data": {
+          "email_address": "info@example.com",
+          "email_message": "Geachte Foobar Holding B.V.,\n\nIn de bijlage kunt u factuur 2022-0003 voor onze diensten vinden. Wij verzoeken u vriendelijk de factuur voor 10-11-2022 te voldoen.\n\nMet vriendelijke groet,\n\nParkietje B.V."
+        },
+        "created_at": "2022-10-27T07:16:47.559Z",
+        "updated_at": "2022-10-27T07:16:47.559Z"
+      }
+    ],
+    "tax_totals": [
+      {
+        "tax_rate_id": "369764439469065326",
+        "taxable_amount": "300.0",
+        "taxable_amount_base": "300.0",
+        "tax_amount": "63.0",
+        "tax_amount_base": "63.0"
+      }
+    ]
+  },
+  {
+    "id": "369764582341740316",
+    "administration_id": "281289699686381606",
+    "contact_id": "369764581997807377",
+    "contact": {
+      "id": "369764581997807377",
+      "administration_id": "281289699686381606",
+      "company_name": "Foobar Holding B.V.",
+      "firstname": "",
+      "lastname": "",
+      "address1": "Hoofdstraat 12",
+      "address2": "",
+      "zipcode": "1234AB",
+      "city": "Amsterdam",
+      "country": "NL",
+      "phone": "",
+      "delivery_method": "Email",
+      "customer_id": "1",
+      "tax_number": "",
+      "chamber_of_commerce": "",
+      "bank_account": "",
+      "attention": "",
+      "email": "info@example.com",
+      "email_ubl": true,
+      "send_invoices_to_attention": "",
+      "send_invoices_to_email": "info@example.com",
+      "send_estimates_to_attention": "",
+      "send_estimates_to_email": "info@example.com",
+      "sepa_active": false,
+      "sepa_iban": "",
+      "sepa_iban_account_name": "",
+      "sepa_bic": "",
+      "sepa_mandate_id": "",
+      "sepa_mandate_date": null,
+      "sepa_sequence_type": "RCUR",
+      "credit_card_number": "",
+      "credit_card_reference": "",
+      "credit_card_type": null,
+      "tax_number_validated_at": null,
+      "tax_number_valid": null,
+      "invoice_workflow_id": null,
+      "estimate_workflow_id": null,
+      "si_identifier": "",
+      "si_identifier_type": null,
+      "moneybird_payments_mandate": false,
+      "created_at": "2022-10-27T07:16:46.687Z",
+      "updated_at": "2022-10-27T07:16:46.687Z",
+      "version": 1666855006,
+      "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823/all",
+      "notes": [
+
+      ],
+      "custom_fields": [
+
+      ],
+      "contact_people": [
+
+      ]
+    },
+    "contact_person_id": null,
+    "contact_person": null,
+    "invoice_id": "2022-0002",
+    "recurring_sales_invoice_id": null,
+    "workflow_id": "369764439669343349",
+    "document_style_id": "369764439814046847",
+    "identity_id": "369764439509959796",
+    "draft_id": null,
+    "state": "open",
+    "invoice_date": "2022-10-27",
+    "due_date": "2022-11-10",
+    "payment_conditions": "We verzoeken u vriendelijk het bovenstaande bedrag van {document.total_price} voor {document.due_date} te voldoen op onze bankrekening onder vermelding van de omschrijving {document.payment_reference}. Voor vragen kunt u contact opnemen per e-mail.",
+    "payment_reference": "RF840000000000000NNSCTZN9",
+    "short_payment_reference": "RF84NNSCTZN9",
+    "reference": "Project X",
+    "language": "nl",
+    "currency": "EUR",
+    "discount": "0.0",
+    "original_sales_invoice_id": null,
+    "paused": false,
+    "paid_at": null,
+    "sent_at": "2022-10-27",
+    "created_at": "2022-10-27T07:16:47.016Z",
+    "updated_at": "2022-10-27T07:16:47.162Z",
+    "public_view_code": "535817",
+    "public_view_code_expires_at": "2023-01-27T07:16:47.090Z",
+    "version": 1666855007,
+    "details": [
+      {
+        "id": "369764582344886045",
+        "administration_id": "281289699686381606",
+        "tax_rate_id": "369764439469065326",
+        "ledger_account_id": "369764439364207706",
+        "project_id": null,
+        "product_id": null,
+        "amount": "1 x",
+        "amount_decimal": "1.0",
+        "description": "Project X",
+        "price": "300.0",
+        "period": null,
+        "row_order": 1,
+        "total_price_excl_tax_with_discount": "300.0",
+        "total_price_excl_tax_with_discount_base": "300.0",
+        "tax_report_reference": [
+          "NL/1a"
+        ],
+        "mandatory_tax_text": null,
+        "created_at": "2022-10-27T07:16:47.018Z",
+        "updated_at": "2022-10-27T07:16:47.160Z"
+      }
+    ],
+    "payments": [
+
+    ],
+    "total_paid": "0.0",
+    "total_unpaid": "363.0",
+    "total_unpaid_base": "363.0",
+    "prices_are_incl_tax": false,
+    "total_price_excl_tax": "300.0",
+    "total_price_excl_tax_base": "300.0",
+    "total_price_incl_tax": "363.0",
+    "total_price_incl_tax_base": "363.0",
+    "total_discount": "0.0",
+    "marked_dubious_on": null,
+    "marked_uncollectible_on": null,
+    "reminder_count": 0,
+    "next_reminder": "2022-11-10",
+    "original_estimate_id": null,
+    "url": "http://moneybird.dev/123/sales_invoices/c3780dc7ef3c7dc4b0081ff9567754794d0f48e5e34b8c42ae8ea2971b215f86/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823",
+    "payment_url": "http://moneybird.dev/123/online_sales_invoices/c3780dc7ef3c7dc4b0081ff9567754794d0f48e5e34b8c42ae8ea2971b215f86/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823/pay_invoice",
+    "custom_fields": [
+
+    ],
+    "notes": [
+
+    ],
+    "attachments": [
+
+    ],
+    "events": [
+      {
+        "administration_id": "281289699686381606",
+        "user_id": 16668548704389,
+        "action": "sales_invoice_created",
+        "link_entity_id": null,
+        "link_entity_type": null,
+        "data": {
+        },
+        "created_at": "2022-10-27T07:16:47.022Z",
+        "updated_at": "2022-10-27T07:16:47.022Z"
+      },
+      {
+        "administration_id": "281289699686381606",
+        "user_id": 16668548704389,
+        "action": "sales_invoice_send_email",
+        "link_entity_id": null,
+        "link_entity_type": null,
+        "data": {
+          "email_address": "info@example.com",
+          "email_message": "Geachte Foobar Holding B.V.,\n\nIn de bijlage kunt u factuur 2022-0002 voor onze diensten vinden. Wij verzoeken u vriendelijk de factuur voor 10-11-2022 te voldoen.\n\nMet vriendelijke groet,\n\nParkietje B.V."
+        },
+        "created_at": "2022-10-27T07:16:47.201Z",
+        "updated_at": "2022-10-27T07:16:47.201Z"
+      }
+    ],
+    "tax_totals": [
+      {
+        "tax_rate_id": "369764439469065326",
+        "taxable_amount": "300.0",
+        "taxable_amount_base": "300.0",
+        "tax_amount": "63.0",
+        "tax_amount_base": "63.0"
+      }
+    ]
+  },
+  {
+    "id": "369764582086936342",
+    "administration_id": "281289699686381606",
+    "contact_id": "369764581997807377",
+    "contact": {
+      "id": "369764581997807377",
+      "administration_id": "281289699686381606",
+      "company_name": "Foobar Holding B.V.",
+      "firstname": "",
+      "lastname": "",
+      "address1": "Hoofdstraat 12",
+      "address2": "",
+      "zipcode": "1234AB",
+      "city": "Amsterdam",
+      "country": "NL",
+      "phone": "",
+      "delivery_method": "Email",
+      "customer_id": "1",
+      "tax_number": "",
+      "chamber_of_commerce": "",
+      "bank_account": "",
+      "attention": "",
+      "email": "info@example.com",
+      "email_ubl": true,
+      "send_invoices_to_attention": "",
+      "send_invoices_to_email": "info@example.com",
+      "send_estimates_to_attention": "",
+      "send_estimates_to_email": "info@example.com",
+      "sepa_active": false,
+      "sepa_iban": "",
+      "sepa_iban_account_name": "",
+      "sepa_bic": "",
+      "sepa_mandate_id": "",
+      "sepa_mandate_date": null,
+      "sepa_sequence_type": "RCUR",
+      "credit_card_number": "",
+      "credit_card_reference": "",
+      "credit_card_type": null,
+      "tax_number_validated_at": null,
+      "tax_number_valid": null,
+      "invoice_workflow_id": null,
+      "estimate_workflow_id": null,
+      "si_identifier": "",
+      "si_identifier_type": null,
+      "moneybird_payments_mandate": false,
+      "created_at": "2022-10-27T07:16:46.687Z",
+      "updated_at": "2022-10-27T07:16:46.687Z",
+      "version": 1666855006,
+      "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823/all",
+      "notes": [
+
+      ],
+      "custom_fields": [
+
+      ],
+      "contact_people": [
+
+      ]
+    },
+    "contact_person_id": "369764582018778900",
+    "contact_person": {
+      "id": "369764581997807377",
+      "administration_id": "281289699686381606",
+      "firstname": "Jan",
+      "lastname": "Janssen",
+      "phone": "123-456-2346",
+      "email": "janjanssen@dev.null.moneybird.net",
+      "department": "Sales",
+      "created_at": "2022-10-27T07:16:46.705Z",
+      "updated_at": "2022-10-27T07:16:46.705Z",
+      "version": 1666855006
+    },
+    "invoice_id": "2022-0001",
+    "recurring_sales_invoice_id": null,
+    "workflow_id": "369764439669343349",
+    "document_style_id": "369764439814046847",
+    "identity_id": "369764439509959796",
+    "draft_id": null,
+    "state": "open",
+    "invoice_date": "2022-10-27",
+    "due_date": "2022-11-10",
+    "payment_conditions": "We verzoeken u vriendelijk het bovenstaande bedrag van {document.total_price} voor {document.due_date} te voldoen op onze bankrekening onder vermelding van de omschrijving {document.payment_reference}. Voor vragen kunt u contact opnemen per e-mail.",
+    "payment_reference": "RF5000000000000003KMC9TEM",
+    "short_payment_reference": "RF503KMC9TEM",
+    "reference": "Project X",
+    "language": "nl",
+    "currency": "EUR",
+    "discount": "0.0",
+    "original_sales_invoice_id": null,
+    "paused": false,
+    "paid_at": null,
+    "sent_at": "2022-10-27",
+    "created_at": "2022-10-27T07:16:46.772Z",
+    "updated_at": "2022-10-27T07:16:46.905Z",
+    "public_view_code": "252109",
+    "public_view_code_expires_at": "2023-01-27T07:16:46.852Z",
+    "version": 1666855006,
+    "details": [
+      {
+        "id": "369764582091130647",
+        "administration_id": "281289699686381606",
+        "tax_rate_id": "369764439469065326",
+        "ledger_account_id": "369764439364207706",
+        "project_id": null,
+        "product_id": null,
+        "amount": "1 x",
+        "amount_decimal": "1.0",
+        "description": "Project X",
+        "price": "300.0",
+        "period": "20221001..20221031",
+        "row_order": 1,
+        "total_price_excl_tax_with_discount": "300.0",
+        "total_price_excl_tax_with_discount_base": "300.0",
+        "tax_report_reference": [
+          "NL/1a"
+        ],
+        "mandatory_tax_text": null,
+        "created_at": "2022-10-27T07:16:46.776Z",
+        "updated_at": "2022-10-27T07:16:46.904Z"
+      }
+    ],
+    "payments": [
+
+    ],
+    "total_paid": "0.0",
+    "total_unpaid": "363.0",
+    "total_unpaid_base": "363.0",
+    "prices_are_incl_tax": false,
+    "total_price_excl_tax": "300.0",
+    "total_price_excl_tax_base": "300.0",
+    "total_price_incl_tax": "363.0",
+    "total_price_incl_tax_base": "363.0",
+    "total_discount": "0.0",
+    "marked_dubious_on": null,
+    "marked_uncollectible_on": null,
+    "reminder_count": 0,
+    "next_reminder": "2022-11-10",
+    "original_estimate_id": null,
+    "url": "http://moneybird.dev/123/sales_invoices/432e969f0cb19d6ba8e951a492cd7d1983d589ea20b364e4298b05eed7ffcedb/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823",
+    "payment_url": "http://moneybird.dev/123/online_sales_invoices/432e969f0cb19d6ba8e951a492cd7d1983d589ea20b364e4298b05eed7ffcedb/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823/pay_invoice",
+    "custom_fields": [
+
+    ],
+    "notes": [
+
+    ],
+    "attachments": [
+
+    ],
+    "events": [
+      {
+        "administration_id": "281289699686381606",
+        "user_id": 16668548704389,
+        "action": "sales_invoice_created",
+        "link_entity_id": null,
+        "link_entity_type": null,
+        "data": {
+        },
+        "created_at": "2022-10-27T07:16:46.780Z",
+        "updated_at": "2022-10-27T07:16:46.780Z"
+      },
+      {
+        "administration_id": "281289699686381606",
+        "user_id": 16668548704389,
+        "action": "sales_invoice_send_email",
+        "link_entity_id": null,
+        "link_entity_type": null,
+        "data": {
+          "email_address": "info@example.com; janjanssen@dev.null.moneybird.net",
+          "email_message": "Geachte Jan Janssen,\n\nIn de bijlage kunt u factuur 2022-0001 voor onze diensten vinden. Wij verzoeken u vriendelijk de factuur voor 10-11-2022 te voldoen.\n\nMet vriendelijke groet,\n\nParkietje B.V."
+        },
+        "created_at": "2022-10-27T07:16:46.928Z",
+        "updated_at": "2022-10-27T07:16:46.928Z"
+      }
+    ],
+    "tax_totals": [
+      {
+        "tax_rate_id": "369764439469065326",
+        "taxable_amount": "300.0",
+        "taxable_amount_base": "300.0",
+        "tax_amount": "63.0",
+        "tax_amount_base": "63.0"
+      }
+    ]
+  }
+]

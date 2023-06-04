@@ -1,7 +1,7 @@
 [
   {
     "id": "370130885195859769",
-    "administration_id": 123,
+    "administration_id": "281289699686381606",
     "name": "21% btw",
     "percentage": "21.0",
     "tax_rate_type": "sales_invoice",
@@ -13,7 +13,7 @@
   },
   {
     "id": "370130885200054074",
-    "administration_id": 123,
+    "administration_id": "281289699686381606",
     "name": "9% btw",
     "percentage": "9.0",
     "tax_rate_type": "sales_invoice",
@@ -25,7 +25,7 @@
   },
   {
     "id": "370130885203199803",
-    "administration_id": 123,
+    "administration_id": "281289699686381606",
     "name": "0% btw",
     "percentage": "0.0",
     "tax_rate_type": "sales_invoice",

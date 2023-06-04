@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.Json;
 using FluentAssertions;
 using Moneybird.Net.Endpoints.TaxRates;
+using Moneybird.Net.Endpoints.TaxRates.Models;
 using Moneybird.Net.Entities.TaxRates;
 using Moneybird.Net.Http;
 using Moq;
@@ -37,12 +38,45 @@ public class TaxRateEndpointTest : CommonTestBase
         var taxRates = JsonSerializer.Deserialize<List<TaxRate>>(taxRatesList, _config.SerializerOptions);
         Assert.NotNull(taxRates);
 
-        var actualTaxRateList = await _taxRateEndpoint.GetAsync(AdministrationId, AccessToken);
-        Assert.NotNull(actualTaxRateList);
+        var actualTaxRates = await _taxRateEndpoint.GetAsync(AdministrationId, AccessToken);
+        Assert.NotNull(actualTaxRates);
+        
+        var actualTaxRateList = actualTaxRates.ToList();
+        Assert.Equal(taxRates.Count, actualTaxRateList.Count);
+        
+        foreach (var actualTaxRate in actualTaxRateList)
+        {
+            var user = taxRates.FirstOrDefault(w => w.Id == actualTaxRate.Id);
+            Assert.NotNull(user);
 
-        var actualTaxRates = actualTaxRateList.ToList();
-        Assert.Equal(taxRates.Count, actualTaxRates.Count);
-        foreach (var actualTaxRate in actualTaxRates)
+            user.Should().BeEquivalentTo(actualTaxRate);
+        }
+    }
+    
+    [Fact]
+    public async void GetTaxRatesAsync_UsingFilterOptions_ByAccessToken_Returns_TaxRates()
+    {
+        var taxRatesList = await File.ReadAllTextAsync(ResponsePath);
+
+        _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
+            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(taxRatesList);
+
+        var taxRates = JsonSerializer.Deserialize<List<TaxRate>>(taxRatesList, _config.SerializerOptions);
+        Assert.NotNull(taxRates);
+        
+        var filterOptions = new TaxRateFilterOptions
+        {
+            Active = true,
+            ShowTax = true
+        };
+
+        var actualTaxRates = await _taxRateEndpoint.GetAsync(AdministrationId, AccessToken, filterOptions);
+        Assert.NotNull(actualTaxRates);
+        
+        var actualTaxRateList = actualTaxRates.ToList();
+        Assert.Equal(taxRates.Count, actualTaxRateList.Count);
+        
+        foreach (var actualTaxRate in actualTaxRateList)
         {
             var user = taxRates.FirstOrDefault(w => w.Id == actualTaxRate.Id);
             Assert.NotNull(user);
