@@ -1,5 +1,5 @@
 using System;
-using Moneybird.Net.Endpoints.Abstractions.Models;
+using Moneybird.Net.Endpoints.Abstractions.Options;
 
 namespace Moneybird.Net.Endpoints.Contacts.Models
 {

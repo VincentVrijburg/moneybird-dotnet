@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using Moneybird.Net.Endpoints.Abstractions.Models;
+using Moneybird.Net.Endpoints.Abstractions.Options;
 using Moneybird.Net.Entities;
 
 namespace Moneybird.Net.Endpoints.Abstractions.Common

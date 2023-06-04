@@ -1,4 +1,5 @@
-using Moneybird.Net.Endpoints.Abstractions.Models;
+using Moneybird.Net.Endpoints.Abstractions.Options;
+using Moneybird.Net.Entities.ExternalSalesInvoices;
 using Moneybird.Net.Entities.SalesInvoices;
 
 namespace Moneybird.Net.Endpoints.ExternalSalesInvoices.Models

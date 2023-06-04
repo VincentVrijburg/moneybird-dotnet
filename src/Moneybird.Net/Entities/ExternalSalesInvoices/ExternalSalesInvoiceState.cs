@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Moneybird.Net.Entities.SalesInvoices
+namespace Moneybird.Net.Entities.ExternalSalesInvoices
 {
     [JsonConverter(typeof(JsonStringEnumMemberConverter))]
     public enum ExternalSalesInvoiceState

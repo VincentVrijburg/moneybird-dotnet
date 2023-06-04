@@ -1,4 +1,4 @@
-namespace Moneybird.Net.Endpoints.Abstractions.Models
+namespace Moneybird.Net.Endpoints.Abstractions.Options
 {
     public interface IMoneybirdCreateOptions
     {
