@@ -42,7 +42,7 @@ namespace Moneybird.Net.Endpoints.LegderAccounts
             return JsonSerializer.Deserialize<LedgerAccount>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<LedgerAccount> CreateLedgerAccountAsync(string administrationId, LedgerAccountCreateOptions options, string accessToken)
+        public async Task<LedgerAccount> CreateAsync(string administrationId, LedgerAccountCreateOptions options, string accessToken)
         {
             var relativeUrl = string.Format(LedgerAccountsUri, administrationId);
             var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
@@ -53,7 +53,7 @@ namespace Moneybird.Net.Endpoints.LegderAccounts
             return JsonSerializer.Deserialize<LedgerAccount>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<LedgerAccount> UpdateLedgerAccountByIdAsync(string administrationId, string ledgerAccountId, LedgerAccountUpdateOptions options, string accessToken)
+        public async Task<LedgerAccount> UpdateByIdAsync(string administrationId, string ledgerAccountId, LedgerAccountUpdateOptions options, string accessToken)
         {
             var relativeUrl = string.Format(LedgerAccountsIdUri, administrationId, ledgerAccountId);
             var body = JsonSerializer.Serialize(options, _config.SerializerOptions);

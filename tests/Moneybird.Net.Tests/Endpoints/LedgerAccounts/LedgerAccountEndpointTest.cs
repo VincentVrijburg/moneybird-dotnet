@@ -104,7 +104,7 @@ public class LedgerAccountEndpointTest : LedgerAccountTestBase
         var expectedLedgerAccount = JsonSerializer.Deserialize<LedgerAccount>(ledgerAccountJson, _config.SerializerOptions);
         Assert.NotNull(expectedLedgerAccount);
 
-        var actualLedgerAccount = await _ledgerAccountEndpoint.CreateLedgerAccountAsync(AdministrationId, ledgerAccountCreateOptions, AccessToken);
+        var actualLedgerAccount = await _ledgerAccountEndpoint.CreateAsync(AdministrationId, ledgerAccountCreateOptions, AccessToken);
         Assert.NotNull(actualLedgerAccount);
 
         actualLedgerAccount.Should().BeEquivalentTo(expectedLedgerAccount);
@@ -139,7 +139,7 @@ public class LedgerAccountEndpointTest : LedgerAccountTestBase
         var expectedLedgerAccount = JsonSerializer.Deserialize<LedgerAccount>(ledgerAccountJson, _config.SerializerOptions);
         Assert.NotNull(expectedLedgerAccount);
 
-        var actualLedgerAccount = await _ledgerAccountEndpoint.UpdateLedgerAccountByIdAsync(AdministrationId, LedgerAccountId, ledgerAccountUpdateOptions, AccessToken);
+        var actualLedgerAccount = await _ledgerAccountEndpoint.UpdateByIdAsync(AdministrationId, LedgerAccountId, ledgerAccountUpdateOptions, AccessToken);
         Assert.NotNull(actualLedgerAccount);
 
         actualLedgerAccount.Should().BeEquivalentTo(expectedLedgerAccount);

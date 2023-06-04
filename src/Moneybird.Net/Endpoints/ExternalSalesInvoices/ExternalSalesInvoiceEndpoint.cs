@@ -32,7 +32,7 @@ namespace Moneybird.Net.Endpoints.ExternalSalesInvoices
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<List<ExternalSalesInvoice>>(responseJson, _config.SerializerOptions);
+            return JsonSerializer.Deserialize<IEnumerable<ExternalSalesInvoice>>(responseJson, _config.SerializerOptions);
         }
 
         public async Task<IEnumerable<ExternalSalesInvoice>> GetAsync(string administrationId, string accessToken, ExternalSalesInvoiceFilterOptions options)
@@ -50,15 +50,12 @@ namespace Moneybird.Net.Endpoints.ExternalSalesInvoices
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken, paramValues)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<List<ExternalSalesInvoice>>(responseJson, _config.SerializerOptions);
+            return JsonSerializer.Deserialize<IEnumerable<ExternalSalesInvoice>>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<ExternalSalesInvoice> GetByIdAsync(
-            string administrationId,
-            string salesInvoiceId,
-            string accessToken)
+        public async Task<ExternalSalesInvoice> GetByIdAsync(string administrationId, string externalSalesInvoiceId, string accessToken)
         {
-            var relativeUrl = string.Format(ExternalSalesInvoiceIdUri, administrationId, salesInvoiceId);
+            var relativeUrl = string.Format(ExternalSalesInvoiceIdUri, administrationId, externalSalesInvoiceId);
             var responseJson = await _requester
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);
@@ -66,10 +63,7 @@ namespace Moneybird.Net.Endpoints.ExternalSalesInvoices
             return JsonSerializer.Deserialize<ExternalSalesInvoice>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<ExternalSalesInvoice> CreateAsync(
-            string administrationId,
-            ExternalSalesInvoiceCreateOptions options,
-            string accessToken)
+        public async Task<ExternalSalesInvoice> CreateAsync(string administrationId, ExternalSalesInvoiceCreateOptions options, string accessToken)
         {
             var relativeUrl = string.Format(ExternalSalesInvoiceUri, administrationId);
             var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
@@ -81,14 +75,9 @@ namespace Moneybird.Net.Endpoints.ExternalSalesInvoices
             return JsonSerializer.Deserialize<ExternalSalesInvoice>(response, _config.SerializerOptions);
         }
 
-        public async Task AddAttachmentAsync(
-            string administrationId,
-            string id,
-            Stream body,
-            string accessToken,
-            string fileName = "invoice.pdf")
+        public async Task AddAttachmentAsync(string administrationId, string externalSalesInvoiceId, Stream body, string accessToken, string fileName = "invoice.pdf")
         {
-            var relativeUrl = string.Format(ExternalSalesInvoiceAttachmentUri, administrationId, id);
+            var relativeUrl = string.Format(ExternalSalesInvoiceAttachmentUri, administrationId, externalSalesInvoiceId);
 
             await _requester
                 .CreatePostFileRequestAsync(_config.ApiUri, relativeUrl, accessToken, fileName, body)

@@ -12,10 +12,10 @@ namespace Moneybird.Net.Endpoints.Abstractions.Common
         /// Update an entity within an administration.
         /// </summary>
         /// <param name="administrationId">The administration id.</param>
-        /// <param name="entityId">The entity id to update.</param>
+        /// <param name="id">The entity id to update.</param>
         /// <param name="options">the options to update with.</param>
         /// <param name="accessToken">The access token.</param>
         /// <returns>The updated entity.</returns>
-        Task<TMoneybirdEntity> UpdateByIdAsync(string administrationId, string entityId, TMoneybirdUpdateOptions options, string accessToken);
+        Task<TMoneybirdEntity> UpdateByIdAsync(string administrationId, string id, TMoneybirdUpdateOptions options, string accessToken);
     }
 }

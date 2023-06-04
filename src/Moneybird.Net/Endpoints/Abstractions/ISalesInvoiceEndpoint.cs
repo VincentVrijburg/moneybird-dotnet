@@ -1,20 +1,27 @@
+using System.IO;
 using System.Threading.Tasks;
+using Moneybird.Net.Endpoints.Abstractions.Common;
 using Moneybird.Net.Endpoints.SalesInvoices.Models;
 using Moneybird.Net.Entities.SalesInvoices;
 
 namespace Moneybird.Net.Endpoints.Abstractions
 {
-    public interface ISalesInvoiceEndpoint
+    public interface ISalesInvoiceEndpoint : 
+        IReadEndpoint<SalesInvoice>,
+        IReadFilterEndpoint<SalesInvoice, SalesInvoiceFilterOptions>,
+        IGetEndpoint<SalesInvoice>,
+        ICreateEndpoint<SalesInvoice, SalesInvoiceCreateOptions>,
+        IUpdateEndpoint<SalesInvoice, SalesInvoiceUpdateOptions>,
+        IDeleteEndpoint
     {
         /// <summary>
-        /// Create a new sale invoice.
+        /// Add an attachment to a sales invoice.
         /// </summary>
         /// <param name="administrationId">The administration id.</param>
-        /// <param name="options">The sale invoice to create.</param>
+        /// <param name="salesInvoiceId">The sales invoice id.</param>
+        /// <param name="body">The file to attach.</param>
         /// <param name="accessToken">The access token.</param>
-        Task<SalesInvoice> CreateSaleInvoiceAsync(
-            string administrationId,
-            SalesInvoiceCreateOptions options,
-            string accessToken);
+        /// <param name="fileName">The file name. Defaults to "invoice.pdf".</param>
+        Task AddAttachmentAsync(string administrationId, string salesInvoiceId, Stream body, string accessToken, string fileName = "invoice.pdf");
     }
 }
