@@ -10,10 +10,10 @@ namespace Moneybird.Net.Tests.Extensions;
 public class TaxRatesExtensionsTest
 {
     [Fact]
-    public void GetFilterString_FromTaxRatesFilterOptions_NameOnly_Returns_CorrectString()
+    public void GetFilterString_FromTaxRateFilterOptions_NameOnly_Returns_CorrectString()
     {
         const string name = "Money Bird";
-            
+        
         var options = new TaxRateFilterOptions
         {
             Name = name
@@ -26,7 +26,7 @@ public class TaxRatesExtensionsTest
     }
     
     [Fact]
-    public void GetFilterString_FromTaxRatesFilterOptions_PartialNameOnly_Returns_CorrectString()
+    public void GetFilterString_FromTaxRateFilterOptions_PartialNameOnly_Returns_CorrectString()
     {
         const string partialName = "Bird";
             
@@ -42,7 +42,7 @@ public class TaxRatesExtensionsTest
     }
 
     [Fact]
-    public void GetFilterString_FromTaxRatesFilterOptions_PercentageOnly_Returns_CorrectString()
+    public void GetFilterString_FromTaxRateFilterOptions_PercentageOnly_Returns_CorrectString()
     {
         const int percentage = 21;
             
@@ -58,7 +58,7 @@ public class TaxRatesExtensionsTest
     }
     
     [Fact]
-    public void GetFilterString_FromTaxRatesFilterOptions_TaxRateTypeOnly_Returns_CorrectString()
+    public void GetFilterString_FromTaxRateFilterOptions_TaxRateTypeOnly_Returns_CorrectString()
     {
         const TaxRateType taxRateType = TaxRateType.All;
             
@@ -74,7 +74,7 @@ public class TaxRatesExtensionsTest
     }
     
     [Fact]
-    public void GetFilterString_FromTaxRatesFilterOptions_StateOnly_Returns_CorrectString()
+    public void GetFilterString_FromTaxRateFilterOptions_StateOnly_Returns_CorrectString()
     {
         var taxRateType = new List<TaxRateType> { TaxRateType.PurchaseInvoice, TaxRateType.SalesInvoice };
             
@@ -90,7 +90,7 @@ public class TaxRatesExtensionsTest
     }
     
     [Fact]
-    public void GetFilterString_FromTaxRatesFilterOptions_CountryOnly_Returns_CorrectString()
+    public void GetFilterString_FromTaxRateFilterOptions_CountryOnly_Returns_CorrectString()
     {
         const string country = "NL";
             
@@ -106,7 +106,7 @@ public class TaxRatesExtensionsTest
     }
     
     [Fact]
-    public void GetFilterString_FromTaxRatesFilterOptions_ShowTaxOnly_Returns_CorrectString()
+    public void GetFilterString_FromTaxRateFilterOptions_ShowTaxOnly_Returns_CorrectString()
     {
         const bool showTax = true;
             
@@ -122,7 +122,7 @@ public class TaxRatesExtensionsTest
     }
     
     [Fact]
-    public void GetFilterString_FromTaxRatesFilterOptions_ActiveOnly_Returns_CorrectString()
+    public void GetFilterString_FromTaxRateFilterOptions_ActiveOnly_Returns_CorrectString()
     {
         const bool active = true;
             
@@ -138,7 +138,7 @@ public class TaxRatesExtensionsTest
     }
     
     [Fact]
-    public void GetFilterString_FromTaxRatesFilterOptions_CreatedOnly_Returns_CorrectString()
+    public void GetFilterString_FromTaxRateFilterOptions_CreatedOnly_Returns_CorrectString()
     {
         var createdAfter = DateTime.UtcNow;
             
@@ -154,7 +154,7 @@ public class TaxRatesExtensionsTest
     }
     
     [Fact]
-    public void GetFilterString_FromTaxRatesFilterOptions_UpdatedOnly_Returns_CorrectString()
+    public void GetFilterString_FromTaxRateFilterOptions_UpdatedOnly_Returns_CorrectString()
     {
         var updatedAfter = DateTime.UtcNow;
             
@@ -170,7 +170,7 @@ public class TaxRatesExtensionsTest
     }
     
     [Fact]
-    public void GetFilterString_FromContactFilterOptions_All_Returns_CorrectString()
+    public void GetFilterString_FromTaxRateFilterOptions_All_Returns_CorrectString()
     {
         const string name = "Money Bird";
         const string partialName = "Bird";

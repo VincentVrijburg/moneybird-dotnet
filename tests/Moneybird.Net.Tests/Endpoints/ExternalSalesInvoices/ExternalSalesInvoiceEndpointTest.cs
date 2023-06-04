@@ -151,10 +151,10 @@ public class ExternalSalesInvoiceEndpointTest : ExternalSalesInvoicesTestBase
         var externalSalesInvoice = JsonSerializer.Deserialize<ExternalSalesInvoice>(createResponse, _config.SerializerOptions);
         Assert.NotNull(externalSalesInvoice);
 
-        var actualExternalSaleInvoice = await _externalSalesInvoiceEndpoint.CreateAsync(AdministrationId, options, AccessToken);
-        Assert.NotNull(actualExternalSaleInvoice);
+        var actualExternalSalesInvoice = await _externalSalesInvoiceEndpoint.CreateAsync(AdministrationId, options, AccessToken);
+        Assert.NotNull(actualExternalSalesInvoice);
 
-        externalSalesInvoice.Should().BeEquivalentTo(actualExternalSaleInvoice);
+        externalSalesInvoice.Should().BeEquivalentTo(actualExternalSalesInvoice);
     }
     
     [Fact]

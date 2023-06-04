@@ -30,14 +30,14 @@ namespace Moneybird.Net
         public IContactEndpoint Contact { get; }
         public ICustomFieldEndpoint CustomField { get; }
         public IDocumentStyleEndpoint DocumentStyle { get; }
+        public IExternalSalesInvoiceEndpoint ExternalSalesInvoice { get; }
+        public ILedgerAccountEndpoint LedgerAccount { get; }
         public IPaymentEndpoint Payment { get; }
+        public ISalesInvoiceEndpoint SalesInvoice { get; }
+        public ITaxRateEndpoint TaxRate { get; }
         public IUserEndpoint User { get; }
         public IVerificationEndpoint Verification { get; }
         public IWorkflowEndpoint Workflow { get; }
-        public ISalesInvoiceEndpoint SalesInvoice { get; }
-        public ITaxRateEndpoint TaxRate { get; }
-        public ILedgerAccountEndpoint LedgerAccount { get; }
-        public IExternalSalesInvoiceEndpoint ExternalSalesInvoice { get; }
 
         /// <summary>
         /// Get the instance of MoneybirdClient.
@@ -69,14 +69,14 @@ namespace Moneybird.Net
             Contact = new ContactEndpoint(Config, _requester);
             CustomField = new CustomFieldEndpoint(Config, _requester);
             DocumentStyle = new DocumentStyleEndpoint(Config, _requester);
+            ExternalSalesInvoice = new ExternalSalesInvoiceEndpoint(Config, _requester);
+            LedgerAccount = new LedgerAccountEndpoint(Config, _requester);
             Payment = new PaymentEndpoint(Config, _requester);
+            SalesInvoice = new SalesInvoiceEndpoint(Config, _requester);
+            TaxRate = new TaxRateEndpoint(Config, _requester);
             User = new UserEndpoint(Config, _requester);
             Verification = new VerificationEndpoint(Config, _requester);
             Workflow = new WorkflowEndpoint(Config, _requester);
-            SalesInvoice = new SalesInvoiceEndpoint(Config, _requester);
-            TaxRate = new TaxRateEndpoint(Config, _requester);
-            LedgerAccount = new LedgerAccountEndpoint(Config, _requester);
-            ExternalSalesInvoice = new ExternalSalesInvoiceEndpoint(Config, _requester);
         }
 
         protected virtual void Dispose(bool disposing)

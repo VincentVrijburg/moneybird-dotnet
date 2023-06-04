@@ -171,13 +171,13 @@ public class SalesInvoiceEndpointTest : SalesInvoiceTestBase
                 It.IsAny<string>(), It.IsAny<string>(), It.IsAny<List<string>>()))
             .ReturnsAsync(createResponse);
 
-        var saleInvoice = JsonSerializer.Deserialize<SalesInvoice>(createResponse, _config.SerializerOptions);
-        Assert.NotNull(saleInvoice);
+        var salesInvoice = JsonSerializer.Deserialize<SalesInvoice>(createResponse, _config.SerializerOptions);
+        Assert.NotNull(salesInvoice);
 
-        var actualSaleInvoice = await _salesInvoiceEndpoint.CreateAsync(AdministrationId, options, AccessToken);
-        Assert.NotNull(actualSaleInvoice);
+        var actualSalesInvoice = await _salesInvoiceEndpoint.CreateAsync(AdministrationId, options, AccessToken);
+        Assert.NotNull(actualSalesInvoice);
 
-        saleInvoice.Should().BeEquivalentTo(actualSaleInvoice);
+        salesInvoice.Should().BeEquivalentTo(actualSalesInvoice);
     }
     
     [Fact]
