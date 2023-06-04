@@ -1,8 +1,9 @@
 using System;
+using Moneybird.Net.Endpoints.Abstractions.Models;
 
 namespace Moneybird.Net.Endpoints.Contacts.Models
 {
-    public class ContactFilterOptions
+    public class ContactFilterOptions : IMoneybirdFilterOptions
     {
         public DateTime? CreatedAfter { get; set; }
 

@@ -40,7 +40,7 @@ namespace Moneybird.Net.Endpoints.Contacts
             return JsonSerializer.Deserialize<IEnumerable<Contact>>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<IEnumerable<Contact>> GetContactsAsync(string administrationId, string accessToken, ContactFilterOptions options)
+        public async Task<IEnumerable<Contact>> GetAsync(string administrationId, string accessToken, ContactFilterOptions options)
         {
             List<string> paramValues = null;
             
@@ -117,7 +117,7 @@ namespace Moneybird.Net.Endpoints.Contacts
             return JsonSerializer.Deserialize<Contact>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<Contact> CreateContactAsync(string administrationId, ContactCreateOptions options, string accessToken)
+        public async Task<Contact> CreateAsync(string administrationId, ContactCreateOptions options, string accessToken)
         {
             var relativeUrl = string.Format(ContactsUri, administrationId);
             var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
@@ -128,7 +128,7 @@ namespace Moneybird.Net.Endpoints.Contacts
             return JsonSerializer.Deserialize<Contact>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<Contact> UpdateContactByIdAsync(string administrationId, string contactId, ContactUpdateOptions options, string accessToken)
+        public async Task<Contact> UpdateByIdAsync(string administrationId, string contactId, ContactUpdateOptions options, string accessToken)
         {
             var relativeUrl = string.Format(ContactsIdUri, administrationId, contactId);
             var body = JsonSerializer.Serialize(options, _config.SerializerOptions);

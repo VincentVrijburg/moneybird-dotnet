@@ -77,7 +77,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
                 LastName = "Doe"
             };
             
-            var actualContacts = await _contactEndpoint.GetContactsAsync(AdministrationId, AccessToken, contactFilterOptions);
+            var actualContacts = await _contactEndpoint.GetAsync(AdministrationId, AccessToken, contactFilterOptions);
             Assert.NotNull(actualContacts);
 
             var actualContactList = actualContacts.ToList();
@@ -270,7 +270,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             var contact = JsonSerializer.Deserialize<Contact>(contactJson, _config.SerializerOptions);
             Assert.NotNull(contact);
 
-            var actualContact = await _contactEndpoint.CreateContactAsync(AdministrationId, contactCreateOptions, AccessToken);
+            var actualContact = await _contactEndpoint.CreateAsync(AdministrationId, contactCreateOptions, AccessToken);
             Assert.NotNull(actualContact);
 
             contact.Should().BeEquivalentTo(actualContact);
@@ -328,7 +328,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             var contact = JsonSerializer.Deserialize<Contact>(contactJson, _config.SerializerOptions);
             Assert.NotNull(contact);
 
-            var actualContact = await _contactEndpoint.UpdateContactByIdAsync(AdministrationId, ContactId, contactUpdateOptions, AccessToken);
+            var actualContact = await _contactEndpoint.UpdateByIdAsync(AdministrationId, ContactId, contactUpdateOptions, AccessToken);
             Assert.NotNull(actualContact);
 
             contact.Should().BeEquivalentTo(actualContact);

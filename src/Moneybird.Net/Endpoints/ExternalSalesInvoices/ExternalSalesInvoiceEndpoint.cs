@@ -35,10 +35,7 @@ namespace Moneybird.Net.Endpoints.ExternalSalesInvoices
             return JsonSerializer.Deserialize<List<ExternalSalesInvoice>>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<List<ExternalSalesInvoice>> GetSalesInvoicesAsync(
-            string administrationId,
-            string accessToken,
-            ExternalSalesInvoiceFilterOptions options)
+        public async Task<IEnumerable<ExternalSalesInvoice>> GetAsync(string administrationId, string accessToken, ExternalSalesInvoiceFilterOptions options)
         {
             List<string> paramValues = null;
                         
@@ -69,7 +66,7 @@ namespace Moneybird.Net.Endpoints.ExternalSalesInvoices
             return JsonSerializer.Deserialize<ExternalSalesInvoice>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<ExternalSalesInvoice> CreateSalesInvoiceAsync(
+        public async Task<ExternalSalesInvoice> CreateAsync(
             string administrationId,
             ExternalSalesInvoiceCreateOptions options,
             string accessToken)
