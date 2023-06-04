@@ -26,9 +26,29 @@ namespace Moneybird.Net.Abstractions
         IDocumentStyleEndpoint DocumentStyle { get; }
         
         /// <summary>
+        /// The ExternalSalesInvoice Endpoint.
+        /// </summary>
+        IExternalSalesInvoiceEndpoint ExternalSalesInvoice { get; }
+        
+        /// <summary>
+        /// The LedgerAccount Endpoint.
+        /// </summary>
+        ILedgerAccountEndpoint LedgerAccount { get; }
+        
+        /// <summary>
         /// The Payment Endpoint.
         /// </summary>
         IPaymentEndpoint Payment { get; }
+        
+        /// <summary>
+        /// The SalesInvoice Endpoint.
+        /// </summary>
+        ISalesInvoiceEndpoint SalesInvoice { get; }
+        
+        /// <summary>
+        /// The TaxRate Endpoint.
+        /// </summary>
+        ITaxRateEndpoint TaxRate { get; }
         
         /// <summary>
         /// The User Endpoint.

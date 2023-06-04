@@ -1,0 +1,305 @@
+[
+  {
+    "id": "369764543587419678",
+    "administration_id": "281289699686381606",
+    "contact_id": null,
+    "contact": null,
+    "date": "2022-10-27",
+    "state": "new",
+    "due_date": null,
+    "reference": "Invoice 4",
+    "entry_number": 104,
+    "origin": null,
+    "source": null,
+    "source_url": null,
+    "currency": "EUR",
+    "paid_at": null,
+    "created_at": "2022-10-27T07:16:10.057Z",
+    "updated_at": "2022-10-27T07:16:10.057Z",
+    "version": 1666854970,
+    "details": [
+
+    ],
+    "payments": [
+
+    ],
+    "total_paid": "0.0",
+    "total_unpaid": "0.0",
+    "total_unpaid_base": "0.0",
+    "prices_are_incl_tax": false,
+    "total_price_excl_tax": "0.0",
+    "total_price_excl_tax_base": "0.0",
+    "total_price_incl_tax": "0.0",
+    "total_price_incl_tax_base": "0.0",
+    "marked_dubious_on": null,
+    "marked_uncollectible_on": null,
+    "notes": [
+
+    ],
+    "attachments": [
+
+    ],
+    "events": [
+
+    ],
+    "tax_totals": [
+
+    ]
+  },
+  {
+    "id": "369764543577982492",
+    "administration_id": "281289699686381606",
+    "contact_id": "369764543559108121",
+    "contact": {
+      "id": "369764543559108121",
+      "administration_id": "281289699686381606",
+      "company_name": "Relation 3",
+      "firstname": null,
+      "lastname": null,
+      "address1": null,
+      "address2": null,
+      "zipcode": null,
+      "city": null,
+      "country": "NL",
+      "phone": null,
+      "delivery_method": "Email",
+      "customer_id": "6e619dfc49c2b8bd9a1237fdd1b71785900ea2b4997715f97a0a5dfb880098ba",
+      "tax_number": null,
+      "chamber_of_commerce": null,
+      "bank_account": null,
+      "attention": null,
+      "email": null,
+      "email_ubl": false,
+      "send_invoices_to_attention": null,
+      "send_invoices_to_email": null,
+      "send_estimates_to_attention": null,
+      "send_estimates_to_email": null,
+      "sepa_active": false,
+      "sepa_iban": null,
+      "sepa_iban_account_name": null,
+      "sepa_bic": null,
+      "sepa_mandate_id": null,
+      "sepa_mandate_date": null,
+      "sepa_sequence_type": "RCUR",
+      "credit_card_number": null,
+      "credit_card_reference": null,
+      "credit_card_type": null,
+      "tax_number_validated_at": null,
+      "tax_number_valid": null,
+      "invoice_workflow_id": null,
+      "estimate_workflow_id": null,
+      "si_identifier": null,
+      "si_identifier_type": null,
+      "moneybird_payments_mandate": false,
+      "created_at": "2022-10-27T07:16:10.030Z",
+      "updated_at": "2022-10-27T07:16:10.030Z",
+      "version": 1666854970,
+      "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/45d9656e6c932ee2dead9d796c8eb522ebd6d51c514cd67ff967d27386ffc1d5/all",
+      "notes": [
+
+      ],
+      "custom_fields": [
+
+      ],
+      "contact_people": [
+
+      ]
+    },
+    "date": "2022-10-27",
+    "state": "open",
+    "due_date": null,
+    "reference": "Invoice 3",
+    "entry_number": 103,
+    "origin": null,
+    "source": null,
+    "source_url": null,
+    "currency": "EUR",
+    "paid_at": null,
+    "created_at": "2022-10-27T07:16:10.048Z",
+    "updated_at": "2022-10-27T07:16:10.052Z",
+    "version": 1666854970,
+    "details": [
+      {
+        "id": "369764543580079645",
+        "administration_id": "281289699686381606",
+        "tax_rate_id": "369764543568545307",
+        "ledger_account_id": "369764543564351002",
+        "project_id": null,
+        "product_id": null,
+        "amount": "1 x",
+        "amount_decimal": "1.0",
+        "description": "Invoice detail description",
+        "price": "100.0",
+        "period": null,
+        "row_order": 0,
+        "total_price_excl_tax_with_discount": "100.0",
+        "total_price_excl_tax_with_discount_base": "100.0",
+        "tax_report_reference": [
+
+        ],
+        "mandatory_tax_text": null,
+        "created_at": "2022-10-27T07:16:10.050Z",
+        "updated_at": "2022-10-27T07:16:10.050Z"
+      }
+    ],
+    "payments": [
+
+    ],
+    "total_paid": "0.0",
+    "total_unpaid": "0.0",
+    "total_unpaid_base": "0.0",
+    "prices_are_incl_tax": false,
+    "total_price_excl_tax": "0.0",
+    "total_price_excl_tax_base": "0.0",
+    "total_price_incl_tax": "0.0",
+    "total_price_incl_tax_base": "0.0",
+    "marked_dubious_on": null,
+    "marked_uncollectible_on": null,
+    "notes": [
+
+    ],
+    "attachments": [
+
+    ],
+    "events": [
+
+    ],
+    "tax_totals": [
+      {
+        "tax_rate_id": "369764543568545307",
+        "taxable_amount": "100.0",
+        "taxable_amount_base": "100.0",
+        "tax_amount": "21.0",
+        "tax_amount_base": "21.0"
+      }
+    ]
+  },
+  {
+    "id": "369764543548622358",
+    "administration_id": "281289699686381606",
+    "contact_id": "369764543527650835",
+    "contact": {
+      "id": "369764543527650835",
+      "administration_id": "281289699686381606",
+      "company_name": "Relation 2",
+      "firstname": null,
+      "lastname": null,
+      "address1": null,
+      "address2": null,
+      "zipcode": null,
+      "city": null,
+      "country": "NL",
+      "phone": null,
+      "delivery_method": "Email",
+      "customer_id": "f05b55682e61a612692b79739c83318a3e66cae09232a65eceb4322a4a020ede",
+      "tax_number": null,
+      "chamber_of_commerce": null,
+      "bank_account": null,
+      "attention": null,
+      "email": null,
+      "email_ubl": false,
+      "send_invoices_to_attention": null,
+      "send_invoices_to_email": null,
+      "send_estimates_to_attention": null,
+      "send_estimates_to_email": null,
+      "sepa_active": false,
+      "sepa_iban": null,
+      "sepa_iban_account_name": null,
+      "sepa_bic": null,
+      "sepa_mandate_id": null,
+      "sepa_mandate_date": null,
+      "sepa_sequence_type": "RCUR",
+      "credit_card_number": null,
+      "credit_card_reference": null,
+      "credit_card_type": null,
+      "tax_number_validated_at": null,
+      "tax_number_valid": null,
+      "invoice_workflow_id": null,
+      "estimate_workflow_id": null,
+      "si_identifier": null,
+      "si_identifier_type": null,
+      "moneybird_payments_mandate": false,
+      "created_at": "2022-10-27T07:16:09.999Z",
+      "updated_at": "2022-10-27T07:16:09.999Z",
+      "version": 1666854969,
+      "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/f58b0d35c1f6ad914c11ee1e42ab4b19412722e3200080cdcd316bfdecf7f625/all",
+      "notes": [
+
+      ],
+      "custom_fields": [
+
+      ],
+      "contact_people": [
+
+      ]
+    },
+    "date": "2022-10-27",
+    "state": "open",
+    "due_date": null,
+    "reference": "Invoice 2",
+    "entry_number": 102,
+    "origin": null,
+    "source": null,
+    "source_url": null,
+    "currency": "EUR",
+    "paid_at": null,
+    "created_at": "2022-10-27T07:16:10.020Z",
+    "updated_at": "2022-10-27T07:16:10.024Z",
+    "version": 1666854970,
+    "details": [
+      {
+        "id": "369764543550719511",
+        "administration_id": "281289699686381606",
+        "tax_rate_id": "369764543538136597",
+        "ledger_account_id": "369764543533942292",
+        "project_id": null,
+        "product_id": null,
+        "amount": "1 x",
+        "amount_decimal": "1.0",
+        "description": "Invoice detail description",
+        "price": "100.0",
+        "period": null,
+        "row_order": 0,
+        "total_price_excl_tax_with_discount": "100.0",
+        "total_price_excl_tax_with_discount_base": "100.0",
+        "tax_report_reference": [
+
+        ],
+        "mandatory_tax_text": null,
+        "created_at": "2022-10-27T07:16:10.022Z",
+        "updated_at": "2022-10-27T07:16:10.022Z"
+      }
+    ],
+    "payments": [
+
+    ],
+    "total_paid": "0.0",
+    "total_unpaid": "0.0",
+    "total_unpaid_base": "0.0",
+    "prices_are_incl_tax": false,
+    "total_price_excl_tax": "0.0",
+    "total_price_excl_tax_base": "0.0",
+    "total_price_incl_tax": "0.0",
+    "total_price_incl_tax_base": "0.0",
+    "marked_dubious_on": null,
+    "marked_uncollectible_on": null,
+    "notes": [
+
+    ],
+    "attachments": [
+
+    ],
+    "events": [
+
+    ],
+    "tax_totals": [
+      {
+        "tax_rate_id": "369764543538136597",
+        "taxable_amount": "100.0",
+        "taxable_amount_base": "100.0",
+        "tax_amount": "21.0",
+        "tax_amount_base": "21.0"
+      }
+    ]
+  }
+]

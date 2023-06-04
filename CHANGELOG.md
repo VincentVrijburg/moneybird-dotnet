@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.9.0 | 2022-06-04
+* Add support for `Tax rates` endpoint.
+* Add support for `Ledger account` endpoint.
+* Add support for `Sales invoices endpoint` endpoint (limited operations).
+* Add support for `External sales invoices` endpoint (limited operations).
+* Change names (classes, enums, interfaces) and their namespaces.
+
 ## 0.8.1 | 2022-02-22
 * Fix race condition for configurations.
 * Add public constructor with optional argument for HttpClient.

@@ -1,0 +1,15 @@
+{
+  "id": "387348630739093112",
+  "administration_id": "281289699686381606",
+  "name": "Test ledger account",
+  "account_type": "expenses",
+  "account_id": "2182",
+  "parent_id": null,
+  "created_at": "2023-05-09T09:27:42.351Z",
+  "updated_at": "2023-05-09T09:27:42.351Z",
+  "allowed_document_types": [
+    "purchase_invoice",
+    "financial_mutation",
+    "general_journal_document"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "387348630529377910",
+  "administration_id": "281289699686381606",
+  "name": "Grootboekrekening dbc6ee7870c255595987",
+  "account_type": "revenue",
+  "account_id": null,
+  "parent_id": null,
+  "created_at": "2023-05-09T09:27:42.151Z",
+  "updated_at": "2023-05-09T09:27:42.151Z",
+  "allowed_document_types": [
+    "sales_invoice",
+    "financial_mutation",
+    "general_journal_document"
+  ]
+}

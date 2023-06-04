@@ -1,0 +1,38 @@
+[
+  {
+    "id": "370130885195859769",
+    "administration_id": "281289699686381606",
+    "name": "21% btw",
+    "percentage": "21.0",
+    "tax_rate_type": "sales_invoice",
+    "show_tax": true,
+    "active": true,
+    "country": null,
+    "created_at": "2022-10-31T08:19:00.638Z",
+    "updated_at": "2022-10-31T08:19:00.638Z"
+  },
+  {
+    "id": "370130885200054074",
+    "administration_id": "281289699686381606",
+    "name": "9% btw",
+    "percentage": "9.0",
+    "tax_rate_type": "sales_invoice",
+    "show_tax": true,
+    "active": true,
+    "country": null,
+    "created_at": "2022-10-31T08:19:00.642Z",
+    "updated_at": "2022-10-31T08:19:00.642Z"
+  },
+  {
+    "id": "370130885203199803",
+    "administration_id": "281289699686381606",
+    "name": "0% btw",
+    "percentage": "0.0",
+    "tax_rate_type": "sales_invoice",
+    "show_tax": true,
+    "active": true,
+    "country": null,
+    "created_at": "2022-10-31T08:19:00.645Z",
+    "updated_at": "2022-10-31T08:19:00.645Z"
+  }
+]

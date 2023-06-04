@@ -38,11 +38,12 @@ namespace Moneybird.Net.Tests.Endpoints.DocumentStyles
             var documentStyleList = JsonSerializer.Deserialize<List<DocumentStyle>>(documentStyleListJson, _config.SerializerOptions);
             Assert.NotNull(documentStyleList);
 
-            var actualDocumentStyleList = await _documentStyleEndpoint.GetDocumentStylesAsync(AdministrationId, AccessToken);
+            var actualDocumentStyleList = await _documentStyleEndpoint.GetAsync(AdministrationId, AccessToken);
             Assert.NotNull(actualDocumentStyleList);
-            
-            Assert.Equal(documentStyleList.Count, actualDocumentStyleList.Count);
-            foreach (var actualDocumentStyle in actualDocumentStyleList)
+
+            var actualDocumentStyles = actualDocumentStyleList.ToList();
+            Assert.Equal(documentStyleList.Count, actualDocumentStyles.Count);
+            foreach (var actualDocumentStyle in actualDocumentStyles)
             {
                 var documentStyle = documentStyleList.FirstOrDefault(a => a.Id == actualDocumentStyle.Id);
                 Assert.NotNull(documentStyle);

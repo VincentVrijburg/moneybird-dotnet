@@ -1,0 +1,15 @@
+{
+  "id": "387348630924691066",
+  "administration_id": "281289699686381606",
+  "name": "New name",
+  "account_type": "revenue",
+  "account_id": null,
+  "parent_id": null,
+  "created_at": "2023-05-09T09:27:42.527Z",
+  "updated_at": "2023-05-09T09:27:42.590Z",
+  "allowed_document_types": [
+    "sales_invoice",
+    "financial_mutation",
+    "general_journal_document"
+  ]
+}

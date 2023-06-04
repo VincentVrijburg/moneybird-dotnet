@@ -37,11 +37,12 @@ public class UserEndpointTest : CommonTestBase
         var userList = JsonSerializer.Deserialize<List<User>>(userListJson, _config.SerializerOptions);
         Assert.NotNull(userList);
 
-        var actualUserList = await _userEndpoint.GetUsersAsync(AdministrationId, AccessToken);
+        var actualUserList = await _userEndpoint.GetAsync(AdministrationId, AccessToken);
         Assert.NotNull(actualUserList);
-            
-        Assert.Equal(userList.Count, actualUserList.Count);
-        foreach (var actualUser in actualUserList)
+
+        var actualUsers = actualUserList.ToList();
+        Assert.Equal(userList.Count, actualUsers.Count);
+        foreach (var actualUser in actualUsers)
         {
             var user = userList.FirstOrDefault(w => w.Id == actualUser.Id);
             Assert.NotNull(user);
