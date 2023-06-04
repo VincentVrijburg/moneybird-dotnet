@@ -32,7 +32,7 @@ namespace Moneybird.Net.Endpoints.TaxRates
             return JsonSerializer.Deserialize<IEnumerable<TaxRate>>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<List<TaxRate>> GetTaxRatesAsync(string administrationId, string accessToken, TaxRateFilterOptions options)
+        public async Task<IEnumerable<TaxRate>> GetAsync(string administrationId, string accessToken, TaxRateFilterOptions options)
         {
             List<string> paramValues = null;
                         
@@ -47,7 +47,7 @@ namespace Moneybird.Net.Endpoints.TaxRates
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken, paramValues)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<List<TaxRate>>(responseJson, _config.SerializerOptions);
+            return JsonSerializer.Deserialize<IEnumerable<TaxRate>>(responseJson, _config.SerializerOptions);
         }
     }
 }

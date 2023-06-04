@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+using Moneybird.Net.Endpoints.Abstractions.Options;
 using Moneybird.Net.Entities.TaxRates;
 
 namespace Moneybird.Net.Endpoints.TaxRates.Models
 {
-    public class TaxRateFilterOptions
+    public class TaxRateFilterOptions : IMoneybirdFilterOptions
     {
         public string Name { get; set; }
         

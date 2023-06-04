@@ -70,8 +70,10 @@ public class TaxRateEndpointTest : CommonTestBase
             ShowTax = true
         };
 
-        var actualTaxRateList = await _taxRateEndpoint.GetTaxRatesAsync(AdministrationId, AccessToken, filterOptions);
-        Assert.NotNull(actualTaxRateList);
+        var actualTaxRates = await _taxRateEndpoint.GetAsync(AdministrationId, AccessToken, filterOptions);
+        Assert.NotNull(actualTaxRates);
+        
+        var actualTaxRateList = actualTaxRates.ToList();
         Assert.Equal(taxRates.Count, actualTaxRateList.Count);
         
         foreach (var actualTaxRate in actualTaxRateList)
