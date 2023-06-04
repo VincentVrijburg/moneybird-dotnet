@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Moneybird.Net.Endpoints.Abstractions.Common;
 using Moneybird.Net.Endpoints.Contacts.Models;
 using Moneybird.Net.Entities.Contacts;
 

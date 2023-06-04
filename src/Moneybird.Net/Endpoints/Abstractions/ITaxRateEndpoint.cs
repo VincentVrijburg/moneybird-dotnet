@@ -1,7 +1,5 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using Moneybird.Net.Endpoints.Abstractions.Common;
 using Moneybird.Net.Entities.TaxRates;
-using Moneybird.Net.Entities.Users;
 
 namespace Moneybird.Net.Endpoints.Abstractions
 {

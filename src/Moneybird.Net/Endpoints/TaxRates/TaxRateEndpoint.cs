@@ -3,7 +3,6 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Moneybird.Net.Endpoints.Abstractions;
 using Moneybird.Net.Entities.TaxRates;
-using Moneybird.Net.Entities.Users;
 using Moneybird.Net.Http;
 
 namespace Moneybird.Net.Endpoints.TaxRates

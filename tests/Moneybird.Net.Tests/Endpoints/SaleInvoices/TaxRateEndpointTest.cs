@@ -1,12 +1,9 @@
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text.Json;
 using FluentAssertions;
 using Moneybird.Net.Endpoints.SaleInvoices;
-using Moneybird.Net.Endpoints.TaxRates;
 using Moneybird.Net.Entities.SaleInvoices;
-using Moneybird.Net.Entities.TaxRates;
 using Moneybird.Net.Http;
 using Moq;
 using Xunit;

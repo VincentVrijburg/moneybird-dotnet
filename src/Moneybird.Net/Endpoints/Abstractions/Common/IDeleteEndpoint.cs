@@ -1,7 +1,6 @@
 using System.Threading.Tasks;
-using Moneybird.Net.Entities;
 
-namespace Moneybird.Net.Endpoints.Abstractions
+namespace Moneybird.Net.Endpoints.Abstractions.Common
 {
     public interface IDeleteEndpoint
     {

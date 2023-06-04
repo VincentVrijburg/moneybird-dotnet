@@ -6,6 +6,7 @@ using Moneybird.Net.Endpoints.Administrations;
 using Moneybird.Net.Endpoints.Contacts;
 using Moneybird.Net.Endpoints.CustomFields;
 using Moneybird.Net.Endpoints.DocumentStyles;
+using Moneybird.Net.Endpoints.ExternalSaleInvoices;
 using Moneybird.Net.Endpoints.LegderAccounts;
 using Moneybird.Net.Endpoints.Payments;
 using Moneybird.Net.Endpoints.SaleInvoices;
