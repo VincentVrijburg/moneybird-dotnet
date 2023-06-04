@@ -20,14 +20,14 @@ namespace Moneybird.Net.Endpoints.Users
             _config = config;
         }
         
-        public async Task<List<User>> GetUsersAsync(string administrationId, string accessToken)
+        public async Task<IEnumerable<User>> GetAsync(string administrationId, string accessToken)
         {
             var relativeUrl = string.Format(UsersUri, administrationId);
             var responseJson = await _requester
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<List<User>>(responseJson, _config.SerializerOptions);
+            return JsonSerializer.Deserialize<IEnumerable<User>>(responseJson, _config.SerializerOptions);
         }
     }
 }

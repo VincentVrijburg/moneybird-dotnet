@@ -20,14 +20,14 @@ namespace Moneybird.Net.Endpoints.Workflows
             _config = config;
         }
         
-        public async Task<List<Workflow>> GetWorkflowsAsync(string administrationId, string accessToken)
+        public async Task<IEnumerable<Workflow>> GetAsync(string administrationId, string accessToken)
         {
             var relativeUrl = string.Format(WorkflowsUri, administrationId);
             var responseJson = await _requester
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<List<Workflow>>(responseJson, _config.SerializerOptions);
+            return JsonSerializer.Deserialize<IEnumerable<Workflow>>(responseJson, _config.SerializerOptions);
         }
     }
 }

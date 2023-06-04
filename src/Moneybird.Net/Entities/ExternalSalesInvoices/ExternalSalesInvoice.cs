@@ -7,7 +7,7 @@ using Moneybird.Net.Entities.SalesInvoices;
 
 namespace Moneybird.Net.Entities.ExternalSalesInvoices
 {
-    public class ExternalSalesInvoice
+    public class ExternalSalesInvoice : IMoneybirdEntity
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

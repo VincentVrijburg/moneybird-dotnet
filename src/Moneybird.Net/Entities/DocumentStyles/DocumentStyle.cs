@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.DocumentStyles
 {
-    public class DocumentStyle
+    public class DocumentStyle : IMoneybirdEntity
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

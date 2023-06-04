@@ -38,10 +38,12 @@ public class TaxRateEndpointTest : CommonTestBase
         var taxRates = JsonSerializer.Deserialize<List<TaxRate>>(taxRatesList, _config.SerializerOptions);
         Assert.NotNull(taxRates);
 
-        var actualTaxRateList = await _taxRateEndpoint.GetTaxRatesAsync(AdministrationId, AccessToken);
-        Assert.NotNull(actualTaxRateList);
-
+        var actualTaxRates = await _taxRateEndpoint.GetAsync(AdministrationId, AccessToken);
+        Assert.NotNull(actualTaxRates);
+        
+        var actualTaxRateList = actualTaxRates.ToList();
         Assert.Equal(taxRates.Count, actualTaxRateList.Count);
+        
         foreach (var actualTaxRate in actualTaxRateList)
         {
             var user = taxRates.FirstOrDefault(w => w.Id == actualTaxRate.Id);
@@ -70,8 +72,8 @@ public class TaxRateEndpointTest : CommonTestBase
 
         var actualTaxRateList = await _taxRateEndpoint.GetTaxRatesAsync(AdministrationId, AccessToken, filterOptions);
         Assert.NotNull(actualTaxRateList);
-
         Assert.Equal(taxRates.Count, actualTaxRateList.Count);
+        
         foreach (var actualTaxRate in actualTaxRateList)
         {
             var user = taxRates.FirstOrDefault(w => w.Id == actualTaxRate.Id);

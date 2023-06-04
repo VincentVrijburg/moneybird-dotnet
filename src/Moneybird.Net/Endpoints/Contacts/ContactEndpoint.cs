@@ -30,7 +30,7 @@ namespace Moneybird.Net.Endpoints.Contacts
             _config = config;
         }
         
-        public async Task<IEnumerable<Contact>> GetContactsAsync(string administrationId, string accessToken)
+        public async Task<IEnumerable<Contact>> GetAsync(string administrationId, string accessToken)
         {
             var relativeUrl = string.Format(ContactsUri, administrationId);
             var responseJson = await _requester
@@ -97,7 +97,7 @@ namespace Moneybird.Net.Endpoints.Contacts
             return JsonSerializer.Deserialize<IEnumerable<Contact>>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<Contact> GetContactByIdAsync(string administrationId, string contactId, string accessToken)
+        public async Task<Contact> GetByIdAsync(string administrationId, string contactId, string accessToken)
         {
             var relativeUrl = string.Format(ContactsIdUri, administrationId, contactId);
             var responseJson = await _requester
@@ -139,7 +139,7 @@ namespace Moneybird.Net.Endpoints.Contacts
             return JsonSerializer.Deserialize<Contact>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<bool> DeleteContactByIdAsync(string administrationId, string contactId, string accessToken)
+        public async Task<bool> DeleteByIdAsync(string administrationId, string contactId, string accessToken)
         {
             var relativeUrl = string.Format(ContactsIdUri, administrationId, contactId);
             var response = await _requester

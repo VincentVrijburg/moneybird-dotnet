@@ -22,17 +22,17 @@ namespace Moneybird.Net.Endpoints.LegderAccounts
             _config = config;
         }
 
-        public async Task<List<LedgerAccount>> GetLedgerAccountsAsync(string administrationId, string accessToken)
+        public async Task<IEnumerable<LedgerAccount>> GetAsync(string administrationId, string accessToken)
         {
             var relativeUrl = string.Format(LedgerAccountsUri, administrationId);
             var responseJson = await _requester
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<List<LedgerAccount>>(responseJson, _config.SerializerOptions);
+            return JsonSerializer.Deserialize<IEnumerable<LedgerAccount>>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<LedgerAccount> GetLedgerAccountByIdAsync(string administrationId, string ledgerAccountId, string accessToken)
+        public async Task<LedgerAccount> GetByIdAsync(string administrationId, string ledgerAccountId, string accessToken)
         {
             var relativeUrl = string.Format(LedgerAccountsIdUri, administrationId, ledgerAccountId);
             var responseJson = await _requester
@@ -64,7 +64,7 @@ namespace Moneybird.Net.Endpoints.LegderAccounts
             return JsonSerializer.Deserialize<LedgerAccount>(responseJson, _config.SerializerOptions);
         }
         
-        public async Task<bool> DeleteLedgerAccountByIdAsync(string administrationId, string ledgerAccountId, string accessToken)
+        public async Task<bool> DeleteByIdAsync(string administrationId, string ledgerAccountId, string accessToken)
         {
             var relativeUrl = string.Format(LedgerAccountsIdUri, administrationId, ledgerAccountId);
             var response = await _requester

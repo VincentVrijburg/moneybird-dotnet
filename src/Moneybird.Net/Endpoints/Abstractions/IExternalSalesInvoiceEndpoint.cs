@@ -1,21 +1,16 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using Moneybird.Net.Endpoints.Abstractions.Common;
 using Moneybird.Net.Endpoints.ExternalSalesInvoices.Models;
 using Moneybird.Net.Entities.ExternalSalesInvoices;
 
 namespace Moneybird.Net.Endpoints.Abstractions
 {
-    public interface IExternalSalesInvoiceEndpoint
+    public interface IExternalSalesInvoiceEndpoint :
+        IReadEndpoint<ExternalSalesInvoice>,
+        IGetEndpoint<ExternalSalesInvoice>
     {
-        /// <summary>
-        /// Get list of all the external sales invoices.
-        /// </summary>
-        /// <param name="administrationId">The administration id.</param>
-        /// <param name="accessToken">The access token.</param>
-        /// <returns></returns>
-        Task<List<ExternalSalesInvoice>> GetSalesInvoicesAsync(string administrationId, string accessToken);
-        
         /// <summary>
         /// Get list of all the external sales invoices with filter options.
         /// </summary>
@@ -24,16 +19,7 @@ namespace Moneybird.Net.Endpoints.Abstractions
         /// <param name="options">The filter options.</param>
         /// <returns></returns>
         Task<List<ExternalSalesInvoice>> GetSalesInvoicesAsync(string administrationId, string accessToken, ExternalSalesInvoiceFilterOptions options);
-        
-        /// <summary>
-        /// Get an external sales invoice by id and access token.
-        /// </summary>
-        /// <param name="administrationId"></param>
-        /// <param name="salesInvoiceId"></param>
-        /// <param name="accessToken"></param>
-        /// <returns></returns>
-        Task<ExternalSalesInvoice> GetSalesInvoiceByIdAsync(string administrationId, string salesInvoiceId, string accessToken);
-        
+
         /// <summary>
         /// Create a new external sale invoice.
         /// </summary>

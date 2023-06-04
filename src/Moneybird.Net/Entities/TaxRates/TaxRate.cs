@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.TaxRates
 {
-    public class TaxRate
+    public class TaxRate : IMoneybirdEntity
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

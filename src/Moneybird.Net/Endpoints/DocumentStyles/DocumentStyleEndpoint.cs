@@ -20,14 +20,14 @@ namespace Moneybird.Net.Endpoints.DocumentStyles
             _config = config;
         }
         
-        public async Task<List<DocumentStyle>> GetDocumentStylesAsync(string administrationId, string accessToken)
+        public async Task<IEnumerable<DocumentStyle>> GetAsync(string administrationId, string accessToken)
         {
             var relativeUrl = string.Format(DocumentStylesUri, administrationId);
             var responseJson = await _requester
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<List<DocumentStyle>>(responseJson, _config.SerializerOptions);
+            return JsonSerializer.Deserialize<IEnumerable<DocumentStyle>>(responseJson, _config.SerializerOptions);
         }
     }
 }

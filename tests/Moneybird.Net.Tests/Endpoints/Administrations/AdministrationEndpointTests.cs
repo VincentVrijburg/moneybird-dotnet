@@ -38,11 +38,12 @@ namespace Moneybird.Net.Tests.Endpoints.Administrations
             var administrationList = JsonSerializer.Deserialize<List<Administration>>(administrationListJson, _config.SerializerOptions);
             Assert.NotNull(administrationList);
 
-            var actualAdministrationList = await _administrationEndpoint.GetAdministrationsAsync(AccessToken);
+            var actualAdministrationList = await _administrationEndpoint.GetAsync(AccessToken);
             Assert.NotNull(actualAdministrationList);
-            
-            Assert.Equal(administrationList.Count, actualAdministrationList.Count);
-            foreach (var actualAdministration in actualAdministrationList)
+
+            var actualAdministrations = actualAdministrationList.ToList();
+            Assert.Equal(administrationList.Count, actualAdministrations.Count);
+            foreach (var actualAdministration in actualAdministrations)
             {
                 var administration = administrationList.FirstOrDefault(a => a.Id == actualAdministration.Id);
                 Assert.NotNull(administration);

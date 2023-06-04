@@ -46,7 +46,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             var contactList = JsonSerializer.Deserialize<List<Contact>>(contactListJson, _config.SerializerOptions);
             Assert.NotNull(contactList);
 
-            var actualContacts = await _contactEndpoint.GetContactsAsync(AdministrationId, AccessToken);
+            var actualContacts = await _contactEndpoint.GetAsync(AdministrationId, AccessToken);
             Assert.NotNull(actualContacts);
 
             var actualContactList = actualContacts.ToList();
@@ -194,7 +194,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             var contact = JsonSerializer.Deserialize<Contact>(contactJson, _config.SerializerOptions);
             Assert.NotNull(contact);
 
-            var actualContact = await _contactEndpoint.GetContactByIdAsync(AdministrationId, ContactId, AccessToken);
+            var actualContact = await _contactEndpoint.GetByIdAsync(AdministrationId, ContactId, AccessToken);
             Assert.NotNull(actualContact);
 
             contact.Should().BeEquivalentTo(actualContact);
@@ -340,7 +340,7 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
             _requester.Setup(moq => moq.CreateDeleteRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
                 It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(true);
             
-            var actualContact = await _contactEndpoint.DeleteContactByIdAsync(AdministrationId, ContactId, AccessToken);
+            var actualContact = await _contactEndpoint.DeleteByIdAsync(AdministrationId, ContactId, AccessToken);
             Assert.True(actualContact);
         }
         

@@ -42,9 +42,10 @@ public class LedgerAccountEndpointTest : LedgerAccountTestBase
         var expectedLedgerAccountList = JsonSerializer.Deserialize<List<LedgerAccount>>(ledgerAccountListJson, _config.SerializerOptions);
         Assert.NotNull(expectedLedgerAccountList);
 
-        var actualLedgerAccountList = await _ledgerAccountEndpoint.GetLedgerAccountsAsync(AdministrationId, AccessToken);
-        Assert.NotNull(actualLedgerAccountList);
-
+        var actualLedgerAccounts = await _ledgerAccountEndpoint.GetAsync(AdministrationId, AccessToken);
+        Assert.NotNull(actualLedgerAccounts);
+        
+        var actualLedgerAccountList = actualLedgerAccounts.ToList();
         Assert.Equal(expectedLedgerAccountList.Count, actualLedgerAccountList.Count);
         foreach (var actualLedgerAccount in actualLedgerAccountList)
         {
@@ -66,7 +67,7 @@ public class LedgerAccountEndpointTest : LedgerAccountTestBase
         var expectedLedgerAccount = JsonSerializer.Deserialize<LedgerAccount>(ledgerAccountJson, _config.SerializerOptions);
         Assert.NotNull(expectedLedgerAccount);
 
-        var actualLedgerAccount = await _ledgerAccountEndpoint.GetLedgerAccountByIdAsync(AdministrationId, LedgerAccountId, AccessToken);
+        var actualLedgerAccount = await _ledgerAccountEndpoint.GetByIdAsync(AdministrationId, LedgerAccountId, AccessToken);
         Assert.NotNull(actualLedgerAccount);
 
         actualLedgerAccount.Should().BeEquivalentTo(expectedLedgerAccount);
@@ -150,7 +151,7 @@ public class LedgerAccountEndpointTest : LedgerAccountTestBase
         _requester.Setup(moq => moq.CreateDeleteRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
             It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(true);
             
-        var response = await _ledgerAccountEndpoint.DeleteLedgerAccountByIdAsync(AdministrationId, LedgerAccountId, AccessToken);
+        var response = await _ledgerAccountEndpoint.DeleteByIdAsync(AdministrationId, LedgerAccountId, AccessToken);
         Assert.True(response);
     }
 }

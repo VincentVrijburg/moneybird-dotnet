@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.CustomFields
 {
-    public class CustomField
+    public class CustomField : IMoneybirdEntity
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }
