@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using Moneybird.Net.Entities.SaleInvoices;
 
 namespace Moneybird.Net.Entities.ExternalSaleInvoices
 {

@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.Administrations
 {
-    public class Administration
+    public class Administration : IMoneybirdEntity
     {
         /// <summary>
         /// Gets or sets the id value.

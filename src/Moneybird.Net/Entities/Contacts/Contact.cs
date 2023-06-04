@@ -5,7 +5,7 @@ using Moneybird.Net.Misc;
 
 namespace Moneybird.Net.Entities.Contacts
 {
-    public class Contact
+    public class Contact : IMoneybirdEntity
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

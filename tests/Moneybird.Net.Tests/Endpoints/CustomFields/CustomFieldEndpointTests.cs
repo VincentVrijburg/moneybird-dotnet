@@ -38,11 +38,12 @@ namespace Moneybird.Net.Tests.Endpoints.CustomFields
             var customFieldList = JsonSerializer.Deserialize<List<CustomField>>(customFieldListJson, _config.SerializerOptions);
             Assert.NotNull(customFieldList);
 
-            var actualCustomFieldList = await _customFieldEndpoint.GetCustomFieldsAsync(AdministrationId, AccessToken);
+            var actualCustomFieldList = await _customFieldEndpoint.GetAsync(AdministrationId, AccessToken);
             Assert.NotNull(actualCustomFieldList);
-            
-            Assert.Equal(customFieldList.Count, actualCustomFieldList.Count);
-            foreach (var actualCustomField in actualCustomFieldList)
+
+            var actualCustomFields = actualCustomFieldList.ToList();
+            Assert.Equal(customFieldList.Count, actualCustomFields.Count);
+            foreach (var actualCustomField in actualCustomFields)
             {
                 var customField = customFieldList.FirstOrDefault(a => a.Id == actualCustomField.Id);
                 Assert.NotNull(customField);

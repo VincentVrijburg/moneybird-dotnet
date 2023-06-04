@@ -5,7 +5,7 @@ using Moneybird.Net.Endpoints.Abstractions;
 using Moneybird.Net.Entities.ExternalSaleInvoices;
 using Moneybird.Net.Http;
 
-namespace Moneybird.Net.Endpoints.SaleInvoices
+namespace Moneybird.Net.Endpoints.ExternalSaleInvoices
 {
     public class ExternalSaleInvoiceEndpoint : IExternalSaleInvoiceEndpoint
     {

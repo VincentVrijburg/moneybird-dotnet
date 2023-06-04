@@ -20,13 +20,13 @@ namespace Moneybird.Net.Endpoints.Administrations
             _config = config;
         }
         
-        public async Task<List<Administration>> GetAdministrationsAsync(string accessToken)
+        public async Task<IEnumerable<Administration>> GetAsync(string accessToken)
         {
             var responseJson = await _requester
                 .CreateGetRequestAsync(_config.ApiUri, AdministrationsUri, accessToken)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<List<Administration>>(responseJson);
+            return JsonSerializer.Deserialize<IEnumerable<Administration>>(responseJson);
         }
     }
 }

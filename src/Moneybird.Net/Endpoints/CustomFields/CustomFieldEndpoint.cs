@@ -20,14 +20,14 @@ namespace Moneybird.Net.Endpoints.CustomFields
             _config = config;
         }
         
-        public async Task<List<CustomField>> GetCustomFieldsAsync(string administrationId, string accessToken)
+        public async Task<IEnumerable<CustomField>> GetAsync(string administrationId, string accessToken)
         {
             var relativeUrl = string.Format(CustomFieldsUri, administrationId);
             var responseJson = await _requester
                 .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<List<CustomField>>(responseJson, _config.SerializerOptions);
+            return JsonSerializer.Deserialize<IEnumerable<CustomField>>(responseJson, _config.SerializerOptions);
         }
     }
 }

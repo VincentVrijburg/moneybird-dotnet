@@ -36,7 +36,7 @@ public class PaymentEndpointTest : PaymentTestBase
         var payment = JsonSerializer.Deserialize<Payment>(paymentJson, _config.SerializerOptions);
         Assert.NotNull(payment);
         
-        var actualPayment = await _paymentEndpoint.GetPaymentByIdAsync(AdministrationId, PaymentId, AccessToken);
+        var actualPayment = await _paymentEndpoint.GetByIdAsync(AdministrationId, PaymentId, AccessToken);
         Assert.NotNull(actualPayment);
         
         payment.Should().BeEquivalentTo(actualPayment);

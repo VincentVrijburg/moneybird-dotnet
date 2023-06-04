@@ -4,7 +4,7 @@ using Moneybird.Net.Misc;
 
 namespace Moneybird.Net.Entities.Users
 {
-    public class User
+    public class User : IMoneybirdEntity
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }
