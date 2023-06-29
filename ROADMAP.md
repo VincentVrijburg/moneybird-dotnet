@@ -27,20 +27,20 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [ ] Documents: Receipts
   - [ ] Documents: Typeless documents
   - [ ] Estimates
-  - [ ] External sales invoices
+  - [x] External sales invoices (limited)
   - [ ] Financial accounts
   - [ ] Financial mutations
   - [ ] Financial statements
   - [ ] Identities
   - [ ] Import mappings
-  - [ ] Ledger accounts
+  - [x] Ledger accounts
   - [x] Payments
   - [x] Products
   - [ ] Projects
   - [ ] Recurring sales invoices
-  - [ ] Sales invoices
+  - [x] Sales invoices (limited)
   - [ ] Subscriptions
-  - [ ] Tax rates
+  - [x] Tax rates
   - [ ] Time entries
   - [x] Users
   - [x] Verifications
