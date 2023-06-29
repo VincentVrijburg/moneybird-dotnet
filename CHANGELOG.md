@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.10.0 | 2022-06-04
+* Add support for `Products` endpoint.
+
 ## 0.9.0 | 2022-06-04
 * Add support for `Tax rates` endpoint.
 * Add support for `Ledger account` endpoint.
