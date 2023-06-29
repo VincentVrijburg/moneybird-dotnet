@@ -1,0 +1,15 @@
+{
+  "id": "369764571401946400",
+  "administration_id": "281289699686381606",
+  "description": "Test product description",
+  "title": "test product",
+  "identifier": "SKU1234",
+  "price": "14.95",
+  "currency": "EUR",
+  "frequency": 1,
+  "frequency_type": "year",
+  "tax_rate_id": "369764439469065326",
+  "ledger_account_id": "369764439364207706",
+  "created_at": "2022-10-27T07:16:36.582Z",
+  "updated_at": "2022-10-27T07:16:36.582Z"
+}
