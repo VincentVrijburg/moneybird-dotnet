@@ -9,6 +9,7 @@ using Moneybird.Net.Endpoints.DocumentStyles;
 using Moneybird.Net.Endpoints.ExternalSalesInvoices;
 using Moneybird.Net.Endpoints.LegderAccounts;
 using Moneybird.Net.Endpoints.Payments;
+using Moneybird.Net.Endpoints.Products;
 using Moneybird.Net.Endpoints.SalesInvoices;
 using Moneybird.Net.Endpoints.TaxRates;
 using Moneybird.Net.Endpoints.Users;
@@ -33,6 +34,7 @@ namespace Moneybird.Net
         public IExternalSalesInvoiceEndpoint ExternalSalesInvoice { get; }
         public ILedgerAccountEndpoint LedgerAccount { get; }
         public IPaymentEndpoint Payment { get; }
+        public IProductEndpoint Product { get; }
         public ISalesInvoiceEndpoint SalesInvoice { get; }
         public ITaxRateEndpoint TaxRate { get; }
         public IUserEndpoint User { get; }
@@ -72,6 +74,7 @@ namespace Moneybird.Net
             ExternalSalesInvoice = new ExternalSalesInvoiceEndpoint(Config, _requester);
             LedgerAccount = new LedgerAccountEndpoint(Config, _requester);
             Payment = new PaymentEndpoint(Config, _requester);
+            Product = new ProductEndpoint(Config, _requester);
             SalesInvoice = new SalesInvoiceEndpoint(Config, _requester);
             TaxRate = new TaxRateEndpoint(Config, _requester);
             User = new UserEndpoint(Config, _requester);
