@@ -1,0 +1,47 @@
+[
+  {
+    "id": "369764563219907806",
+    "administration_id": "281289699686381606",
+    "description": "Apple description",
+    "title": "Apple title",
+    "identifier": "SKU0000",
+    "price": "10.99",
+    "currency": "EUR",
+    "frequency": 1,
+    "frequency_type": "week",
+    "tax_rate_id": "369764439469065326",
+    "ledger_account_id": "369764439364207706",
+    "created_at": "2022-10-27T07:16:28.779Z",
+    "updated_at": "2022-10-27T07:16:28.779Z"
+  },
+  {
+    "id": "369764563195790556",
+    "administration_id": "281289699686381606",
+    "description": "My product description",
+    "title": "My product title",
+    "identifier": "SKU1234",
+    "price": "100.0",
+    "currency": "EUR",
+    "frequency": 2,
+    "frequency_type": "month",
+    "tax_rate_id": "369764439469065326",
+    "ledger_account_id": "369764439364207706",
+    "created_at": "2022-10-27T07:16:28.756Z",
+    "updated_at": "2022-10-27T07:16:28.756Z"
+  },
+  {
+    "id": "369764563237733600",
+    "administration_id": "281289699686381606",
+    "description": "Pie description",
+    "title": "Pie title",
+    "identifier": "SKU5678",
+    "price": "0.125",
+    "currency": "EUR",
+    "frequency": 3,
+    "frequency_type": "year",
+    "tax_rate_id": "369764439469065326",
+    "ledger_account_id": "369764439364207706",
+    "created_at": "2022-10-27T07:16:28.797Z",
+    "updated_at": "2022-10-27T07:16:28.797Z"
+  }
+]
