@@ -132,16 +132,11 @@ catch (MoneybirdException ex)
 
 ```
 
-#### Supported data classes
+#### Supported endpoints
 
-The following data classes are currently supported and accessible through the client:
+We're continuously working on expanding this library to include additional endpoints, giving you even more options and functionality.
 
-- Administration
-- Contact
-- CustomField
-- DocumentStyle
-- User
-- Workflow
+To see the full list of currently supported endpoints, and get a glimpse of what's coming next, head over to our [roadmap](ROADMAP.md).
 
 ## Roadmap
 See our [roadmap](ROADMAP.md) for an overview of what we are planning to work on and in what time frame.
