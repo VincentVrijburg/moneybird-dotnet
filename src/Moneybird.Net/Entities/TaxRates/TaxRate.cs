@@ -16,7 +16,7 @@ namespace Moneybird.Net.Entities.TaxRates
 
         [JsonPropertyName("percentage")]
         [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-        public double Percentage { get; set; }
+        public double? Percentage { get; set; }
 
         [JsonPropertyName("tax_rate_type")]
         public TaxRateType TaxRateType { get; set; }
