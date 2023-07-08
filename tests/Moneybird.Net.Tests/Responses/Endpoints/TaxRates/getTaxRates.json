@@ -34,5 +34,17 @@
     "country": null,
     "created_at": "2022-10-31T08:19:00.645Z",
     "updated_at": "2022-10-31T08:19:00.645Z"
+  },
+  {
+    "id": "370130885305104772",
+    "administration_id": "281289699686381606",
+    "name": "Geen btw",
+    "percentage": null,
+    "tax_rate_type": "sales_invoice",
+    "show_tax": false,
+    "active": true,
+    "country": null,
+    "created_at": "2023-04-10T14:59:44.219Z",
+    "updated_at": "2023-04-10T14:59:44.219Z"
   }
 ]

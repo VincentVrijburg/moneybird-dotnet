@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.10.1 | 2023-07-08
+* Fix deserialization for percentage in `TaxRate` entity.
+
 ## 0.10.0 | 2023-06-29
 * Add support for `Products` endpoint.
 
