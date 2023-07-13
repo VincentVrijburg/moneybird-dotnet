@@ -10,11 +10,10 @@ namespace Moneybird.Net
         /// </summary>
         public readonly HttpStatusCode HttpStatusCode;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MoneybirdException"/> class.
-        /// </summary>
-        /// <param name="message">The exception message.</param>
-        /// <param name="httpStatusCode">The HTTP status code.</param>
+        public MoneybirdException(string message) : base(message)
+        {
+        }
+        
         public MoneybirdException(string message, HttpStatusCode httpStatusCode) : base(message)
         {
             HttpStatusCode = httpStatusCode;
