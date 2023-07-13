@@ -29,6 +29,18 @@ public class EventUtilsTests : CommonTestBase
     }
     
     [Fact]
+    public void ParseEvent_NullJson_ThrowsException()
+    {
+        Assert.Throws<ArgumentNullException>(() => EventUtils.ParseEvent(null));
+    }
+    
+    [Fact]
+    public void ParseEvent_EmptyJson_ThrowsException()
+    {
+        Assert.Throws<ArgumentException>(() => EventUtils.ParseEvent(string.Empty));
+    }
+    
+    [Fact]
     public async void ConstructEvent_ValidJson_ReturnsEvent()
     {
         var eventJson = await File.ReadAllTextAsync(ContactCreatedEventResponsePath);
