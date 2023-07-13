@@ -18,15 +18,16 @@ namespace Moneybird.Net.Tests
             Assert.NotNull(moneybirdClient.Contact);
             Assert.NotNull(moneybirdClient.CustomField);
             Assert.NotNull(moneybirdClient.DocumentStyle);
+            Assert.NotNull(moneybirdClient.ExternalSalesInvoice);
+            Assert.NotNull(moneybirdClient.LedgerAccount);
             Assert.NotNull(moneybirdClient.Payment);
             Assert.NotNull(moneybirdClient.Product);
-            Assert.NotNull(moneybirdClient.User);
-            Assert.NotNull(moneybirdClient.Verification);
-            Assert.NotNull(moneybirdClient.Workflow);
             Assert.NotNull(moneybirdClient.SalesInvoice);
             Assert.NotNull(moneybirdClient.TaxRate);
-            Assert.NotNull(moneybirdClient.LedgerAccount);
-            Assert.NotNull(moneybirdClient.ExternalSalesInvoice);
+            Assert.NotNull(moneybirdClient.User);
+            Assert.NotNull(moneybirdClient.Verification);
+            Assert.NotNull(moneybirdClient.Webhook);
+            Assert.NotNull(moneybirdClient.Workflow);
         }
         
         [Fact]

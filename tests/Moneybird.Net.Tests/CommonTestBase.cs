@@ -13,5 +13,7 @@ namespace Moneybird.Net.Tests
         protected static string RedirectUriEndUser = "https://bird.example.com/oauthcallback";
 
         protected static string AdministrationId = "281289699686381606";
+        
+        protected static string SecretWebhookToken = "9AqXyhfFXcqcaGHRWQZMbxuM";
     }
 }

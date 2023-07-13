@@ -14,6 +14,7 @@ using Moneybird.Net.Endpoints.SalesInvoices;
 using Moneybird.Net.Endpoints.TaxRates;
 using Moneybird.Net.Endpoints.Users;
 using Moneybird.Net.Endpoints.Verifications;
+using Moneybird.Net.Endpoints.Webhooks;
 using Moneybird.Net.Endpoints.Workflows;
 using Moneybird.Net.Http;
 
@@ -39,8 +40,9 @@ namespace Moneybird.Net
         public ITaxRateEndpoint TaxRate { get; }
         public IUserEndpoint User { get; }
         public IVerificationEndpoint Verification { get; }
+        public IWebhookEndpoint Webhook { get; }
         public IWorkflowEndpoint Workflow { get; }
-
+        
         /// <summary>
         /// Get the instance of MoneybirdClient.
         /// </summary>
@@ -79,6 +81,7 @@ namespace Moneybird.Net
             TaxRate = new TaxRateEndpoint(Config, _requester);
             User = new UserEndpoint(Config, _requester);
             Verification = new VerificationEndpoint(Config, _requester);
+            Webhook = new WebhookEndpoint(Config, _requester);
             Workflow = new WorkflowEndpoint(Config, _requester);
         }
 

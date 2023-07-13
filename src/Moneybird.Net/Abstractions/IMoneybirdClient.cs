@@ -66,6 +66,11 @@ namespace Moneybird.Net.Abstractions
         IVerificationEndpoint Verification { get; }
         
         /// <summary>
+        /// The Webhook Endpoint.
+        /// </summary>
+        IWebhookEndpoint Webhook { get; }
+        
+        /// <summary>
         /// The Workflow Endpoint.
         /// </summary>
         IWorkflowEndpoint Workflow { get; }
