@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.11.0 | 2023-07-13
+* Add support for `Webhooks` endpoint.
+
 ## 0.10.1 | 2023-07-08
 * Fix deserialization for percentage in `TaxRate` entity.
 
