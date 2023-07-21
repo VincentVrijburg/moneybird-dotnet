@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: "nuget"
+    directory: "src/Moneybird.Net"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+  - package-ecosystem: "nuget"
+    directory: "tests/Moneybird.Net.Tests"
+    schedule:
+      interval: "weekly"
+      day: "friday"
