@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.12.0 | 2023-09-17
+* Add support for `Projects` endpoint.
+
 ## 0.11.0 | 2023-07-13
 * Add support for `Webhooks` endpoint.
 

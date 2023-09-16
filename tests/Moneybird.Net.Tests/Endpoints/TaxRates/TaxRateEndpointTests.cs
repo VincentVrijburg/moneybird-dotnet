@@ -12,7 +12,7 @@ using Xunit;
 
 namespace Moneybird.Net.Tests.Endpoints.TaxRates;
 
-public class TaxRateEndpointTest : CommonTestBase
+public class TaxRateEndpointTests : CommonTestBase
 {
     private static Mock<IRequester> _requester;
     private readonly MoneybirdConfig _config;
@@ -20,7 +20,7 @@ public class TaxRateEndpointTest : CommonTestBase
     
     private const string ResponsePath = "./Responses/Endpoints/TaxRates/getTaxRates.json";
 
-    public TaxRateEndpointTest()
+    public TaxRateEndpointTests()
     {
         _requester = new Mock<IRequester>();
         _config = new MoneybirdConfig();

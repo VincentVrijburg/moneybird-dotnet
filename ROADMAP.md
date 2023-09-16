@@ -36,7 +36,7 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [x] Ledger accounts
   - [x] Payments
   - [x] Products
-  - [ ] Projects
+  - [x] Projects
   - [ ] Recurring sales invoices
   - [x] Sales invoices (limited)
   - [ ] Subscriptions

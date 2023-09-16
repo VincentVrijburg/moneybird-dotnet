@@ -38,7 +38,7 @@ namespace Moneybird.Net.Tests.Authentication.Utils
             var expectedUrlWithoutScope = $"client_id={ClientId}&redirect_uri={RedirectUriOutOfBand}&response_type=code";
             var actualUrlWithoutScope = StringUtils.GetRequestTokenString(ClientId, RedirectUriOutOfBand);
             
-            Assert.True(expectedUrlWithoutScope.Equals(actualUrlWithoutScope));
+            Assert.Equal(expectedUrlWithoutScope, actualUrlWithoutScope);
         }
         
         [Fact]
@@ -49,7 +49,7 @@ namespace Moneybird.Net.Tests.Authentication.Utils
             var expectedUrlWithScope = $"client_id={ClientId}&redirect_uri={RedirectUriOutOfBand}&response_type=code&scope={scopeString}";
             var actualUrlWithScope = StringUtils.GetRequestTokenString(ClientId, RedirectUriOutOfBand, scopeString);
             
-            Assert.True(expectedUrlWithScope.Equals(actualUrlWithScope));
+            Assert.Equal(expectedUrlWithScope, actualUrlWithScope);
         }
         
         [Fact]
@@ -58,7 +58,7 @@ namespace Moneybird.Net.Tests.Authentication.Utils
             var expectedTokenString = $"client_id={ClientId}&client_secret={ClientSecret}&code={RequestToken}&redirect_uri={RedirectUriOutOfBand}&grant_type=authorization_code";
             var actualTokenString = StringUtils.GetAccessTokenString(ClientId, ClientSecret, RequestToken, RedirectUriOutOfBand);
             
-            Assert.True(expectedTokenString.Equals(actualTokenString));
+            Assert.Equal(expectedTokenString, actualTokenString);
         }
         
         [Fact]
@@ -72,7 +72,7 @@ namespace Moneybird.Net.Tests.Authentication.Utils
             var expectedTokenString = $"client_id={ClientId}&client_secret={ClientSecret}&refresh_token={accessToken.RefreshToken}&grant_type=refresh_token";
             var actualTokenString = StringUtils.GetRefreshTokenString(ClientId, ClientSecret, accessToken.RefreshToken);
             
-            Assert.True(expectedTokenString.Equals(actualTokenString));
+            Assert.Equal(expectedTokenString, actualTokenString);
         }
     }
 }

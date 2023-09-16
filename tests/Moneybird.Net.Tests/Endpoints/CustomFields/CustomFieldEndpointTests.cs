@@ -12,7 +12,7 @@ using Xunit;
 
 namespace Moneybird.Net.Tests.Endpoints.CustomFields
 {
-    public class CustomFieldEndpointTest : CommonTestBase
+    public class CustomFieldEndpointTests : CommonTestBase
     {
         private static Mock<IRequester> _requester;
         private readonly MoneybirdConfig _config;
@@ -20,7 +20,7 @@ namespace Moneybird.Net.Tests.Endpoints.CustomFields
 
         private const string ResponsePath = "./Responses/Endpoints/CustomFields/getCustomFields.json";
 
-        public CustomFieldEndpointTest()
+        public CustomFieldEndpointTests()
         {  
             _requester = new Mock<IRequester>();
             _config = new MoneybirdConfig();

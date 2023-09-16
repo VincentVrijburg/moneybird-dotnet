@@ -7,7 +7,7 @@ using Xunit;
 
 namespace Moneybird.Net.Tests.Extensions;
 
-public class TaxRatesExtensionsTest
+public class TaxRatesExtensionsTests
 {
     [Fact]
     public void GetFilterString_FromTaxRateFilterOptions_NameOnly_Returns_CorrectString()
