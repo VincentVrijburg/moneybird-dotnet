@@ -14,7 +14,7 @@ using Xunit;
 
 namespace Moneybird.Net.Tests.Endpoints.Webhooks;
 
-public class WebhookEndpointTest : WebhookEndpointTestBase
+public class WebhookEndpointTests : WebhookEndpointTestBase
 {
     private static Mock<IRequester> _requester;
     private readonly MoneybirdConfig _config;
@@ -24,7 +24,7 @@ public class WebhookEndpointTest : WebhookEndpointTestBase
     private const string WebhookCreateOptionsPath = "./Responses/Endpoints/Webhooks/webhookCreateOptions.json";
     private const string PostWebhookResponsePath = "./Responses/Endpoints/Webhooks/postWebhook.json";
         
-    public WebhookEndpointTest()
+    public WebhookEndpointTests()
     {  
         _requester = new Mock<IRequester>();
         _config = new MoneybirdConfig();

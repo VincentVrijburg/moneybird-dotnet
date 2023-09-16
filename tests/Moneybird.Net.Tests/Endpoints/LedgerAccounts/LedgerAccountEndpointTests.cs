@@ -13,7 +13,7 @@ using Xunit;
 
 namespace Moneybird.Net.Tests.Endpoints.LedgerAccounts;
 
-public class LedgerAccountEndpointTest : LedgerAccountTestBase
+public class LedgerAccountEndpointTests : LedgerAccountTestBase
 {
     private static Mock<IRequester> _requester;
     private readonly MoneybirdConfig _config;
@@ -24,7 +24,7 @@ public class LedgerAccountEndpointTest : LedgerAccountTestBase
     private const string PostLedgerAccountResponsePath = "./Responses/Endpoints/LedgerAccounts/postLedgerAccount.json";
     private const string PatchLedgerAccountResponsePath = "./Responses/Endpoints/LedgerAccounts/patchLedgerAccount.json";
 
-    public LedgerAccountEndpointTest()
+    public LedgerAccountEndpointTests()
     {
         _requester = new Mock<IRequester>();
         _config = new MoneybirdConfig();

@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Moneybird.Net.Tests.Extensions;
 
-public class ExternalSalesInvoicesExtensionsTest
+public class ExternalSalesInvoicesExtensionsTests
 {
     [Fact]
     public void GetFilterString_FromExternalSalesInvoiceFilterOptions_StateOnly_Returns_CorrectString()

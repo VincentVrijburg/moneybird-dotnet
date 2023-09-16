@@ -11,7 +11,7 @@ using Xunit;
 
 namespace Moneybird.Net.Tests.Endpoints.Workflows
 {
-    public class WorkflowEndpointTest : CommonTestBase
+    public class WorkflowEndpointTests : CommonTestBase
     {
         private static Mock<IRequester> _requester;
         private readonly MoneybirdConfig _config;
@@ -19,7 +19,7 @@ namespace Moneybird.Net.Tests.Endpoints.Workflows
         
         private const string ResponsePath = "./Responses/Endpoints/Workflows/getWorkflows.json";
         
-        public WorkflowEndpointTest()
+        public WorkflowEndpointTests()
         {  
             _requester = new Mock<IRequester>();
             _config = new MoneybirdConfig();
