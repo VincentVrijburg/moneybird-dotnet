@@ -11,7 +11,7 @@ using Xunit;
 
 namespace Moneybird.Net.Tests.Endpoints.Payments;
 
-public class PaymentEndpointTest : PaymentTestBase
+public class PaymentEndpointTests : PaymentTestBase
 {
     private static Mock<IRequester> _requester;
     private readonly MoneybirdConfig _config;
@@ -19,7 +19,7 @@ public class PaymentEndpointTest : PaymentTestBase
     
     private const string GetPaymentResponsePath = "./Responses/Endpoints/Payments/getPayment.json";
     
-    public PaymentEndpointTest()
+    public PaymentEndpointTests()
     {
         _requester = new Mock<IRequester>();
         _config = new MoneybirdConfig();

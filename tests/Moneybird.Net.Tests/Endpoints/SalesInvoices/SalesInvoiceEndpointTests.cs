@@ -13,7 +13,7 @@ using Xunit;
 
 namespace Moneybird.Net.Tests.Endpoints.SalesInvoices;
 
-public class SalesInvoiceEndpointTest : SalesInvoiceTestBase
+public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
 {
     private static Mock<IRequester> _requester;
     private readonly MoneybirdConfig _config;
@@ -23,7 +23,7 @@ public class SalesInvoiceEndpointTest : SalesInvoiceTestBase
     private const string GetSalesInvoiceResponsePath = "./Responses/Endpoints/SalesInvoices/getSalesInvoice.json";
     private const string PostSalesInvoiceResponsePath = "./Responses/Endpoints/SalesInvoices/postSalesInvoice.json";
 
-    public SalesInvoiceEndpointTest()
+    public SalesInvoiceEndpointTests()
     {
         _requester = new Mock<IRequester>();
         _config = new MoneybirdConfig();

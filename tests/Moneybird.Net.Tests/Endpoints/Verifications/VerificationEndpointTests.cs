@@ -11,7 +11,7 @@ using Xunit;
 
 namespace Moneybird.Net.Tests.Endpoints.Verifications;
 
-public class VerificationEndpointTest : CommonTestBase
+public class VerificationEndpointTests : CommonTestBase
 {
     private static Mock<IRequester> _requester;
     private readonly MoneybirdConfig _config;
@@ -24,7 +24,7 @@ public class VerificationEndpointTest : CommonTestBase
     private const string GetVerificationEmailPendingResponsePath = "./Responses/Endpoints/Verifications/getVerificationEmailPending.json";
     private const string GetVerificationTaxPendingResponsePath = "./Responses/Endpoints/Verifications/getVerificationTaxPending.json";
 
-    public VerificationEndpointTest()
+    public VerificationEndpointTests()
     {
         _requester = new Mock<IRequester>();
         _config = new MoneybirdConfig();

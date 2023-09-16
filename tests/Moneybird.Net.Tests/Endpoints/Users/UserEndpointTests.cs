@@ -11,7 +11,7 @@ using Xunit;
 
 namespace Moneybird.Net.Tests.Endpoints.Users;
 
-public class UserEndpointTest : CommonTestBase
+public class UserEndpointTests : CommonTestBase
 {
     private static Mock<IRequester> _requester;
     private readonly MoneybirdConfig _config;
@@ -19,7 +19,7 @@ public class UserEndpointTest : CommonTestBase
     
     private const string ResponsePath = "./Responses/Endpoints/Users/getUsers.json";
 
-    public UserEndpointTest()
+    public UserEndpointTests()
     {
         _requester = new Mock<IRequester>();
         _config = new MoneybirdConfig();

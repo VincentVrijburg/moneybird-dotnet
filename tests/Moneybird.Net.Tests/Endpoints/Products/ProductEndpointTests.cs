@@ -13,7 +13,7 @@ using Xunit;
 
 namespace Moneybird.Net.Tests.Endpoints.Products;
 
-public class ProductEndpointTest : ProductTestBase
+public class ProductEndpointTests : ProductTestBase
 {
     private static Mock<IRequester> _requester;
     private readonly MoneybirdConfig _config;
@@ -24,7 +24,7 @@ public class ProductEndpointTest : ProductTestBase
     private const string PostProductResponsePath = "./Responses/Endpoints/Products/postProduct.json";
     private const string PatchProductResponsePath = "./Responses/Endpoints/Products/patchProduct.json";
 
-    public ProductEndpointTest()
+    public ProductEndpointTests()
     {
         _requester = new Mock<IRequester>();
         _config = new MoneybirdConfig();

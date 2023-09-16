@@ -14,7 +14,7 @@ using Xunit;
 
 namespace Moneybird.Net.Tests.Endpoints.ExternalSalesInvoices;
 
-public class ExternalSalesInvoiceEndpointTest : ExternalSalesInvoicesTestBase
+public class ExternalSalesInvoiceEndpointTests : ExternalSalesInvoicesTestBase
 {
     private static Mock<IRequester> _requester;
     private readonly MoneybirdConfig _config;
@@ -24,7 +24,7 @@ public class ExternalSalesInvoiceEndpointTest : ExternalSalesInvoicesTestBase
     private const string GetExternalSalesInvoiceResponsePath = "./Responses/Endpoints/ExternalSalesInvoices/getExternalSalesInvoice.json";
     private const string PostExternalSalesInvoiceResponsePath = "./Responses/Endpoints/ExternalSalesInvoices/postExternalSalesInvoice.json";
 
-    public ExternalSalesInvoiceEndpointTest()
+    public ExternalSalesInvoiceEndpointTests()
     {
         _requester = new Mock<IRequester>();
         _config = new MoneybirdConfig();

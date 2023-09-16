@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Moneybird.Net.Tests.Extensions
 {
-    public class ContactsExtensionsTest
+    public class ContactsExtensionsTests
     {
         [Fact]
         public void GetFilterString_FromContactFilterOptions_CreatedOnly_Returns_CorrectString()
