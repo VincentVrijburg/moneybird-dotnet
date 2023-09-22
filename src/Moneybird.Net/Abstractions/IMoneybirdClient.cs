@@ -31,6 +31,11 @@ namespace Moneybird.Net.Abstractions
         IExternalSalesInvoiceEndpoint ExternalSalesInvoice { get; }
         
         /// <summary>
+        /// The FinancialAccount Endpoint.
+        /// </summary>
+        IFinancialAccountEndpoint FinancialAccount { get; }
+        
+        /// <summary>
         /// The LedgerAccount Endpoint.
         /// </summary>
         ILedgerAccountEndpoint LedgerAccount { get; }
