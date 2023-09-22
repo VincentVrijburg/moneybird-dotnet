@@ -1,0 +1,26 @@
+[
+  {
+    "id": "367854746503907443",
+    "administration_id": "281289699686381606",
+    "type": "CreditCardAccount",
+    "name": "Test",
+    "identifier": "4141",
+    "currency": "EUR",
+    "provider": null,
+    "active": true,
+    "created_at": "2023-02-06T20:00:51.506Z",
+    "updated_at": "2023-02-06T20:00:51.506Z"
+  },
+  {
+    "id": "398922464317919020",
+    "administration_id": "281289699686381606",
+    "type": "PspAccount",
+    "name": "Mollie provider",
+    "identifier": "bird",
+    "currency": "EUR",
+    "provider": "Mollie",
+    "active": true,
+    "created_at": "2023-09-22T18:01:14.396Z",
+    "updated_at": "2023-09-22T18:01:14.396Z"
+  }
+]
