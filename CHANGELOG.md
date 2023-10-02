@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.13.0 | 2023-10-02
+* Add support for `Financial account` endpoint.
+* Add support for `Financial statement` endpoint.
+
 ## 0.12.0 | 2023-09-17
 * Add support for `Projects` endpoint.
 

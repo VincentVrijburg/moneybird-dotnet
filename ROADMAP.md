@@ -28,9 +28,9 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [ ] Documents: Typeless documents
   - [ ] Estimates
   - [x] External sales invoices (limited)
-  - [ ] Financial accounts
+  - [x] Financial accounts
   - [ ] Financial mutations
-  - [ ] Financial statements
+  - [x] Financial statements
   - [ ] Identities
   - [ ] Import mappings
   - [x] Ledger accounts

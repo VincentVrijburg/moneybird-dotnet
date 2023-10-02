@@ -1,0 +1,79 @@
+{
+  "id": "395773914725221835",
+  "financial_account_id": "395773914661258696",
+  "reference": "new_reference",
+  "official_date": null,
+  "official_balance": null,
+  "importer_service": null,
+  "financial_mutations": [
+    {
+      "id": "395773915382679005",
+      "administration_id": "281289699686381606",
+      "amount": "-20.0",
+      "code": null,
+      "date": "2023-08-09",
+      "message": "Afboeking",
+      "contra_account_name": "Krant",
+      "contra_account_number": "CH0108877380006003301",
+      "state": "unprocessed",
+      "amount_open": "-20.0",
+      "sepa_fields": {
+        "sref": "EE87231C76T83302305104OM4ADDS4QR03",
+        "isdt": "2023-08-16",
+        "benm": {
+          "name": "ADYEN NV",
+          "id": "NL37ABNA3820430049"
+        },
+        "eref": "BC6KKCQPKH82L6LW62",
+        "marf": "D24SXHV25PZJ55WN",
+        "crdb": "DBIT",
+        "remi": "Moneybird B.V. Factuur 2023 000001 van MoneyBird B.V."
+      },
+      "batch_reference": null,
+      "financial_account_id": "395773914661258696",
+      "currency": "EUR",
+      "original_amount": null,
+      "created_at": "2023-08-10T09:23:59.924Z",
+      "updated_at": "2023-08-10T09:23:59.924Z",
+      "version": 1691659439,
+      "financial_statement_id": "395773915378484699",
+      "processed_at": null,
+      "account_servicer_transaction_id": null,
+      "payments": [
+        {
+          "id": "396209917480929108",
+          "administration_id": "281289699686381606",
+          "invoice_type": "SalesInvoice",
+          "invoice_id": "395173133762430063",
+          "financial_account_id": "262970968946771424",
+          "user_id": "262969831890880267",
+          "payment_transaction_id": null,
+          "transaction_identifier": null,
+          "price": "14520.0",
+          "price_base": "14520.0",
+          "payment_date": "2023-08-13",
+          "credit_invoice_id": null,
+          "financial_mutation_id": "980876925279325392",
+          "ledger_account_id": "275938222387061475",
+          "linked_payment_id": null,
+          "manual_payment_action": null,
+          "created_at": "2023-08-14T04:34:03.000Z",
+          "updated_at": "2023-08-14T04:34:03.000Z"
+        }
+      ],
+      "ledger_account_bookings": [
+        {
+          "id": "083162539470276383",
+          "administration_id": "281289699686381606",
+          "financial_mutation_id": "980876925279325392",
+          "ledger_account_id": "275938222387061475",
+          "project_id": null,
+          "description": "",
+          "price": "-2000.0",
+          "created_at": "2023-09-02T19:18:39.000Z",
+          "updated_at": "2023-09-02T19:18:39.000Z"
+        }
+      ]
+    }
+  ]
+}

@@ -5,8 +5,21 @@ updates:
     schedule:
       interval: "weekly"
       day: "friday"
+      time: "03:00"
+    open-pull-requests-limit: 5
+    groups:
+      dependencies:
+        patterns:
+        - '*'
   - package-ecosystem: "nuget"
     directory: "tests/Moneybird.Net.Tests"
     schedule:
       interval: "weekly"
       day: "friday"
+      time: "03:00"
+    open-pull-requests-limit: 5
+    groups:
+      dependencies:
+        patterns:
+        - '*'
+  
