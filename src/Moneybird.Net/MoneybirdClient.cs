@@ -8,6 +8,7 @@ using Moneybird.Net.Endpoints.CustomFields;
 using Moneybird.Net.Endpoints.DocumentStyles;
 using Moneybird.Net.Endpoints.ExternalSalesInvoices;
 using Moneybird.Net.Endpoints.FinancialAccounts;
+using Moneybird.Net.Endpoints.FinancialStatements;
 using Moneybird.Net.Endpoints.LegderAccounts;
 using Moneybird.Net.Endpoints.Payments;
 using Moneybird.Net.Endpoints.Products;
@@ -36,6 +37,7 @@ namespace Moneybird.Net
         public IDocumentStyleEndpoint DocumentStyle { get; }
         public IExternalSalesInvoiceEndpoint ExternalSalesInvoice { get; }
         public IFinancialAccountEndpoint FinancialAccount { get; }
+        public IFinancialStatementEndpoint FinancialStatement { get; }
         public ILedgerAccountEndpoint LedgerAccount { get; }
         public IPaymentEndpoint Payment { get; }
         public IProductEndpoint Product { get; }
@@ -79,6 +81,7 @@ namespace Moneybird.Net
             DocumentStyle = new DocumentStyleEndpoint(Config, _requester);
             ExternalSalesInvoice = new ExternalSalesInvoiceEndpoint(Config, _requester);
             FinancialAccount = new FinancialAccountEndpoint(Config, _requester);
+            FinancialStatement = new FinancialStatementEndpoint(Config, _requester);
             LedgerAccount = new LedgerAccountEndpoint(Config, _requester);
             Payment = new PaymentEndpoint(Config, _requester);
             Product = new ProductEndpoint(Config, _requester);
