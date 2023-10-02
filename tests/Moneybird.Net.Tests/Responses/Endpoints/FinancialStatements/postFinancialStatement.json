@@ -1,0 +1,39 @@
+{
+  "financial_statement": {
+    "id": "395773914725221835",
+    "financial_account_id": "395773914661258696",
+    "reference": "31012014",
+    "official_date": "2023-08-10",
+    "official_balance": 1000.00,
+    "importer_service": "moneybird-dotnet",
+    "financial_mutations_attributes": [
+      {
+        "date": "2023-08-10",
+        "valutation_date": "2023-08-11",
+        "message": "Foobar 1",
+        "amount": 10.96,
+        "code": "code 1",
+        "contra_account_name": "contra account name 1",
+        "contra_account_number": "NL00ABNA0123456789",
+        "batch_reference": "batch reference 1",
+        "offset": 1,
+        "account_servicer_transaction_id": "account servicer transaction id 1",
+        "adyen_payment_instrument_id": 1,
+        "_destroy": false
+      },
+      {
+        "date": "2023-08-12",
+        "message": "Foobar 2",
+        "amount": 10.97,
+        "code": "code 2",
+        "contra_account_name": "contra account name 2",
+        "contra_account_number": "NL00ABNA0123456789",
+        "batch_reference": "batch reference 2",
+        "offset": 2,
+        "account_servicer_transaction_id": "account servicer transaction id 2",
+        "adyen_payment_instrument_id": 2,
+        "_destroy": false
+      }
+    ]
+  }
+}
