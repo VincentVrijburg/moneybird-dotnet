@@ -13,6 +13,17 @@ namespace Moneybird.Net.Tests.Extensions;
 public class TimeEntriesExtensionsTests
 {
     [Fact]
+    public void GetFilterString_FromTimeEntryFilterOptions_NoFilters_Returns_EmptyString()
+    {
+        var options = new TimeEntryFilterOptions();
+
+        const string expectedString = "";
+        var actualString = options.GetFilterString();
+            
+        Assert.Equal(expectedString, actualString);
+    }
+    
+    [Fact]
     public void GetFilterString_FromTimeEntryFilterOptions_StateOnly_Returns_CorrectString()
     {
         var state = new List<TimeEntryState> { TimeEntryState.Open };
