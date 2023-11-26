@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,6 +9,7 @@ using Moneybird.Net.Entities.Notes;
 using Moneybird.Net.Entities.TimeEntries;
 using Moneybird.Net.Http;
 using Moneybird.Net.Models.Notes;
+using Moneybird.Net.Models.TimeEntries;
 using Moq;
 using Xunit;
 
@@ -19,7 +21,8 @@ public class TimeEntryEndpointTests : TimeEntryTestBase
     private readonly MoneybirdConfig _config;
     private readonly TimeEntryEndpoint _timeEntryEndpoint;
     
-    private const string ResponsePath = "./Responses/Endpoints/TimeEntries/getTimeEntries.json";
+    private const string GetTimeEntriesResponsePath = "./Responses/Endpoints/TimeEntries/getTimeEntries.json";
+    private const string GetTimeEntryResponsePath = "./Responses/Endpoints/TimeEntries/getTimeEntry.json";
     private const string NewTimeEntryNoteResponsePath = "./Responses/Endpoints/TimeEntries/newTimeEntryNote.json";
     
     public TimeEntryEndpointTests()
@@ -32,7 +35,7 @@ public class TimeEntryEndpointTests : TimeEntryTestBase
     [Fact]
     public async void GetTimeEntriesAsync_ByAccessToken_Returns_TimeEntries()
     {
-        var timeEntriesList = await File.ReadAllTextAsync(ResponsePath);
+        var timeEntriesList = await File.ReadAllTextAsync(GetTimeEntriesResponsePath);
 
         _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
             It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(timeEntriesList);
@@ -53,6 +56,61 @@ public class TimeEntryEndpointTests : TimeEntryTestBase
 
             user.Should().BeEquivalentTo(actualTimeEntry);
         }
+    }
+    
+    [Fact]
+    public async void GetTimeEntriesAsync_UsingFilterOptions_ByAccessToken_Returns_TimeEntries()
+    {
+        var timeEntryListJson = await File.ReadAllTextAsync(GetTimeEntriesResponsePath);
+
+        _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
+            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(timeEntryListJson);
+
+        var timeEntries = JsonSerializer.Deserialize<List<TimeEntry>>(timeEntryListJson, _config.SerializerOptions);
+        Assert.NotNull(timeEntries);
+        
+        var filterOptions = new TimeEntryFilterOptions
+        {
+            State = new [] { TimeEntryState.All },
+            Period = "this_month",
+            ContactId = "381666401394414610",
+            IncludeNilContacts = true,
+            IncludeActive = false,
+            ProjectId = "386844401331200766",
+            UserId = "252969831744742910",
+            Day = DateTime.Parse("2023-11-10")
+        };
+
+        var actualTimeEntries = await _timeEntryEndpoint.GetAsync(AdministrationId, AccessToken, filterOptions);
+        Assert.NotNull(actualTimeEntries);
+        
+        var actualTimeEntryList = actualTimeEntries.ToList();
+        Assert.Equal(timeEntries.Count, actualTimeEntryList.Count);
+        
+        foreach (var actualTimeEntry in actualTimeEntryList)
+        {
+            var timeEntry = timeEntries.FirstOrDefault(w => w.Id == actualTimeEntry.Id);
+            Assert.NotNull(timeEntry);
+
+            timeEntry.Should().BeEquivalentTo(actualTimeEntry);
+        }
+    }
+    
+    [Fact]
+    public async void GetTimeEntryAsync_ByAccessToken_Returns_Single_TimeEntry()
+    {
+        var timeEntryJson = await File.ReadAllTextAsync(GetTimeEntryResponsePath);
+            
+        _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
+            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(timeEntryJson);
+            
+        var expectedTimeEntry = JsonSerializer.Deserialize<TimeEntry>(timeEntryJson, _config.SerializerOptions);
+        Assert.NotNull(expectedTimeEntry);
+
+        var actualTimeEntry = await _timeEntryEndpoint.GetByIdAsync(AdministrationId, TimeEntryId, AccessToken);
+        Assert.NotNull(actualTimeEntry);
+
+        actualTimeEntry.Should().BeEquivalentTo(expectedTimeEntry);
     }
     
     [Fact]

@@ -38,20 +38,51 @@ public class ProjectEndpointTests : ProjectTestBase
         _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
             It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(projectListJson);
 
-        var expectedProjectList = JsonSerializer.Deserialize<List<Project>>(projectListJson, _config.SerializerOptions);
-        Assert.NotNull(expectedProjectList);
+        var projects = JsonSerializer.Deserialize<List<Project>>(projectListJson, _config.SerializerOptions);
+        Assert.NotNull(projects);
 
         var actualProjects = await _projectEndpoint.GetAsync(AdministrationId, AccessToken);
         Assert.NotNull(actualProjects);
         
         var actualProjectList = actualProjects.ToList();
-        Assert.Equal(expectedProjectList.Count, actualProjectList.Count);
+        Assert.Equal(projects.Count, actualProjectList.Count);
         foreach (var actualProject in actualProjectList)
         {
-            var expectedProject = expectedProjectList.FirstOrDefault(w => w.Id == actualProject.Id);
+            var expectedProject = projects.FirstOrDefault(w => w.Id == actualProject.Id);
             Assert.NotNull(expectedProject);
 
             actualProject.Should().BeEquivalentTo(expectedProject);
+        }
+    }
+    
+    [Fact]
+    public async void GetProjectsAsync_UsingFilterOptions_ByAccessToken_Returns_Projects()
+    {
+        var projectListJson = await File.ReadAllTextAsync(GetProjectsResponsePath);
+
+        _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
+            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(projectListJson);
+
+        var projects = JsonSerializer.Deserialize<List<Project>>(projectListJson, _config.SerializerOptions);
+        Assert.NotNull(projects);
+        
+        var filterOptions = new ProjectFilterOptions
+        {
+            State = ProjectState.All
+        };
+
+        var actualProjects = await _projectEndpoint.GetAsync(AdministrationId, AccessToken, filterOptions);
+        Assert.NotNull(actualProjects);
+        
+        var actualProjectList = actualProjects.ToList();
+        Assert.Equal(projects.Count, actualProjectList.Count);
+        
+        foreach (var actualProject in actualProjectList)
+        {
+            var project = projects.FirstOrDefault(w => w.Id == actualProject.Id);
+            Assert.NotNull(project);
+
+            project.Should().BeEquivalentTo(actualProject);
         }
     }
     
