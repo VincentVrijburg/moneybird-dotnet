@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using FluentAssertions;
-using Moneybird.Net.Endpoints.Webhooks;
-using Moneybird.Net.Endpoints.Webhooks.Models;
+using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.Webhooks;
 using Moneybird.Net.Http;
+using Moneybird.Net.Models.Webhooks;
 using Moq;
 using Xunit;
 

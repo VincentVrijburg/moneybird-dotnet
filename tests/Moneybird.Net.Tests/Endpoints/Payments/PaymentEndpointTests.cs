@@ -3,7 +3,7 @@ using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
 using FluentAssertions;
-using Moneybird.Net.Endpoints.Payments;
+using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.Payments;
 using Moneybird.Net.Http;
 using Moq;

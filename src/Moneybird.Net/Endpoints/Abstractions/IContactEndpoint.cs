@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Moneybird.Net.Endpoints.Abstractions.Common;
-using Moneybird.Net.Endpoints.Contacts.Models;
 using Moneybird.Net.Entities.Contacts;
+using Moneybird.Net.Models.Contacts;
+using Moneybird.Net.Models.Notes;
 
 namespace Moneybird.Net.Endpoints.Abstractions
 {
@@ -18,7 +19,7 @@ namespace Moneybird.Net.Endpoints.Abstractions
         Task<IEnumerable<SynchronizationContact>> GetSynchronizationContactsAsync(string administrationId, string accessToken, ContactFilterOptions options);
         Task<IEnumerable<Contact>> GetContactsByIdsAsync(string administrationId, string accessToken, ContactListOptions options);
         Task<Contact> GetContactByCustomerIdAsync(string administrationId, string customerId, string accessToken);
-        Task<ContactNote> CreateContactNoteAsync(string administrationId, string contactId, ContactNoteCreateOptions options, string accessToken);
+        Task<ContactNote> CreateContactNoteAsync(string administrationId, string contactId, NoteCreateOptions options, string accessToken);
         Task<bool> DeleteContactNoteByIdAsync(string administrationId, string contactId, string noteId, string accessToken);
         Task<ContactPerson> GetContactPersonByIdAsync(string administrationId, string contactId, string contactPersonId, string accessToken);
         Task<ContactPerson> CreateContactPersonAsync(string administrationId, string contactId, ContactPersonCreateOptions options, string accessToken);

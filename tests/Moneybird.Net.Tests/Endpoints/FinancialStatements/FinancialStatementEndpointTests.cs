@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using FluentAssertions;
-using Moneybird.Net.Endpoints.FinancialStatements;
-using Moneybird.Net.Endpoints.FinancialStatements.Models;
+using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.FinancialMutations;
 using Moneybird.Net.Entities.FinancialStatements;
 using Moneybird.Net.Http;
+using Moneybird.Net.Models.FinancialStatements;
 using Moq;
 using Xunit;
 

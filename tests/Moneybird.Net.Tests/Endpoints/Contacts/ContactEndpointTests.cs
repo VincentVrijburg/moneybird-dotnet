@@ -3,12 +3,13 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using FluentAssertions;
+using Moneybird.Net.Endpoints;
 using Moneybird.Net.Endpoints.Abstractions;
-using Moneybird.Net.Endpoints.Contacts;
-using Moneybird.Net.Endpoints.Contacts.Models;
 using Moneybird.Net.Entities.Contacts;
 using Moneybird.Net.Http;
 using Moneybird.Net.Misc;
+using Moneybird.Net.Models.Contacts;
+using Moneybird.Net.Models.Notes;
 using Moq;
 using Xunit;
 
@@ -355,9 +356,9 @@ namespace Moneybird.Net.Tests.Endpoints.Contacts
         public async void CreateContactNoteAsync_ByAccessToken_Returns_NewContactNote()
         {
             var contactNoteJson = await File.ReadAllTextAsync(NewContactNoteResponsePath);
-            var contactNoteCreateOptions = new ContactNoteCreateOptions
+            var contactNoteCreateOptions = new NoteCreateOptions
             {
-                Note = new ContactNoteCreateItem
+                Note = new NoteCreateItem
                 {
                     Note = "Text of the note",
                     Todo = true,

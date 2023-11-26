@@ -1,8 +1,8 @@
 using System.IO;
 using System.Threading.Tasks;
 using Moneybird.Net.Endpoints.Abstractions.Common;
-using Moneybird.Net.Endpoints.ExternalSalesInvoices.Models;
 using Moneybird.Net.Entities.ExternalSalesInvoices;
+using Moneybird.Net.Models.ExternalSalesInvoices;
 
 namespace Moneybird.Net.Endpoints.Abstractions
 {

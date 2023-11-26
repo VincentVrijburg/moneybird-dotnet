@@ -3,11 +3,11 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using FluentAssertions;
-using Moneybird.Net.Endpoints.LegderAccounts;
-using Moneybird.Net.Endpoints.LegderAccounts.Models;
+using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.LedgerAccounts;
 using Moneybird.Net.Http;
 using Moneybird.Net.Misc;
+using Moneybird.Net.Models.LedgerAccounts;
 using Moq;
 using Xunit;
 

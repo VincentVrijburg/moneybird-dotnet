@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using FluentAssertions;
-using Moneybird.Net.Endpoints.Workflows;
+using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.Workflows;
 using Moneybird.Net.Http;
 using Moq;

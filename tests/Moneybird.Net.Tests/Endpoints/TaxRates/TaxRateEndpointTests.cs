@@ -3,10 +3,10 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using FluentAssertions;
-using Moneybird.Net.Endpoints.TaxRates;
-using Moneybird.Net.Endpoints.TaxRates.Models;
+using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.TaxRates;
 using Moneybird.Net.Http;
+using Moneybird.Net.Models.TaxRates;
 using Moq;
 using Xunit;
 

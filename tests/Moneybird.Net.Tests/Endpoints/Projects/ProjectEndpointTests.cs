@@ -3,10 +3,10 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using FluentAssertions;
-using Moneybird.Net.Endpoints.Projects;
-using Moneybird.Net.Endpoints.Projects.Models;
+using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.Projects;
 using Moneybird.Net.Http;
+using Moneybird.Net.Models.Projects;
 using Moq;
 using Xunit;
 

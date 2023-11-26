@@ -4,11 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using FluentAssertions;
-using Moneybird.Net.Endpoints.ExternalSalesInvoices;
-using Moneybird.Net.Endpoints.ExternalSalesInvoices.Models;
+using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.ExternalSalesInvoices;
 using Moneybird.Net.Entities.SalesInvoices;
 using Moneybird.Net.Http;
+using Moneybird.Net.Models.ExternalSalesInvoices;
 using Moq;
 using Xunit;
 
@@ -70,7 +70,7 @@ public class ExternalSalesInvoiceEndpointTests : ExternalSalesInvoicesTestBase
         
         var filterOptions = new ExternalSalesInvoiceFilterOptions
         {
-            ContactId = 10,
+            ContactId = "369764545284015762",
             State = ExternalSalesInvoiceState.Open,
             Period = "ThisYear"
         };
