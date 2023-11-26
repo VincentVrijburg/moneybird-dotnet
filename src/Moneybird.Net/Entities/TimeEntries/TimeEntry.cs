@@ -24,7 +24,7 @@ namespace Moneybird.Net.Entities.TimeEntries
         public string ProjectId { get; set; }
 
         [JsonPropertyName("user_id")]
-        public long UserId { get; set; }
+        public string UserId { get; set; }
 
         [JsonPropertyName("started_at")]
         public DateTime StartedAt { get; set; }

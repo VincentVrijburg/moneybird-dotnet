@@ -30,7 +30,7 @@ namespace Moneybird.Net.Entities.Notes
         public string Value { get; set; }
 
         [JsonPropertyName("completed_at")]
-        public DateTime CompletedAt { get; set; }
+        public DateTime? CompletedAt { get; set; }
 
         [JsonPropertyName("completed_by_id")]
         public string CompletedById { get; set; }
@@ -38,6 +38,7 @@ namespace Moneybird.Net.Entities.Notes
         [JsonPropertyName("todo_type")]
         public object TodoType { get; set; }
 
+        [JsonIgnore]
         [JsonPropertyName("data")]
         public object Data { get; set; }
 

@@ -28,6 +28,7 @@ namespace Moneybird.Net
         public IProjectEndpoint Project { get; }
         public ISalesInvoiceEndpoint SalesInvoice { get; }
         public ITaxRateEndpoint TaxRate { get; }
+        public ITimeEntryEndpoint TimeEntry { get; }
         public IUserEndpoint User { get; }
         public IVerificationEndpoint Verification { get; }
         public IWebhookEndpoint Webhook { get; }
@@ -72,6 +73,7 @@ namespace Moneybird.Net
             Project = new ProjectEndpoint(Config, _requester);
             SalesInvoice = new SalesInvoiceEndpoint(Config, _requester);
             TaxRate = new TaxRateEndpoint(Config, _requester);
+            TimeEntry = new TimeEntryEndpoint(Config, _requester);
             User = new UserEndpoint(Config, _requester);
             Verification = new VerificationEndpoint(Config, _requester);
             Webhook = new WebhookEndpoint(Config, _requester);

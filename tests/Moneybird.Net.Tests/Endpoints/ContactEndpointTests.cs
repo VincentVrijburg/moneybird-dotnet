@@ -6,6 +6,7 @@ using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Endpoints.Abstractions;
 using Moneybird.Net.Entities.Contacts;
+using Moneybird.Net.Entities.Notes;
 using Moneybird.Net.Http;
 using Moneybird.Net.Misc;
 using Moneybird.Net.Models.Contacts;
@@ -372,7 +373,7 @@ namespace Moneybird.Net.Tests.Endpoints
                     It.IsAny<string>(), It.Is<string>(s => s.Equals(serializedContactNoteCreateOptions)), It.IsAny<List<string>>()))
                 .ReturnsAsync(contactNoteJson);
         
-            var contactNote = JsonSerializer.Deserialize<ContactNote>(contactNoteJson, _config.SerializerOptions);
+            var contactNote = JsonSerializer.Deserialize<Note>(contactNoteJson, _config.SerializerOptions);
             Assert.NotNull(contactNote);
 
             var actualContactNote = await _contactEndpoint.CreateContactNoteAsync(AdministrationId, ContactId, contactNoteCreateOptions, AccessToken);
