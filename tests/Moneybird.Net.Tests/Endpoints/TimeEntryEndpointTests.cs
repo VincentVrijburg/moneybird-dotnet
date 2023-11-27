@@ -23,6 +23,8 @@ public class TimeEntryEndpointTests : TimeEntryTestBase
     
     private const string GetTimeEntriesResponsePath = "./Responses/Endpoints/TimeEntries/getTimeEntries.json";
     private const string GetTimeEntryResponsePath = "./Responses/Endpoints/TimeEntries/getTimeEntry.json";
+    private const string PostTimeEntryResponsePath = "./Responses/Endpoints/TimeEntries/postTimeEntry.json";
+    private const string PatchTimeEntryResponsePath = "./Responses/Endpoints/TimeEntries/patchTimeEntry.json";
     private const string NewTimeEntryNoteResponsePath = "./Responses/Endpoints/TimeEntries/newTimeEntryNote.json";
     
     public TimeEntryEndpointTests()
@@ -108,6 +110,74 @@ public class TimeEntryEndpointTests : TimeEntryTestBase
         Assert.NotNull(expectedTimeEntry);
 
         var actualTimeEntry = await _timeEntryEndpoint.GetByIdAsync(AdministrationId, TimeEntryId, AccessToken);
+        Assert.NotNull(actualTimeEntry);
+
+        actualTimeEntry.Should().BeEquivalentTo(expectedTimeEntry);
+    }
+    
+    [Fact]
+    public async void CreateTimeEntryAsync_ByAccessToken_Returns_NewTimeEntry()
+    {
+        var timeEntryJson = await File.ReadAllTextAsync(PostTimeEntryResponsePath);
+        var timeEntryCreateOptions = new TimeEntryCreateOptions
+        {
+            TimeEntry = new TimeEntryCreate
+            {
+                StartedAt = DateTime.Parse("2023-08-10 09:25:00"),
+                EndedAt = DateTime.Parse("2023-08-10 10:25:00"),
+                Description = "Test time entry",
+                ContactId = "395774014807606787",
+                ProjectId = "395774014821238277",
+                UserId = "1691659319295",
+                Billable = false,
+                DetailId = null,
+                PausedDuration = 0
+            }
+        };
+        
+        var serializedTimeEntryCreateOptions = JsonSerializer.Serialize(timeEntryCreateOptions, _config.SerializerOptions);
+    
+        _requester.Setup(moq => moq.CreatePostRequestAsync(It.IsAny<string>(), It.IsAny<string>(), 
+                It.IsAny<string>(), It.Is<string>(s => s.Equals(serializedTimeEntryCreateOptions)), It.IsAny<List<string>>()))
+            .ReturnsAsync(timeEntryJson);
+    
+        var expectedTimeEntry = JsonSerializer.Deserialize<TimeEntry>(timeEntryJson, _config.SerializerOptions);
+        Assert.NotNull(expectedTimeEntry);
+
+        var actualTimeEntry = await _timeEntryEndpoint.CreateAsync(AdministrationId, timeEntryCreateOptions, AccessToken);
+        Assert.NotNull(actualTimeEntry);
+
+        actualTimeEntry.Should().BeEquivalentTo(expectedTimeEntry);
+    }
+    
+    [Fact]
+    public async void UpdateTimeEntryAsync_ByAccessToken_Returns_UpdatedTimeEntry()
+    {
+        var timeEntryJson = await File.ReadAllTextAsync(PatchTimeEntryResponsePath);
+        var timeEntryUpdateOptions = new TimeEntryUpdateOptions
+        {
+            TimeEntry = new TimeEntryUpdate
+            {
+                StartedAt = DateTime.Parse("2023-08-10 09:25:00"),
+                EndedAt = DateTime.Parse("2023-08-10 10:25:00"),
+                Description = "Updated description",
+                ContactId = "395774015039342091",
+                ProjectId = "395774015051925005",
+                Billable = false,
+                PausedDuration = 0
+            }
+        };
+        
+        var serializedTimeEntryOptions = JsonSerializer.Serialize(timeEntryUpdateOptions, _config.SerializerOptions);
+    
+        _requester.Setup(moq => moq.CreatePatchRequestAsync(It.IsAny<string>(), It.IsAny<string>(), 
+                It.IsAny<string>(), It.Is<string>(s => s.Equals(serializedTimeEntryOptions)), It.IsAny<List<string>>()))
+            .ReturnsAsync(timeEntryJson);
+    
+        var expectedTimeEntry = JsonSerializer.Deserialize<TimeEntry>(timeEntryJson, _config.SerializerOptions);
+        Assert.NotNull(expectedTimeEntry);
+
+        var actualTimeEntry = await _timeEntryEndpoint.UpdateByIdAsync(AdministrationId, TimeEntryId, timeEntryUpdateOptions, AccessToken);
         Assert.NotNull(actualTimeEntry);
 
         actualTimeEntry.Should().BeEquivalentTo(expectedTimeEntry);

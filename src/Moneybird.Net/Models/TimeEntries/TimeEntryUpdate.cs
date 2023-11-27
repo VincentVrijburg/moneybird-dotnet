@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Models.TimeEntries
@@ -5,19 +6,19 @@ namespace Moneybird.Net.Models.TimeEntries
     public class TimeEntryUpdate
     {
         [JsonPropertyName("started_at")]
-        public string StartedAt { get; set; }
+        public DateTime StartedAt { get; set; }
 
         [JsonPropertyName("ended_at")]
-        public string EndedAt { get; set; }
+        public DateTime EndedAt { get; set; }
 
         [JsonPropertyName("paused_duration")]
         public int PausedDuration { get; set; }
         
         [JsonPropertyName("contact_id")]
-        public long ContactId { get; set; }
+        public string ContactId { get; set; }
         
         [JsonPropertyName("project_id")]
-        public long ProjectId { get; set; }
+        public string ProjectId { get; set; }
         
         [JsonPropertyName("description")]
         public string Description { get; set; }

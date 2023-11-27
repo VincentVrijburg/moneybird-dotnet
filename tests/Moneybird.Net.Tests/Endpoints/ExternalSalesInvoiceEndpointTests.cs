@@ -136,9 +136,9 @@ public class ExternalSalesInvoiceEndpointTests : ExternalSalesInvoicesTestBase
                 Date = DateTime.UtcNow,
                 Source = "webshop",
                 DueDate = DateTime.UtcNow.AddDays(14),
-                SourceUrl = "https://www.example.com/checkout/1234",
+                SourceUrl = "https://www.example.com/checkout/1234"
             },
-            UserAgent = "Moneybird .NET Client",
+            UserAgent = "Moneybird .NET Client"
         };
 
         var createResponse = await File.ReadAllTextAsync(PostExternalSalesInvoiceResponsePath);
@@ -189,7 +189,7 @@ public class ExternalSalesInvoiceEndpointTests : ExternalSalesInvoicesTestBase
                     }
                 }
             },
-            UserAgent = "Moneybird .NET Client",
+            UserAgent = "Moneybird .NET Client"
         };
         
         var serializedExternalSalesInvoiceUpdateOptions = JsonSerializer.Serialize(externalSalesInvoiceUpdateOptions, _config.SerializerOptions);
