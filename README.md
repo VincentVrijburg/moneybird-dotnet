@@ -25,7 +25,7 @@ Moneybird client for .NET Framework and .NET (Core).
       - [Create singleton entry point](#create-singleton-entry-point)
       - [Create disposable entry point](#create-disposable-entry-point)
       - [Request data](#request-data)
-      - [Supported data classes](#supported-data-classes)
+      - [Supported endpoints](#supported-endpoints)
   - [Roadmap](#roadmap)
   - [Versioning](#versioning)
   - [License](#license)
@@ -50,14 +50,14 @@ For both the authenticator and the client, an instance of the moneybird configur
 *Note: both options will create an instance with the default api url and default authentication url values assigned.*
 
 #### Option 1
-In case you DO NOT need to use the OAuth functionality, you can create the default config as follows.
+In case you <ins>do not</ins> need to use the OAuth functionality, you can create the default config as follows.
 
 ```csharp
 var moneybirdConfig = new MoneybirdConfig();
 ```
 
 #### Option 2
-In case you DO need to use the OAuth functionality, you can create a custom config as follows.
+In case you <ins>do</ins> need to use the OAuth functionality, you can create a custom config as follows.
 
 ```csharp
 var moneybirdConfig = new MoneybirdConfig("YOUR_CLIENT_ID", "YOUR_CLIENT_SECRET", "YOUR_REDIRECT_URI");
