@@ -434,7 +434,7 @@
     "reference": "Project X",
     "language": "nl",
     "currency": "EUR",
-    "discount": "0.0",
+    "discount": null,
     "original_sales_invoice_id": null,
     "paused": false,
     "paid_at": null,

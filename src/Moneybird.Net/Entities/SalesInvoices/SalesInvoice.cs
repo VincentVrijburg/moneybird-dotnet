@@ -73,7 +73,7 @@ namespace Moneybird.Net.Entities.SalesInvoices
 
         [JsonPropertyName("discount")]
         [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-        public double Discount { get; set; }
+        public double? Discount { get; set; }
 
         [JsonPropertyName("original_sales_invoice_id")]
         public string OriginalSalesInvoiceId { get; set; }
