@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.13.1 | 2023-11-28
+* Fix deserialization for discount in `SalesInvoice` entity.
+
 ## 0.13.0 | 2023-10-02
 * Add support for `Financial account` endpoint.
 * Add support for `Financial statement` endpoint.
