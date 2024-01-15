@@ -71,7 +71,13 @@ namespace Moneybird.Net.Http
                     {
                         var json = response.Content.ReadAsStringAsync().Result;
                         var obj = JsonDocument.Parse(json);
-                        message = obj.RootElement[0].GetProperty("error").GetString();
+                        var error = obj.RootElement.GetProperty("error");
+                        message = error.ValueKind switch
+                        {
+                            JsonValueKind.Object => string.Join(", ", error.EnumerateObject().SelectMany(prop => prop.Value.EnumerateArray().Select(val => $"{prop.Name}: {val.GetString()}")).ToList()),
+                            JsonValueKind.Array => string.Join(", ", error.EnumerateArray().Select(e => e.ToString())),
+                            _ => error.GetString(),
+                        };
                     }
                     catch {
                         message = response.StatusCode.ToString();
