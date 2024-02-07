@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using Moneybird.Net.Endpoints.ExternalSalesInvoices.Models;
+using Moneybird.Net.Models.ExternalSalesInvoices;
 
 namespace Moneybird.Net.Extensions
 {
@@ -12,7 +12,7 @@ namespace Moneybird.Net.Extensions
 
             if (options.State.HasValue)
             {
-                filterValues.Add($"state:{options.State.Value}");
+                filterValues.Add($"state:{options.State.Value.ToString().ToSnakeCase()}");
             }
             
             if (!string.IsNullOrEmpty(options.Period))
@@ -20,9 +20,9 @@ namespace Moneybird.Net.Extensions
                 filterValues.Add($"period:{options.Period}");
             }
             
-            if (options.ContactId.HasValue)
+            if (!string.IsNullOrEmpty(options.ContactId))
             {
-                filterValues.Add($"contact_id:{options.ContactId.Value}");
+                filterValues.Add($"contact_id:{options.ContactId}");
             }
 
             return filterValues.Any()

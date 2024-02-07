@@ -1,0 +1,126 @@
+[
+  {
+    "id": "447521404512760211",
+    "administration_id": "357760731887252340",
+    "contact_id": "306602835138381837",
+    "project_id": "376181771183119693",
+    "user_id": "224938791219844626",
+    "started_at": "2023-11-24T18:00:00.000Z",
+    "ended_at": "2023-11-24T18:15:00.000Z",
+    "description": "Test description",
+    "paused_duration": 0,
+    "billable": true,
+    "created_at": "2023-11-24T18:28:36.544Z",
+    "updated_at": "2023-11-24T18:33:07.974Z",
+    "contact": {
+      "id": "306602835138381837",
+      "firstname": "",
+      "lastname": "",
+      "company_name": "Moneybird"
+    },
+    "detail": null,
+    "user": {
+      "id": "224938791219844626",
+      "name": "John Doe",
+      "created_at": "2019-08-05T12:19:56.000Z",
+      "updated_at": "2023-11-05T21:34:42.867Z"
+    },
+    "project": {
+      "id": "376181771183119693",
+      "name": "Apex",
+      "state": "active"
+    },
+    "events": [
+      {
+        "administration_id": "357760731887252340",
+        "user_id": "224938791219844626",
+        "action": "todo_created",
+        "link_entity_id": null,
+        "link_entity_type": null,
+        "data": {},
+        "created_at": "2023-11-24T18:29:10.795Z",
+        "updated_at": "2023-11-24T18:29:10.795Z"
+      },
+      {
+        "administration_id": "357760731887252340",
+        "user_id": "224938791219844626",
+        "action": "note_created",
+        "link_entity_id": null,
+        "link_entity_type": null,
+        "data": {},
+        "created_at": "2023-11-24T18:29:04.137Z",
+        "updated_at": "2023-11-24T18:29:04.137Z"
+      },
+      {
+        "administration_id": "357760731887252340",
+        "user_id": "224938791219844626",
+        "action": "time_entry_created",
+        "link_entity_id": null,
+        "link_entity_type": null,
+        "data": {},
+        "created_at": "2023-11-24T18:28:36.552Z",
+        "updated_at": "2023-11-24T18:28:36.552Z"
+      },
+      {
+        "administration_id": "357760731887252340",
+        "user_id": "224938791219844626",
+        "action": "todo_created",
+        "link_entity_id": null,
+        "link_entity_type": null,
+        "data": {},
+        "created_at": "2023-11-24T18:29:16.951Z",
+        "updated_at": "2023-11-24T18:29:16.951Z"
+      }
+    ],
+    "notes": [
+      {
+        "id": "405411500095702179",
+        "administration_id": "357760731887252340",
+        "entity_id": "405411457741621022",
+        "entity_type": "TimeEntry",
+        "user_id": "224938791219844626",
+        "assignee_id": "224938791219844626",
+        "todo": true,
+        "note": "Test task John Doe",
+        "completed_at": "2023-11-24T18:33:07.969Z",
+        "completed_by_id": "224938791219844626",
+        "todo_type": null,
+        "data": {},
+        "created_at": "2023-11-24T18:29:16.935Z",
+        "updated_at": "2023-11-24T18:33:07.970Z"
+      },
+      {
+        "id": "405411493648008274",
+        "administration_id": "357760731887252340",
+        "entity_id": "405411457741621022",
+        "entity_type": "TimeEntry",
+        "user_id": "224938791219844626",
+        "assignee_id": null,
+        "todo": true,
+        "note": "Test task",
+        "completed_at": null,
+        "completed_by_id": null,
+        "todo_type": null,
+        "data": {},
+        "created_at": "2023-11-24T18:29:10.786Z",
+        "updated_at": "2023-11-24T18:29:10.786Z"
+      },
+      {
+        "id": "405411486665541616",
+        "administration_id": "357760731887252340",
+        "entity_id": "405411457741621022",
+        "entity_type": "TimeEntry",
+        "user_id": "224938791219844626",
+        "assignee_id": null,
+        "todo": false,
+        "note": "Test note",
+        "completed_at": null,
+        "completed_by_id": null,
+        "todo_type": null,
+        "data": {},
+        "created_at": "2023-11-24T18:29:04.127Z",
+        "updated_at": "2023-11-24T18:29:04.127Z"
+      }
+    ]
+  }
+]

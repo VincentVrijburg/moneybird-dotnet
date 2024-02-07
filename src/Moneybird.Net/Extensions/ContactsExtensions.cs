@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using Moneybird.Net.Endpoints.Contacts.Models;
+using Moneybird.Net.Models.Contacts;
 
 namespace Moneybird.Net.Extensions
 {

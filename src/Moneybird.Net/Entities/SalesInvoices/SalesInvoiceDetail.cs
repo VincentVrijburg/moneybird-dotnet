@@ -35,7 +35,8 @@ namespace Moneybird.Net.Entities.SalesInvoices
         public string Description { get; set; }
 
         [JsonPropertyName("price")]
-        public string Price { get; set; }
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+        public double Price { get; set; }
 
         [JsonPropertyName("period")]
         public string Period { get; set; }
@@ -44,10 +45,12 @@ namespace Moneybird.Net.Entities.SalesInvoices
         public int RowOrder { get; set; }
 
         [JsonPropertyName("total_price_excl_tax_with_discount")]
-        public string TotalPriceExclTaxWithDiscount { get; set; }
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+        public double TotalPriceExclTaxWithDiscount { get; set; }
 
         [JsonPropertyName("total_price_excl_tax_with_discount_base")]
-        public string TotalPriceExclTaxWithDiscountBase { get; set; }
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+        public double TotalPriceExclTaxWithDiscountBase { get; set; }
 
         [JsonPropertyName("tax_report_reference")]
         public List<string> TaxReportReference { get; set; }

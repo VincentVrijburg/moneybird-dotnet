@@ -71,6 +71,11 @@ namespace Moneybird.Net.Abstractions
         ITaxRateEndpoint TaxRate { get; }
         
         /// <summary>
+        /// The TimeEntry Endpoint.
+        /// </summary>
+        ITimeEntryEndpoint TimeEntry { get; }
+        
+        /// <summary>
         /// The User Endpoint.
         /// </summary>
         IUserEndpoint User { get; }

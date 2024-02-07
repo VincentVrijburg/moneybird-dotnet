@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using Moneybird.Net.Endpoints.TaxRates.Models;
+using Moneybird.Net.Models.TaxRates;
 
 namespace Moneybird.Net.Extensions
 {
@@ -27,12 +27,12 @@ namespace Moneybird.Net.Extensions
             
             if (options.TaxRateType.HasValue)
             {
-                filterValues.Add($"tax_rate_type:{options.TaxRateType.Value}");
+                filterValues.Add($"tax_rate_type:{options.TaxRateType.Value.ToString().ToSnakeCase()}");
             }
             
             if (options.State != null && options.State.Any())
             {
-                filterValues.Add($"state:{string.Join("|", options.State)}");
+                filterValues.Add($"state:{string.Join("|", options.State.Select(s => s.ToString().ToSnakeCase()))}");
             }
             
             if (!string.IsNullOrEmpty(options.Country))
@@ -42,12 +42,12 @@ namespace Moneybird.Net.Extensions
             
             if (options.ShowTax.HasValue)
             {
-                filterValues.Add($"show_tax:{options.ShowTax.Value}");
+                filterValues.Add($"show_tax:{options.ShowTax.Value.ToString().ToLowerInvariant()}");
             }
             
             if (options.Active.HasValue)
             {
-                filterValues.Add($"active:{options.Active.Value}");
+                filterValues.Add($"active:{options.Active.Value.ToString().ToLowerInvariant()}");
             }
             
             if (options.CreatedAfter.HasValue)
