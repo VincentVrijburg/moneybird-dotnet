@@ -16,6 +16,6 @@ namespace Moneybird.Net.Endpoints.Abstractions
         IDeleteEndpoint
     {
         Task<Note> CreateTimeEntryNoteAsync(string administrationId, string timeEntryId, NoteCreateOptions options, string accessToken);
-        Task<bool> DeleteTimeEntryNoteByIdAsync(string administrationId, string contactId, string noteId, string accessToken);
+        Task<bool> DeleteTimeEntryNoteByIdAsync(string administrationId, string timeEntryId, string noteId, string accessToken);
     }
 }

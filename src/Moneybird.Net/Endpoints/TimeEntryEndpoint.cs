@@ -108,9 +108,9 @@ namespace Moneybird.Net.Endpoints
             return JsonSerializer.Deserialize<Note>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<bool> DeleteTimeEntryNoteByIdAsync(string administrationId, string contactId, string noteId, string accessToken)
+        public async Task<bool> DeleteTimeEntryNoteByIdAsync(string administrationId, string timeEntryId, string noteId, string accessToken)
         {
-            var relativeUrl = string.Format(TimeEntriesIdNotesIdUri, administrationId, contactId, noteId);
+            var relativeUrl = string.Format(TimeEntriesIdNotesIdUri, administrationId, timeEntryId, noteId);
             var response = await _requester
                 .CreateDeleteRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);
