@@ -1,7 +1,7 @@
-using Moneybird.Net.Endpoints.ExternalSalesInvoices.Models;
 using Moneybird.Net.Entities.ExternalSalesInvoices;
 using Moneybird.Net.Entities.SalesInvoices;
 using Moneybird.Net.Extensions;
+using Moneybird.Net.Models.ExternalSalesInvoices;
 using Xunit;
 
 namespace Moneybird.Net.Tests.Extensions;
@@ -18,7 +18,7 @@ public class ExternalSalesInvoicesExtensionsTests
             State = state
         };
 
-        var expectedString = $"filter=state:{state}";
+        const string expectedString = "filter=state:all";
         var actualString = options.GetFilterString();
             
         Assert.Equal(expectedString, actualString);
@@ -27,14 +27,14 @@ public class ExternalSalesInvoicesExtensionsTests
     [Fact]
     public void GetFilterString_FromExternalSalesInvoiceFilterOptions_PeriodOnly_Returns_CorrectString()
     {
-        const string period = "ThisYear";
+        const string period = "this_year";
             
         var options = new ExternalSalesInvoiceFilterOptions
         {
             Period = period
         };
 
-        var expectedString = $"filter=period:{period}";
+        const string expectedString = "filter=period:this_year";
         var actualString = options.GetFilterString();
             
         Assert.Equal(expectedString, actualString);
@@ -43,14 +43,14 @@ public class ExternalSalesInvoicesExtensionsTests
     [Fact]
     public void GetFilterString_FromExternalSalesInvoiceFilterOptions_ContactIdOnly_Returns_CorrectString()
     {
-        const int contactId = 10;
+        const string contactId = "381666401394414610";
             
         var options = new ExternalSalesInvoiceFilterOptions
         {
             ContactId = contactId
         };
 
-        var expectedString = $"filter=contact_id:{contactId}";
+        const string expectedString = "filter=contact_id:381666401394414610";
         var actualString = options.GetFilterString();
             
         Assert.Equal(expectedString, actualString);
@@ -59,9 +59,9 @@ public class ExternalSalesInvoicesExtensionsTests
     [Fact]
     public void GetFilterString_FromExternalSalesInvoiceFilterOptions_All_Returns_CorrectString()
     {
-        const ExternalSalesInvoiceState state = ExternalSalesInvoiceState.All;
-        const string period = "ThisYear";
-        const int contactId = 10;
+        const ExternalSalesInvoiceState state = ExternalSalesInvoiceState.Late;
+        const string period = "this_month";
+        const string contactId = "381666401394414610";
             
         var options = new ExternalSalesInvoiceFilterOptions
         {
@@ -70,9 +70,9 @@ public class ExternalSalesInvoicesExtensionsTests
             ContactId = contactId
         };
 
-        var expectedString = $"filter=state:{state}," +
-                             $"period:{period}," +
-                             $"contact_id:{contactId}";
+        const string expectedString = $"filter=state:late," +
+                                      $"period:this_month," +
+                                      $"contact_id:381666401394414610";
             
         var actualString = options.GetFilterString();
             

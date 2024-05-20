@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using Moneybird.Net.Endpoints.Projects.Models;
+using Moneybird.Net.Models.Projects;
 
 namespace Moneybird.Net.Extensions
 {
@@ -12,7 +12,7 @@ namespace Moneybird.Net.Extensions
 
             if (options.State.HasValue)
             {
-                filterValues.Add($"state:{options.State.Value}");
+                filterValues.Add($"state:{options.State.Value.ToString().ToSnakeCase()}");
             }
 
             return filterValues.Any()

@@ -27,6 +27,7 @@ namespace Moneybird.Net.Tests
             Assert.NotNull(moneybirdClient.Project);
             Assert.NotNull(moneybirdClient.SalesInvoice);
             Assert.NotNull(moneybirdClient.TaxRate);
+            Assert.NotNull(moneybirdClient.TimeEntry);
             Assert.NotNull(moneybirdClient.User);
             Assert.NotNull(moneybirdClient.Verification);
             Assert.NotNull(moneybirdClient.Webhook);
