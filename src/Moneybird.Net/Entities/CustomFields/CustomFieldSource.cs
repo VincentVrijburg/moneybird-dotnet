@@ -8,8 +8,8 @@ namespace Moneybird.Net.Entities.CustomFields
     [JsonConverter(typeof(JsonStringEnumMemberConverter))]
     public enum CustomFieldSource
     {
-        [JsonPropertyName("sales_invoices")]
-        SalesInvoices,
+        [JsonPropertyName("sales_invoice")]
+        SalesInvoice,
         [JsonPropertyName("contact")]
         Contact,
         [JsonPropertyName("identity")]

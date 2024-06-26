@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.13.2 | 2024-06-26
+* Fix deserialization for sales_invoice in `CustomFieldSource` enum.
+
 ## 0.13.1 | 2023-11-28
 * Fix deserialization for discount in `SalesInvoice` entity.
 
