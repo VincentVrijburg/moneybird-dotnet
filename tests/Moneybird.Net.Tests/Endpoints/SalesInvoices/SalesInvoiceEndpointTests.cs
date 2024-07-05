@@ -6,6 +6,7 @@ using System.Text.Json;
 using FluentAssertions;
 using Moneybird.Net.Endpoints.SalesInvoices;
 using Moneybird.Net.Endpoints.SalesInvoices.Models;
+using Moneybird.Net.Entities.CustomFields;
 using Moneybird.Net.Entities.SalesInvoices;
 using Moneybird.Net.Http;
 using Moq;
@@ -155,9 +156,9 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
                 Discount = 0,
                 CustomFieldsAttributes = new []
                 {
-                    new SalesInvoiceCustomField
+                    new CustomFieldAttribute
                     {
-                        Id = 1,
+                        Id = "1",
                         Value = "Custom field value"
                     }
                 }
@@ -227,14 +228,14 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
                 },
                 CustomFieldsAttributes = new []
                 {
-                    new SalesInvoiceCustomField
+                    new CustomFieldAttribute
                     {
-                        Id = 1,
+                        Id = "1",
                         Value = "Custom field value"
                     },
-                    new SalesInvoiceCustomField
+                    new CustomFieldAttribute
                     {
-                        Id = 2,
+                        Id = "2",
                         Value = "Second custom field value"
                     }
                 }
