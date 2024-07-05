@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using Moneybird.Net.Entities.CustomFields;
 using Moneybird.Net.Entities.SalesInvoices;
 
 namespace Moneybird.Net.Endpoints.SalesInvoices.Models
@@ -76,6 +77,6 @@ namespace Moneybird.Net.Endpoints.SalesInvoices.Models
         public IReadOnlyList<SalesInvoiceUpdateDetail> DetailsAttributes { get; set; }
 
         [JsonPropertyName("custom_fields_attributes")]
-        public IReadOnlyList<SalesInvoiceCustomField> CustomFieldsAttributes { get; set; }
+        public IReadOnlyList<CustomFieldAttribute> CustomFieldsAttributes { get; set; }
     }
 }

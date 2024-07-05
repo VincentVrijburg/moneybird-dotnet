@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Moneybird.Net.Entities.Contacts;
+using Moneybird.Net.Entities.CustomFields;
 using Moneybird.Net.Entities.Payments;
 using Moneybird.Net.Entities.SalesInvoices;
 
@@ -101,7 +102,7 @@ namespace Moneybird.Net.Entities.ExternalSalesInvoices
         public string PaymentUrl { get; set; }
 
         [JsonPropertyName("custom_fields")]
-        public List<ExternalSalesInvoiceCustomField> CustomFields { get; set; }
+        public List<CustomFieldAttribute> CustomFields { get; set; }
 
         [JsonPropertyName("tax_totals")]
         public List<SalesInvoiceTaxTotal> TaxTotals { get; set; }
