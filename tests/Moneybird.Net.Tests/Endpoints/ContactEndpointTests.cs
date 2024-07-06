@@ -6,6 +6,7 @@ using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Endpoints.Abstractions;
 using Moneybird.Net.Entities.Contacts;
+using Moneybird.Net.Entities.CustomFields;
 using Moneybird.Net.Entities.Notes;
 using Moneybird.Net.Http;
 using Moneybird.Net.Misc;
@@ -259,7 +260,14 @@ namespace Moneybird.Net.Tests.Endpoints
                     SiIdentifierTypeType = null,
                     CreateEvent = true,
                     DirectDebit = false,
-                    CustomFieldsAttributes = null
+                    CustomFieldsAttributes = new List<CustomFieldAttribute>
+                    {
+                        new ()
+                        {
+                            Id = "343816698630643114",
+                            Value = "Custom field test value"
+                        }
+                    }
                 }
             };
             
@@ -271,6 +279,7 @@ namespace Moneybird.Net.Tests.Endpoints
         
             var contact = JsonSerializer.Deserialize<Contact>(contactJson, _config.SerializerOptions);
             Assert.NotNull(contact);
+            Assert.NotNull(contact.CustomFields.First().Name);
 
             var actualContact = await _contactEndpoint.CreateAsync(AdministrationId, contactCreateOptions, AccessToken);
             Assert.NotNull(actualContact);
@@ -317,11 +326,11 @@ namespace Moneybird.Net.Tests.Endpoints
                     SiIdentifier = "",
                     SiIdentifierTypeType = null,
                     DirectDebit = false,
-                    CustomFieldsAttributes = new List<ContactCustomFieldsAttribute>
+                    CustomFieldsAttributes = new List<CustomFieldAttribute>
                     {
                         new ()
                         {
-                            Id = 1,
+                            Id = "1",
                             Value = "Custom contact field"
                         }
                     }

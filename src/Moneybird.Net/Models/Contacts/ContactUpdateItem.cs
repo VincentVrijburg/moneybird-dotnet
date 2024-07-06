@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Moneybird.Net.Entities.Contacts;
+using Moneybird.Net.Entities.CustomFields;
 using Moneybird.Net.Misc;
 
 namespace Moneybird.Net.Models.Contacts
@@ -101,6 +102,6 @@ namespace Moneybird.Net.Models.Contacts
         public bool? DirectDebit { get; set; }
          
         [JsonPropertyName("custom_fields_attributes")]
-        public List<ContactCustomFieldsAttribute> CustomFieldsAttributes { get; set; }
+        public List<CustomFieldAttribute> CustomFieldsAttributes { get; set; }
     }
 }

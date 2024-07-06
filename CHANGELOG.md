@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.13.3 | 2024-07-05
+* Fix deserialization for id in CustomFieldAttribute entity.
+
 ## 0.13.2 | 2024-06-26
 * Fix deserialization for sales_invoice in `CustomFieldSource` enum.
 

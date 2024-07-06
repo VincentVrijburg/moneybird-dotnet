@@ -43,7 +43,13 @@
   "version": 1640619493,
   "sales_invoices_url": "https://moneybird.com/322056713748350877/sales_invoices/6af2bbb86743f70b85c9371911a7ce22686d04069a3c858d6817c2cc3e5c8c4b/all",
   "notes": [],
-  "custom_fields": [],
+  "custom_fields": [
+    {
+      "id": "343816698630643114",
+      "name": "Test field",
+      "value": "Custom field test value"
+    }
+  ],
   "contact_people": [],
   "events": []
 }
