@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text.Json;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
-using Moneybird.Net.Endpoints.SalesInvoices;
-using Moneybird.Net.Endpoints.SalesInvoices.Models;
 using Moneybird.Net.Entities.CustomFields;
 using Moneybird.Net.Entities.SalesInvoices;
 using Moneybird.Net.Http;
-using Moneybird.Net.Tests.Endpoints.SalesInvoices;
+using Moneybird.Net.Models.SalesInvoices;
 using Moq;
 using Xunit;
 
@@ -72,12 +70,12 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
         
         var filterOptions = new SalesInvoiceFilterOptions
         {
-            ContactId = 10,
+            ContactId = "369764595159532558",
             State = SalesInvoiceState.Open,
             Period = "ThisYear",
             Reference = "30052",
             RecurringSalesInvoiceId = null,
-            WorkflowId = 9,
+            WorkflowId = "369764439669343349",
             CreatedAfter = DateTime.UtcNow,
             UpdatedAfter = DateTime.UtcNow
         };
@@ -230,7 +228,7 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
                 },
                 CustomFieldsAttributes = new []
                 {
-                    new CustomFieldAttribute
+                    new CustomFieldAttribute()
                     {
                         Id = "1",
                         Value = "Custom field value"

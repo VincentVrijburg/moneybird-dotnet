@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Moneybird.Net.Entities.CustomFields;
+using Moneybird.Net.Entities.Notes;
 using Moneybird.Net.Misc;
 
 namespace Moneybird.Net.Entities.Contacts
@@ -138,7 +139,7 @@ namespace Moneybird.Net.Entities.Contacts
         public string SalesInvoicesUrl { get; set; }
 
         [JsonPropertyName("notes")]
-        public List<ContactNote> Notes { get; set; }
+        public List<Note> Notes { get; set; }
 
         [JsonPropertyName("custom_fields")]
         public List<CustomFieldAttribute> CustomFields { get; set; }
