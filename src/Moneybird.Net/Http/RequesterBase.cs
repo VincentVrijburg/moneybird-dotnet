@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Moneybird.Net.Extensions;
 
 namespace Moneybird.Net.Http
 {
@@ -51,15 +52,15 @@ namespace Moneybird.Net.Http
             
             return requestMessage;
         }
-        
-        protected string GetQueryString(List<string> queryParameters)
+
+        private string GetQueryString(List<string> queryParameters)
         {
             return queryParameters
                 .Where(param => !string.IsNullOrWhiteSpace(param))
-                .Aggregate(string.Empty, (current, param) => current + ("&" + param));
+                .Aggregate(string.Empty, (current, param) => current + "&" + param);
         }
-        
-        protected void HandleRequestFailure(HttpResponseMessage response)
+
+        private void HandleRequestFailure(HttpResponseMessage response)
         {
             try
             {
@@ -70,8 +71,8 @@ namespace Moneybird.Net.Http
                     try
                     {
                         var json = response.Content.ReadAsStringAsync().Result;
-                        var obj = JsonDocument.Parse(json);
-                        message = obj.RootElement[0].GetProperty("error").GetString();
+                        var jsonDocument = JsonDocument.Parse(json);
+                        message = jsonDocument.RootElement.GetErrorMessage();
                     }
                     catch {
                         message = response.StatusCode.ToString();
