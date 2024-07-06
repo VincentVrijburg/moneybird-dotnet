@@ -1,6 +1,6 @@
 using Moneybird.Net.Endpoints.Abstractions.Common;
-using Moneybird.Net.Endpoints.Projects.Models;
 using Moneybird.Net.Entities.Projects;
+using Moneybird.Net.Models.Projects;
 
 namespace Moneybird.Net.Endpoints.Abstractions
 {
