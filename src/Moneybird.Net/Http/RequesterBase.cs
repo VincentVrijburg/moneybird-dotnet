@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -10,6 +11,7 @@ using Moneybird.Net.Extensions;
 
 namespace Moneybird.Net.Http
 {
+    [ExcludeFromCodeCoverage]
     public abstract class RequesterBase : IDisposable
     {
         private readonly HttpClient _httpClient;
