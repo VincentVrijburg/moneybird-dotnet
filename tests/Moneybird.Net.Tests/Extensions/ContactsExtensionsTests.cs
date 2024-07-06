@@ -1,6 +1,6 @@
 using System;
-using Moneybird.Net.Endpoints.Contacts.Models;
 using Moneybird.Net.Extensions;
+using Moneybird.Net.Models.Contacts;
 using Xunit;
 
 namespace Moneybird.Net.Tests.Extensions
@@ -49,7 +49,7 @@ namespace Moneybird.Net.Tests.Extensions
                 FirstName = firstName
             };
 
-            var expectedString = $"filter=first_name:{firstName}";
+            var expectedString = $"filter=first_name:Money";
             var actualString = options.GetFilterString();
             
             Assert.Equal(expectedString, actualString);
@@ -65,7 +65,7 @@ namespace Moneybird.Net.Tests.Extensions
                 LastName = lastName
             };
 
-            var expectedString = $"filter=last_name:{lastName}";
+            var expectedString = $"filter=last_name:Bird";
             var actualString = options.GetFilterString();
             
             Assert.Equal(expectedString, actualString);
@@ -89,8 +89,8 @@ namespace Moneybird.Net.Tests.Extensions
 
             var expectedString = $"filter=created_after:{createdDate:O}," +
                                  $"updated_after:{updatedDate:O}," +
-                                 $"first_name:{firstName}," +
-                                 $"last_name:{lastName}";
+                                 $"first_name:Money," +
+                                 $"last_name:Bird";
             
             var actualString = options.GetFilterString();
             

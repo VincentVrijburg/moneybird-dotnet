@@ -1,0 +1,58 @@
+{
+  "id": "395774015067653647",
+  "administration_id": "281289699686381606",
+  "contact_id": "395774015039342091",
+  "project_id": "395774015051925005",
+  "user_id": "1691659319295",
+  "started_at": "2023-08-10T09:25:00.000Z",
+  "ended_at": "2023-08-10T10:25:00.000Z",
+  "description": "Updated description",
+  "paused_duration": 0,
+  "billable": true,
+  "created_at": "2023-08-10T09:25:34.991Z",
+  "updated_at": "2023-08-10T09:25:35.037Z",
+  "contact": {
+    "id": "395774015039342091",
+    "firstname": "",
+    "lastname": "",
+    "company_name": "Foobar Holding B.V."
+  },
+  "detail": null,
+  "user": {
+    "id": "1691659319295",
+    "name": "Moneybird",
+    "created_at": "2023-08-10T09:21:59.146Z",
+    "updated_at": "2023-08-10T09:21:59.350Z"
+  },
+  "project": {
+    "id": "395774015051925005",
+    "name": "My project name",
+    "state": "active"
+  },
+  "events": [
+    {
+      "administration_id": "281289699686381606",
+      "user_id": "1691659319295",
+      "action": "time_entry_created",
+      "link_entity_id": null,
+      "link_entity_type": null,
+      "data": {
+      },
+      "created_at": "2023-08-10T09:25:34.993Z",
+      "updated_at": "2023-08-10T09:25:34.993Z"
+    },
+    {
+      "administration_id": "281289699686381606",
+      "user_id": "1691659319295",
+      "action": "time_entry_updated",
+      "link_entity_id": null,
+      "link_entity_type": null,
+      "data": {
+      },
+      "created_at": "2023-08-10T09:25:35.041Z",
+      "updated_at": "2023-08-10T09:25:35.041Z"
+    }
+  ],
+  "notes": [
+  ]
+}

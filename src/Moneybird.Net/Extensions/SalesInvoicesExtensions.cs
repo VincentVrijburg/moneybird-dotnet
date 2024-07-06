@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using Moneybird.Net.Endpoints.SalesInvoices.Models;
+using Moneybird.Net.Models.SalesInvoices;
 
 namespace Moneybird.Net.Extensions
 {
@@ -12,7 +12,7 @@ namespace Moneybird.Net.Extensions
 
             if (options.State.HasValue)
             {
-                filterValues.Add($"state:{options.State.Value}");
+                filterValues.Add($"state:{options.State.Value.ToString().ToSnakeCase()}");
             }
             
             if (!string.IsNullOrEmpty(options.Period))
@@ -24,20 +24,20 @@ namespace Moneybird.Net.Extensions
             {
                 filterValues.Add($"reference:{options.Reference}");
             }
-
-            if (options.ContactId.HasValue)
+            
+            if (!string.IsNullOrEmpty(options.ContactId))
             {
-                filterValues.Add($"contact_id:{options.ContactId.Value}");
+                filterValues.Add($"contact_id:{options.ContactId}");
             }
             
-            if (options.RecurringSalesInvoiceId.HasValue)
+            if (!string.IsNullOrEmpty(options.RecurringSalesInvoiceId))
             {
-                filterValues.Add($"recurring_sales_invoice_id:{options.RecurringSalesInvoiceId.Value}");
+                filterValues.Add($"recurring_sales_invoice_id:{options.RecurringSalesInvoiceId}");
             }
             
-            if (options.WorkflowId.HasValue)
+            if (!string.IsNullOrEmpty(options.WorkflowId))
             {
-                filterValues.Add($"workflow_id:{options.WorkflowId.Value}");
+                filterValues.Add($"workflow_id:{options.WorkflowId}");
             }
             
             if (options.CreatedAfter.HasValue)

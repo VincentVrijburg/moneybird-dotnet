@@ -1,24 +1,8 @@
 using System;
 using System.Net.Http;
 using Moneybird.Net.Abstractions;
+using Moneybird.Net.Endpoints;
 using Moneybird.Net.Endpoints.Abstractions;
-using Moneybird.Net.Endpoints.Administrations;
-using Moneybird.Net.Endpoints.Contacts;
-using Moneybird.Net.Endpoints.CustomFields;
-using Moneybird.Net.Endpoints.DocumentStyles;
-using Moneybird.Net.Endpoints.ExternalSalesInvoices;
-using Moneybird.Net.Endpoints.FinancialAccounts;
-using Moneybird.Net.Endpoints.FinancialStatements;
-using Moneybird.Net.Endpoints.LegderAccounts;
-using Moneybird.Net.Endpoints.Payments;
-using Moneybird.Net.Endpoints.Products;
-using Moneybird.Net.Endpoints.Projects;
-using Moneybird.Net.Endpoints.SalesInvoices;
-using Moneybird.Net.Endpoints.TaxRates;
-using Moneybird.Net.Endpoints.Users;
-using Moneybird.Net.Endpoints.Verifications;
-using Moneybird.Net.Endpoints.Webhooks;
-using Moneybird.Net.Endpoints.Workflows;
 using Moneybird.Net.Http;
 
 namespace Moneybird.Net
@@ -44,6 +28,7 @@ namespace Moneybird.Net
         public IProjectEndpoint Project { get; }
         public ISalesInvoiceEndpoint SalesInvoice { get; }
         public ITaxRateEndpoint TaxRate { get; }
+        public ITimeEntryEndpoint TimeEntry { get; }
         public IUserEndpoint User { get; }
         public IVerificationEndpoint Verification { get; }
         public IWebhookEndpoint Webhook { get; }
@@ -88,6 +73,7 @@ namespace Moneybird.Net
             Project = new ProjectEndpoint(Config, _requester);
             SalesInvoice = new SalesInvoiceEndpoint(Config, _requester);
             TaxRate = new TaxRateEndpoint(Config, _requester);
+            TimeEntry = new TimeEntryEndpoint(Config, _requester);
             User = new UserEndpoint(Config, _requester);
             Verification = new VerificationEndpoint(Config, _requester);
             Webhook = new WebhookEndpoint(Config, _requester);
