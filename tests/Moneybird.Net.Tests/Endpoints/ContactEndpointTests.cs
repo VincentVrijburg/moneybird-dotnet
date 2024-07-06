@@ -3,14 +3,15 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using FluentAssertions;
+using Moneybird.Net.Endpoints;
 using Moneybird.Net.Endpoints.Abstractions;
-using Moneybird.Net.Endpoints.Contacts;
-using Moneybird.Net.Endpoints.Contacts.Models;
 using Moneybird.Net.Entities.Contacts;
 using Moneybird.Net.Entities.CustomFields;
+using Moneybird.Net.Entities.Notes;
 using Moneybird.Net.Http;
 using Moneybird.Net.Misc;
-using Moneybird.Net.Tests.Endpoints.Contacts;
+using Moneybird.Net.Models.Contacts;
+using Moneybird.Net.Models.Notes;
 using Moq;
 using Xunit;
 
@@ -365,9 +366,9 @@ namespace Moneybird.Net.Tests.Endpoints
         public async void CreateContactNoteAsync_ByAccessToken_Returns_NewContactNote()
         {
             var contactNoteJson = await File.ReadAllTextAsync(NewContactNoteResponsePath);
-            var contactNoteCreateOptions = new ContactNoteCreateOptions
+            var contactNoteCreateOptions = new NoteCreateOptions
             {
-                Note = new ContactNoteCreateItem
+                Note = new NoteCreateItem
                 {
                     Note = "Text of the note",
                     Todo = true,
@@ -381,7 +382,7 @@ namespace Moneybird.Net.Tests.Endpoints
                     It.IsAny<string>(), It.Is<string>(s => s.Equals(serializedContactNoteCreateOptions)), It.IsAny<List<string>>()))
                 .ReturnsAsync(contactNoteJson);
         
-            var contactNote = JsonSerializer.Deserialize<ContactNote>(contactNoteJson, _config.SerializerOptions);
+            var contactNote = JsonSerializer.Deserialize<Note>(contactNoteJson, _config.SerializerOptions);
             Assert.NotNull(contactNote);
 
             var actualContactNote = await _contactEndpoint.CreateContactNoteAsync(AdministrationId, ContactId, contactNoteCreateOptions, AccessToken);
