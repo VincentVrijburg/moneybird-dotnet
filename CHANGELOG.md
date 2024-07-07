@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.14.0 | 2024-07-07
+* Add support for `Time entry` endpoint
+* Refactoring of the `Note` entity from `ContactNote` to a generic `Note` used in multiple entity types
+* Refactoring of endpoint namespaces after moving them within the solution
+* Refactoring of fields with a price or discount value from `string` to a `double` through serialization
+* Improved deserialization of error messages
+* Change various `Id` fields from `int` to `string` due to incorrect documentation
+* Updates of dependency versions
+
 ## 0.13.3 | 2024-07-05
 * Fix deserialization for id in CustomFieldAttribute entity.
 
