@@ -50,8 +50,10 @@ namespace Moneybird.Net.Entities.TimeEntries
         [JsonPropertyName("contact")]
         public Contact Contact { get; set; }
 
+        // TODO: Check documentation to understand what this detail field is meant for.
+        [JsonIgnore]
         [JsonPropertyName("detail")]
-        public SalesInvoiceDetail Detail { get; set; }
+        public object Detail { get; set; }
 
         [JsonPropertyName("user")]
         public User User { get; set; }
