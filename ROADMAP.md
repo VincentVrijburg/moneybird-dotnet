@@ -41,7 +41,7 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [x] Sales invoices (limited)
   - [ ] Subscriptions
   - [x] Tax rates
-  - [ ] Time entries
+  - [x] Time entries
   - [x] Users
   - [x] Verifications
   - [x] Webhooks

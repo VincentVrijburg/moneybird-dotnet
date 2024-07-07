@@ -1,6 +1,6 @@
-using Moneybird.Net.Endpoints.TaxRates.Models;
 using Moneybird.Net.Endpoints.Abstractions.Common;
 using Moneybird.Net.Entities.TaxRates;
+using Moneybird.Net.Models.TaxRates;
 
 namespace Moneybird.Net.Endpoints.Abstractions
 {

@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Moneybird.Net.Endpoints.TaxRates.Models;
 using Moneybird.Net.Entities.TaxRates;
 using Moneybird.Net.Extensions;
+using Moneybird.Net.Models.TaxRates;
 using Xunit;
 
 namespace Moneybird.Net.Tests.Extensions;
@@ -60,14 +60,14 @@ public class TaxRatesExtensionsTests
     [Fact]
     public void GetFilterString_FromTaxRateFilterOptions_TaxRateTypeOnly_Returns_CorrectString()
     {
-        const TaxRateType taxRateType = TaxRateType.All;
+        const TaxRateType taxRateType = TaxRateType.GeneralJournalDocument;
             
         var options = new TaxRateFilterOptions
         {
             TaxRateType = taxRateType
         };
 
-        var expectedString = $"filter=tax_rate_type:{taxRateType}";
+        const string expectedString = "filter=tax_rate_type:general_journal_document";
         var actualString = options.GetFilterString();
             
         Assert.Equal(expectedString, actualString);
@@ -83,7 +83,7 @@ public class TaxRatesExtensionsTests
             State = taxRateType
         };
 
-        var expectedString = $"filter=state:{string.Join("|", taxRateType)}";
+        const string expectedString = "filter=state:purchase_invoice|sales_invoice";
         var actualString = options.GetFilterString();
             
         Assert.Equal(expectedString, actualString);
@@ -99,7 +99,7 @@ public class TaxRatesExtensionsTests
             Country = country
         };
 
-        const string expectedString = $"filter=country:{country}";
+        const string expectedString = "filter=country:NL";
         var actualString = options.GetFilterString();
             
         Assert.Equal(expectedString, actualString);
@@ -115,7 +115,7 @@ public class TaxRatesExtensionsTests
             ShowTax = showTax
         };
 
-        var expectedString = $"filter=show_tax:{showTax}";
+        const string expectedString = "filter=show_tax:true";
         var actualString = options.GetFilterString();
             
         Assert.Equal(expectedString, actualString);
@@ -131,7 +131,7 @@ public class TaxRatesExtensionsTests
             Active = active
         };
 
-        var expectedString = $"filter=active:{active}";
+        const string expectedString = "filter=active:true";
         var actualString = options.GetFilterString();
             
         Assert.Equal(expectedString, actualString);
@@ -197,14 +197,14 @@ public class TaxRatesExtensionsTests
             UpdatedAfter = updatedAfter
         };
 
-        var expectedString = $"filter=name:{name}," +
-                             $"partial_name:{partialName}," +
-                             $"percentage:{percentage}," +
-                             $"tax_rate_type:{taxRateType}," +
-                             $"state:{string.Join("|", state)}," +
-                             $"country:{country}," +
-                             $"show_tax:{showTax}," +
-                             $"active:{active}," +
+        var expectedString = $"filter=name:Money Bird," +
+                             $"partial_name:Bird," +
+                             $"percentage:21," +
+                             $"tax_rate_type:all," +
+                             $"state:purchase_invoice|sales_invoice," +
+                             $"country:NL," +
+                             $"show_tax:true," +
+                             $"active:true," +
                              $"created_after:{createdAfter:O}," +
                              $"updated_after:{updatedAfter:O}";
             
