@@ -8,6 +8,7 @@ using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.CustomFields;
 using Moneybird.Net.Entities.SalesInvoices;
 using Moneybird.Net.Http;
+using Moneybird.Net.Misc;
 using Moneybird.Net.Models.SalesInvoices;
 using Moq;
 using Xunit;
@@ -23,6 +24,7 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
     private const string GetSalesInvoicesResponsePath = "./Responses/Endpoints/SalesInvoices/getSalesInvoices.json";
     private const string GetSalesInvoiceResponsePath = "./Responses/Endpoints/SalesInvoices/getSalesInvoice.json";
     private const string PostSalesInvoiceResponsePath = "./Responses/Endpoints/SalesInvoices/postSalesInvoice.json";
+    private const string SendSalesInvoiceResponsePath = "./Responses/Endpoints/SalesInvoices/sendSalesInvoice.json";
 
     public SalesInvoiceEndpointTests()
     {
@@ -265,6 +267,36 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
             
         var actualSalesInvoice = await _salesInvoiceEndpoint.DeleteByIdAsync(AdministrationId, SalesInvoiceId, AccessToken);
         Assert.True(actualSalesInvoice);
+    }
+
+    [Fact]
+    public async void SendSalesInvoiceAsync_ByAccessToken_Returns_UpdatedSalesInvoice()
+    {
+        var salesInvoiceJson = await File.ReadAllTextAsync(SendSalesInvoiceResponsePath);
+        var salesInvoiceSendOptions = new SalesInvoiceSendOptions
+        {
+            DeliveryMethod = DeliveryMethod.Email,
+            SendingScheduled = false,
+            SendingUbl = false,
+            Mergeable = false,
+            EmailAddress = "info@example.com",
+            EmailMessage = "Geachte Foobar Holding B.V.,\n\nIn de bijlage kunt u factuur 2024-0001 voor onze diensten vinden. Wij verzoeken u vriendelijk de factuur voor 30-07-2024 te voldoen.\n\nMet vriendelijke groet,\n\nParkietje B.V.",
+            InvoiceDate = null
+        };
+
+        var serializedSalesInvoiceSendOptions = JsonSerializer.Serialize(salesInvoiceSendOptions, _config.SerializerOptions);
+
+        _requester.Setup(moq => moq.CreatePatchRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
+                It.IsAny<string>(), It.Is<string>(s => s.Equals(serializedSalesInvoiceSendOptions)), It.IsAny<List<string>>()))
+            .ReturnsAsync(salesInvoiceJson);
+
+        var salesInvoice = JsonSerializer.Deserialize<SalesInvoice>(salesInvoiceJson, _config.SerializerOptions);
+        Assert.NotNull(salesInvoice);
+
+        var actualSalesInvoice = await _salesInvoiceEndpoint.SendInvoice(AdministrationId, SalesInvoiceId, salesInvoiceSendOptions, AccessToken);
+        Assert.NotNull(actualSalesInvoice);
+
+        salesInvoice.Should().BeEquivalentTo(actualSalesInvoice);
     }
 
     [Fact]

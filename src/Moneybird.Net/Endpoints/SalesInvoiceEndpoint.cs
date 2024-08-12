@@ -96,6 +96,17 @@ namespace Moneybird.Net.Endpoints
             return response;
         }
 
+        public async Task<SalesInvoice> SendInvoice(string administrationId, string salesInvoiceId, SalesInvoiceSendOptions options, string accessToken)
+        {
+            var relativeUrl = string.Format(SalesInvoiceIdUri, administrationId, salesInvoiceId);
+            var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
+            var responseJson = await _requester
+                .CreatePatchRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
+                .ConfigureAwait(false);
+
+            return JsonSerializer.Deserialize<SalesInvoice>(responseJson, _config.SerializerOptions); ;
+        }
+
         public async Task AddAttachmentAsync(string administrationId, string salesInvoiceId, Stream body, string accessToken, string fileName = "invoice.pdf")
         {
             var relativeUrl = string.Format(SalesInvoiceAttachmentUri, administrationId, salesInvoiceId);
