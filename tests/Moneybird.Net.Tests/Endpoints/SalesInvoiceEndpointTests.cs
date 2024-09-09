@@ -277,7 +277,7 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
         {
             DeliveryMethod = DeliveryMethod.Email,
             SendingScheduled = false,
-            SendingUbl = false,
+            DeliverUbl = false,
             Mergeable = false,
             EmailAddress = "info@example.com",
             EmailMessage = "Geachte Foobar Holding B.V.,\n\nIn de bijlage kunt u factuur 2024-0001 voor onze diensten vinden. Wij verzoeken u vriendelijk de factuur voor 30-07-2024 te voldoen.\n\nMet vriendelijke groet,\n\nParkietje B.V.",

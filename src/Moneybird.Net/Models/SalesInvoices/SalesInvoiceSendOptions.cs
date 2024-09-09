@@ -11,8 +11,8 @@ namespace Moneybird.Net.Models.SalesInvoices
         [JsonPropertyName("sending_scheduled")]
         public bool SendingScheduled { get; set; }
 
-        [JsonPropertyName("sending_ubl")]
-        public bool SendingUbl { get; set; }
+        [JsonPropertyName("deliver_ubl")]
+        public bool DeliverUbl { get; set; }
 
         [JsonPropertyName("mergable")]
         public bool Mergeable { get; set; }
