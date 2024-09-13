@@ -3,7 +3,7 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>9</LangVersion>
         <PackageId>Moneybird.Net</PackageId>
-        <Version>0.14.0</Version>
+        <Version>0.15.0</Version>
         <Authors>Vincent Vrijburg</Authors>
         <Description>A wrapper for the Moneybird API.</Description>
         <Copyright>Copyright © Vincent Vrijburg 2021</Copyright>
@@ -12,12 +12,12 @@
         <PackageTags>dotnet dotnet-core dotnet-standard client wrapper moneybird</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-        <PackageVersion>0.14.0</PackageVersion>
+        <PackageVersion>0.15.0</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="Macross.Json.Extensions" Version="3.0.0" />
-      <PackageReference Include="System.Text.Json" Version="8.0.3" />
+      <PackageReference Include="System.Text.Json" Version="8.0.4" />
     </ItemGroup>
 
     <ItemGroup>

@@ -15,6 +15,16 @@ namespace Moneybird.Net.Endpoints.Abstractions
         IDeleteEndpoint
     {
         /// <summary>
+        /// Send an invoice to a customer.
+        /// </summary>
+        /// <param name="administrationId">The administration id.</param>
+        /// <param name="salesInvoiceId">The sales invoice id.</param>
+        /// <param name="options">The options to send the invoice with.</param>
+        /// <param name="accessToken">The access token.</param>
+        /// <returns></returns>
+        Task<SalesInvoice> SendInvoice(string administrationId, string salesInvoiceId, SalesInvoiceSendOptions options, string accessToken);
+
+        /// <summary>
         /// Add an attachment to a sales invoice.
         /// </summary>
         /// <param name="administrationId">The administration id.</param>

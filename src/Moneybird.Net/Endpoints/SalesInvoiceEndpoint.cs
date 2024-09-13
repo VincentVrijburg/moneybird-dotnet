@@ -14,6 +14,7 @@ namespace Moneybird.Net.Endpoints
     {
         private const string SalesInvoiceUri = "/{0}/sales_invoices.json";
         private const string SalesInvoiceIdUri = "/{0}/sales_invoices/{1}.json";
+        private const string SalesInvoiceSendInvoiceUri = "/{0}/sales_invoices/{1}/send_invoice.json";
         private const string SalesInvoiceAttachmentUri = "/{0}/external_sales_invoices/{1}/attachment";
 
         private readonly MoneybirdConfig _config;
@@ -94,6 +95,17 @@ namespace Moneybird.Net.Endpoints
                 .ConfigureAwait(false);
 
             return response;
+        }
+
+        public async Task<SalesInvoice> SendInvoice(string administrationId, string salesInvoiceId, SalesInvoiceSendOptions options, string accessToken)
+        {
+            var relativeUrl = string.Format(SalesInvoiceSendInvoiceUri, administrationId, salesInvoiceId);
+            var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
+            var responseJson = await _requester
+                .CreatePatchRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
+                .ConfigureAwait(false);
+
+            return JsonSerializer.Deserialize<SalesInvoice>(responseJson, _config.SerializerOptions); ;
         }
 
         public async Task AddAttachmentAsync(string administrationId, string salesInvoiceId, Stream body, string accessToken, string fileName = "invoice.pdf")
