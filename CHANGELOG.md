@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.15.0 | 2024-09-13
+* Add support for Send an invoice operation in the `Sales invoice` endpoint
+
 ## 0.14.0 | 2024-07-07
 * Add support for `Time entry` endpoint
 * Refactoring of the `Note` entity from `ContactNote` to a generic `Note` used in multiple entity types
@@ -37,7 +40,7 @@
 ## 0.9.0 | 2023-06-04
 * Add support for `Tax rates` endpoint.
 * Add support for `Ledger account` endpoint.
-* Add support for `Sales invoices endpoint` endpoint (limited operations).
+* Add support for `Sales invoices` endpoint endpoint (limited operations).
 * Add support for `External sales invoices` endpoint (limited operations).
 * Change names (classes, enums, interfaces) and their namespaces.
 
