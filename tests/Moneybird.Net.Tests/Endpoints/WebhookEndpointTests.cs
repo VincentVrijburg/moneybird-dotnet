@@ -60,7 +60,7 @@ public class WebhookEndpointTests : WebhookEndpointTestBase
         var options = new WebhookCreateOptions
         {
             Url = "http://www.mocky.io/v2/5185415ba171ea3a00704eed",
-            Events = new List<WebhookEvent>
+            EnabledEvents = new List<WebhookEvent>
             {
                 WebhookEvent.ContactCreated
             }
