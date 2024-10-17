@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.16.0 | 2024-10-17
+* Add support for pagination in all list endpoints.
+* Fix the `events` attribute on webhook entities as it is considered deprecated (replaced by `enabled_events`)
+
 ## 0.15.0 | 2024-09-13
 * Add support for Send an invoice operation in the `Sales invoice` endpoint
 
