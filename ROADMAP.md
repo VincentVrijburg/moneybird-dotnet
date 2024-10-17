@@ -16,6 +16,7 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [x] Retrieving the request token
   - [x] Requesting the access token
   - [x] Refreshing the access token
+- [x] Support for pagination 
 - [ ] Support for the resource endpoints
   - [x] Administration
   - [x] Contacts
