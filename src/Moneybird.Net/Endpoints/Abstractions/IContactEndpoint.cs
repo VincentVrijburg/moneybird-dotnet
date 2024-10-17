@@ -16,8 +16,8 @@ namespace Moneybird.Net.Endpoints.Abstractions
         IUpdateEndpoint<Contact, ContactUpdateOptions>,
         IDeleteEndpoint
     {
-        Task<IEnumerable<SynchronizationContact>> GetSynchronizationContactsAsync(string administrationId, string accessToken);
-        Task<IEnumerable<SynchronizationContact>> GetSynchronizationContactsAsync(string administrationId, string accessToken, ContactFilterOptions options);
+        Task<IEnumerable<SynchronizationContact>> GetSynchronizationContactsAsync(string administrationId, string accessToken, int page = 1, int perPage = 50);
+        Task<IEnumerable<SynchronizationContact>> GetSynchronizationContactsAsync(string administrationId, string accessToken, ContactFilterOptions options, int page = 1, int perPage = 50);
         Task<IEnumerable<Contact>> GetContactsByIdsAsync(string administrationId, string accessToken, ContactListOptions options);
         Task<Contact> GetContactByCustomerIdAsync(string administrationId, string customerId, string accessToken);
         Task<Note> CreateContactNoteAsync(string administrationId, string contactId, NoteCreateOptions options, string accessToken);

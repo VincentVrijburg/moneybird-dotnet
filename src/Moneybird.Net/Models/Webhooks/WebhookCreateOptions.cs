@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Moneybird.Net.Endpoints.Abstractions.Options;
@@ -10,7 +11,11 @@ namespace Moneybird.Net.Models.Webhooks
         [JsonPropertyName("url")]
         public string Url { get; set; }
         
-        [JsonPropertyName("events")]
+        [Obsolete("Use EnabledEvents instead as this attribute has been removed from the API.", true)]
+        [JsonIgnore]
         public List<WebhookEvent> Events { get; set; }
+        
+        [JsonPropertyName("enabled_events")]
+        public List<WebhookEvent> EnabledEvents { get; set; }
     }
 }

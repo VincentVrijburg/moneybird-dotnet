@@ -19,7 +19,7 @@ namespace Moneybird.Net.Endpoints
             _config = config;
         }
         
-        public async Task<Verification> GetVerificationAsync(string administrationId, string accessToken)
+        public async Task<Verification> GetAsync(string administrationId, string accessToken)
         {
             var relativeUrl = string.Format(VerificationsUri, administrationId);
             var responseJson = await _requester

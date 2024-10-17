@@ -20,11 +20,16 @@ namespace Moneybird.Net.Endpoints
             _config = config;
         }
         
-        public async Task<IEnumerable<DocumentStyle>> GetAsync(string administrationId, string accessToken)
+        public async Task<IEnumerable<DocumentStyle>> GetAsync(
+            string administrationId,
+            string accessToken,
+            int page = 1,
+            int perPage = 50)
         {
+            var paramValues = new List<string> { $"page={page}", $"per_page={perPage}" };
             var relativeUrl = string.Format(DocumentStylesUri, administrationId);
             var responseJson = await _requester
-                .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
+                .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken, paramValues)
                 .ConfigureAwait(false);
 
             return JsonSerializer.Deserialize<IEnumerable<DocumentStyle>>(responseJson, _config.SerializerOptions);
