@@ -15,7 +15,9 @@ namespace Moneybird.Net.Endpoints.Abstractions.Common
         /// <param name="administrationId">The administration id.</param>
         /// <param name="accessToken">The access token.</param>
         /// <param name="options">The filter options.</param>
+        /// <param name="page">The page number of the entities. Defaults to 1.</param>
+        /// <param name="perPage">The amount of entities per page. Defaults to 50.</param>
         /// <returns></returns>
-        Task<IEnumerable<TMoneybirdEntity>> GetAsync(string administrationId, string accessToken, TMoneybirdFilterOptions options);
+        Task<IEnumerable<TMoneybirdEntity>> GetAsync(string administrationId, string accessToken, TMoneybirdFilterOptions options, int page = 1, int perPage = 50);
     }
 }
