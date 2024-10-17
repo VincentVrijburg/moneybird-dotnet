@@ -17,12 +17,12 @@ public class VerificationEndpointTests : CommonTestBase
     private readonly MoneybirdConfig _config;
     private readonly VerificationEndpoint _verificationEndpoint;
     
-    private const string GetVerificationResponsePath = "./Responses/Endpoints/Verifications/getVerification.json";
-    private const string GetVerificationAllPendingResponsePath = "./Responses/Endpoints/Verifications/getVerificationAllPending.json";
-    private const string GetVerificationBankPendingResponsePath = "./Responses/Endpoints/Verifications/getVerificationBankPending.json";
-    private const string GetVerificationCommercePendingResponsePath = "./Responses/Endpoints/Verifications/getVerificationCommercePending.json";
-    private const string GetVerificationEmailPendingResponsePath = "./Responses/Endpoints/Verifications/getVerificationEmailPending.json";
-    private const string GetVerificationTaxPendingResponsePath = "./Responses/Endpoints/Verifications/getVerificationTaxPending.json";
+    private const string GetVerificationsResponsePath = "./Responses/Endpoints/Verifications/getVerification.json";
+    private const string GetVerificationsAllPendingResponsePath = "./Responses/Endpoints/Verifications/getVerificationAllPending.json";
+    private const string GetVerificationsBankPendingResponsePath = "./Responses/Endpoints/Verifications/getVerificationBankPending.json";
+    private const string GetVerificationsCommercePendingResponsePath = "./Responses/Endpoints/Verifications/getVerificationCommercePending.json";
+    private const string GetVerificationsEmailPendingResponsePath = "./Responses/Endpoints/Verifications/getVerificationEmailPending.json";
+    private const string GetVerificationsTaxPendingResponsePath = "./Responses/Endpoints/Verifications/getVerificationTaxPending.json";
 
     public VerificationEndpointTests()
     {
@@ -32,142 +32,142 @@ public class VerificationEndpointTests : CommonTestBase
     }
     
     [Fact]
-    public async Task GetVerificationAsync_ByAccessToken_Returns_Verification()
+    public async Task GetAsync_ByAccessToken_Returns_Verifications()
     {
-        var verificationJson = await File.ReadAllTextAsync(GetVerificationResponsePath);
+        var verificationsJson = await File.ReadAllTextAsync(GetVerificationsResponsePath);
         _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
-            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(verificationJson);
+            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(verificationsJson);
         
-        var verification = JsonSerializer.Deserialize<Verification>(verificationJson, _config.SerializerOptions);
-        Assert.NotNull(verification);
+        var verifications = JsonSerializer.Deserialize<Verification>(verificationsJson, _config.SerializerOptions);
+        Assert.NotNull(verifications);
         
-        var actualVerification = await _verificationEndpoint.GetVerificationAsync(AdministrationId, AccessToken);
-        Assert.NotNull(actualVerification);
+        var actualVerifications = await _verificationEndpoint.GetAsync(AdministrationId, AccessToken);
+        Assert.NotNull(actualVerifications);
         
-        verification.Should().BeEquivalentTo(actualVerification);
+        verifications.Should().BeEquivalentTo(actualVerifications);
         
         // All properties should be filled
-        Assert.NotNull(actualVerification.BankAccountNumbers);
-        Assert.NotEmpty(actualVerification.BankAccountNumbers);
-        Assert.NotNull(actualVerification.ChamberOfCommerceNumber);
-        Assert.NotNull(actualVerification.Emails);
-        Assert.NotEmpty(actualVerification.Emails);
-        Assert.NotNull(actualVerification.TaxNumber);
+        Assert.NotNull(actualVerifications.BankAccountNumbers);
+        Assert.NotEmpty(actualVerifications.BankAccountNumbers);
+        Assert.NotNull(actualVerifications.ChamberOfCommerceNumber);
+        Assert.NotNull(actualVerifications.Emails);
+        Assert.NotEmpty(actualVerifications.Emails);
+        Assert.NotNull(actualVerifications.TaxNumber);
     }
     
     [Fact]
-    public async Task GetVerificationAsync_ByAccessToken_Returns_VerificationAllPending()
+    public async Task GetAsync_ByAccessToken_Returns_VerificationsAllPending()
     {
-        var verificationJson = await File.ReadAllTextAsync(GetVerificationAllPendingResponsePath);
+        var verificationsJson = await File.ReadAllTextAsync(GetVerificationsAllPendingResponsePath);
         _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
-            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(verificationJson);
+            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(verificationsJson);
         
-        var verification = JsonSerializer.Deserialize<Verification>(verificationJson, _config.SerializerOptions);
-        Assert.NotNull(verification);
+        var verifications = JsonSerializer.Deserialize<Verification>(verificationsJson, _config.SerializerOptions);
+        Assert.NotNull(verifications);
         
-        var actualVerification = await _verificationEndpoint.GetVerificationAsync(AdministrationId, AccessToken);
-        Assert.NotNull(actualVerification);
+        var actualVerifications = await _verificationEndpoint.GetAsync(AdministrationId, AccessToken);
+        Assert.NotNull(actualVerifications);
         
-        verification.Should().BeEquivalentTo(actualVerification);
+        verifications.Should().BeEquivalentTo(actualVerifications);
         
         // All properties should not be filled
-        Assert.Null(actualVerification.BankAccountNumbers);
-        Assert.Null(actualVerification.ChamberOfCommerceNumber);
-        Assert.Null(actualVerification.Emails);
-        Assert.Null(actualVerification.TaxNumber);
+        Assert.Null(actualVerifications.BankAccountNumbers);
+        Assert.Null(actualVerifications.ChamberOfCommerceNumber);
+        Assert.Null(actualVerifications.Emails);
+        Assert.Null(actualVerifications.TaxNumber);
     }
     
     [Fact]
-    public async Task GetVerificationAsync_ByAccessToken_Returns_VerificationBankPending()
+    public async Task GetAsync_ByAccessToken_Returns_VerificationsBankPending()
     {
-        var verificationJson = await File.ReadAllTextAsync(GetVerificationBankPendingResponsePath);
+        var verificationsJson = await File.ReadAllTextAsync(GetVerificationsBankPendingResponsePath);
         _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
-            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(verificationJson);
+            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(verificationsJson);
         
-        var verification = JsonSerializer.Deserialize<Verification>(verificationJson, _config.SerializerOptions);
-        Assert.NotNull(verification);
+        var verifications = JsonSerializer.Deserialize<Verification>(verificationsJson, _config.SerializerOptions);
+        Assert.NotNull(verifications);
         
-        var actualVerification = await _verificationEndpoint.GetVerificationAsync(AdministrationId, AccessToken);
-        Assert.NotNull(actualVerification);
+        var actualVerifications = await _verificationEndpoint.GetAsync(AdministrationId, AccessToken);
+        Assert.NotNull(actualVerifications);
         
-        verification.Should().BeEquivalentTo(actualVerification);
+        verifications.Should().BeEquivalentTo(actualVerifications);
         
         // All properties except bank account numbers should be filled
-        Assert.Null(actualVerification.BankAccountNumbers);
-        Assert.NotNull(actualVerification.ChamberOfCommerceNumber);
-        Assert.NotNull(actualVerification.Emails);
-        Assert.NotEmpty(actualVerification.Emails);
-        Assert.NotNull(actualVerification.TaxNumber);
+        Assert.Null(actualVerifications.BankAccountNumbers);
+        Assert.NotNull(actualVerifications.ChamberOfCommerceNumber);
+        Assert.NotNull(actualVerifications.Emails);
+        Assert.NotEmpty(actualVerifications.Emails);
+        Assert.NotNull(actualVerifications.TaxNumber);
     }
     
     [Fact]
     public async Task GetVerificationAsync_ByAccessToken_Returns_VerificationCommercePending()
     {
-        var verificationJson = await File.ReadAllTextAsync(GetVerificationCommercePendingResponsePath);
+        var verificationsJson = await File.ReadAllTextAsync(GetVerificationsCommercePendingResponsePath);
         _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
-            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(verificationJson);
+            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(verificationsJson);
         
-        var verification = JsonSerializer.Deserialize<Verification>(verificationJson, _config.SerializerOptions);
-        Assert.NotNull(verification);
+        var verifications = JsonSerializer.Deserialize<Verification>(verificationsJson, _config.SerializerOptions);
+        Assert.NotNull(verifications);
         
-        var actualVerification = await _verificationEndpoint.GetVerificationAsync(AdministrationId, AccessToken);
-        Assert.NotNull(actualVerification);
+        var actualVerifications = await _verificationEndpoint.GetAsync(AdministrationId, AccessToken);
+        Assert.NotNull(actualVerifications);
         
-        verification.Should().BeEquivalentTo(actualVerification);
+        verifications.Should().BeEquivalentTo(actualVerifications);
         
         // All properties except chamber of commerce number should be filled
-        Assert.NotNull(actualVerification.BankAccountNumbers);
-        Assert.NotEmpty(actualVerification.BankAccountNumbers);
-        Assert.Null(actualVerification.ChamberOfCommerceNumber);
-        Assert.NotNull(actualVerification.Emails);
-        Assert.NotEmpty(actualVerification.Emails);
-        Assert.NotNull(actualVerification.TaxNumber);
+        Assert.NotNull(actualVerifications.BankAccountNumbers);
+        Assert.NotEmpty(actualVerifications.BankAccountNumbers);
+        Assert.Null(actualVerifications.ChamberOfCommerceNumber);
+        Assert.NotNull(actualVerifications.Emails);
+        Assert.NotEmpty(actualVerifications.Emails);
+        Assert.NotNull(actualVerifications.TaxNumber);
     }
     
     [Fact]
-    public async Task GetVerificationAsync_ByAccessToken_Returns_VerificationEmailPending()
+    public async Task GetAsync_ByAccessToken_Returns_VerificationsEmailPending()
     {
-        var verificationJson = await File.ReadAllTextAsync(GetVerificationEmailPendingResponsePath);
+        var verificationsJson = await File.ReadAllTextAsync(GetVerificationsEmailPendingResponsePath);
         _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
-            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(verificationJson);
+            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(verificationsJson);
         
-        var verification = JsonSerializer.Deserialize<Verification>(verificationJson, _config.SerializerOptions);
-        Assert.NotNull(verification);
+        var verifications = JsonSerializer.Deserialize<Verification>(verificationsJson, _config.SerializerOptions);
+        Assert.NotNull(verifications);
         
-        var actualVerification = await _verificationEndpoint.GetVerificationAsync(AdministrationId, AccessToken);
-        Assert.NotNull(actualVerification);
+        var actualVerifications = await _verificationEndpoint.GetAsync(AdministrationId, AccessToken);
+        Assert.NotNull(actualVerifications);
         
-        verification.Should().BeEquivalentTo(actualVerification);
+        verifications.Should().BeEquivalentTo(actualVerifications);
         
         // All properties except emails should be filled
-        Assert.NotNull(actualVerification.BankAccountNumbers);
-        Assert.NotEmpty(actualVerification.BankAccountNumbers);
-        Assert.NotNull(actualVerification.ChamberOfCommerceNumber);
-        Assert.Null(actualVerification.Emails);
-        Assert.NotNull(actualVerification.TaxNumber);
+        Assert.NotNull(actualVerifications.BankAccountNumbers);
+        Assert.NotEmpty(actualVerifications.BankAccountNumbers);
+        Assert.NotNull(actualVerifications.ChamberOfCommerceNumber);
+        Assert.Null(actualVerifications.Emails);
+        Assert.NotNull(actualVerifications.TaxNumber);
     }
     
     [Fact]
-    public async Task GetVerificationAsync_ByAccessToken_Returns_VerificationTaxPending()
+    public async Task GetAsync_ByAccessToken_Returns_VerificationsTaxPending()
     {
-        var verificationJson = await File.ReadAllTextAsync(GetVerificationTaxPendingResponsePath);
+        var verificationsJson = await File.ReadAllTextAsync(GetVerificationsTaxPendingResponsePath);
         _requester.Setup(moq => moq.CreateGetRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
-            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(verificationJson);
+            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(verificationsJson);
         
-        var verification = JsonSerializer.Deserialize<Verification>(verificationJson, _config.SerializerOptions);
-        Assert.NotNull(verification);
+        var verifications = JsonSerializer.Deserialize<Verification>(verificationsJson, _config.SerializerOptions);
+        Assert.NotNull(verifications);
         
-        var actualVerification = await _verificationEndpoint.GetVerificationAsync(AdministrationId, AccessToken);
-        Assert.NotNull(actualVerification);
+        var actualVerifications = await _verificationEndpoint.GetAsync(AdministrationId, AccessToken);
+        Assert.NotNull(actualVerifications);
         
-        verification.Should().BeEquivalentTo(actualVerification);
+        verifications.Should().BeEquivalentTo(actualVerifications);
         
         // All properties except tax number should be filled
-        Assert.NotNull(actualVerification.BankAccountNumbers);
-        Assert.NotEmpty(actualVerification.BankAccountNumbers);
-        Assert.NotNull(actualVerification.ChamberOfCommerceNumber);
-        Assert.NotNull(actualVerification.Emails);
-        Assert.NotEmpty(actualVerification.Emails);
-        Assert.Null(actualVerification.TaxNumber);
+        Assert.NotNull(actualVerifications.BankAccountNumbers);
+        Assert.NotEmpty(actualVerifications.BankAccountNumbers);
+        Assert.NotNull(actualVerifications.ChamberOfCommerceNumber);
+        Assert.NotNull(actualVerifications.Emails);
+        Assert.NotEmpty(actualVerifications.Emails);
+        Assert.Null(actualVerifications.TaxNumber);
     }
 }

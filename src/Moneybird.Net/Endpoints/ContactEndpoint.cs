@@ -32,24 +32,35 @@ namespace Moneybird.Net.Endpoints
             _config = config;
         }
         
-        public async Task<IEnumerable<Contact>> GetAsync(string administrationId, string accessToken)
+        public async Task<IEnumerable<Contact>> GetAsync(
+            string administrationId,
+            string accessToken,
+            int page = 1,
+            int perPage = 50)
         {
+            var paramValues = new List<string> { $"page={page}", $"per_page={perPage}" };
+            
             var relativeUrl = string.Format(ContactsUri, administrationId);
             var responseJson = await _requester
-                .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
+                .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken, paramValues)
                 .ConfigureAwait(false);
 
             return JsonSerializer.Deserialize<IEnumerable<Contact>>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<IEnumerable<Contact>> GetAsync(string administrationId, string accessToken, ContactFilterOptions options)
+        public async Task<IEnumerable<Contact>> GetAsync(
+            string administrationId,
+            string accessToken,
+            ContactFilterOptions options,
+            int page = 1,
+            int perPage = 50)
         {
-            List<string> paramValues = null;
+            var paramValues = new List<string> { $"page={page}", $"per_page={perPage}" };
             
             var filterString = options.GetFilterString();
             if (!string.IsNullOrEmpty(filterString))
             {
-                paramValues = new List<string> { $"filter={filterString}" };
+                paramValues.Add($"filter={filterString}");
             }
             
             var relativeUrl = string.Format(ContactsFilterUri, administrationId);
@@ -60,24 +71,35 @@ namespace Moneybird.Net.Endpoints
             return JsonSerializer.Deserialize<IEnumerable<Contact>>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<IEnumerable<SynchronizationContact>> GetSynchronizationContactsAsync(string administrationId, string accessToken)
+        public async Task<IEnumerable<SynchronizationContact>> GetSynchronizationContactsAsync(
+            string administrationId,
+            string accessToken,
+            int page = 1,
+            int perPage = 50)
         {
+            var paramValues = new List<string> { $"page={page}", $"per_page={perPage}" };
+            
             var relativeUrl = string.Format(ContactsSynchronizationUri, administrationId);
             var responseJson = await _requester
-                .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
+                .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken, paramValues)
                 .ConfigureAwait(false);
 
             return JsonSerializer.Deserialize<IEnumerable<SynchronizationContact>>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<IEnumerable<SynchronizationContact>> GetSynchronizationContactsAsync(string administrationId, string accessToken, ContactFilterOptions options)
+        public async Task<IEnumerable<SynchronizationContact>> GetSynchronizationContactsAsync(
+            string administrationId,
+            string accessToken,
+            ContactFilterOptions options,
+            int page = 1,
+            int perPage = 50)
         {
-            List<string> paramValues = null;
+            var paramValues = new List<string> { $"page={page}", $"per_page={perPage}" };
             
             var filterString = options.GetFilterString();
             if (!string.IsNullOrEmpty(filterString))
             {
-                paramValues = new List<string> { $"filter={filterString}" };
+                paramValues.Add($"filter={filterString}");
             }
             
             var relativeUrl = string.Format(ContactsSynchronizationUri, administrationId);

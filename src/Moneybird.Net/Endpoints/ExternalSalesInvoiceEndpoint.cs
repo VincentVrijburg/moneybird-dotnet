@@ -25,24 +25,34 @@ namespace Moneybird.Net.Endpoints
             _requester = requester;
         }
 
-        public async Task<IEnumerable<ExternalSalesInvoice>> GetAsync(string administrationId, string accessToken)
+        public async Task<IEnumerable<ExternalSalesInvoice>> GetAsync(
+            string administrationId,
+            string accessToken,
+            int page = 1,
+            int perPage = 50)
         {
+            var paramValues = new List<string> { $"page={page}", $"per_page={perPage}" };
             var relativeUrl = string.Format(ExternalSalesInvoiceUri, administrationId);
             var responseJson = await _requester
-                .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
+                .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken, paramValues)
                 .ConfigureAwait(false);
 
             return JsonSerializer.Deserialize<IEnumerable<ExternalSalesInvoice>>(responseJson, _config.SerializerOptions);
         }
 
-        public async Task<IEnumerable<ExternalSalesInvoice>> GetAsync(string administrationId, string accessToken, ExternalSalesInvoiceFilterOptions options)
+        public async Task<IEnumerable<ExternalSalesInvoice>> GetAsync(
+            string administrationId,
+            string accessToken,
+            ExternalSalesInvoiceFilterOptions options,
+            int page = 1,
+            int perPage = 50)
         {
-            List<string> paramValues = null;
+            var paramValues = new List<string> { $"page={page}", $"per_page={perPage}" };
                         
             var filterString = options.GetFilterString();
             if (!string.IsNullOrEmpty(filterString))
             {
-                paramValues = new List<string> { $"filter={filterString}" };
+                paramValues.Add($"filter={filterString}");
             }
             
             var relativeUrl = string.Format(ExternalSalesInvoiceUri, administrationId);

@@ -23,24 +23,34 @@ namespace Moneybird.Net.Endpoints
             _config = config;
         }
         
-        public async Task<IEnumerable<Project>> GetAsync(string administrationId, string accessToken)
+        public async Task<IEnumerable<Project>> GetAsync(
+            string administrationId,
+            string accessToken,
+            int page = 1,
+            int perPage = 50)
         {
+            var paramValues = new List<string> { $"page={page}", $"per_page={perPage}" };
             var relativeUrl = string.Format(ProjectsUri, administrationId);
             var responseJson = await _requester
-                .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken)
+                .CreateGetRequestAsync(_config.ApiUri, relativeUrl, accessToken, paramValues)
                 .ConfigureAwait(false);
 
             return JsonSerializer.Deserialize<IEnumerable<Project>>(responseJson, _config.SerializerOptions);
         }
         
-        public async Task<IEnumerable<Project>> GetAsync(string administrationId, string accessToken, ProjectFilterOptions options)
+        public async Task<IEnumerable<Project>> GetAsync(
+            string administrationId,
+            string accessToken,
+            ProjectFilterOptions options,
+            int page = 1,
+            int perPage = 50)
         {
-            List<string> paramValues = null;
-                        
+            var paramValues = new List<string> { $"page={page}", $"per_page={perPage}" };
+            
             var filterString = options.GetFilterString();
             if (!string.IsNullOrEmpty(filterString))
             {
-                paramValues = new List<string> { $"filter={filterString}" };
+                paramValues.Add($"filter={filterString}");
             }
             
             var relativeUrl = string.Format(ProjectsUri, administrationId);
