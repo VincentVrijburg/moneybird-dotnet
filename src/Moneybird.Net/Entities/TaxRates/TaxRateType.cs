@@ -2,19 +2,19 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.TaxRates
 {
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum TaxRateType
     {
-        [JsonPropertyName("all")]
+        [JsonStringEnumMemberName("all")]
         All,
         
-        [JsonPropertyName("general_journal_document")]
+        [JsonStringEnumMemberName("general_journal_document")]
         GeneralJournalDocument,
         
-        [JsonPropertyName("purchase_invoice")]
+        [JsonStringEnumMemberName("purchase_invoice")]
         PurchaseInvoice,
         
-        [JsonPropertyName("sales_invoice")]
+        [JsonStringEnumMemberName("sales_invoice")]
         SalesInvoice
     }
 }

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.TaxRates;
@@ -28,7 +29,7 @@ public class TaxRateEndpointTests : CommonTestBase
     }
     
     [Fact]
-    public async void GetTaxRatesAsync_ByAccessToken_Returns_TaxRates()
+    public async Task GetTaxRatesAsync_ByAccessToken_Returns_TaxRates()
     {
         var taxRatesList = await File.ReadAllTextAsync(ResponsePath);
 
@@ -54,7 +55,7 @@ public class TaxRateEndpointTests : CommonTestBase
     }
     
     [Fact]
-    public async void GetTaxRatesAsync_UsingFilterOptions_ByAccessToken_Returns_TaxRates()
+    public async Task GetTaxRatesAsync_UsingFilterOptions_ByAccessToken_Returns_TaxRates()
     {
         var taxRatesList = await File.ReadAllTextAsync(ResponsePath);
 

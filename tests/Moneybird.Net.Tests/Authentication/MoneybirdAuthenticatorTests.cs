@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Text.Json;
 using System.Threading;
+using System.Threading.Tasks;
 using Moneybird.Net.Authentication;
 using Moneybird.Net.Authentication.Abstractions;
 using Moneybird.Net.Authentication.Enums;
@@ -65,7 +66,7 @@ namespace Moneybird.Net.Tests.Authentication
         }
 
         [Fact]
-        public async void GetGetAccessToken_With_RequestToken_Returns_CorrectAccessToken()
+        public async Task GetGetAccessToken_With_RequestToken_Returns_CorrectAccessToken()
         {
             var accessTokenJson = await File.ReadAllTextAsync(AccessTokenPath);
             var expectedAccessToken = JsonSerializer.Deserialize<AccessToken>(accessTokenJson);
@@ -81,7 +82,7 @@ namespace Moneybird.Net.Tests.Authentication
         }
         
         [Fact]
-        public async void GetGetAccessToken_Without_RequestToken_Throws_ArgumentNullException()
+        public async Task GetGetAccessToken_Without_RequestToken_Throws_ArgumentNullException()
         {
             var config = new MoneybirdConfig(ClientId, ClientSecret, RedirectUriEndUser);
             using var authenticator = new MoneybirdAuthenticator(config);

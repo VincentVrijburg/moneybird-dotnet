@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.Notes;
@@ -35,7 +36,7 @@ public class TimeEntryEndpointTests : TimeEntryTestBase
     }
     
     [Fact]
-    public async void GetTimeEntriesAsync_ByAccessToken_Returns_TimeEntries()
+    public async Task GetTimeEntriesAsync_ByAccessToken_Returns_TimeEntries()
     {
         var timeEntriesList = await File.ReadAllTextAsync(GetTimeEntriesResponsePath);
 
@@ -61,7 +62,7 @@ public class TimeEntryEndpointTests : TimeEntryTestBase
     }
     
     [Fact]
-    public async void GetTimeEntriesAsync_UsingFilterOptions_ByAccessToken_Returns_TimeEntries()
+    public async Task GetTimeEntriesAsync_UsingFilterOptions_ByAccessToken_Returns_TimeEntries()
     {
         var timeEntryListJson = await File.ReadAllTextAsync(GetTimeEntriesResponsePath);
 
@@ -99,7 +100,7 @@ public class TimeEntryEndpointTests : TimeEntryTestBase
     }
     
     [Fact]
-    public async void GetTimeEntryAsync_ByAccessToken_Returns_Single_TimeEntry()
+    public async Task GetTimeEntryAsync_ByAccessToken_Returns_Single_TimeEntry()
     {
         var timeEntryJson = await File.ReadAllTextAsync(GetTimeEntryResponsePath);
             
@@ -116,7 +117,7 @@ public class TimeEntryEndpointTests : TimeEntryTestBase
     }
     
     [Fact]
-    public async void CreateTimeEntryAsync_ByAccessToken_Returns_NewTimeEntry()
+    public async Task CreateTimeEntryAsync_ByAccessToken_Returns_NewTimeEntry()
     {
         var timeEntryJson = await File.ReadAllTextAsync(PostTimeEntryResponsePath);
         var timeEntryCreateOptions = new TimeEntryCreateOptions
@@ -151,7 +152,7 @@ public class TimeEntryEndpointTests : TimeEntryTestBase
     }
     
     [Fact]
-    public async void UpdateTimeEntryAsync_ByAccessToken_Returns_UpdatedTimeEntry()
+    public async Task UpdateTimeEntryAsync_ByAccessToken_Returns_UpdatedTimeEntry()
     {
         var timeEntryJson = await File.ReadAllTextAsync(PatchTimeEntryResponsePath);
         var timeEntryUpdateOptions = new TimeEntryUpdateOptions
@@ -184,7 +185,7 @@ public class TimeEntryEndpointTests : TimeEntryTestBase
     }
     
     [Fact]
-    public async void DeleteTimeEntryAsync_ByAccessToken_Returns_True()
+    public async Task DeleteTimeEntryAsync_ByAccessToken_Returns_True()
     {
         _requester.Setup(moq => moq.CreateDeleteRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
             It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(true);
@@ -194,7 +195,7 @@ public class TimeEntryEndpointTests : TimeEntryTestBase
     }
     
     [Fact]
-    public async void CreateTimeEntryNoteAsync_ByAccessToken_Returns_NewNote()
+    public async Task CreateTimeEntryNoteAsync_ByAccessToken_Returns_NewNote()
     {
         var timeEntryNoteJson = await File.ReadAllTextAsync(NewTimeEntryNoteResponsePath);
         var noteCreateOptions = new NoteCreateOptions
@@ -223,7 +224,7 @@ public class TimeEntryEndpointTests : TimeEntryTestBase
     }
     
     [Fact]
-    public async void DeleteTimeEntryNoteByIdAsync_ByAccessToken_Returns_True()
+    public async Task DeleteTimeEntryNoteByIdAsync_ByAccessToken_Returns_True()
     {
         _requester.Setup(moq => moq.CreateDeleteRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
             It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(true);

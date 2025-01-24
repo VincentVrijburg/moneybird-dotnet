@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Text.Json;
+using System.Threading.Tasks;
 using Moneybird.Net.Utils;
 using Xunit;
 
@@ -11,7 +12,7 @@ public class EventUtilsTests : CommonTestBase
     private const string ContactCreatedEventResponsePath = "./Responses/Events/contactCreatedEvent.json";
     
     [Fact]
-    public async void ParseEvent_ValidJson_ReturnsEvent()
+    public async Task ParseEvent_ValidJson_ReturnsEvent()
     {
         var eventJson = await File.ReadAllTextAsync(ContactCreatedEventResponsePath);
         
@@ -20,7 +21,7 @@ public class EventUtilsTests : CommonTestBase
     }
     
     [Fact]
-    public async void ParseEvent_InvalidJson_ThrowsException()
+    public async Task ParseEvent_InvalidJson_ThrowsException()
     {
         var eventJson = await File.ReadAllTextAsync(ContactCreatedEventResponsePath);
         eventJson = eventJson.Replace("}", "");
@@ -41,7 +42,7 @@ public class EventUtilsTests : CommonTestBase
     }
     
     [Fact]
-    public async void ConstructEvent_ValidJson_ReturnsEvent()
+    public async Task ConstructEvent_ValidJson_ReturnsEvent()
     {
         var eventJson = await File.ReadAllTextAsync(ContactCreatedEventResponsePath);
         
@@ -50,7 +51,7 @@ public class EventUtilsTests : CommonTestBase
     }
     
     [Fact]
-    public async void ConstructEvent_InvalidJson_ThrowsException()
+    public async Task ConstructEvent_InvalidJson_ThrowsException()
     {
         var eventJson = await File.ReadAllTextAsync(ContactCreatedEventResponsePath);
         eventJson = eventJson.Replace("}", "");
@@ -59,7 +60,7 @@ public class EventUtilsTests : CommonTestBase
     }
     
     [Fact]
-    public async void ConstructEvent_InvalidToken_ThrowsException()
+    public async Task ConstructEvent_InvalidToken_ThrowsException()
     {
         var eventJson = await File.ReadAllTextAsync(ContactCreatedEventResponsePath);
         

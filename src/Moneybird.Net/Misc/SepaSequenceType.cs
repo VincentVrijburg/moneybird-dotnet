@@ -8,16 +8,16 @@ namespace Moneybird.Net.Misc
     /// <summary>
     /// Sepa sequence types.
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum SepaSequenceType
     {
-        [JsonPropertyName("RCUR")]
+        [JsonStringEnumMemberName("RCUR")]
         RCUR,
-        [JsonPropertyName("FRST")]
+        [JsonStringEnumMemberName("FRST")]
         FRST,
-        [JsonPropertyName("OOFF")]
+        [JsonStringEnumMemberName("OOFF")]
         OOFF,
-        [JsonPropertyName("FNAL")]
+        [JsonStringEnumMemberName("FNAL")]
         FNAL
     }
 }

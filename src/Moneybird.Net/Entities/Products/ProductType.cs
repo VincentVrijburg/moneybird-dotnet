@@ -2,13 +2,13 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.Products
 {
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum ProductType
     {
-        [JsonPropertyName("digital_service")]
+        [JsonStringEnumMemberName("digital_service")]
         DigitalService,
 
-        [JsonPropertyName("service")]
+        [JsonStringEnumMemberName("service")]
         Service
     }
 }

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Endpoints.Abstractions;
@@ -28,7 +29,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
 
         [Fact]
-        public async void GetAdministrationListAsync_ByAccessToken_Returns_AdministrationList()
+        public async Task GetAdministrationListAsync_ByAccessToken_Returns_AdministrationList()
         {
             var administrationListJson = await File.ReadAllTextAsync(ResponsePath);
             

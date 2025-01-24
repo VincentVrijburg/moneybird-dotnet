@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.LedgerAccounts;
@@ -32,7 +33,7 @@ public class LedgerAccountEndpointTests : LedgerAccountTestBase
     }
     
     [Fact]
-    public async void GetLedgerAccountsAsync_ByAccessToken_Returns_LedgerAccounts()
+    public async Task GetLedgerAccountsAsync_ByAccessToken_Returns_LedgerAccounts()
     {
         var ledgerAccountListJson = await File.ReadAllTextAsync(GetLedgerAccountsResponsePath);
 
@@ -57,7 +58,7 @@ public class LedgerAccountEndpointTests : LedgerAccountTestBase
     }
     
     [Fact]
-    public async void GetLedgerAccountAsync_ByAccessToken_Returns_Single_LedgerAccount()
+    public async Task GetLedgerAccountAsync_ByAccessToken_Returns_Single_LedgerAccount()
     {
         var ledgerAccountJson = await File.ReadAllTextAsync(GetLedgerAccountResponsePath);
             
@@ -74,7 +75,7 @@ public class LedgerAccountEndpointTests : LedgerAccountTestBase
     }
     
     [Fact]
-    public async void CreateLedgerAccountAsync_ByAccessToken_Returns_NewLedgerAccount()
+    public async Task CreateLedgerAccountAsync_ByAccessToken_Returns_NewLedgerAccount()
     {
         var ledgerAccountJson = await File.ReadAllTextAsync(PostLedgerAccountResponsePath);
         var ledgerAccountCreateOptions = new LedgerAccountCreateOptions
@@ -111,7 +112,7 @@ public class LedgerAccountEndpointTests : LedgerAccountTestBase
     }
     
     [Fact]
-    public async void UpdateLedgerAccountAsync_ByAccessToken_Returns_UpdatedLedgerAccount()
+    public async Task UpdateLedgerAccountAsync_ByAccessToken_Returns_UpdatedLedgerAccount()
     {
         var ledgerAccountJson = await File.ReadAllTextAsync(PatchLedgerAccountResponsePath);
         var ledgerAccountUpdateOptions = new LedgerAccountUpdateOptions
@@ -148,7 +149,7 @@ public class LedgerAccountEndpointTests : LedgerAccountTestBase
     }
     
     [Fact]
-    public async void DeleteLedgerAccountByIdAsync_ByAccessToken_Returns_True()
+    public async Task DeleteLedgerAccountByIdAsync_ByAccessToken_Returns_True()
     {
         _requester.Setup(moq => moq.CreateDeleteRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
             It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(true);
