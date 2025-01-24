@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.Projects;
@@ -31,7 +32,7 @@ public class ProjectEndpointTests : ProjectTestBase
     }
     
     [Fact]
-    public async void GetProjectsAsync_ByAccessToken_Returns_Projects()
+    public async Task GetProjectsAsync_ByAccessToken_Returns_Projects()
     {
         var projectListJson = await File.ReadAllTextAsync(GetProjectsResponsePath);
 
@@ -56,7 +57,7 @@ public class ProjectEndpointTests : ProjectTestBase
     }
     
     [Fact]
-    public async void GetProjectsAsync_UsingFilterOptions_ByAccessToken_Returns_Projects()
+    public async Task GetProjectsAsync_UsingFilterOptions_ByAccessToken_Returns_Projects()
     {
         var projectListJson = await File.ReadAllTextAsync(GetProjectsResponsePath);
 
@@ -87,7 +88,7 @@ public class ProjectEndpointTests : ProjectTestBase
     }
     
     [Fact]
-    public async void GetProjectAsync_ByAccessToken_Returns_Single_Project()
+    public async Task GetProjectAsync_ByAccessToken_Returns_Single_Project()
     {
         var projectJson = await File.ReadAllTextAsync(GetProjectResponsePath);
             
@@ -104,7 +105,7 @@ public class ProjectEndpointTests : ProjectTestBase
     }
     
     [Fact]
-    public async void CreateProjectAsync_ByAccessToken_Returns_NewProject()
+    public async Task CreateProjectAsync_ByAccessToken_Returns_NewProject()
     {
         var projectJson = await File.ReadAllTextAsync(PostProjectResponsePath);
         var projectCreateOptions = new ProjectCreateOptions
@@ -132,7 +133,7 @@ public class ProjectEndpointTests : ProjectTestBase
     }
     
     [Fact]
-    public async void UpdateProjectAsync_ByAccessToken_Returns_UpdatedProject()
+    public async Task UpdateProjectAsync_ByAccessToken_Returns_UpdatedProject()
     {
         var projectJson = await File.ReadAllTextAsync(PatchProjectResponsePath);
         var projectUpdateOptions = new ProjectUpdateOptions
@@ -160,7 +161,7 @@ public class ProjectEndpointTests : ProjectTestBase
     }
     
     [Fact]
-    public async void DeleteProjectByIdAsync_ByAccessToken_Returns_True()
+    public async Task DeleteProjectByIdAsync_ByAccessToken_Returns_True()
     {
         _requester.Setup(moq => moq.CreateDeleteRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
             It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(true);

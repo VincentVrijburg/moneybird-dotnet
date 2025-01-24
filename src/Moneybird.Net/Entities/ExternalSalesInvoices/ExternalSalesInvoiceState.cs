@@ -2,22 +2,22 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.ExternalSalesInvoices
 {
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum ExternalSalesInvoiceState
     {
-        [JsonPropertyName("all")]
+        [JsonStringEnumMemberName("all")]
         All,
         
-        [JsonPropertyName("new")]
+        [JsonStringEnumMemberName("new")]
         New,
         
-        [JsonPropertyName("open")]
+        [JsonStringEnumMemberName("open")]
         Open,
         
-        [JsonPropertyName("late")]
+        [JsonStringEnumMemberName("late")]
         Late,
         
-        [JsonPropertyName("paid")]
+        [JsonStringEnumMemberName("paid")]
         Paid
     }
 }

@@ -2,16 +2,16 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.Projects
 {
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum ProjectState
     {
-        [JsonPropertyName("active")]
+        [JsonStringEnumMemberName("active")]
         Active,
      
-        [JsonPropertyName("all")]
+        [JsonStringEnumMemberName("all")]
         All,
         
-        [JsonPropertyName("archived")]
+        [JsonStringEnumMemberName("archived")]
         Archived
     }
 }

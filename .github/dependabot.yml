@@ -22,4 +22,7 @@ updates:
       dependencies:
         patterns:
         - '*'
+    ignore:
+      - dependency-name: "FluentAssertions"
+        update-types: ["version-update:semver-major"]
   

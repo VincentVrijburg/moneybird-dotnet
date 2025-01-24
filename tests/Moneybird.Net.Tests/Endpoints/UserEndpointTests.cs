@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.Users;
@@ -27,7 +28,7 @@ public class UserEndpointTests : CommonTestBase
     }
     
     [Fact]
-    public async void GetUsersAsync_ByAccessToken_Returns_UserList()
+    public async Task GetUsersAsync_ByAccessToken_Returns_UserList()
     {
         var userListJson = await File.ReadAllTextAsync(ResponsePath);
             

@@ -2,16 +2,16 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.TimeEntries
 {
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum TimeEntryState
     {
-        [JsonPropertyName("all")]
+        [JsonStringEnumMemberName("all")]
         All,
         
-        [JsonPropertyName("open")]
+        [JsonStringEnumMemberName("open")]
         Open,
         
-        [JsonPropertyName("non_billable")]
+        [JsonStringEnumMemberName("non_billable")]
         NonBillable,
     }
 }

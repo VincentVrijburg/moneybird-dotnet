@@ -2,37 +2,37 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.LedgerAccounts
 {
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum LedgerAccountType
     {
-        [JsonPropertyName("non_current_assets")]
+        [JsonStringEnumMemberName("non_current_assets")]
         NonCurrentAssets,
 
-        [JsonPropertyName("current_assets")]
+        [JsonStringEnumMemberName("current_assets")]
         CurrentAssets,
 
-        [JsonPropertyName("equity")]
+        [JsonStringEnumMemberName("equity")]
         Equity,
 
-        [JsonPropertyName("provisions")]
+        [JsonStringEnumMemberName("provisions")]
         Provisions,
 
-        [JsonPropertyName("non_current_liabilities")]
+        [JsonStringEnumMemberName("non_current_liabilities")]
         NonCurrentLiabilities,
 
-        [JsonPropertyName("current_liabilities")]
+        [JsonStringEnumMemberName("current_liabilities")]
         CurrentLiabilities,
 
-        [JsonPropertyName("revenue")]
+        [JsonStringEnumMemberName("revenue")]
         Revenue,
 
-        [JsonPropertyName("direct_costs")]
+        [JsonStringEnumMemberName("direct_costs")]
         DirectCosts,
 
-        [JsonPropertyName("expenses")]
+        [JsonStringEnumMemberName("expenses")]
         Expenses,
 
-        [JsonPropertyName("other_income_expenses")]
+        [JsonStringEnumMemberName("other_income_expenses")]
         OtherIncomeExpenses
     }
 }

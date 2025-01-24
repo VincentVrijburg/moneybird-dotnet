@@ -5,14 +5,14 @@ namespace Moneybird.Net.Entities.CustomFields
     /// <summary>
     /// Custom field sources.
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum CustomFieldSource
     {
-        [JsonPropertyName("sales_invoice")]
+        [JsonStringEnumMemberName("sales_invoice")]
         SalesInvoice,
-        [JsonPropertyName("contact")]
+        [JsonStringEnumMemberName("contact")]
         Contact,
-        [JsonPropertyName("identity")]
+        [JsonStringEnumMemberName("identity")]
         Identity
     }
 }

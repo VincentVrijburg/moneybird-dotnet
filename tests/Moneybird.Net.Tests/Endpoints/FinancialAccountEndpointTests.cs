@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.FinancialAccounts;
@@ -27,7 +28,7 @@ public class FinancialAccountEndpointTests : CommonTestBase
     }
     
     [Fact]
-    public async void GetFinancialAccountsAsync_ByAccessToken_Returns_FinancialAccounts()
+    public async Task GetFinancialAccountsAsync_ByAccessToken_Returns_FinancialAccounts()
     {
         var financialAccountsList = await File.ReadAllTextAsync(GetFinancialAccountsResponsePath);
 

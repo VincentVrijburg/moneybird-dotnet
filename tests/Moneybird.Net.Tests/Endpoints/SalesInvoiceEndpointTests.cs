@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.CustomFields;
@@ -34,7 +35,7 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
     }
     
     [Fact]
-    public async void GetSalesInvoicesAsync_ByAccessToken_Returns_SalesInvoices()
+    public async Task GetSalesInvoicesAsync_ByAccessToken_Returns_SalesInvoices()
     {
         var salesInvoicesList = await File.ReadAllTextAsync(GetSalesInvoicesResponsePath);
 
@@ -60,7 +61,7 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
     }
     
     [Fact]
-    public async void GetSalesInvoicesAsync_UsingFilterOptions_ByAccessToken_Returns_SalesInvoices()
+    public async Task GetSalesInvoicesAsync_UsingFilterOptions_ByAccessToken_Returns_SalesInvoices()
     {
         var salesInvoiceList = await File.ReadAllTextAsync(GetSalesInvoicesResponsePath);
 
@@ -98,7 +99,7 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
     }
     
     [Fact]
-    public async void GetSalesInvoiceByIdAsync_ByAccessToken_Returns_Single_SalesInvoice()
+    public async Task GetSalesInvoiceByIdAsync_ByAccessToken_Returns_Single_SalesInvoice()
     {
         var salesInvoiceJson = await File.ReadAllTextAsync(GetSalesInvoiceResponsePath);
             
@@ -115,7 +116,7 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
     }
     
     [Fact]
-    public async void CreateSalesInvoiceAsync_ByAccessToken_Returns_NewSalesInvoice()
+    public async Task CreateSalesInvoiceAsync_ByAccessToken_Returns_NewSalesInvoice()
     {
         var options = new SalesInvoiceCreateOptions
         {
@@ -184,7 +185,7 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
     }
     
     [Fact]
-    public async void UpdateSalesInvoiceAsync_ByAccessToken_Returns_UpdatedSalesInvoice()
+    public async Task UpdateSalesInvoiceAsync_ByAccessToken_Returns_UpdatedSalesInvoice()
     {
         var salesInvoiceJson = await File.ReadAllTextAsync(GetSalesInvoiceResponsePath);
         var salesInvoiceUpdateOptions = new SalesInvoiceUpdateOptions
@@ -260,7 +261,7 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
     }
     
     [Fact]
-    public async void DeleteSalesInvoiceAsync_ByAccessToken_Returns_True()
+    public async Task DeleteSalesInvoiceAsync_ByAccessToken_Returns_True()
     {
         _requester.Setup(moq => moq.CreateDeleteRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
             It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(true);
@@ -270,7 +271,7 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
     }
 
     [Fact]
-    public async void SendSalesInvoiceAsync_ByAccessToken_Returns_UpdatedSalesInvoice()
+    public async Task SendSalesInvoiceAsync_ByAccessToken_Returns_UpdatedSalesInvoice()
     {
         var salesInvoiceJson = await File.ReadAllTextAsync(SendSalesInvoiceResponsePath);
         var salesInvoiceSendOptions = new SalesInvoiceSendOptions
@@ -300,7 +301,7 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
     }
 
     [Fact]
-    public async void AddSalesInvoiceAttachmentAsync_ByAccessToken_Returns()
+    public async Task AddSalesInvoiceAttachmentAsync_ByAccessToken_Returns()
     {
         _requester.Setup(moq => moq.CreatePostFileRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
             It.IsAny<string>(), It.IsAny<string>(), It.IsAny<Stream>(), It.IsAny<List<string>>()));

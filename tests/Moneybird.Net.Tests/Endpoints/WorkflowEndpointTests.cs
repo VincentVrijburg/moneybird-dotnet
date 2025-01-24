@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.Workflows;
@@ -27,7 +28,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void GetWorkflowsAsync_ByAccessToken_Returns_WorkflowList()
+        public async Task GetWorkflowsAsync_ByAccessToken_Returns_WorkflowList()
         {
             var workflowListJson = await File.ReadAllTextAsync(ResponsePath);
             

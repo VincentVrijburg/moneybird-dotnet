@@ -2,34 +2,34 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.SalesInvoices
 {
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum SalesInvoiceState
     {
-        [JsonPropertyName("all")]
+        [JsonStringEnumMemberName("all")]
         All,
         
-        [JsonPropertyName("draft")]
+        [JsonStringEnumMemberName("draft")]
         Draft,
         
-        [JsonPropertyName("open")]
+        [JsonStringEnumMemberName("open")]
         Open,
         
-        [JsonPropertyName("scheduled")]
+        [JsonStringEnumMemberName("scheduled")]
         Scheduled,
         
-        [JsonPropertyName("pending_payment")]
+        [JsonStringEnumMemberName("pending_payment")]
         PendingPayment,
         
-        [JsonPropertyName("late")]
+        [JsonStringEnumMemberName("late")]
         Late,
         
-        [JsonPropertyName("reminded")]
+        [JsonStringEnumMemberName("reminded")]
         Reminded,
         
-        [JsonPropertyName("paid")]
+        [JsonStringEnumMemberName("paid")]
         Paid,
         
-        [JsonPropertyName("uncollectible")]
+        [JsonStringEnumMemberName("uncollectible")]
         Uncollectible,
     }
 }

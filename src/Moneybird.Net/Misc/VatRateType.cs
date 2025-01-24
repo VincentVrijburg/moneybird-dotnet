@@ -2,13 +2,13 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Misc
 {
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum VatRateType
     {
-        [JsonPropertyName("standard")]
+        [JsonStringEnumMemberName("standard")]
         Standard,
         
-        [JsonPropertyName("reduced")]
+        [JsonStringEnumMemberName("reduced")]
         Reduced
     }
 }

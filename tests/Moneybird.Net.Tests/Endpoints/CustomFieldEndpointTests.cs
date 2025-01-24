@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Endpoints.Abstractions;
@@ -28,7 +29,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void GetCustomFieldsAsync_ByAccessToken_Returns_CustomFieldList()
+        public async Task GetCustomFieldsAsync_ByAccessToken_Returns_CustomFieldList()
         {
             var customFieldListJson = await File.ReadAllTextAsync(ResponsePath);
             

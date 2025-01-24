@@ -2,12 +2,12 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.Workflows
 {
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum WorkflowType
     {
-        [JsonPropertyName("InvoiceWorkflow")]
+        [JsonStringEnumMemberName("InvoiceWorkflow")]
         InvoiceWorkflow,
-        [JsonPropertyName("EstimateWorkflow")]
+        [JsonStringEnumMemberName("EstimateWorkflow")]
         EstimateWorkflow
     }
 }

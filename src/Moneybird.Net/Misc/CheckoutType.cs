@@ -2,13 +2,13 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Misc
 {
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum CheckoutType
     {
-        [JsonPropertyName("product")]
+        [JsonStringEnumMemberName("product")]
         Product,
         
-        [JsonPropertyName("subscription")]
+        [JsonStringEnumMemberName("subscription")]
         Subscription
     }
 }
