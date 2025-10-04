@@ -229,12 +229,12 @@ namespace Moneybird.Net.Tests.Endpoints
             {
                 Contact = new ContactCreateItem
                 {
-                    CompanyName = "MoneyBird B.V.",
+                    CompanyName = "Parkietje B.V.",
                     Firstname = "John",
                     Lastname = "Doe",
                     Address1 = "Moutlaan 35",
                     Address2 = "",
-                    ZipCode = "7523MC",
+                    Zipcode = "7523MC",
                     City = "Enschede",
                     CountryCode = "NL",
                     Phone = "0612345678",
@@ -296,12 +296,12 @@ namespace Moneybird.Net.Tests.Endpoints
             {
                 Contact = new ContactUpdateItem
                 {
-                    CompanyName = "MoneyBird B.V.",
+                    CompanyName = "Parkietje B.V.",
                     Firstname = "John",
                     Lastname = "Doe",
                     Address1 = "Moutlaan 35",
                     Address2 = "",
-                    ZipCode = "7523MC",
+                    Zipcode = "7523MC",
                     City = "Enschede",
                     CountryCode = "NL",
                     Phone = "0612345678",
