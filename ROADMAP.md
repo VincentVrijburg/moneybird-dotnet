@@ -32,7 +32,7 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [x] Financial accounts
   - [ ] Financial mutations
   - [x] Financial statements
-  - [ ] Identities
+  - [x] Identities
   - [ ] Import mappings
   - [x] Ledger accounts
   - [x] Payments
