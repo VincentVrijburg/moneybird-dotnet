@@ -1,5 +1,6 @@
 using System.IO;
 using System.Text.Json;
+using System.Threading.Tasks;
 using Moneybird.Net.Authentication.Enums;
 using Moneybird.Net.Authentication.Models;
 using Moneybird.Net.Authentication.Utils;
@@ -62,7 +63,7 @@ namespace Moneybird.Net.Tests.Authentication.Utils
         }
         
         [Fact]
-        public async void GetRefreshTokenString_Returns_CorrectString()
+        public async Task GetRefreshTokenString_Returns_CorrectString()
         {
             var accessTokenJson = await File.ReadAllTextAsync("./Responses/Authentication/accessToken.json");
             var accessToken = JsonSerializer.Deserialize<AccessToken>(accessTokenJson);

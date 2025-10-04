@@ -2,22 +2,22 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.Users
 {
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum UserPermission
     {
-        [JsonPropertyName("sales_invoices")]
+        [JsonStringEnumMemberName("sales_invoices")]
         SalesInvoices,
-        [JsonPropertyName("documents")]
+        [JsonStringEnumMemberName("documents")]
         Documents,
-        [JsonPropertyName("estimates")]
+        [JsonStringEnumMemberName("estimates")]
         Estimates,
-        [JsonPropertyName("bank")]
+        [JsonStringEnumMemberName("bank")]
         Bank,
-        [JsonPropertyName("settings")]
+        [JsonStringEnumMemberName("settings")]
         Settings,
-        [JsonPropertyName("ownership")]
+        [JsonStringEnumMemberName("ownership")]
         Ownership,
-        [JsonPropertyName("time_entries")]
+        [JsonStringEnumMemberName("time_entries")]
         TimeEntries,
     }
 }

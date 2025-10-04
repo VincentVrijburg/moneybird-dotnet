@@ -2,22 +2,22 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Misc
 {
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum DocumentType
     {
-        [JsonPropertyName("sales_invoice")]
+        [JsonStringEnumMemberName("sales_invoice")]
         SalesInvoice,
 
-        [JsonPropertyName("purchase_invoice")]
+        [JsonStringEnumMemberName("purchase_invoice")]
         PurchaseInvoice,
 
-        [JsonPropertyName("general_journal_document")]
+        [JsonStringEnumMemberName("general_journal_document")]
         GeneralJournalDocument,
 
-        [JsonPropertyName("financial_mutation")]
+        [JsonStringEnumMemberName("financial_mutation")]
         FinancialMutation,
 
-        [JsonPropertyName("payment")]
+        [JsonStringEnumMemberName("payment")]
         Payment
     }
 }

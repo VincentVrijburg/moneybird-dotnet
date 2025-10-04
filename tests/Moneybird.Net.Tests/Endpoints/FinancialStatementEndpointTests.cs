@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.FinancialMutations;
@@ -30,7 +31,7 @@ public class FinancialStatementEndpointTests : FinancialStatementTestBase
     }
     
     [Fact]
-    public async void CreateFinancialStatementAsync_ByAccessToken_Returns_NewFinancialStatement()
+    public async Task CreateFinancialStatementAsync_ByAccessToken_Returns_NewFinancialStatement()
     {
         var options = new FinancialStatementCreateOptions
         {
@@ -93,7 +94,7 @@ public class FinancialStatementEndpointTests : FinancialStatementTestBase
     }
     
     [Fact]
-    public async void UpdateFinancialStatementAsync_ByAccessToken_Returns_UpdatedFinancialStatement()
+    public async Task UpdateFinancialStatementAsync_ByAccessToken_Returns_UpdatedFinancialStatement()
     {
         var financialStatementJson = await File.ReadAllTextAsync(PatchFinancialStatementResponsePath);
         var financialStatementUpdateOptions = new FinancialStatementUpdateOptions
@@ -137,7 +138,7 @@ public class FinancialStatementEndpointTests : FinancialStatementTestBase
     }
     
     [Fact]
-    public async void DeleteFinancialStatementAsync_ByAccessToken_Returns_True()
+    public async Task DeleteFinancialStatementAsync_ByAccessToken_Returns_True()
     {
         _requester.Setup(moq => moq.CreateDeleteRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
             It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(true);

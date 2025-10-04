@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.ExternalSalesInvoices;
@@ -31,7 +32,7 @@ public class ExternalSalesInvoiceEndpointTests : ExternalSalesInvoicesTestBase
     }
     
     [Fact]
-    public async void GetExternalSalesInvoicesAsync_ByAccessToken_Returns_ExternalSalesInvoices()
+    public async Task GetExternalSalesInvoicesAsync_ByAccessToken_Returns_ExternalSalesInvoices()
     {
         var externalSalesInvoicesList = await File.ReadAllTextAsync(GetExternalSalesInvoicesResponsePath);
 
@@ -57,7 +58,7 @@ public class ExternalSalesInvoiceEndpointTests : ExternalSalesInvoicesTestBase
     }
     
     [Fact]
-    public async void GetExternalSalesInvoicesAsync_UsingFilterOptions_ByAccessToken_Returns_ExternalSalesInvoices()
+    public async Task GetExternalSalesInvoicesAsync_UsingFilterOptions_ByAccessToken_Returns_ExternalSalesInvoices()
     {
         var externalSalesInvoiceList = await File.ReadAllTextAsync(GetExternalSalesInvoicesResponsePath);
 
@@ -90,7 +91,7 @@ public class ExternalSalesInvoiceEndpointTests : ExternalSalesInvoicesTestBase
     }
     
     [Fact]
-    public async void GetExternalSalesInvoiceByIdAsync_ByAccessToken_Returns_Single_ExternalSalesInvoice()
+    public async Task GetExternalSalesInvoiceByIdAsync_ByAccessToken_Returns_Single_ExternalSalesInvoice()
     {
         var externalSalesInvoiceJson = await File.ReadAllTextAsync(GetExternalSalesInvoiceResponsePath);
             
@@ -107,7 +108,7 @@ public class ExternalSalesInvoiceEndpointTests : ExternalSalesInvoicesTestBase
     }
     
     [Fact]
-    public async void CreateExternalSalesInvoiceAsync_ByAccessToken_Returns_NewExternalSalesInvoice()
+    public async Task CreateExternalSalesInvoiceAsync_ByAccessToken_Returns_NewExternalSalesInvoice()
     {
         var options = new ExternalSalesInvoiceCreateOptions
         {
@@ -157,7 +158,7 @@ public class ExternalSalesInvoiceEndpointTests : ExternalSalesInvoicesTestBase
     }
     
     [Fact]
-    public async void UpdateExternalSalesInvoiceAsync_ByAccessToken_Returns_UpdatedExternalSalesInvoice()
+    public async Task UpdateExternalSalesInvoiceAsync_ByAccessToken_Returns_UpdatedExternalSalesInvoice()
     {
         var externalSalesInvoiceJson = await File.ReadAllTextAsync(GetExternalSalesInvoiceResponsePath);
         var externalSalesInvoiceUpdateOptions = new ExternalSalesInvoiceUpdateOptions
@@ -208,7 +209,7 @@ public class ExternalSalesInvoiceEndpointTests : ExternalSalesInvoicesTestBase
     }
 
     [Fact]
-    public async void DeleteExternalSalesInvoiceAsync_ByAccessToken_Returns_True()
+    public async Task DeleteExternalSalesInvoiceAsync_ByAccessToken_Returns_True()
     {
         _requester.Setup(moq => moq.CreateDeleteRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
             It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(true);
@@ -218,7 +219,7 @@ public class ExternalSalesInvoiceEndpointTests : ExternalSalesInvoicesTestBase
     }
 
     [Fact]
-    public async void AddExternalSalesInvoiceAttachmentAsync_ByAccessToken_Returns()
+    public async Task AddExternalSalesInvoiceAttachmentAsync_ByAccessToken_Returns()
     {
         _requester.Setup(moq => moq.CreatePostFileRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
             It.IsAny<string>(), It.IsAny<string>(), It.IsAny<Stream>(), It.IsAny<List<string>>()));

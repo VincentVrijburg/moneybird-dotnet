@@ -22,6 +22,7 @@ namespace Moneybird.Net
         public IExternalSalesInvoiceEndpoint ExternalSalesInvoice { get; }
         public IFinancialAccountEndpoint FinancialAccount { get; }
         public IFinancialStatementEndpoint FinancialStatement { get; }
+        public IIdentityEndpoint Identity { get; }
         public ILedgerAccountEndpoint LedgerAccount { get; }
         public IPaymentEndpoint Payment { get; }
         public IProductEndpoint Product { get; }
@@ -67,6 +68,7 @@ namespace Moneybird.Net
             ExternalSalesInvoice = new ExternalSalesInvoiceEndpoint(Config, _requester);
             FinancialAccount = new FinancialAccountEndpoint(Config, _requester);
             FinancialStatement = new FinancialStatementEndpoint(Config, _requester);
+            Identity = new IdentityEndpoint(Config, _requester);
             LedgerAccount = new LedgerAccountEndpoint(Config, _requester);
             Payment = new PaymentEndpoint(Config, _requester);
             Product = new ProductEndpoint(Config, _requester);

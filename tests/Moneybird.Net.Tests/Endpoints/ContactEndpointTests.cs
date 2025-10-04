@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Endpoints.Abstractions;
@@ -39,7 +40,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void GetContactsAsync_ByAccessToken_Returns_ListOf_Contacts()
+        public async Task GetContactsAsync_ByAccessToken_Returns_ListOf_Contacts()
         {
             var contactListJson = await File.ReadAllTextAsync(GetContactsResponsePath);
             
@@ -64,7 +65,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void GetContactsAsync_UsingFilterOptions_ByAccessToken_Returns_ListOf_Contacts()
+        public async Task GetContactsAsync_UsingFilterOptions_ByAccessToken_Returns_ListOf_Contacts()
         {
             var contactListJson = await File.ReadAllTextAsync(GetContactsResponsePath);
             
@@ -95,7 +96,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void GetContactsByIdsAsync_ByAccessToken_Returns_ListOf_Contacts()
+        public async Task GetContactsByIdsAsync_ByAccessToken_Returns_ListOf_Contacts()
         {
             var contactListByIdsJson = await File.ReadAllTextAsync(GetContactsResponsePath);
             var contactListOptions = new ContactListOptions
@@ -130,7 +131,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void GetSynchronizationContactsAsync_ByAccessToken_Returns_ListOf_SynchronizationContacts()
+        public async Task GetSynchronizationContactsAsync_ByAccessToken_Returns_ListOf_SynchronizationContacts()
         {
             var synchronizationContactListJson = await File.ReadAllTextAsync(GetSynchronizationContactsResponsePath);
             
@@ -155,7 +156,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void GetSynchronizationContactsAsync_UsingFilterOptions_ByAccessToken_Returns_ListOf_SynchronizationContacts()
+        public async Task GetSynchronizationContactsAsync_UsingFilterOptions_ByAccessToken_Returns_ListOf_SynchronizationContacts()
         {
             var synchronizationContactListJson = await File.ReadAllTextAsync(GetSynchronizationContactsResponsePath);
             
@@ -187,7 +188,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void GetContactByIdAsync_ByAccessToken_Returns_Single_Contact()
+        public async Task GetContactByIdAsync_ByAccessToken_Returns_Single_Contact()
         {
             var contactJson = await File.ReadAllTextAsync(GetContactResponsePath);
             
@@ -204,7 +205,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void GetContactByCustomerIdAsync_ByAccessToken_Returns_Single_Contact()
+        public async Task GetContactByCustomerIdAsync_ByAccessToken_Returns_Single_Contact()
         {
             var contactJson = await File.ReadAllTextAsync(GetContactResponsePath);
             
@@ -221,19 +222,19 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void CreateContactAsync_ByAccessToken_Returns_NewContact()
+        public async Task CreateContactAsync_ByAccessToken_Returns_NewContact()
         {
             var contactJson = await File.ReadAllTextAsync(NewContactResponsePath);
             var contactCreateOptions = new ContactCreateOptions
             {
                 Contact = new ContactCreateItem
                 {
-                    CompanyName = "MoneyBird B.V.",
+                    CompanyName = "Parkietje B.V.",
                     Firstname = "John",
                     Lastname = "Doe",
                     Address1 = "Moutlaan 35",
                     Address2 = "",
-                    ZipCode = "7523MC",
+                    Zipcode = "7523MC",
                     City = "Enschede",
                     CountryCode = "NL",
                     Phone = "0612345678",
@@ -288,19 +289,19 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void UpdateContactAsync_ByAccessToken_Returns_UpdatedContact()
+        public async Task UpdateContactAsync_ByAccessToken_Returns_UpdatedContact()
         {
             var contactJson = await File.ReadAllTextAsync(GetContactResponsePath);
             var contactUpdateOptions = new ContactUpdateOptions
             {
                 Contact = new ContactUpdateItem
                 {
-                    CompanyName = "MoneyBird B.V.",
+                    CompanyName = "Parkietje B.V.",
                     Firstname = "John",
                     Lastname = "Doe",
                     Address1 = "Moutlaan 35",
                     Address2 = "",
-                    ZipCode = "7523MC",
+                    Zipcode = "7523MC",
                     City = "Enschede",
                     CountryCode = "NL",
                     Phone = "0612345678",
@@ -353,7 +354,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
 
         [Fact]
-        public async void DeleteContactByIdAsync_ByAccessToken_Returns_True()
+        public async Task DeleteContactByIdAsync_ByAccessToken_Returns_True()
         {
             _requester.Setup(moq => moq.CreateDeleteRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
                 It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(true);
@@ -363,7 +364,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void CreateContactNoteAsync_ByAccessToken_Returns_NewContactNote()
+        public async Task CreateContactNoteAsync_ByAccessToken_Returns_NewContactNote()
         {
             var contactNoteJson = await File.ReadAllTextAsync(NewContactNoteResponsePath);
             var contactNoteCreateOptions = new NoteCreateOptions
@@ -392,7 +393,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void DeleteContactNoteByIdAsync_ByAccessToken_Returns_True()
+        public async Task DeleteContactNoteByIdAsync_ByAccessToken_Returns_True()
         {
             _requester.Setup(moq => moq.CreateDeleteRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
                 It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(true);
@@ -402,7 +403,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void GetContactPersonByIdAsync_ByAccessToken_Returns_Single_ContactPerson()
+        public async Task GetContactPersonByIdAsync_ByAccessToken_Returns_Single_ContactPerson()
         {
             var contactPersonJson = await File.ReadAllTextAsync(GetContactPersonResponsePath);
             
@@ -419,7 +420,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void CreateContactPersonAsync_ByAccessToken_Returns_NewContactPerson()
+        public async Task CreateContactPersonAsync_ByAccessToken_Returns_NewContactPerson()
         {
             var contactPersonJson = await File.ReadAllTextAsync(NewContactPersonResponsePath);
             var contactPersonCreateOptions = new ContactPersonCreateOptions
@@ -451,7 +452,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void UpdateContactPersonAsync_ByAccessToken_Returns_NewContactPerson()
+        public async Task UpdateContactPersonAsync_ByAccessToken_Returns_NewContactPerson()
         {
             var contactPersonJson = await File.ReadAllTextAsync(NewContactPersonResponsePath);
             var contactPersonUpdateOptions = new ContactPersonUpdateOptions
@@ -483,7 +484,7 @@ namespace Moneybird.Net.Tests.Endpoints
         }
         
         [Fact]
-        public async void DeleteContactPersonByIdAsync_ByAccessToken_Returns_True()
+        public async Task DeleteContactPersonByIdAsync_ByAccessToken_Returns_True()
         {
             _requester.Setup(moq => moq.CreateDeleteRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
                 It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(true);

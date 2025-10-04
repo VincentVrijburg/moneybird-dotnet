@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.Products;
@@ -32,7 +33,7 @@ public class ProductEndpointTests : ProductTestBase
     }
     
     [Fact]
-    public async void GetProductsAsync_ByAccessToken_Returns_Products()
+    public async Task GetProductsAsync_ByAccessToken_Returns_Products()
     {
         var productListJson = await File.ReadAllTextAsync(GetProductsResponsePath);
 
@@ -57,7 +58,7 @@ public class ProductEndpointTests : ProductTestBase
     }
     
     [Fact]
-    public async void GetProductAsync_ByAccessToken_Returns_Single_Product()
+    public async Task GetProductAsync_ByAccessToken_Returns_Single_Product()
     {
         var productJson = await File.ReadAllTextAsync(GetProductResponsePath);
             
@@ -74,7 +75,7 @@ public class ProductEndpointTests : ProductTestBase
     }
     
     [Fact]
-    public async void GetProductByIdentifierAsync_ByAccessToken_Returns_Single_Product()
+    public async Task GetProductByIdentifierAsync_ByAccessToken_Returns_Single_Product()
     {
         var productJson = await File.ReadAllTextAsync(GetProductResponsePath);
             
@@ -91,7 +92,7 @@ public class ProductEndpointTests : ProductTestBase
     }
     
     [Fact]
-    public async void CreateProductAsync_ByAccessToken_Returns_NewProduct()
+    public async Task CreateProductAsync_ByAccessToken_Returns_NewProduct()
     {
         var productJson = await File.ReadAllTextAsync(PostProductResponsePath);
         var productCreateOptions = new ProductCreateOptions
@@ -133,7 +134,7 @@ public class ProductEndpointTests : ProductTestBase
     }
     
     [Fact]
-    public async void UpdateProductAsync_ByAccessToken_Returns_UpdatedProduct()
+    public async Task UpdateProductAsync_ByAccessToken_Returns_UpdatedProduct()
     {
         var productJson = await File.ReadAllTextAsync(PatchProductResponsePath);
         var productUpdateOptions = new ProductUpdateOptions
@@ -175,7 +176,7 @@ public class ProductEndpointTests : ProductTestBase
     }
     
     [Fact]
-    public async void DeleteProductByIdAsync_ByAccessToken_Returns_True()
+    public async Task DeleteProductByIdAsync_ByAccessToken_Returns_True()
     {
         _requester.Setup(moq => moq.CreateDeleteRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
             It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(true);

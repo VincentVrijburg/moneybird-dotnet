@@ -2,22 +2,22 @@ using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Misc
 {
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum FrequencyType
     {
-        [JsonPropertyName("day")]
+        [JsonStringEnumMemberName("day")]
         Day,
 
-        [JsonPropertyName("week")]
+        [JsonStringEnumMemberName("week")]
         Week,
 
-        [JsonPropertyName("month")]
+        [JsonStringEnumMemberName("month")]
         Month,
 
-        [JsonPropertyName("quarter")]
+        [JsonStringEnumMemberName("quarter")]
         Quarter,
 
-        [JsonPropertyName("year")]
+        [JsonStringEnumMemberName("year")]
         Year
     }
 }

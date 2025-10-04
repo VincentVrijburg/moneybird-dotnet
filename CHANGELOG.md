@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.17.0 | 2025-10-04
+* Add support for `Identities` endpoint.
+* Fix inconsistent casing for the `zipcode` parameter.
+* Update `System.Text.Json` dependency to version 9.0.9
+* Remove `Macross.Json.Extensions` dependency for enum conversions.
+
 ## 0.16.0 | 2024-10-17
 * Add support for pagination in all list endpoints.
 * Fix the `events` attribute on webhook entities as it is considered deprecated (replaced by `enabled_events`)

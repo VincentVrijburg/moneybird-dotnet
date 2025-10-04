@@ -7,16 +7,16 @@ namespace Moneybird.Net.Misc
     /// <summary>
     /// Delivery method.
     /// </summary>
-    [JsonConverter(typeof(JsonStringEnumMemberConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum DeliveryMethod
     {
-        [JsonPropertyName("Email")]
+        [JsonStringEnumMemberName("Email")]
         Email,
-        [JsonPropertyName("Simplerinvoicing")]
+        [JsonStringEnumMemberName("Simplerinvoicing")]
         Simplerinvoicing,
-        [JsonPropertyName("Post")]
+        [JsonStringEnumMemberName("Post")]
         Post,
-        [JsonPropertyName("Manual")]
+        [JsonStringEnumMemberName("Manual")]
         Manual
     }
 }

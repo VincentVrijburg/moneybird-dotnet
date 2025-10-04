@@ -18,7 +18,7 @@ namespace Moneybird.Net.Models.Contacts
         public string Address2 { get; set; }
         
         [JsonPropertyName("zipcode")]
-        public string ZipCode { get; set; }
+        public string Zipcode { get; set; }
         
         [JsonPropertyName("city")]
         public string City { get; set; }

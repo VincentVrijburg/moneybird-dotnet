@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
 using Moneybird.Net.Entities.Webhooks;
@@ -30,7 +31,7 @@ public class WebhookEndpointTests : WebhookEndpointTestBase
     }
         
     [Fact]
-    public async void GetWebhooksAsync_ByAccessToken_Returns_WebhookList()
+    public async Task GetWebhooksAsync_ByAccessToken_Returns_WebhookList()
     {
         var webhookListJson = await File.ReadAllTextAsync(GetWebhooksResponsePath);
             
@@ -55,7 +56,7 @@ public class WebhookEndpointTests : WebhookEndpointTestBase
     }
     
     [Fact]
-    public async void CreateWebhookAsync_ByAccessToken_Returns_NewWebhook()
+    public async Task CreateWebhookAsync_ByAccessToken_Returns_NewWebhook()
     {
         var options = new WebhookCreateOptions
         {
@@ -86,7 +87,7 @@ public class WebhookEndpointTests : WebhookEndpointTestBase
     }
     
     [Fact]
-    public async void DeleteWebhookAsync_ByAccessToken_Returns_True()
+    public async Task DeleteWebhookAsync_ByAccessToken_Returns_True()
     {
         _requester.Setup(moq => moq.CreateDeleteRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
             It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(true);

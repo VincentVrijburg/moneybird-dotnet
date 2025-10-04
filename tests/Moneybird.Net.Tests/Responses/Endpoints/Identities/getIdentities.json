@@ -1,0 +1,42 @@
+[
+  {
+    "id": "392226999181644748",
+    "administration_id": "281289699686381606",
+    "company_name": "Parkietje B.V.",
+    "city": "Den Haag",
+    "country": "NL",
+    "zipcode": "4321XY",
+    "address1": "Brouwersplein 62",
+    "address2": null,
+    "email": "info@dev.null.moneybird.net",
+    "phone": "1234-5678900",
+    "bank_account_name": "Foobar B.V.",
+    "bank_account_number": "NL80TEST0252789466",
+    "bank_account_bic": "TESTNL2A",
+    "custom_fields": [],
+    "updated_at": "2025-10-02T14:12:56.590Z",
+    "created_at": "2025-10-02T14:12:56.590Z",
+    "chamber_of_commerce": "08155914",
+    "tax_number": "NL817575546B01"
+  },
+  {
+    "id": "526525709670214763",
+    "administration_id": "281289699686381606",
+    "company_name": "Parakeet LLC.",
+    "city": "Den Haag",
+    "country": "NL",
+    "zipcode": "4321XY",
+    "address1": "Brouwersplein 62",
+    "address2": "Suite 1",
+    "email": "info@dev.null.moneybird.net",
+    "phone": "1234-5678900",
+    "bank_account_name": "Foobar B.V.",
+    "bank_account_number": "NL80TEST0252789466",
+    "bank_account_bic": null,
+    "custom_fields": [],
+    "updated_at": "2025-10-02T14:12:56.590Z",
+    "created_at": "2025-10-02T14:12:56.590Z",
+    "chamber_of_commerce": "08155914",
+    "tax_number": "NL817575546B01"
+  }
+]
