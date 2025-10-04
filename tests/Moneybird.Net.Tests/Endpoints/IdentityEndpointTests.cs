@@ -98,8 +98,8 @@ namespace Moneybird.Net.Tests.Endpoints
             {
                 Identity = new IdentityCreate
                 {
-                    CompanyName = "MoneyBird B.V.",
-                    ZipCode = "7523MC",
+                    CompanyName = "Parkietje B.V.",
+                    Zipcode = "7523MC",
                     Address1 = "Moutlaan 35",
                     Address2 = "",
                     City = "Enschede",
@@ -146,10 +146,10 @@ namespace Moneybird.Net.Tests.Endpoints
             {
                 Identity = new IdentityUpdate
                 {
-                    CompanyName = "MoneyBird B.V.",
+                    CompanyName = "Parkietje B.V.",
                     Address1 = "Moutlaan 35",
                     Address2 = "",
-                    ZipCode = "7523MC",
+                    Zipcode = "7523MC",
                     City = "Enschede",
                     Country = "Netherlands",
                     Phone = "0612345678",
@@ -193,10 +193,10 @@ namespace Moneybird.Net.Tests.Endpoints
             {
                 Identity = new IdentityUpdate
                 {
-                    CompanyName = "MoneyBird B.V.",
+                    CompanyName = "Parkietje B.V.",
                     Address1 = "Moutlaan 35",
                     Address2 = "",
-                    ZipCode = "7523MC",
+                    Zipcode = "7523MC",
                     City = "Enschede",
                     Country = "Netherlands",
                     Phone = "0612345678",

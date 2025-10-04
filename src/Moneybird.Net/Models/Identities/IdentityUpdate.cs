@@ -16,7 +16,7 @@ namespace Moneybird.Net.Models.Identities
         public string Country { get; set; }
 
         [JsonPropertyName("zipcode")]
-        public string ZipCode { get; set; }
+        public string Zipcode { get; set; }
 
         [JsonPropertyName("address1")]
         public string Address1 { get; set; }
