@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Moneybird.Net.Entities.CustomFields;
-using Moneybird.Net.Entities.SalesInvoices;
 
 namespace Moneybird.Net.Models.SalesInvoices
 {
@@ -23,18 +22,21 @@ namespace Moneybird.Net.Models.SalesInvoices
         [JsonPropertyName("update_contact")]
         public bool UpdateContact { get; set; }
 
+        /// <summary>
+        /// Should be a valid estimate id.
+        /// </summary>
         [JsonPropertyName("original_estimate_id")]
         public string OriginalEstimateId { get; set; }
 
         /// <summary>
-        /// Default document style is used if value is not provided. Should be a valid document style id.
+        /// The default document style is used if a value is not provided. Should be a valid document style id.
         /// </summary>
         [JsonPropertyName("document_style_id")]
         public string DocumentStyleId { get; set; }
 
         /// <summary>
         /// If value is not provided, the workflow saved in the contact is used.
-        /// If the contact doesn’t have a default workflow, the administration’s default workflow is used.
+        /// If the contact does not have a default workflow, the administration’s default workflow is used.
         /// Should be a valid workflow id.
         /// </summary>
         [JsonPropertyName("workflow_id")]
@@ -72,7 +74,10 @@ namespace Moneybird.Net.Models.SalesInvoices
         /// </summary>
         [JsonPropertyName("discount")]
         public double? Discount { get; set; }
-
+        
+        [JsonPropertyName("time_entry_ids")]
+        public IReadOnlyList<string> TimeEntryIds { get; set; }
+        
         [JsonPropertyName("details_attributes")]
         public IReadOnlyList<SalesInvoiceUpdateDetail> DetailsAttributes { get; set; }
 

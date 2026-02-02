@@ -11,7 +11,7 @@ namespace Moneybird.Net.Models.SalesInvoices
         [JsonPropertyName("sales_invoice")]
         public SalesInvoiceCreate SalesInvoice { get; set; }
 
-        [JsonPropertyName("from_checkout")]
-        public bool? FromCheckout { get; set; }
+        [JsonPropertyName("from_payment_request")]
+        public bool? FromPaymentRequest { get; set; }
     }
 }
