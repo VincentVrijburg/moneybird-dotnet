@@ -51,11 +51,14 @@ namespace Moneybird.Net.Models.SalesInvoices
         [JsonPropertyName("product_id")]
         public string ProductId { get; set; }
 
-        [JsonPropertyName("time_entry_ids")]
-        public IReadOnlyList<string> TimeEntryIds { get; set; }
-
         [JsonPropertyName("row_order")]
         public int? RowOrder { get; set; }
+        
+        [JsonPropertyName("is_optional")]
+        public bool? IsOptional { get; set; }
+        
+        [JsonPropertyName("is_selected")]
+        public bool? IsSelected { get; set; }
 
         [JsonPropertyName("_destroy")]
         public bool? Destroy { get; set; }

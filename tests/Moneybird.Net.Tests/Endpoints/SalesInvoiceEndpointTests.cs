@@ -140,11 +140,7 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
                         Period = "20221001..20221031",
                         RowOrder = 1,
                         Destroy = false,
-                        AutomatedTaxEnabled = true,
-                        TimeEntryIds = new []
-                        {
-                            "369764595235030037"
-                        }
+                        AutomatedTaxEnabled = true
                     }
                 },
                 ContactPersonId = "369764595176309777",
@@ -157,6 +153,10 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
                 PaymentConditions = "Payment within 30 days",
                 PricesAreInclTax = true,
                 Discount = 0,
+                TimeEntryIds = new []
+                {
+                    "369764595235030037"
+                },
                 CustomFieldsAttributes = new []
                 {
                     new CustomFieldAttribute
@@ -166,7 +166,7 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
                     }
                 }
             },
-            FromCheckout = true
+            FromPaymentRequest = true
         };
 
         var createResponse = await File.ReadAllTextAsync(PostSalesInvoiceResponsePath);
@@ -222,12 +222,12 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
                         Period = "20221001..20221031",
                         RowOrder = 1,
                         Destroy = false,
-                        AutomatedTaxEnabled = true,
-                        TimeEntryIds = new []
-                        {
-                            "369764595235030037"
-                        }
+                        AutomatedTaxEnabled = true
                     }
+                },
+                TimeEntryIds = new []
+                {
+                    "369764595235030037"
                 },
                 CustomFieldsAttributes = new []
                 {
@@ -276,13 +276,16 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
         var salesInvoiceJson = await File.ReadAllTextAsync(SendSalesInvoiceResponsePath);
         var salesInvoiceSendOptions = new SalesInvoiceSendOptions
         {
-            DeliveryMethod = DeliveryMethod.Email,
-            SendingScheduled = false,
-            DeliverUbl = false,
-            Mergeable = false,
-            EmailAddress = "info@example.com",
-            EmailMessage = "Geachte Foobar Holding B.V.,\n\nIn de bijlage kunt u factuur 2024-0001 voor onze diensten vinden. Wij verzoeken u vriendelijk de factuur voor 30-07-2024 te voldoen.\n\nMet vriendelijke groet,\n\nParkietje B.V.",
-            InvoiceDate = null
+            SalesInvoiceSend = new SalesInvoiceSend
+            {
+                DeliveryMethod = DeliveryMethod.Email,
+                SendingScheduled = false,
+                DeliverUbl = false,
+                Mergeable = false,
+                EmailAddress = "info@example.com",
+                EmailMessage = "Geachte Foobar Holding B.V.,\n\nIn de bijlage kunt u factuur 2024-0001 voor onze diensten vinden. Wij verzoeken u vriendelijk de factuur voor 30-07-2024 te voldoen.\n\nMet vriendelijke groet,\n\nParkietje B.V.",
+                InvoiceDate = null
+            }
         };
 
         var serializedSalesInvoiceSendOptions = JsonSerializer.Serialize(salesInvoiceSendOptions, _config.SerializerOptions);
