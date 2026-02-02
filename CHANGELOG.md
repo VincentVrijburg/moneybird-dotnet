@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.18.0 | 2026-02-02
+* Fix linking time entries to sales invoices
+* Add missing properties to models for sales invoices
+* Update `System.Text.Json` dependency to version 9.0.12
+
 ## 0.17.0 | 2025-10-04
 * Add support for `Identities` endpoint.
 * Fix inconsistent casing for the `zipcode` parameter.
