@@ -112,7 +112,7 @@ namespace Moneybird.Net.Entities.Contacts
         public string CreditCardReference { get; set; }
 
         [JsonPropertyName("credit_card_type")]
-        public CreditCardType CreditCardType { get; set; }
+        public CreditCardType? CreditCardType { get; set; }
 
         [JsonPropertyName("tax_number_validated_at")]
         public DateTime? TaxNumberValidatedAt { get; set; }

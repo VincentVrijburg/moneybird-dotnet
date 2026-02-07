@@ -36,7 +36,7 @@ namespace Moneybird.Net.Entities.Workflows
         public bool ShowQrCode { get; set; }
         
         [JsonPropertyName("action")]
-        public WorkflowStepAction Action { get; set; }
+        public WorkflowStepAction? Action { get; set; }
         
         [JsonPropertyName("created_at")]
         public DateTime CreatedAt { get; set; }

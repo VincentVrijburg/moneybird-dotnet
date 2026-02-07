@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Moneybird.Net.Endpoints.Abstractions.Options;
 using Moneybird.Net.Entities.TimeEntries;
 
@@ -7,7 +6,7 @@ namespace Moneybird.Net.Models.TimeEntries
 {
     public class TimeEntryFilterOptions : IMoneybirdFilterOptions
     {
-        public IList<TimeEntryState> State { get; set; }
+        public TimeEntryState[] State { get; set; }
         
         public string Period { get; set; }
         

@@ -150,7 +150,7 @@
   "events": [
     {
       "administration_id": "281289699686381606",
-      "user_id": 16668548704389,
+      "user_id": "262969831844742919",
       "action": "sales_invoice_created",
       "link_entity_id": null,
       "link_entity_type": null,
@@ -161,7 +161,7 @@
     },
     {
       "administration_id": "281289699686381606",
-      "user_id": 16668548704389,
+      "user_id": "262969831844742919",
       "action": "sales_invoice_send_email",
       "link_entity_id": null,
       "link_entity_type": null,

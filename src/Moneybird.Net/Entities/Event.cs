@@ -1,7 +1,7 @@
 using System;
 using System.Text.Json.Serialization;
 
-namespace Moneybird.Net.Entities.Contacts
+namespace Moneybird.Net.Entities
 {
     public class Event
     {

@@ -178,7 +178,7 @@ namespace Moneybird.Net.Entities.SalesInvoices
         public List<Note> Notes { get; set; }
         
         [JsonPropertyName("attachments")]
-        public List<Attachment> Attachments { get; set; }
+        public List<SalesInvoiceAttachment> Attachments { get; set; }
 
         [JsonPropertyName("events")]
         public List<Event> Events { get; set; }

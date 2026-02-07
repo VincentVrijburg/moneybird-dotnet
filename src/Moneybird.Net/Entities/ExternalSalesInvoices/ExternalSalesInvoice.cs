@@ -24,7 +24,7 @@ namespace Moneybird.Net.Entities.ExternalSalesInvoices
         public Contact Contact { get; set; }
 
         [JsonPropertyName("date")]
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
 
         [JsonPropertyName("state")]
         public ExternalSalesInvoiceState State { get; set; }
@@ -39,7 +39,7 @@ namespace Moneybird.Net.Entities.ExternalSalesInvoices
         public int EntryNumber { get; set; }
 
         [JsonPropertyName("origin")]
-        public ExternalSalesInvoiceOrigin Origin { get; set; }
+        public ExternalSalesInvoiceOrigin? Origin { get; set; }
         
         [JsonPropertyName("source")]
         public string Source { get; set; }
@@ -109,7 +109,7 @@ namespace Moneybird.Net.Entities.ExternalSalesInvoices
         public List<Note> Notes { get; set; }
 
         [JsonPropertyName("attachments")]
-        public List<Attachment> Attachments { get; set; }
+        public List<SalesInvoiceAttachment> Attachments { get; set; }
 
         [JsonPropertyName("events")]
         public List<Event> Events { get; set; }

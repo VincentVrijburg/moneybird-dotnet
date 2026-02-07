@@ -34,7 +34,7 @@ namespace Moneybird.Net.Entities.Workflows
         public bool PricesAreInclTax { get; set; }
         
         [JsonPropertyName("steps")]
-        public IList<WorkflowSteps> Steps { get; set; }
+        public List<WorkflowSteps> Steps { get; set; }
         
         [JsonPropertyName("created_at")]
         public DateTime CreatedAt { get; set; }
