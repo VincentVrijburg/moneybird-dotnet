@@ -57,6 +57,12 @@ namespace Moneybird.Net.Entities.Contacts
         [JsonPropertyName("bank_account")]
         public string BankAccount { get; set; }
 
+        [JsonPropertyName("is_trusted")]
+        public bool IsTrusted { get; set; }
+        
+        [JsonPropertyName("max_transfer_amount")]
+        public double? MaxTransferAmount { get; set; }
+        
         [JsonPropertyName("attention")]
         public string Attention { get; set; }
 
@@ -79,7 +85,7 @@ namespace Moneybird.Net.Entities.Contacts
         public string SendEstimatesToEmail { get; set; }
 
         [JsonPropertyName("sepa_active")]
-        public bool SepaActive { get; set; }
+        public bool? SepaActive { get; set; }
 
         [JsonPropertyName("sepa_iban")]
         public string SepaIban { get; set; }
@@ -106,7 +112,7 @@ namespace Moneybird.Net.Entities.Contacts
         public string CreditCardReference { get; set; }
 
         [JsonPropertyName("credit_card_type")]
-        public object CreditCardType { get; set; }
+        public CreditCardType CreditCardType { get; set; }
 
         [JsonPropertyName("tax_number_validated_at")]
         public DateTime? TaxNumberValidatedAt { get; set; }
@@ -124,7 +130,7 @@ namespace Moneybird.Net.Entities.Contacts
         public string SiIdentifier { get; set; }
 
         [JsonPropertyName("si_identifier_type")]
-        public string SiIdentifierTypeType { get; set; }
+        public string SiIdentifierType { get; set; }
 
         [JsonPropertyName("created_at")]
         public DateTime CreatedAt { get; set; }
@@ -147,6 +153,9 @@ namespace Moneybird.Net.Entities.Contacts
         [JsonPropertyName("contact_people")]
         public List<ContactPerson> ContactPeople { get; set; }
 
+        [JsonPropertyName("archived")]
+        public bool Archived { get; set; }
+        
         [JsonPropertyName("events")]
         public List<Event> Events { get; set; }
     }

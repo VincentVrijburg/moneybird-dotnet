@@ -34,7 +34,10 @@ namespace Moneybird.Net.Entities.FinancialMutations
         public string ContraAccountNumber { get; set; }
 
         [JsonPropertyName("state")]
-        public string State { get; set; }
+        public FinancialMutationState State { get; set; }
+        
+        [JsonPropertyName("settlement_state")]
+        public FinancialMutationSettlementState SettlementState { get; set; }
 
         [JsonPropertyName("amount_open")]
         [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
@@ -75,9 +78,9 @@ namespace Moneybird.Net.Entities.FinancialMutations
         public string AccountServicerTransactionId { get; set; }
         
         [JsonPropertyName("payments")]
-        public IReadOnlyList<Payment> Payments { get; set; }
+        public List<Payment> Payments { get; set; }
         
         [JsonPropertyName("ledger_account_bookings")]
-        public IReadOnlyList<LedgerAccountBooking> LedgerAccountBookings { get; set; }
+        public List<LedgerAccountBooking> LedgerAccountBookings { get; set; }
     }
 }

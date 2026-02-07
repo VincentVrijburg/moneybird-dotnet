@@ -12,7 +12,7 @@ namespace Moneybird.Net.Entities.Payments
         public string AdministrationId { get; set; }
 
         [JsonPropertyName("invoice_type")]
-        public string InvoiceType { get; set; }
+        public PaymentInvoiceType InvoiceType { get; set; }
 
         [JsonPropertyName("invoice_id")]
         public string InvoiceId { get; set; }
@@ -24,22 +24,24 @@ namespace Moneybird.Net.Entities.Payments
         public string UserId { get; set; }
 
         [JsonPropertyName("payment_transaction_id")]
-        public object PaymentTransactionId { get; set; }
+        public string PaymentTransactionId { get; set; }
 
         [JsonPropertyName("transaction_identifier")]
-        public object TransactionIdentifier { get; set; }
+        public string TransactionIdentifier { get; set; }
 
         [JsonPropertyName("price")]
-        public string Price { get; set; }
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+        public double? Price { get; set; }
 
         [JsonPropertyName("price_base")]
-        public string PriceBase { get; set; }
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+        public double? PriceBase { get; set; }
 
         [JsonPropertyName("payment_date")]
         public DateTime PaymentDate { get; set; }
 
         [JsonPropertyName("credit_invoice_id")]
-        public object CreditInvoiceId { get; set; }
+        public string CreditInvoiceId { get; set; }
 
         [JsonPropertyName("financial_mutation_id")]
         public string FinancialMutationId { get; set; }
@@ -48,10 +50,10 @@ namespace Moneybird.Net.Entities.Payments
         public string LedgerAccountId { get; set; }
 
         [JsonPropertyName("linked_payment_id")]
-        public object LinkedPaymentId { get; set; }
+        public string LinkedPaymentId { get; set; }
 
         [JsonPropertyName("manual_payment_action")]
-        public object ManualPaymentAction { get; set; }
+        public string ManualPaymentAction { get; set; }
 
         [JsonPropertyName("created_at")]
         public DateTime CreatedAt { get; set; }

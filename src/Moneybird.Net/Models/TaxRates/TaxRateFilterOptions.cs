@@ -15,7 +15,7 @@ namespace Moneybird.Net.Models.TaxRates
         
         public TaxRateType? TaxRateType { get; set; }
         
-        public IReadOnlyCollection<TaxRateType> State { get; set; }
+        public IList<TaxRateType> State { get; set; }
 
         public string Country { get; set; }
         

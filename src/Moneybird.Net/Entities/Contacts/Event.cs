@@ -15,10 +15,10 @@ namespace Moneybird.Net.Entities.Contacts
         public string Action { get; set; }
 
         [JsonPropertyName("link_entity_id")]
-        public object LinkEntityId { get; set; }
+        public string LinkEntityId { get; set; }
 
         [JsonPropertyName("link_entity_type")]
-        public object LinkEntityType { get; set; }
+        public string LinkEntityType { get; set; }
 
         // TODO: Check documentation to understand what this data field is meant for.
         [JsonIgnore]

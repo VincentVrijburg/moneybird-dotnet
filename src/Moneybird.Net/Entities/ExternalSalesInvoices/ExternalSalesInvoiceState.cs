@@ -7,17 +7,17 @@ namespace Moneybird.Net.Entities.ExternalSalesInvoices
     {
         [JsonStringEnumMemberName("all")]
         All,
-        
         [JsonStringEnumMemberName("new")]
         New,
-        
         [JsonStringEnumMemberName("open")]
         Open,
-        
         [JsonStringEnumMemberName("late")]
         Late,
-        
         [JsonStringEnumMemberName("paid")]
-        Paid
+        Paid,
+        [JsonStringEnumMemberName("uncollectible")]
+        Uncollectible,
+        [JsonStringEnumMemberName("pending_payment")]
+        PendingPayment
     }
 }

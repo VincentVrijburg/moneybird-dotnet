@@ -3,6 +3,7 @@
   "administration_id": "357760731887252340",
   "contact_id": "306602835138381837",
   "project_id": "376181771183119693",
+  "sales_invoice_id": null,
   "user_id": "224938791219844626",
   "started_at": "2023-11-24T18:00:00.000Z",
   "ended_at": "2023-11-24T18:15:00.000Z",
@@ -17,7 +18,7 @@
     "lastname": "",
     "company_name": "Moneybird"
   },
-  "detail": null,
+  "sales_invoice": null,
   "user": {
     "id": "224938791219844626",
     "name": "John Doe",

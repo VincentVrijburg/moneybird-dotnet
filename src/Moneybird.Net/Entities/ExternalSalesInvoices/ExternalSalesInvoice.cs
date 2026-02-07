@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Mail;
 using System.Text.Json.Serialization;
 using Moneybird.Net.Entities.Contacts;
-using Moneybird.Net.Entities.CustomFields;
+using Moneybird.Net.Entities.Notes;
 using Moneybird.Net.Entities.Payments;
 using Moneybird.Net.Entities.SalesInvoices;
 
@@ -22,23 +23,35 @@ namespace Moneybird.Net.Entities.ExternalSalesInvoices
         [JsonPropertyName("contact")]
         public Contact Contact { get; set; }
 
-        [JsonPropertyName("state")]
-        public ExternalSalesInvoiceState State { get; set; }
-
         [JsonPropertyName("date")]
         public string Date { get; set; }
 
+        [JsonPropertyName("state")]
+        public ExternalSalesInvoiceState State { get; set; }
+        
         [JsonPropertyName("due_date")]
-        public string DueDate { get; set; }
+        public DateTime? DueDate { get; set; }
 
         [JsonPropertyName("reference")]
         public string Reference { get; set; }
+        
+        [JsonPropertyName("entry_number")]
+        public int EntryNumber { get; set; }
 
+        [JsonPropertyName("origin")]
+        public ExternalSalesInvoiceOrigin Origin { get; set; }
+        
+        [JsonPropertyName("source")]
+        public string Source { get; set; }
+
+        [JsonPropertyName("source_url")]
+        public string SourceUrl { get; set; }
+        
         [JsonPropertyName("currency")]
         public string Currency { get; set; }
 
         [JsonPropertyName("paid_at")]
-        public string PaidAt { get; set; }
+        public DateTime? PaidAt { get; set; }
 
         [JsonPropertyName("created_at")]
         public DateTime CreatedAt { get; set; }
@@ -87,22 +100,19 @@ namespace Moneybird.Net.Entities.ExternalSalesInvoices
         public double TotalPriceInclTaxBase { get; set; }
 
         [JsonPropertyName("marked_dubious_on")]
-        public string MarkedDubiousOn { get; set; }
+        public DateTime? MarkedDubiousOn { get; set; }
 
         [JsonPropertyName("marked_uncollectible_on")]
-        public string MarkedUncollectibleOn { get; set; }
+        public DateTime? MarkedUncollectibleOn { get; set; }
 
-        [JsonPropertyName("source")]
-        public string Source { get; set; }
+        [JsonPropertyName("notes")]
+        public List<Note> Notes { get; set; }
 
-        [JsonPropertyName("source_url")]
-        public string SourceUrl { get; set; }
+        [JsonPropertyName("attachments")]
+        public List<Attachment> Attachments { get; set; }
 
-        [JsonPropertyName("payment_url")]
-        public string PaymentUrl { get; set; }
-
-        [JsonPropertyName("custom_fields")]
-        public List<CustomFieldAttribute> CustomFields { get; set; }
+        [JsonPropertyName("events")]
+        public List<Event> Events { get; set; }
 
         [JsonPropertyName("tax_totals")]
         public List<SalesInvoiceTaxTotal> TaxTotals { get; set; }

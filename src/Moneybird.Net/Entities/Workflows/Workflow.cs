@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.Workflows
@@ -31,6 +32,9 @@ namespace Moneybird.Net.Entities.Workflows
         
         [JsonPropertyName("prices_are_incl_tax")]
         public bool PricesAreInclTax { get; set; }
+        
+        [JsonPropertyName("steps")]
+        public IList<WorkflowSteps> Steps { get; set; }
         
         [JsonPropertyName("created_at")]
         public DateTime CreatedAt { get; set; }

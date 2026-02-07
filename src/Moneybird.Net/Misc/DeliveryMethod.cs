@@ -17,6 +17,8 @@ namespace Moneybird.Net.Misc
         [JsonStringEnumMemberName("Post")]
         Post,
         [JsonStringEnumMemberName("Manual")]
-        Manual
+        Manual,
+        [JsonStringEnumMemberName("Peppol")]
+        Peppol
     }
 }

@@ -17,7 +17,7 @@
     "lastname": "",
     "company_name": "Foobar Holding B.V."
   },
-  "detail": null,
+  "sales_invoice": null,
   "user": {
     "id": "1691659319295",
     "name": "Moneybird",

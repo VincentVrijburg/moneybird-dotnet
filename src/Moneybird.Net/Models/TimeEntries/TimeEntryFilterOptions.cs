@@ -7,7 +7,7 @@ namespace Moneybird.Net.Models.TimeEntries
 {
     public class TimeEntryFilterOptions : IMoneybirdFilterOptions
     {
-        public IReadOnlyCollection<TimeEntryState> State { get; set; }
+        public IList<TimeEntryState> State { get; set; }
         
         public string Period { get; set; }
         

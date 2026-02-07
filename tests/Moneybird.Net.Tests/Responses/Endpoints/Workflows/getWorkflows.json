@@ -1,20 +1,7 @@
 [
   {
-    "id": "354230541627765863",
-    "administration_id": "322056713748350877",
-    "type": "EstimateWorkflow",
-    "name": "Standaard",
-    "default": true,
-    "currency": "EUR",
-    "language": "nl",
-    "active": true,
-    "prices_are_incl_tax": false,
-    "created_at": "2021-05-18T16:00:38.810Z",
-    "updated_at": "2021-05-18T16:00:38.810Z"
-  },
-  {
-    "id": "354230541627765864",
-    "administration_id": "322056713748350877",
+    "id": "322056714507519919",
+    "administration_id": "281289699686381606",
     "type": "InvoiceWorkflow",
     "name": "Standaard",
     "default": true,
@@ -22,7 +9,99 @@
     "language": "nl",
     "active": true,
     "prices_are_incl_tax": false,
-    "created_at": "2021-05-18T16:00:38.771Z",
-    "updated_at": "2021-05-18T16:00:38.771Z"
+    "created_at": "2021-05-18T17:00:38.771Z",
+    "updated_at": "2021-05-18T17:00:38.771Z",
+    "steps": [
+      {
+        "id": "322056714508568511",
+        "administration_id": "281289699686381606",
+        "step_order": 0,
+        "due_interval": 14,
+        "reminder_delay": 0,
+        "reminder_text": null,
+        "reminder_auto_send": false,
+        "payment_methods": [],
+        "collection_method": null,
+        "show_qr_code": true,
+        "action": null,
+        "created_at": "2021-05-18T17:00:38.773Z",
+        "updated_at": "2021-05-18T17:00:38.773Z"
+      },
+      {
+        "id": "322056714510665671",
+        "administration_id": "281289699686381606",
+        "step_order": 1,
+        "due_interval": 10,
+        "reminder_delay": 0,
+        "reminder_text": "Geachte {recipient.name},\n\nUit onze administratie blijkt dat u de onderstaande facturen nog niet voldaan heeft. We willen u erop wijzen dat de betaaltermijn van deze facturen verstreken is en verzoeken u vriendelijk doch dringend om de betaling zo spoedig mogelijk te voldoen.\n\n{reminders_table}\n\nMochten de betalingen en deze herinnering elkaar kruisen, dan kunt u deze herinnering als niet verzonden beschouwen.\nVia deze link kunt u naar het overzicht van uw {recipient.show_open_invoices_online_url}.\n\nMet vriendelijke groet,\n\n{company.company_name}",
+        "reminder_auto_send": false,
+        "payment_methods": [],
+        "collection_method": null,
+        "show_qr_code": true,
+        "action": null,
+        "created_at": "2021-05-18T17:00:38.775Z",
+        "updated_at": "2021-05-18T17:00:38.775Z"
+      },
+      {
+        "id": "322056714512762821",
+        "administration_id": "281289699686381606",
+        "step_order": 2,
+        "due_interval": 5,
+        "reminder_delay": 0,
+        "reminder_text": "Geachte {recipient.name},\n\nOndanks een eerdere herinnering blijkt uit onze administratie dat u de onderstaande facturen nog niet voldaan heeft. We willen u er op wijzen dat de betaaltermijn van deze facturen verstreken is en verzoeken u vriendelijk doch dringend om de betaling zo spoedig mogelijk te voldoen.\n\n{reminders_table}\n\nMochten de betalingen en deze herinnering elkaar kruisen, dan kunt u deze herinnering als niet verzonden beschouwen. Wanneer betaling uitblijft, zullen wij de vordering uit handen moeten geven aan een incassobureau en de wettelijke incassokosten in rekening brengen.\nVia deze link kunt u naar het overzicht van uw {recipient.show_open_invoices_online_url}.\n\nMet vriendelijke groet,\n\n{company.company_name}",
+        "reminder_auto_send": false,
+        "payment_methods": [],
+        "collection_method": null,
+        "show_qr_code": true,
+        "action": null,
+        "created_at": "2021-05-18T17:00:38.777Z",
+        "updated_at": "2021-05-18T17:00:38.777Z"
+      },
+      {
+        "id": "322056714513811400",
+        "administration_id": "281289699686381606",
+        "step_order": 3,
+        "due_interval": 5,
+        "reminder_delay": 0,
+        "reminder_text": "Geachte {recipient.name},\n\nOndanks eerdere herinneringen blijkt uit onze administratie dat u de onderstaande facturen nog niet voldaan heeft. Dit is de derde herinnering voor het voldoen van de vordering, voordat de vordering uit handen gegeven zal worden aan een incassobureau.\n\n{reminders_table}\n\nWij verzoeken u om de betalingen binnen 5 dagen te voldoen. Wanneer betaling uitblijft, zullen wij de vordering uit handen geven aan een incassobureau en brengen we de wettelijke incassokosten in rekening.\nVia deze link kunt u naar het overzicht van uw {recipient.show_open_invoices_online_url}.\n\nMet vriendelijke groet,\n\n{company.company_name}",
+        "reminder_auto_send": false,
+        "payment_methods": [],
+        "collection_method": null,
+        "show_qr_code": true,
+        "action": null,
+        "created_at": "2021-05-18T17:00:38.778Z",
+        "updated_at": "2021-05-18T17:00:38.778Z"
+      }
+    ]
+  },
+  {
+    "id": "322056714547365812",
+    "administration_id": "281289699686381606",
+    "type": "EstimateWorkflow",
+    "name": "Standaard",
+    "default": true,
+    "currency": "EUR",
+    "language": "nl",
+    "active": true,
+    "prices_are_incl_tax": false,
+    "created_at": "2021-05-18T17:00:38.810Z",
+    "updated_at": "2021-05-18T17:00:38.810Z",
+    "steps": [
+      {
+        "id": "322056714550511563",
+        "administration_id": "281289699686381606",
+        "step_order": 0,
+        "due_interval": 14,
+        "reminder_delay": 0,
+        "reminder_text": null,
+        "reminder_auto_send": false,
+        "payment_methods": [],
+        "collection_method": null,
+        "show_qr_code": true,
+        "action": null,
+        "created_at": "2021-05-18T17:00:38.813Z",
+        "updated_at": "2021-05-18T17:00:38.813Z"
+      }
+    ]
   }
 ]
