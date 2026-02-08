@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <LangVersion>14</LangVersion>
         <PackageId>Moneybird.Net</PackageId>
         <Version>0.18.0</Version>
         <Authors>Vincent Vrijburg</Authors>
@@ -13,10 +12,11 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageVersion>0.18.0</PackageVersion>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="System.Text.Json" Version="9.0.12" />
+      <PackageReference Include="System.Text.Json" Version="10.0.2" />
     </ItemGroup>
 
     <ItemGroup>
