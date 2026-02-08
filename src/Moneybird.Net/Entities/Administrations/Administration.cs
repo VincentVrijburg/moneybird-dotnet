@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities.Administrations
@@ -39,5 +40,23 @@ namespace Moneybird.Net.Entities.Administrations
         /// </summary>
         [JsonPropertyName("time_zone")]
         public string TimeZone { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the access value.
+        /// </summary>
+        [JsonPropertyName("access")]
+        public AdministrationAccess Access { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the suspended value.
+        /// </summary>
+        [JsonPropertyName("suspended")]
+        public bool Suspended { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the period locked until value.
+        /// </summary>
+        [JsonPropertyName("period_locked_until")]
+        public DateTime? PeriodLockedUntil { get; set; }
     }
 }

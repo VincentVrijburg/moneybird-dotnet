@@ -22,10 +22,10 @@ namespace Moneybird.Net.Entities.TaxRates
         public TaxRateType TaxRateType { get; set; }
 
         [JsonPropertyName("show_tax")]
-        public bool ShowTax { get; set; }
+        public bool? ShowTax { get; set; }
 
         [JsonPropertyName("active")]
-        public bool Active { get; set; }
+        public bool? Active { get; set; }
         
         [JsonPropertyName("country")]
         public string Country { get; set; }

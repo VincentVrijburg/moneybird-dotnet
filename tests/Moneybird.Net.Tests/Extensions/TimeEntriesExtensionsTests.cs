@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using Microsoft.VisualBasic;
-using Moneybird.Net.Entities.TaxRates;
 using Moneybird.Net.Entities.TimeEntries;
 using Moneybird.Net.Extensions;
 using Moneybird.Net.Models.TimeEntries;
@@ -26,7 +22,7 @@ public class TimeEntriesExtensionsTests
     [Fact]
     public void GetFilterString_FromTimeEntryFilterOptions_StateOnly_Returns_CorrectString()
     {
-        var state = new List<TimeEntryState> { TimeEntryState.Open };
+        var state = new [] { TimeEntryState.Open };
         
         var options = new TimeEntryFilterOptions
         {
@@ -154,7 +150,7 @@ public class TimeEntriesExtensionsTests
     [Fact]
     public void GetFilterString_FromTaxRateFilterOptions_All_Returns_CorrectString()
     {
-        var state = new List<TimeEntryState> { TimeEntryState.All };
+        var state = new [] { TimeEntryState.All };
         const string period = "this_month";
         const string contactId = "381666401394414610";
         const bool includeNilContacts = true;

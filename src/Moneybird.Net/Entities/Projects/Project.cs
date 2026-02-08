@@ -12,5 +12,8 @@ namespace Moneybird.Net.Entities.Projects
         
         [JsonPropertyName("state")]
         public ProjectState State { get; set; }
+        
+        [JsonPropertyName("budget")]
+        public int? Budget { get; set; }
     }
 }

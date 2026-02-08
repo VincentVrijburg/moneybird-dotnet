@@ -32,6 +32,12 @@ namespace Moneybird.Net.Entities.LedgerAccounts
         public DateTime UpdatedAt { get; set; }
 
         [JsonPropertyName("allowed_document_types")]
-        public IReadOnlyList<DocumentType> AllowedDocumentTypes { get; set; }
+        public List<DocumentType> AllowedDocumentTypes { get; set; }
+        
+        [JsonPropertyName("taxonomy_item")]
+        public TaxonomyItem TaxonomyItem { get; set; }
+        
+        [JsonPropertyName("financial_account_id")]
+        public string FinancialAccountId { get; set; }
     }
 }

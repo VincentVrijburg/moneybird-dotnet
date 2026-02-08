@@ -22,7 +22,7 @@
     "identifier": "SKU1234",
     "price": "100.0",
     "currency": "EUR",
-    "frequency": 2,
+    "frequency": null,
     "frequency_type": "month",
     "tax_rate_id": "369764439469065326",
     "ledger_account_id": "369764439364207706",

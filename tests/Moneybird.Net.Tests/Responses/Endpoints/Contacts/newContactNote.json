@@ -10,8 +10,7 @@
   "completed_at": null,
   "completed_by_id": null,
   "todo_type": null,
-  "data": {
-  },
+  "data": {},
   "created_at": "2021-12-03T17:36:24.651Z",
   "updated_at": "2021-12-03T17:36:24.651Z"
 }

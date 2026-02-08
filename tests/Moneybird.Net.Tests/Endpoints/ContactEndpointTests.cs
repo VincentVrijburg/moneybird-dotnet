@@ -101,11 +101,10 @@ namespace Moneybird.Net.Tests.Endpoints
             var contactListByIdsJson = await File.ReadAllTextAsync(GetContactsResponsePath);
             var contactListOptions = new ContactListOptions
             {
-                Ids = new List<string>()
-                {
+                Ids = [
                     "726609752430752165",
                     "622071342065956775"
-                }
+                ]
             };
             var serializedContactListOptions = JsonSerializer.Serialize(contactListOptions, _config.SerializerOptions);
             

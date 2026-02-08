@@ -125,8 +125,8 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
                 Reference = "30052",
                 ContactId = "370131045504255127",
                 Currency = "USD",
-                DetailsAttributes = new []
-                {
+                DetailsAttributes =
+                [
                     new SalesInvoiceCreateDetail
                     {
                         Id = "369764595235030036",
@@ -142,7 +142,7 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
                         Destroy = false,
                         AutomatedTaxEnabled = true
                     }
-                },
+                ],
                 ContactPersonId = "369764595176309777",
                 OriginalEstimateId = null,
                 DocumentStyleId = "369764439814046847",
@@ -153,18 +153,18 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
                 PaymentConditions = "Payment within 30 days",
                 PricesAreInclTax = true,
                 Discount = 0,
-                TimeEntryIds = new []
-                {
+                TimeEntryIds = 
+                [
                     "369764595235030037"
-                },
-                CustomFieldsAttributes = new []
-                {
+                ],
+                CustomFieldsAttributes =
+                [
                     new CustomFieldAttribute
                     {
                         Id = "1",
                         Value = "Custom field value"
                     }
-                }
+                ]
             },
             FromPaymentRequest = true
         };
@@ -207,8 +207,8 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
                 PricesAreInclTax = true,
                 PaymentConditions = "Payment within 14 days",
                 Discount = 0,
-                DetailsAttributes = new []
-                {
+                DetailsAttributes =
+                [
                     new SalesInvoiceUpdateDetail
                     {
                         Id = "369764595235030036",
@@ -224,13 +224,13 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
                         Destroy = false,
                         AutomatedTaxEnabled = true
                     }
-                },
-                TimeEntryIds = new []
-                {
+                ],
+                TimeEntryIds =
+                [
                     "369764595235030037"
-                },
-                CustomFieldsAttributes = new []
-                {
+                ],
+                CustomFieldsAttributes =
+                [
                     new CustomFieldAttribute()
                     {
                         Id = "1",
@@ -241,7 +241,7 @@ public class SalesInvoiceEndpointTests : SalesInvoiceTestBase
                         Id = "2",
                         Value = "Second custom field value"
                     }
-                }
+                ]
             }
         };
         

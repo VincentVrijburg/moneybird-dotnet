@@ -20,7 +20,7 @@ namespace Moneybird.Net.Models.LedgerAccounts
         public string ParentId { get; set; }
         
         [JsonPropertyName("allowed_document_types")]
-        public IReadOnlyList<DocumentType> AllowedDocumentTypes { get; set; }
+        public List<DocumentType> AllowedDocumentTypes { get; set; }
         
         [JsonPropertyName("description")]
         public string Description { get; set; }

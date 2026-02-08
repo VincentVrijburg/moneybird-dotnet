@@ -36,7 +36,7 @@ namespace Moneybird.Net.Entities.Notes
         public string CompletedById { get; set; }
 
         [JsonPropertyName("todo_type")]
-        public object TodoType { get; set; }
+        public NoteTodoType? TodoType { get; set; }
 
         [JsonIgnore]
         [JsonPropertyName("data")]

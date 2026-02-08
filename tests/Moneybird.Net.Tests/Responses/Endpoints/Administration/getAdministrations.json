@@ -5,7 +5,10 @@
     "language": "nl",
     "currency": "EUR",
     "country": "NL",
-    "time_zone": "Europe/Amsterdam"
+    "time_zone": "Europe/Amsterdam",
+    "access": "user",
+    "suspended": false,
+    "period_locked_until": null
   },
   {
     "id": "268239961169888660",
@@ -13,6 +16,9 @@
     "language": "en",
     "currency": "USD",
     "country": "US",
-    "time_zone": "US/Eastern"
+    "time_zone": "US/Eastern",
+    "access": "accountant_company",
+    "suspended": true,
+    "period_locked_until": "2025-12-31T23:59:59.999Z"
   }
 ]

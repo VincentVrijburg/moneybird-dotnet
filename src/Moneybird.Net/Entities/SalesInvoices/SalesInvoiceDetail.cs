@@ -63,5 +63,11 @@ namespace Moneybird.Net.Entities.SalesInvoices
 
         [JsonPropertyName("updated_at")]
         public DateTime UpdatedAt { get; set; }
+        
+        [JsonPropertyName("is_optional")]
+        public bool IsOptional { get; set; }
+        
+        [JsonPropertyName("is_selected")]
+        public bool IsSelected { get; set; }
     }
 }

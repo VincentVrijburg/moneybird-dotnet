@@ -117,14 +117,14 @@ public class ExternalSalesInvoiceEndpointTests : ExternalSalesInvoicesTestBase
                 Reference = "30052",
                 ContactId = "370131045504255127",
                 Currency = "USD",
-                DetailsAttributes = new []
-                {
+                DetailsAttributes =
+                [
                     new ExternalSalesInvoiceCreateDetail
                     {
                         Id = "369764595235030036",
                         TaxRateId = "369764439469065326",
-                        LedgerAccountId= "369764439364207706",
-                        ProjectId=  null,
+                        LedgerAccountId = "369764439364207706",
+                        ProjectId = null,
                         Amount = 1,
                         Description = "Project X",
                         Price = 300.0,
@@ -132,7 +132,7 @@ public class ExternalSalesInvoiceEndpointTests : ExternalSalesInvoicesTestBase
                         RowOrder = 1,
                         Destroy = false
                     }
-                },
+                ],
                 PricesAreInclTax = true,
                 Date = DateTime.UtcNow,
                 Source = "webshop",
@@ -173,14 +173,14 @@ public class ExternalSalesInvoiceEndpointTests : ExternalSalesInvoicesTestBase
                 DueDate = DateTime.UtcNow.AddDays(14),
                 Source = "webshop",
                 SourceUrl = "https://www.example.com/checkout/1234",
-                DetailsAttributes = new []
-                {
+                DetailsAttributes =
+                [
                     new ExternalSalesInvoiceUpdateDetail
                     {
                         Id = "369764595235030036",
                         TaxRateId = "369764439469065326",
-                        LedgerAccountId= "369764439364207706",
-                        ProjectId=  null,
+                        LedgerAccountId = "369764439364207706",
+                        ProjectId = null,
                         Amount = 1,
                         Description = "Project X",
                         Price = 300.0,
@@ -188,7 +188,7 @@ public class ExternalSalesInvoiceEndpointTests : ExternalSalesInvoicesTestBase
                         RowOrder = 1,
                         Destroy = false
                     }
-                }
+                ]
             },
             UserAgent = "Moneybird .NET Client"
         };

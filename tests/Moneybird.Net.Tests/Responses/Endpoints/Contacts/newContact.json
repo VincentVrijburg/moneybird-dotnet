@@ -10,7 +10,7 @@
   "city": "Enschede",
   "country": "NL",
   "phone": "0612345678",
-  "delivery_method": "Email",
+  "delivery_method": "Manual",
   "customer_id": "1",
   "tax_number": "NL012345678B01",
   "chamber_of_commerce": "58209344",
@@ -41,7 +41,7 @@
   "created_at": "2021-12-27T15:10:44.770Z",
   "updated_at": "2021-12-27T15:38:13.628Z",
   "version": 1640619493,
-  "sales_invoices_url": "https://moneybird.com/322056713748350877/sales_invoices/6af2bbb86743f70b85c9371911a7ce22686d04069a3c858d6817c2cc3e5c8c4b/all",
+  "sales_invoices_url": "https://moneybird.com/281289699686381606/sales_invoices/6af2bbb86743f70b85c9371911a7ce22686d04069a3c858d6817c2cc3e5c8c4b/all",
   "notes": [],
   "custom_fields": [
     {

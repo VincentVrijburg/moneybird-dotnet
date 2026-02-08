@@ -74,7 +74,7 @@ public class TimeEntryEndpointTests : TimeEntryTestBase
         
         var filterOptions = new TimeEntryFilterOptions
         {
-            State = new [] { TimeEntryState.All },
+            State = [ TimeEntryState.All ],
             Period = "this_month",
             ContactId = "381666401394414610",
             IncludeNilContacts = true,

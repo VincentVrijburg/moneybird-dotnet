@@ -1,7 +1,7 @@
 [
   {
     "id": "322056714472916933",
-    "administration_id": "322056713748350877",
+    "administration_id": "281289699686381606",
     "name": "Standaard",
     "identity_id": "322056714608183250",
     "default": true,
@@ -15,7 +15,7 @@
     "font_size": 9,
     "font_family": "lucida_grande",
     "print_on_stationery": false,
-    "custom_css": null,
+    "custom_css": "width: 100%;",
     "invoice_sender_address": [
       {
         "field": "company_name",

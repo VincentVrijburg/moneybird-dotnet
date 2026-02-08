@@ -10,6 +10,8 @@ namespace Moneybird.Net.Entities.CustomFields
     {
         [JsonStringEnumMemberName("sales_invoice")]
         SalesInvoice,
+        [JsonStringEnumMemberName("estimate")]
+        Estimate,
         [JsonStringEnumMemberName("contact")]
         Contact,
         [JsonStringEnumMemberName("identity")]
