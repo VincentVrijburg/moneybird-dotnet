@@ -15,6 +15,8 @@
   "tax_number": "",
   "chamber_of_commerce": "58209344",
   "bank_account": "",
+  "is_trusted": false,
+  "max_transfer_amount": null,
   "attention": "",
   "email": "",
   "email_ubl": true,
@@ -54,7 +56,7 @@
       "note": "Test taak afgerond",
       "completed_at": "2021-12-27T15:45:09.410Z",
       "completed_by_id": "262969831844742919",
-      "todo_type": null,
+      "todo_type": "financial_mutation_failed",
       "data": {},
       "created_at": "2021-12-27T15:45:07.962Z",
       "updated_at": "2021-12-27T15:45:09.412Z"
@@ -70,7 +72,7 @@
       "note": "Test taak",
       "completed_at": null,
       "completed_by_id": null,
-      "todo_type": null,
+      "todo_type": "contact_email_not_present",
       "data": {},
       "created_at": "2021-12-27T15:44:38.438Z",
       "updated_at": "2021-12-27T15:44:41.532Z"
@@ -107,6 +109,7 @@
       "version": 1640617869
     }
   ],
+  "archived": false,
   "events": [
     {
       "administration_id": "281289699686381606",

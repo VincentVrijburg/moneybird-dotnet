@@ -1,45 +1,69 @@
 [
   {
-    "id": "370130885126653740",
+    "id": "322056713840625571",
     "administration_id": "281289699686381606",
-    "name": "Algemene kosten",
-    "account_type": "expenses",
+    "name": "Debiteuren",
+    "account_type": "current_assets",
     "account_id": null,
     "parent_id": null,
-    "created_at": "2022-10-31T08:19:00.570Z",
-    "updated_at": "2022-10-31T08:19:00.570Z",
+    "created_at": "2021-05-18T17:00:38.137Z",
+    "updated_at": "2024-03-11T20:41:02.197Z",
+    "allowed_document_types": [
+      "financial_mutation",
+      "general_journal_document"
+    ],
+    "taxonomy_item": {
+      "taxonomy_version": "3.5",
+      "code": "BVorDebHad",
+      "name": "Handelsdebiteuren nominaal",
+      "name_english": "Trade debtors nominal",
+      "reference": "1101010"
+    },
+    "financial_account_id": null
+  },
+  {
+    "id": "322056713841674141",
+    "administration_id": "281289699686381606",
+    "name": "Financiële rekeningen",
+    "account_type": "current_assets",
+    "account_id": null,
+    "parent_id": "322056713840625571",
+    "created_at": "2021-05-18T17:00:38.137Z",
+    "updated_at": "2021-05-18T17:00:38.137Z",
+    "allowed_document_types": [
+      "financial_mutation",
+      "general_journal_document"
+    ],
+    "taxonomy_item": {
+      "taxonomy_version": "3.5",
+      "code": "BLimKruSto",
+      "name": "Stortingen onderweg",
+      "name_english": "Deposits in transit",
+      "reference": "1003010"
+    },
+    "financial_account_id": null
+  },
+  {
+    "id": "322056713844819881",
+    "administration_id": "281289699686381606",
+    "name": "Huisvestingskosten",
+    "account_type": "expenses",
+    "account_id": "322056713844819881",
+    "parent_id": null,
+    "created_at": "2021-05-18T17:00:38.137Z",
+    "updated_at": "2021-05-18T17:00:38.137Z",
     "allowed_document_types": [
       "purchase_invoice",
       "financial_mutation",
       "general_journal_document"
-    ]
-  },
-  {
-    "id": "370130885170693944",
-    "administration_id": "281289699686381606",
-    "name": "Betaalde en/of ontvangen btw",
-    "account_type": "current_liabilities",
-    "account_id": null,
-    "parent_id": "370130885125605155",
-    "created_at": "2022-10-31T08:19:00.615Z",
-    "updated_at": "2022-10-31T08:19:00.615Z",
-    "allowed_document_types": [
-      "financial_mutation",
-      "general_journal_document"
-    ]
-  },
-  {
-    "id": "370130885125605155",
-    "administration_id": "281289699686381606",
-    "name": "Btw",
-    "account_type": "current_liabilities",
-    "account_id": null,
-    "parent_id": null,
-    "created_at": "2022-10-31T08:19:00.570Z",
-    "updated_at": "2022-10-31T08:19:00.570Z",
-    "allowed_document_types": [
-      "financial_mutation",
-      "general_journal_document"
-    ]
+    ],
+    "taxonomy_item": {
+      "taxonomy_version": "3.5",
+      "code": "WBedHuiOhv",
+      "name": "Overige huisvestingskosten",
+      "name_english": "Other accommodation expenses",
+      "reference": "4201270"
+    },
+    "financial_account_id": null
   }
 ]

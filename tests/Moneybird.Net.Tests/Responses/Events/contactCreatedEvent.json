@@ -60,8 +60,8 @@
         "administration_id": "281289699686381606",
         "user_id": "342253198562559001",
         "action": "contact_created",
-        "link_entity_id": null,
-        "link_entity_type": null,
+        "link_entity_id": "392093513877030000",
+        "link_entity_type": "Contact",
         "data": {},
         "created_at": "2023-06-30T18:25:35.555Z",
         "updated_at": "2023-06-30T18:25:35.555Z"

@@ -51,7 +51,7 @@ namespace Moneybird.Net.Entities.Administrations
         /// Gets or sets the suspended value.
         /// </summary>
         [JsonPropertyName("suspended")]
-        public string Suspended { get; set; }
+        public bool Suspended { get; set; }
         
         /// <summary>
         /// Gets or sets the period locked until value.

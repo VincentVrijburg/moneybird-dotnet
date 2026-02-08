@@ -84,7 +84,7 @@
       "note": "Test task John Doe",
       "completed_at": "2023-11-24T18:33:07.969Z",
       "completed_by_id": "224938791219844626",
-      "todo_type": null,
+      "todo_type": "sales_invoice_due",
       "data": {},
       "created_at": "2023-11-24T18:29:16.935Z",
       "updated_at": "2023-11-24T18:33:07.970Z"
@@ -100,7 +100,7 @@
       "note": "Test task",
       "completed_at": null,
       "completed_by_id": null,
-      "todo_type": null,
+      "todo_type": "general_document_due",
       "data": {},
       "created_at": "2023-11-24T18:29:10.786Z",
       "updated_at": "2023-11-24T18:29:10.786Z"

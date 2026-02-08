@@ -14,7 +14,7 @@
   "financial_mutation_id": "370131013357012173",
   "ledger_account_id": "370131013340234952",
   "linked_payment_id": null,
-  "manual_payment_action": null,
+  "manual_payment_action": "bank_transfer",
   "created_at": "2022-10-31T08:21:02.867Z",
   "updated_at": "2022-10-31T08:21:02.867Z"
 }

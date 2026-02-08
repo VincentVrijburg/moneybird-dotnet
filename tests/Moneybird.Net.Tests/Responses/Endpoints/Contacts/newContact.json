@@ -10,7 +10,7 @@
   "city": "Enschede",
   "country": "NL",
   "phone": "0612345678",
-  "delivery_method": "Email",
+  "delivery_method": "Manual",
   "customer_id": "1",
   "tax_number": "NL012345678B01",
   "chamber_of_commerce": "58209344",

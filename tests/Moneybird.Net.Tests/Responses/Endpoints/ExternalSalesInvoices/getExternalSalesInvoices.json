@@ -62,7 +62,7 @@
       "city": null,
       "country": "NL",
       "phone": null,
-      "delivery_method": "Email",
+      "delivery_method": "Peppol",
       "customer_id": "6e619dfc49c2b8bd9a1237fdd1b71785900ea2b4997715f97a0a5dfb880098ba",
       "tax_number": null,
       "chamber_of_commerce": null,

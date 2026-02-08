@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace Moneybird.Net.Entities
@@ -21,8 +22,8 @@ namespace Moneybird.Net.Entities
         public string LinkEntityType { get; set; }
 
         // TODO: Check documentation to understand what this data field is meant for.
-        [JsonIgnore]
         [JsonPropertyName("data")]
+        [JsonIgnore]
         public object Data { get; set; }
 
         [JsonPropertyName("created_at")]

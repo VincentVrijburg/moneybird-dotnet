@@ -15,7 +15,7 @@
     "font_size": 9,
     "font_family": "lucida_grande",
     "print_on_stationery": false,
-    "custom_css": null,
+    "custom_css": "width: 100%;",
     "invoice_sender_address": [
       {
         "field": "company_name",

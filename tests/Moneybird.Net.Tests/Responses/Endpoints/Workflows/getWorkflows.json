@@ -21,9 +21,9 @@
         "reminder_text": null,
         "reminder_auto_send": false,
         "payment_methods": [],
-        "collection_method": null,
+        "collection_method": "cash",
         "show_qr_code": true,
-        "action": null,
+        "action": "suspend_moneybird_account",
         "created_at": "2021-05-18T17:00:38.773Z",
         "updated_at": "2021-05-18T17:00:38.773Z"
       },
@@ -37,8 +37,8 @@
         "reminder_auto_send": false,
         "payment_methods": [],
         "collection_method": null,
-        "show_qr_code": true,
-        "action": null,
+        "show_qr_code": false,
+        "action": "reactivate_moneybird_account",
         "created_at": "2021-05-18T17:00:38.775Z",
         "updated_at": "2021-05-18T17:00:38.775Z"
       },
@@ -53,7 +53,7 @@
         "payment_methods": [],
         "collection_method": null,
         "show_qr_code": true,
-        "action": null,
+        "action": "cancel_subscription",
         "created_at": "2021-05-18T17:00:38.777Z",
         "updated_at": "2021-05-18T17:00:38.777Z"
       },
