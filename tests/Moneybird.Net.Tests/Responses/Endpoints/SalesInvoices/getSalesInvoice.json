@@ -19,6 +19,8 @@
     "tax_number": "NL819341234B01",
     "chamber_of_commerce": "24433159",
     "bank_account": "NL95INGB0109146738",
+    "is_trusted": false,
+    "max_transfer_amount": null,
     "attention": "attention",
     "email": "info@example.com",
     "email_ubl": true,
@@ -47,15 +49,10 @@
     "updated_at": "2022-10-27T07:16:59.239Z",
     "version": 1666855019,
     "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/5f3e5c91c3ca419f17b0420645d5b3da304e6e097e4f297815b329817bbdc611/all",
-    "notes": [
-
-    ],
-    "custom_fields": [
-
-    ],
-    "contact_people": [
-
-    ]
+    "notes": [],
+    "custom_fields": [],
+    "contact_people": [],
+    "archived": false
   },
   "contact_person_id": "369764595176309777",
   "contact_person": {
@@ -72,10 +69,11 @@
   },
   "invoice_id": "2022-0001",
   "recurring_sales_invoice_id": null,
+  "subscription_id": null,
   "workflow_id": "369764439669343349",
   "document_style_id": "369764439814046847",
   "identity_id": "369764439509959796",
-  "draft_id": null,
+  "draft_id": 6,
   "state": "open",
   "invoice_date": "2022-10-27",
   "due_date": "2022-11-10",
@@ -119,9 +117,7 @@
       "updated_at": "2022-10-27T07:16:59.434Z"
     }
   ],
-  "payments": [
-
-  ],
+  "payments": [],
   "total_paid": "0.0",
   "total_unpaid": "363.0",
   "total_unpaid_base": "363.0",
@@ -138,14 +134,21 @@
   "original_estimate_id": null,
   "url": "http://moneybird.dev/123/sales_invoices/7cb149b6abfe003cd000cc69aae49af18bac5c6614f3e09935c99b4cd4f8685a/5f3e5c91c3ca419f17b0420645d5b3da304e6e097e4f297815b329817bbdc611",
   "payment_url": "http://moneybird.dev/123/online_sales_invoices/7cb149b6abfe003cd000cc69aae49af18bac5c6614f3e09935c99b4cd4f8685a/5f3e5c91c3ca419f17b0420645d5b3da304e6e097e4f297815b329817bbdc611/pay_invoice",
-  "custom_fields": [
-
-  ],
-  "notes": [
-
-  ],
+  "custom_fields": [],
+  "notes": [],
   "attachments": [
-
+    {
+      "id": "478443671078831318",
+      "administration_id": "322056713748350877",
+      "attachable_id": "478443671070442709",
+      "attachable_type": "ExternalSalesInvoice",
+      "filename": "Invoice-12345.pdf",
+      "content_type": "application/pdf",
+      "size": 38313,
+      "rotation": 0,
+      "created_at": "2026-02-07T21:24:22.675Z",
+      "updated_at": "2026-02-07T21:24:22.675Z"
+    }
   ],
   "events": [
     {
@@ -154,8 +157,7 @@
       "action": "sales_invoice_created",
       "link_entity_id": null,
       "link_entity_type": null,
-      "data": {
-      },
+      "data": {},
       "created_at": "2022-10-27T07:16:59.315Z",
       "updated_at": "2022-10-27T07:16:59.315Z"
     },
@@ -180,6 +182,36 @@
       "taxable_amount_base": "300.0",
       "tax_amount": "63.0",
       "tax_amount_base": "63.0"
+    }
+  ],
+  "time_entries": [
+    {
+      "id": "477976507147355952",
+      "administration_id": "322056713748350877",
+      "contact_id": "360637813082818153",
+      "project_id": "399168831771116751",
+      "user_id": "262969831844742919",
+      "started_at": "2026-02-02T13:45:00.000Z",
+      "ended_at": "2026-02-02T14:30:00.000Z",
+      "description": "Test time entry 0",
+      "paused_duration": 0,
+      "billable": true,
+      "created_at": "2026-02-02T17:39:00.431Z",
+      "updated_at": "2026-02-02T18:12:41.508Z"
+    },
+    {
+      "id": "477969643869308834",
+      "administration_id": "322056713748350877",
+      "contact_id": "360637813082818153",
+      "project_id": "399168835641410786",
+      "user_id": "262969831844742919",
+      "started_at": "2026-02-02T14:30:00.000Z",
+      "ended_at": "2026-02-02T15:30:00.000Z",
+      "description": "Test time entry 1",
+      "paused_duration": 0,
+      "billable": true,
+      "created_at": "2026-02-02T15:49:55.099Z",
+      "updated_at": "2026-02-02T18:12:31.142Z"
     }
   ]
 }

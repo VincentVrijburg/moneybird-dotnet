@@ -20,6 +20,8 @@
       "tax_number": "",
       "chamber_of_commerce": "",
       "bank_account": "",
+      "is_trusted": false,
+      "max_transfer_amount": null,
       "attention": "",
       "email": "info@example.com",
       "email_ubl": true,
@@ -48,15 +50,10 @@
       "updated_at": "2022-10-27T07:16:46.687Z",
       "version": 1666855006,
       "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823/all",
-      "notes": [
-
-      ],
-      "custom_fields": [
-
-      ],
-      "contact_people": [
-
-      ]
+      "notes": [],
+      "custom_fields": [],
+      "contact_people": [],
+      "archived": false
     },
     "contact_person_id": null,
     "contact_person": null,
@@ -109,9 +106,7 @@
         "updated_at": "2022-10-27T07:16:47.509Z"
       }
     ],
-    "payments": [
-
-    ],
+    "payments": [],
     "total_paid": "0.0",
     "total_unpaid": "363.0",
     "total_unpaid_base": "363.0",
@@ -128,14 +123,21 @@
     "original_estimate_id": null,
     "url": "http://moneybird.dev/123/sales_invoices/9a3d4182e59f73172ea526f9d46cc38fc39ada210f0dc73d33c00ee9b9f1b6a9/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823",
     "payment_url": "http://moneybird.dev/123/online_sales_invoices/9a3d4182e59f73172ea526f9d46cc38fc39ada210f0dc73d33c00ee9b9f1b6a9/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823/pay_invoice",
-    "custom_fields": [
-
-    ],
-    "notes": [
-
-    ],
+    "custom_fields": [],
+    "notes": [],
     "attachments": [
-
+      {
+        "id": "478443671078831318",
+        "administration_id": "322056713748350877",
+        "attachable_id": "478443671070442709",
+        "attachable_type": "ExternalSalesInvoice",
+        "filename": "Invoice-12345.pdf",
+        "content_type": "application/pdf",
+        "size": 38313,
+        "rotation": 0,
+        "created_at": "2026-02-07T21:24:22.675Z",
+        "updated_at": "2026-02-07T21:24:22.675Z"
+      }
     ],
     "events": [
       {
@@ -144,8 +146,7 @@
         "action": "sales_invoice_created",
         "link_entity_id": null,
         "link_entity_type": null,
-        "data": {
-        },
+        "data": {},
         "created_at": "2022-10-27T07:16:47.334Z",
         "updated_at": "2022-10-27T07:16:47.334Z"
       },
@@ -171,7 +172,8 @@
         "tax_amount": "63.0",
         "tax_amount_base": "63.0"
       }
-    ]
+    ],
+    "time_entries": []
   },
   {
     "id": "369764582341740316",
@@ -194,6 +196,8 @@
       "tax_number": "",
       "chamber_of_commerce": "",
       "bank_account": "",
+      "is_trusted": false,
+      "max_transfer_amount": null,
       "attention": "",
       "email": "info@example.com",
       "email_ubl": true,
@@ -222,15 +226,10 @@
       "updated_at": "2022-10-27T07:16:46.687Z",
       "version": 1666855006,
       "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823/all",
-      "notes": [
-
-      ],
-      "custom_fields": [
-
-      ],
-      "contact_people": [
-
-      ]
+      "notes": [],
+      "custom_fields": [],
+      "contact_people": [],
+      "archived": false
     },
     "contact_person_id": null,
     "contact_person": null,
@@ -283,9 +282,7 @@
         "updated_at": "2022-10-27T07:16:47.160Z"
       }
     ],
-    "payments": [
-
-    ],
+    "payments": [],
     "total_paid": "0.0",
     "total_unpaid": "363.0",
     "total_unpaid_base": "363.0",
@@ -302,15 +299,9 @@
     "original_estimate_id": null,
     "url": "http://moneybird.dev/123/sales_invoices/c3780dc7ef3c7dc4b0081ff9567754794d0f48e5e34b8c42ae8ea2971b215f86/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823",
     "payment_url": "http://moneybird.dev/123/online_sales_invoices/c3780dc7ef3c7dc4b0081ff9567754794d0f48e5e34b8c42ae8ea2971b215f86/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823/pay_invoice",
-    "custom_fields": [
-
-    ],
-    "notes": [
-
-    ],
-    "attachments": [
-
-    ],
+    "custom_fields": [],
+    "notes": [],
+    "attachments": [],
     "events": [
       {
         "administration_id": "281289699686381606",
@@ -318,8 +309,7 @@
         "action": "sales_invoice_created",
         "link_entity_id": null,
         "link_entity_type": null,
-        "data": {
-        },
+        "data": {},
         "created_at": "2022-10-27T07:16:47.022Z",
         "updated_at": "2022-10-27T07:16:47.022Z"
       },
@@ -345,7 +335,8 @@
         "tax_amount": "63.0",
         "tax_amount_base": "63.0"
       }
-    ]
+    ],
+    "time_entries": []
   },
   {
     "id": "369764582086936342",
@@ -368,6 +359,8 @@
       "tax_number": "",
       "chamber_of_commerce": "",
       "bank_account": "",
+      "is_trusted": false,
+      "max_transfer_amount": null,
       "attention": "",
       "email": "info@example.com",
       "email_ubl": true,
@@ -396,15 +389,10 @@
       "updated_at": "2022-10-27T07:16:46.687Z",
       "version": 1666855006,
       "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823/all",
-      "notes": [
-
-      ],
-      "custom_fields": [
-
-      ],
-      "contact_people": [
-
-      ]
+      "notes": [],
+      "custom_fields": [],
+      "contact_people": [],
+      "archived": false
     },
     "contact_person_id": "369764582018778900",
     "contact_person": {
@@ -468,9 +456,7 @@
         "updated_at": "2022-10-27T07:16:46.904Z"
       }
     ],
-    "payments": [
-
-    ],
+    "payments": [],
     "total_paid": "0.0",
     "total_unpaid": "363.0",
     "total_unpaid_base": "363.0",
@@ -487,15 +473,9 @@
     "original_estimate_id": null,
     "url": "http://moneybird.dev/123/sales_invoices/432e969f0cb19d6ba8e951a492cd7d1983d589ea20b364e4298b05eed7ffcedb/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823",
     "payment_url": "http://moneybird.dev/123/online_sales_invoices/432e969f0cb19d6ba8e951a492cd7d1983d589ea20b364e4298b05eed7ffcedb/4c2f5b56fb8383c7174c353c6d1dd1971cfee7f71a64699d100e3ab8132ca823/pay_invoice",
-    "custom_fields": [
-
-    ],
-    "notes": [
-
-    ],
-    "attachments": [
-
-    ],
+    "custom_fields": [],
+    "notes": [],
+    "attachments": [],
     "events": [
       {
         "administration_id": "281289699686381606",
@@ -503,8 +483,7 @@
         "action": "sales_invoice_created",
         "link_entity_id": null,
         "link_entity_type": null,
-        "data": {
-        },
+        "data": {},
         "created_at": "2022-10-27T07:16:46.780Z",
         "updated_at": "2022-10-27T07:16:46.780Z"
       },
@@ -530,6 +509,7 @@
         "tax_amount": "63.0",
         "tax_amount_base": "63.0"
       }
-    ]
+    ],
+    "time_entries": []
   }
 ]

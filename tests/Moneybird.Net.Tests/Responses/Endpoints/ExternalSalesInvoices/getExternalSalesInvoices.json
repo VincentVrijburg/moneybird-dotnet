@@ -33,18 +33,10 @@
     "total_price_incl_tax_base": "0.0",
     "marked_dubious_on": null,
     "marked_uncollectible_on": null,
-    "notes": [
-
-    ],
-    "attachments": [
-
-    ],
-    "events": [
-
-    ],
-    "tax_totals": [
-
-    ]
+    "notes": [],
+    "attachments": [],
+    "events": [],
+    "tax_totals": []
   },
   {
     "id": "369764543577982492",
@@ -67,6 +59,8 @@
       "tax_number": null,
       "chamber_of_commerce": null,
       "bank_account": null,
+      "is_trusted": false,
+      "max_transfer_amount": null,
       "attention": null,
       "email": null,
       "email_ubl": false,
@@ -95,15 +89,10 @@
       "updated_at": "2022-10-27T07:16:10.030Z",
       "version": 1666854970,
       "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/45d9656e6c932ee2dead9d796c8eb522ebd6d51c514cd67ff967d27386ffc1d5/all",
-      "notes": [
-
-      ],
-      "custom_fields": [
-
-      ],
-      "contact_people": [
-
-      ]
+      "notes": [],
+      "custom_fields": [],
+      "contact_people": [],
+      "archived": false
     },
     "date": "2022-10-27",
     "state": "open",
@@ -134,17 +123,13 @@
         "row_order": 0,
         "total_price_excl_tax_with_discount": "100.0",
         "total_price_excl_tax_with_discount_base": "100.0",
-        "tax_report_reference": [
-
-        ],
+        "tax_report_reference": [],
         "mandatory_tax_text": null,
         "created_at": "2022-10-27T07:16:10.050Z",
         "updated_at": "2022-10-27T07:16:10.050Z"
       }
     ],
-    "payments": [
-
-    ],
+    "payments": [],
     "total_paid": "0.0",
     "total_unpaid": "0.0",
     "total_unpaid_base": "0.0",
@@ -155,15 +140,22 @@
     "total_price_incl_tax_base": "0.0",
     "marked_dubious_on": null,
     "marked_uncollectible_on": null,
-    "notes": [
-
-    ],
+    "notes": [],
     "attachments": [
-
+      {
+        "id": "478443671078831318",
+        "administration_id": "322056713748350877",
+        "attachable_id": "478443671070442709",
+        "attachable_type": "ExternalSalesInvoice",
+        "filename": "Invoice-12345.pdf",
+        "content_type": "application/pdf",
+        "size": 38313,
+        "rotation": 0,
+        "created_at": "2026-02-07T21:24:22.675Z",
+        "updated_at": "2026-02-07T21:24:22.675Z"
+      }
     ],
-    "events": [
-
-    ],
+    "events": [],
     "tax_totals": [
       {
         "tax_rate_id": "369764543568545307",
@@ -195,6 +187,8 @@
       "tax_number": null,
       "chamber_of_commerce": null,
       "bank_account": null,
+      "is_trusted": false,
+      "max_transfer_amount": null,
       "attention": null,
       "email": null,
       "email_ubl": false,
@@ -223,15 +217,10 @@
       "updated_at": "2022-10-27T07:16:09.999Z",
       "version": 1666854969,
       "sales_invoices_url": "http://moneybird.dev/123/sales_invoices/f58b0d35c1f6ad914c11ee1e42ab4b19412722e3200080cdcd316bfdecf7f625/all",
-      "notes": [
-
-      ],
-      "custom_fields": [
-
-      ],
-      "contact_people": [
-
-      ]
+      "notes": [],
+      "custom_fields": [],
+      "contact_people": [],
+      "archived": false
     },
     "date": "2022-10-27",
     "state": "open",
@@ -262,17 +251,13 @@
         "row_order": 0,
         "total_price_excl_tax_with_discount": "100.0",
         "total_price_excl_tax_with_discount_base": "100.0",
-        "tax_report_reference": [
-
-        ],
+        "tax_report_reference": [],
         "mandatory_tax_text": null,
         "created_at": "2022-10-27T07:16:10.022Z",
         "updated_at": "2022-10-27T07:16:10.022Z"
       }
     ],
-    "payments": [
-
-    ],
+    "payments": [],
     "total_paid": "0.0",
     "total_unpaid": "0.0",
     "total_unpaid_base": "0.0",
@@ -283,15 +268,9 @@
     "total_price_incl_tax_base": "0.0",
     "marked_dubious_on": null,
     "marked_uncollectible_on": null,
-    "notes": [
-
-    ],
-    "attachments": [
-
-    ],
-    "events": [
-
-    ],
+    "notes": [],
+    "attachments": [],
+    "events": [],
     "tax_totals": [
       {
         "tax_rate_id": "369764543538136597",
