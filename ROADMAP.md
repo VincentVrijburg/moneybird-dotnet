@@ -19,8 +19,10 @@ The goal is to provide a stable version that has the basic functionality to inte
 - [x] Support for pagination 
 - [ ] Support for the resource endpoints
   - [x] Administration
+  - [ ] Assets
   - [x] Contacts
   - [x] Custom fields
+  - [ ] Customer Contact Portal
   - [x] Document styles
   - [ ] Documents: General documents
   - [ ] Documents: General journal documents
@@ -33,12 +35,12 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [ ] Financial mutations
   - [x] Financial statements
   - [x] Identities
-  - [ ] Import mappings
   - [x] Ledger accounts
   - [x] Payments
   - [x] Products
   - [x] Projects
   - [ ] Recurring sales invoices
+  - [ ] Reports
   - [x] Sales invoices (limited)
   - [ ] Subscriptions
   - [x] Tax rates
