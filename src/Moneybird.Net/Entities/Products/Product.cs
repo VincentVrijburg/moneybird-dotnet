@@ -29,7 +29,7 @@ namespace Moneybird.Net.Entities.Products
         public string Currency { get; set; }
 
         [JsonPropertyName("frequency")]
-        public int Frequency { get; set; }
+        public int? Frequency { get; set; }
 
         [JsonPropertyName("frequency_type")]
         public FrequencyType FrequencyType { get; set; }

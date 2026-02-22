@@ -52,19 +52,19 @@ namespace Moneybird.Net.Entities.DocumentStyles
         public bool PrintOnStationery { get; set; }
         
         [JsonPropertyName("custom_css")]
-        public object CustomCss { get; set; }
+        public string CustomCss { get; set; }
         
         [JsonPropertyName("invoice_sender_address")]
         public List<DocumentStyleField> InvoiceSenderAddress { get; set; }
-        
-        [JsonPropertyName("estimate_sender_address")]
-        public List<DocumentStyleField> EstimateSenderAddress { get; set; }
         
         [JsonPropertyName("invoice_metadata_left")]
         public List<DocumentStyleField> InvoiceMetadataLeft { get; set; }
         
         [JsonPropertyName("invoice_metadata_right")]
         public List<DocumentStyleField> InvoiceMetadataRight { get; set; }
+        
+        [JsonPropertyName("estimate_sender_address")]
+        public List<DocumentStyleField> EstimateSenderAddress { get; set; }
         
         [JsonPropertyName("estimate_metadata_left")]
         public List<DocumentStyleField> EstimateMetadataLeft { get; set; }

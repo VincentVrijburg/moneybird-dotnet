@@ -22,6 +22,9 @@ namespace Moneybird.Net.Entities.TimeEntries
 
         [JsonPropertyName("project_id")]
         public string ProjectId { get; set; }
+        
+        [JsonPropertyName("sales_invoice_id")]
+        public string SalesInvoiceId { get; set; }
 
         [JsonPropertyName("user_id")]
         public string UserId { get; set; }
@@ -50,16 +53,14 @@ namespace Moneybird.Net.Entities.TimeEntries
         [JsonPropertyName("contact")]
         public Contact Contact { get; set; }
 
-        // TODO: Check documentation to understand what this detail field is meant for.
-        [JsonIgnore]
-        [JsonPropertyName("detail")]
-        public object Detail { get; set; }
-
         [JsonPropertyName("user")]
         public User User { get; set; }
 
         [JsonPropertyName("project")]
         public Project Project { get; set; }
+        
+        [JsonPropertyName("sales_invoice")]
+        public SalesInvoice SalesInvoice { get; set; }
 
         [JsonPropertyName("events")]
         public List<Event> Events { get; set; }

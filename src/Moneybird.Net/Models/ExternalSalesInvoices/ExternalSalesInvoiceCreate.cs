@@ -37,6 +37,6 @@ namespace Moneybird.Net.Models.ExternalSalesInvoices
         public string SourceUrl { get; set; }
 
         [JsonPropertyName("details_attributes")]
-        public IReadOnlyList<ExternalSalesInvoiceCreateDetail> DetailsAttributes { get; set; }
+        public List<ExternalSalesInvoiceCreateDetail> DetailsAttributes { get; set; }
     }
 }

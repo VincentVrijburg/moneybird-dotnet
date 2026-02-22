@@ -76,7 +76,7 @@ public class TaxRatesExtensionsTests
     [Fact]
     public void GetFilterString_FromTaxRateFilterOptions_StateOnly_Returns_CorrectString()
     {
-        var taxRateType = new List<TaxRateType> { TaxRateType.PurchaseInvoice, TaxRateType.SalesInvoice };
+        var taxRateType = new [] { TaxRateType.PurchaseInvoice, TaxRateType.SalesInvoice };
             
         var options = new TaxRateFilterOptions
         {
@@ -176,7 +176,7 @@ public class TaxRatesExtensionsTests
         const string partialName = "Bird";
         const int percentage = 21;
         const TaxRateType taxRateType = TaxRateType.All;
-        var state = new List<TaxRateType> { TaxRateType.PurchaseInvoice, TaxRateType.SalesInvoice };
+        var state = new [] { TaxRateType.PurchaseInvoice, TaxRateType.SalesInvoice };
         const string country = "NL";
         const bool showTax = true;
         const bool active = true;

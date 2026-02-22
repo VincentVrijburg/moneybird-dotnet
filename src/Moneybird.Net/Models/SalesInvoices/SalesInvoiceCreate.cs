@@ -70,12 +70,12 @@ namespace Moneybird.Net.Models.SalesInvoices
         public double? Discount { get; set; }
         
         [JsonPropertyName("time_entry_ids")]
-        public IReadOnlyList<string> TimeEntryIds { get; set; }
+        public List<string> TimeEntryIds { get; set; }
 
         [JsonPropertyName("details_attributes")]
-        public IReadOnlyList<SalesInvoiceCreateDetail> DetailsAttributes { get; set; }
+        public List<SalesInvoiceCreateDetail> DetailsAttributes { get; set; }
 
         [JsonPropertyName("custom_fields_attributes")]
-        public IReadOnlyList<CustomFieldAttribute> CustomFieldsAttributes { get; set; }
+        public List<CustomFieldAttribute> CustomFieldsAttributes { get; set; }
     }
 }

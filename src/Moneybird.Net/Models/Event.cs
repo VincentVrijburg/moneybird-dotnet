@@ -27,6 +27,7 @@ namespace Moneybird.Net.Models
         public WebhookEvent Action { get; set; }
 
         [JsonPropertyName("entity")]
+        [JsonIgnore]
         public object Entity { get; set; }
     }
 }
