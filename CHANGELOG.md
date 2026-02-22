@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.19.0 | 2026-02-22
+* Add missing properties on entities for supported endpoints.
+
 ## 0.18.0 | 2026-02-02
 * Fix linking time entries to sales invoices
 * Add missing properties to models for sales invoices
