@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -15,10 +14,6 @@ namespace Moneybird.Net.Entities.Webhooks
         [JsonPropertyName("url")]
         public string Url { get; set; }
         
-        [Obsolete("Use EnabledEvents instead as this attribute will be removed from the API on 1st of January 2025.")]
-        [JsonPropertyName("events")]
-        public List<WebhookEvent> Events { get; set; }
-        
         [JsonPropertyName("enabled_events")]
         public List<WebhookEvent> EnabledEvents { get; set; }
 
@@ -26,7 +21,7 @@ namespace Moneybird.Net.Entities.Webhooks
         public int? LastHttpStatus { get; set; }
 
         [JsonPropertyName("last_http_body")]
-        public object LastHttpBody { get; set; }
+        public string LastHttpBody { get; set; }
 
         [JsonPropertyName("token")]
         public string Token { get; set; }

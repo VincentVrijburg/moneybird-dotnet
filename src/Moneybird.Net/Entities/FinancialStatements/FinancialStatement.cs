@@ -30,6 +30,6 @@ namespace Moneybird.Net.Entities.FinancialStatements
         public string ImporterService { get; set; }
         
         [JsonPropertyName("financial_mutations")]
-        public IReadOnlyList<FinancialMutation> FinancialMutations { get; set; }
+        public List<FinancialMutation> FinancialMutations { get; set; }
     }
 }

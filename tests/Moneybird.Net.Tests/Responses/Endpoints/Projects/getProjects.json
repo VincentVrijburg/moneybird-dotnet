@@ -1,7 +1,14 @@
 [
   {
     "id": "395773951324718315",
-    "name": "My project name",
-    "state": "active"
+    "name": "First project name",
+    "state": "active",
+    "budget": 10000
+  },
+  {
+    "id": "395773951324718316",
+    "name": "Second project name",
+    "state": "active",
+    "budget": null
   }
 ]

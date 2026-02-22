@@ -11,20 +11,20 @@ namespace Moneybird.Net.Entities.SalesInvoices
         [JsonStringEnumMemberName("draft")]
         Draft,
         
-        [JsonStringEnumMemberName("open")]
-        Open,
-        
         [JsonStringEnumMemberName("scheduled")]
         Scheduled,
+        
+        [JsonStringEnumMemberName("open")]
+        Open,
         
         [JsonStringEnumMemberName("pending_payment")]
         PendingPayment,
         
-        [JsonStringEnumMemberName("late")]
-        Late,
-        
         [JsonStringEnumMemberName("reminded")]
         Reminded,
+        
+        [JsonStringEnumMemberName("late")]
+        Late,
         
         [JsonStringEnumMemberName("paid")]
         Paid,

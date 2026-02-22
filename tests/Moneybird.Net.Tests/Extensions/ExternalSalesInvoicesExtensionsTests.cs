@@ -1,5 +1,4 @@
 using Moneybird.Net.Entities.ExternalSalesInvoices;
-using Moneybird.Net.Entities.SalesInvoices;
 using Moneybird.Net.Extensions;
 using Moneybird.Net.Models.ExternalSalesInvoices;
 using Xunit;

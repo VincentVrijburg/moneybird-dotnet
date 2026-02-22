@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Moneybird.Net.Entities.Contacts;
 using Moneybird.Net.Entities.CustomFields;
+using Moneybird.Net.Entities.Notes;
 using Moneybird.Net.Entities.Payments;
+using Moneybird.Net.Entities.TimeEntries;
 
 namespace Moneybird.Net.Entities.SalesInvoices
 {
@@ -32,6 +34,9 @@ namespace Moneybird.Net.Entities.SalesInvoices
 
         [JsonPropertyName("recurring_sales_invoice_id")]
         public string RecurringSalesInvoiceId { get; set; }
+        
+        [JsonPropertyName("subscription_id")]
+        public string SubscriptionId { get; set; }
 
         [JsonPropertyName("workflow_id")]
         public string WorkflowId { get; set; }
@@ -83,10 +88,10 @@ namespace Moneybird.Net.Entities.SalesInvoices
         public bool Paused { get; set; }
 
         [JsonPropertyName("paid_at")]
-        public string PaidAt { get; set; }
+        public DateTime? PaidAt { get; set; }
 
         [JsonPropertyName("sent_at")]
-        public string SentAt { get; set; }
+        public DateTime? SentAt { get; set; }
 
         [JsonPropertyName("created_at")]
         public DateTime CreatedAt { get; set; }
@@ -167,8 +172,20 @@ namespace Moneybird.Net.Entities.SalesInvoices
 
         [JsonPropertyName("custom_fields")]
         public List<CustomFieldAttribute> CustomFields { get; set; }
+        
+        [JsonPropertyName("notes")]
+        public List<Note> Notes { get; set; }
+        
+        [JsonPropertyName("attachments")]
+        public List<SalesInvoiceAttachment> Attachments { get; set; }
+
+        [JsonPropertyName("events")]
+        public List<Event> Events { get; set; }
 
         [JsonPropertyName("tax_totals")]
         public List<SalesInvoiceTaxTotal> TaxTotals { get; set; }
+        
+        [JsonPropertyName("time_entries")]
+        public List<TimeEntry> TimeEntries { get; set; }
     }
 }

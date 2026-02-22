@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using Moneybird.Net.Entities.Contacts;
 using Moneybird.Net.Entities.CustomFields;
 using Moneybird.Net.Misc;
 

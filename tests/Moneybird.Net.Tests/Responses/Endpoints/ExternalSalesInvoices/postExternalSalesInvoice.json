@@ -115,15 +115,14 @@
   ],
   "events": [
     {
-      "administration_id": "281289699686381606",
-      "user_id": 16668548704389,
-      "action": "external_sales_invoice_created",
+      "administration_id": "322056713748350877",
+      "user_id": "262969831844742919",
+      "action": "external_sales_invoice_updated",
       "link_entity_id": null,
       "link_entity_type": null,
-      "data": {
-      },
-      "created_at": "2022-10-27T07:16:12.021Z",
-      "updated_at": "2022-10-27T07:16:12.021Z"
+      "data": {},
+      "created_at": "2026-02-07T21:24:29.340Z",
+      "updated_at": "2026-02-07T21:24:29.340Z"
     }
   ],
   "tax_totals": [

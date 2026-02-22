@@ -87,12 +87,12 @@ public class LedgerAccountEndpointTests : LedgerAccountTestBase
                 AccountType = LedgerAccountType.Expenses,
                 Description = "Test description", // TODO: Check if this description is also in response.
                 ParentId = null,
-                AllowedDocumentTypes = new[]
-                {
+                AllowedDocumentTypes =
+                [
                     DocumentType.PurchaseInvoice,
                     DocumentType.FinancialMutation,
                     DocumentType.GeneralJournalDocument
-                }
+                ]
             }
         };
         
@@ -122,12 +122,12 @@ public class LedgerAccountEndpointTests : LedgerAccountTestBase
                 Name = "New name",
                 AccountId = null,
                 AccountType = LedgerAccountType.Revenue,
-                AllowedDocumentTypes = new []
-                {
+                AllowedDocumentTypes =
+                [
                     DocumentType.SalesInvoice,
                     DocumentType.FinancialMutation,
                     DocumentType.GeneralJournalDocument
-                },
+                ],
                 ParentId = null,
                 Description = null
             }
