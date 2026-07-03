@@ -9,7 +9,7 @@ namespace Moneybird.Net
 {
     public class MoneybirdClient : IMoneybirdClient
     {
-        private static MoneybirdClient _instance;
+        private static volatile MoneybirdClient _instance;
 
         private readonly Requester _requester;
 
@@ -47,14 +47,11 @@ namespace Moneybird.Net
             ArgumentGuard.NotNull(config, nameof(config));
 
             var instance = _instance;
-            
-            if (instance?.Config != config)
-            {
-                instance = new MoneybirdClient(config);
-                _instance = instance;
-            }
-            
-            return instance;
+            if (instance?.Config == config)
+                return instance;
+
+            _instance = new MoneybirdClient(config);
+            return _instance;
         }
         
         public MoneybirdClient(MoneybirdConfig config, HttpClient client = null)

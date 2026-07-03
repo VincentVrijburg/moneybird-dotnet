@@ -26,6 +26,9 @@ Moneybird client for .NET Framework and .NET (Core).
       - [Create disposable entry point](#create-disposable-entry-point)
       - [Request data](#request-data)
       - [Supported endpoints](#supported-endpoints)
+    - [Dependency injection](#dependency-injection)
+      - [Register the client](#register-the-client)
+      - [Register the authenticator](#register-the-authenticator)
   - [Roadmap](#roadmap)
   - [Versioning](#versioning)
   - [License](#license)
@@ -138,6 +141,42 @@ We're continuously working on expanding this library to include additional endpo
 
 To see the full list of currently supported endpoints, and get a glimpse of what's coming next, head over to our [roadmap](ROADMAP.md).
 
+### Dependency injection
+
+Moneybird.Net integrates with `IHttpClientFactory` for use in ASP.NET Core applications.
+
+#### Register the client
+
+In case you <ins>do not</ins> need to use the OAuth functionality, register the client as follows.
+
+```csharp
+var moneybirdConfig = new MoneybirdConfig();
+builder.Services.AddMoneybird(moneybirdConfig);
+```
+
+Inject `IMoneybirdClient` wherever you need it.
+
+#### Register the authenticator
+
+In case you <ins>do</ins> need to use the OAuth functionality, register the authenticator as follows.
+
+```csharp
+var moneybirdConfig = new MoneybirdConfig("YOUR_CLIENT_ID", "YOUR_CLIENT_SECRET", "YOUR_REDIRECT_URI");
+builder.Services.AddMoneybirdAuthenticator(moneybirdConfig);
+```
+
+Inject `IMoneybirdAuthenticator` wherever you need it.
+
+#### Register both
+
+When registering both, pass the configuration to `AddMoneybird` and call `AddMoneybirdAuthenticator` without arguments. The configuration is shared automatically.
+
+```csharp
+builder.Services
+    .AddMoneybird(new MoneybirdConfig("YOUR_CLIENT_ID", "YOUR_CLIENT_SECRET", "YOUR_REDIRECT_URI"))
+    .AddMoneybirdAuthenticator();
+```
+
 ## Roadmap
 See our [roadmap](ROADMAP.md) for an overview of what we are planning to work on and in what time frame.
 
@@ -145,7 +184,7 @@ See our [roadmap](ROADMAP.md) for an overview of what we are planning to work on
 This project uses [Semver v2.0](https://semver.org/spec/v2.0.0.html) and is currently in initial development.
 
 ## License
-Copyright (c) 2021 Vincent Vrijburg  
+Copyright (c) 2021-2026 Vincent Vrijburg  
 Licensed under the MIT license.
 
 ## Disclaimer

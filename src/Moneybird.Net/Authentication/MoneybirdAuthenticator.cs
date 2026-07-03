@@ -26,18 +26,36 @@ namespace Moneybird.Net.Authentication
         /// </summary>
         /// <param name="config">The Moneybird configuration.</param>
         public MoneybirdAuthenticator(MoneybirdConfig config)
+            : this(config, new HttpClient())
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MoneybirdAuthenticator"/> class
+        /// with an externally provided <see cref="HttpClient"/>, typically supplied by
+        /// <see cref="System.Net.Http.IHttpClientFactory"/> when using dependency injection.
+        /// The caller is responsible for configuring <see cref="HttpClient.BaseAddress"/>
+        /// on the client before passing it in (e.g. via <c>AddMoneybirdAuthenticator</c>).
+        /// </summary>
+        /// <param name="config">The Moneybird configuration.</param>
+        /// <param name="httpClient">The HTTP client to use for authentication requests.</param>
+        public MoneybirdAuthenticator(MoneybirdConfig config, HttpClient httpClient)
         {
             ArgumentGuard.NotNull(config, nameof(config));
             ArgumentGuard.NotNullNorEmpty(config.AuthUri, nameof(config.AuthUri));
             ArgumentGuard.NotNullNorEmpty(config.ClientId, nameof(config.ClientId));
             ArgumentGuard.NotNullNorEmpty(config.ClientSecret, nameof(config.ClientSecret));
             ArgumentGuard.NotNullNorEmpty(config.RedirectUri, nameof(config.RedirectUri));
-            
+
             _config = config;
-            _httpClient = new HttpClient
+            _httpClient = httpClient;
+
+            // Set BaseAddress if the caller did not configure it (e.g. manual construction).
+            // When using IHttpClientFactory the factory sets BaseAddress before injection.
+            if (_httpClient.BaseAddress == null)
             {
-                BaseAddress = new Uri(_config.AuthUri)
-            };
+                _httpClient.BaseAddress = new Uri(_config.AuthUri);
+            }
         }
         
         /// <inheritdoc />
