@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -252,7 +253,7 @@ namespace Moneybird.Net.Tests.Endpoints
                     SepaIbanAccountName = "Test account name",
                     SepaBic = "TESTNL2A",
                     SepaMandateId = "0123456789",
-                    SepaMandateDate = "2021-12-27T15:10:44.770Z",
+                    SepaMandateDate = DateTime.Parse("2021-12-27T15:10:44.770Z"),
                     SepaSequenceType = SepaSequenceType.RCUR,
                     InvoiceWorkflowId = "292669868098208840",
                     EstimateWorkflowId = "292669868131763278",
@@ -319,7 +320,7 @@ namespace Moneybird.Net.Tests.Endpoints
                     SepaIbanAccountName = "Test accountname",
                     SepaBic = "TESTNL2A",
                     SepaMandateId = "0123456789",
-                    SepaMandateDate = "2021-12-27T15:10:44.770Z",
+                    SepaMandateDate = DateTime.Parse("2021-12-27T15:10:44.770Z"),
                     SepaSequenceType = SepaSequenceType.RCUR,
                     InvoiceWorkflowId = "292669868098208840",
                     EstimateWorkflowId = "292669868131763278",

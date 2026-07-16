@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Moneybird.Net.Entities.CustomFields;
@@ -80,7 +81,7 @@ namespace Moneybird.Net.Models.Contacts
         public string SepaMandateId { get; set; }
         
         [JsonPropertyName("sepa_mandate_date")]
-        public string SepaMandateDate { get; set; }
+        public DateTime SepaMandateDate { get; set; }
         
         [JsonPropertyName("sepa_sequence_type")]
         public SepaSequenceType SepaSequenceType { get; set; }

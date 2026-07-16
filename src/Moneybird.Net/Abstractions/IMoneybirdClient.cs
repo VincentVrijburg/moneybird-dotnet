@@ -61,6 +61,11 @@ namespace Moneybird.Net.Abstractions
         IProjectEndpoint Project { get; }
         
         /// <summary>
+        /// The RecurringSalesInvoice Endpoint.
+        /// </summary>
+        IRecurringSalesInvoiceEndpoint RecurringSalesInvoice { get; }
+        
+        /// <summary>
         /// The SalesInvoice Endpoint.
         /// </summary>
         ISalesInvoiceEndpoint SalesInvoice { get; }
