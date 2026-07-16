@@ -24,6 +24,7 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [x] Custom fields
   - [ ] Customer Contact Portal
   - [x] Document styles
+  - [ ] Downloads
   - [ ] Documents: General documents
   - [ ] Documents: General journal documents
   - [ ] Documents: Purchase invoices
@@ -39,10 +40,14 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [x] Payments
   - [x] Products
   - [x] Projects
+  - [ ] Purchase transactions
   - [ ] Recurring sales invoices
   - [ ] Reports
   - [x] Sales invoices (limited)
+  - [ ] Subscription templates
   - [ ] Subscriptions
+  - [ ] Task lists
+  - [ ] Task list templates
   - [x] Tax rates
   - [x] Time entries
   - [x] Users
