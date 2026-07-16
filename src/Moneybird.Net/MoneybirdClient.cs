@@ -27,6 +27,7 @@ namespace Moneybird.Net
         public IPaymentEndpoint Payment { get; }
         public IProductEndpoint Product { get; }
         public IProjectEndpoint Project { get; }
+        public IRecurringSalesInvoiceEndpoint RecurringSalesInvoice { get; }
         public ISalesInvoiceEndpoint SalesInvoice { get; }
         public ITaxRateEndpoint TaxRate { get; }
         public ITimeEntryEndpoint TimeEntry { get; }
@@ -73,6 +74,7 @@ namespace Moneybird.Net
             Payment = new PaymentEndpoint(Config, _requester);
             Product = new ProductEndpoint(Config, _requester);
             Project = new ProjectEndpoint(Config, _requester);
+            RecurringSalesInvoice = new RecurringSalesInvoiceEndpoint(Config, _requester);
             SalesInvoice = new SalesInvoiceEndpoint(Config, _requester);
             TaxRate = new TaxRateEndpoint(Config, _requester);
             TimeEntry = new TimeEntryEndpoint(Config, _requester);

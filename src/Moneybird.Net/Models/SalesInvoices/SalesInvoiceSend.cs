@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 using Moneybird.Net.Misc;
 
@@ -24,6 +25,6 @@ namespace Moneybird.Net.Models.SalesInvoices
         public string EmailMessage { get; set; }
 
         [JsonPropertyName("invoice_date")]
-        public string InvoiceDate { get; set; }
+        public DateTime? InvoiceDate { get; set; }
     }
 }
