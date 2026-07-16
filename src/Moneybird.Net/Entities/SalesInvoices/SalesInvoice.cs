@@ -54,10 +54,10 @@ namespace Moneybird.Net.Entities.SalesInvoices
         public SalesInvoiceState State { get; set; }
 
         [JsonPropertyName("invoice_date")]
-        public string InvoiceDate { get; set; }
+        public DateTime? InvoiceDate { get; set; }
 
         [JsonPropertyName("due_date")]
-        public string DueDate { get; set; }
+        public DateTime DueDate { get; set; }
 
         [JsonPropertyName("payment_conditions")]
         public string PaymentConditions { get; set; }

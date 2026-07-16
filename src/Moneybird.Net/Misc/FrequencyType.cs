@@ -5,6 +5,9 @@ namespace Moneybird.Net.Misc
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum FrequencyType
     {
+        [JsonStringEnumMemberName("all")]
+        All,
+
         [JsonStringEnumMemberName("day")]
         Day,
 
