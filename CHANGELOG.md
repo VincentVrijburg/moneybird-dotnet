@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.20.0 | 2026-07-16
+* Add support for the `Recurring sales invoices` endpoint.
+* Add `FrequencyType.All` to FrequencyType enum.
+* Update `System.Text.Json` from `10.0.2` to `10.0.9` (src/Moneybird.Net).
+
 ## 0.19.0 | 2026-02-22
 * Add missing properties on entities for supported endpoints.
 
