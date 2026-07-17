@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Moneybird.Net.Http
 {
+    [ExcludeFromCodeCoverage]
     public class Requester : RequesterBase, IRequester
     {
         public Requester(HttpClient httpClient)

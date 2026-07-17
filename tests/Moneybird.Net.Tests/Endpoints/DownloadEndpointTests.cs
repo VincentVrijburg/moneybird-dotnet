@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Moneybird.Net.Endpoints;
@@ -10,6 +13,7 @@ using Moneybird.Net.Entities.Downloads;
 using Moneybird.Net.Http;
 using Moneybird.Net.Models.Downloads;
 using Moq;
+using Moq.Protected;
 using Xunit;
 
 namespace Moneybird.Net.Tests.Endpoints;
@@ -109,5 +113,53 @@ public class DownloadEndpointTests : DownloadsTestBase
         var actualContent = await reader.ReadToEndAsync();
 
         Assert.Equal(expectedContent, actualContent);
+    }
+
+    [Fact]
+    public async Task DownloadByIdAsync_UsingRequester_WithNonRedirectSuccess_Throws_MoneybirdException()
+    {
+        var handlerMock = new Mock<HttpMessageHandler>(MockBehavior.Strict);
+        handlerMock
+            .Protected()
+            .Setup<Task<HttpResponseMessage>>(
+                "SendAsync",
+                ItExpr.IsAny<HttpRequestMessage>(),
+                ItExpr.IsAny<CancellationToken>())
+            .ReturnsAsync(new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent("{\"message\":\"unexpected\"}", Encoding.UTF8)
+            });
+
+        var endpoint = new DownloadEndpoint(_config, new Requester(new HttpClient(handlerMock.Object)));
+
+        var exception = await Assert.ThrowsAsync<MoneybirdException>(() =>
+            endpoint.DownloadByIdAsync(AdministrationId, DownloadId, AccessToken));
+
+        Assert.Equal(HttpStatusCode.OK, exception.HttpStatusCode);
+        Assert.Equal("Expected a 302 redirect with a Location header when downloading a file.", exception.Message);
+    }
+
+    [Fact]
+    public async Task DownloadByIdAsync_UsingRequester_WithUnauthorizedResponse_Throws_MoneybirdException()
+    {
+        var handlerMock = new Mock<HttpMessageHandler>(MockBehavior.Strict);
+        handlerMock
+            .Protected()
+            .Setup<Task<HttpResponseMessage>>(
+                "SendAsync",
+                ItExpr.IsAny<HttpRequestMessage>(),
+                ItExpr.IsAny<CancellationToken>())
+            .ReturnsAsync(new HttpResponseMessage(HttpStatusCode.Unauthorized)
+            {
+                Content = new StringContent("{\"error\":\"No access to [:sales_invoices]\"}", Encoding.UTF8)
+            });
+
+        var endpoint = new DownloadEndpoint(_config, new Requester(new HttpClient(handlerMock.Object)));
+
+        var exception = await Assert.ThrowsAsync<MoneybirdException>(() =>
+            endpoint.DownloadByIdAsync(AdministrationId, DownloadId, AccessToken));
+
+        Assert.Equal(HttpStatusCode.Unauthorized, exception.HttpStatusCode);
+        Assert.Equal("No access to [:sales_invoices]", exception.Message);
     }
 }
