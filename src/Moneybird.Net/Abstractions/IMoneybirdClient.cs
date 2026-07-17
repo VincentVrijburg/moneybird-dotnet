@@ -19,12 +19,22 @@ namespace Moneybird.Net.Abstractions
         /// The CustomField Endpoint.
         /// </summary>
         ICustomFieldEndpoint CustomField { get; }
+
+        /// <summary>
+        /// The CustomerContactPortal Endpoint.
+        /// </summary>
+        ICustomerContactPortalEndpoint CustomerContactPortal { get; }
         
         /// <summary>
         /// The DocumentStyle Endpoint.
         /// </summary>
         IDocumentStyleEndpoint DocumentStyle { get; }
-        
+
+        /// <summary>
+        /// The Download Endpoint.
+        /// </summary>
+        IDownloadEndpoint Download { get; }
+         
         /// <summary>
         /// The ExternalSalesInvoice Endpoint.
         /// </summary>

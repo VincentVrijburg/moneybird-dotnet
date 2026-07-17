@@ -37,6 +37,20 @@ namespace Moneybird.Net.Http
         Task<string> CreatePostRequestAsync(string host, string relativeUrl, string accessToken, string body, List<string> queryParameters = null);
 
         /// <summary>
+        /// Create a post request for a generated download and send it asynchronously to the Moneybird api.
+        /// </summary>
+        /// <param name="host">The host.</param>
+        /// <param name="relativeUrl">The relative url.</param>
+        /// <param name="accessToken">The access token.</param>
+        /// <param name="queryParameters">The query parameters.</param>
+        /// <returns>A stream containing the downloaded file contents.</returns>
+        /// <exception cref="MoneybirdException">
+        /// Thrown if an Http error occurs.
+        /// Contains the Http error code and error message.
+        /// </exception>
+        Task<Stream> CreatePostDownloadRequestAsync(string host, string relativeUrl, string accessToken, List<string> queryParameters = null);
+
+        /// <summary>
         /// Create a post request and send it asynchronously to the Moneybird api.
         /// </summary>
         /// <param name="host">The host.</param>

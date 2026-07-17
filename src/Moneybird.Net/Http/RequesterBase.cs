@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -99,6 +100,18 @@ namespace Moneybird.Net.Http
             using (var content = response.Content)
             {
                 return await content.ReadAsStringAsync().ConfigureAwait(false);
+            }
+        }
+
+        protected async Task<Stream> GetResponseStreamAsync(HttpResponseMessage response)
+        {
+            using (response)
+            using (var content = response.Content)
+            {
+                var memoryStream = new MemoryStream();
+                await content.CopyToAsync(memoryStream).ConfigureAwait(false);
+                memoryStream.Position = 0;
+                return memoryStream;
             }
         }
 
