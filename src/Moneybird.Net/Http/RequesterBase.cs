@@ -30,10 +30,12 @@ namespace Moneybird.Net.Http
             _httpClient = httpClient;
         }
         
-        protected async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request)
+        protected async Task<HttpResponseMessage> SendAsync(
+            HttpRequestMessage request,
+            HttpStatusCode? allowedNonSuccessStatusCode = null)
         {
             var response = await _httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead).ConfigureAwait(false);
-            if (!response.IsSuccessStatusCode)
+            if (!response.IsSuccessStatusCode && response.StatusCode != allowedNonSuccessStatusCode)
             {
                 HandleRequestFailure(response);
             }
