@@ -24,7 +24,7 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [x] Custom fields
   - [x] Customer Contact Portal
   - [x] Document styles
-  - [ ] Downloads
+  - [x] Downloads
   - [ ] Documents: General documents
   - [ ] Documents: General journal documents
   - [ ] Documents: Purchase invoices
