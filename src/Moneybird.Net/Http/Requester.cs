@@ -44,7 +44,7 @@ namespace Moneybird.Net.Http
             List<string> queryParameters = null)
         {
             var request = ConstructRequest(host, relativeUrl, accessToken, queryParameters, HttpMethod.Post);
-            var response = await SendAsync(request, HttpStatusCode.Found).ConfigureAwait(false);
+            var response = await SendAsync(request).ConfigureAwait(false);
 
             if (response.StatusCode == HttpStatusCode.Found &&
                 response.Headers.Location != null)
