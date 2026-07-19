@@ -89,6 +89,32 @@ namespace Moneybird.Net.Http
             response.EnsureSuccessStatusCode();
         }
 
+        public async Task<string> CreatePostMultipartFormRequestAsync(
+            string host,
+            string relativeUrl,
+            string accessToken,
+            Stream body,
+            Dictionary<string, string> formFields = null)
+        {
+            var request = ConstructRequest(host, relativeUrl, accessToken, null, HttpMethod.Post);
+            var multipartContent = new MultipartFormDataContent
+            {
+                { new StreamContent(body), "file" }
+            };
+
+            if (formFields != null)
+            {
+                foreach (var field in formFields)
+                {
+                    multipartContent.Add(new StringContent(field.Value), field.Key);
+                }
+            }
+
+            request.Content = multipartContent;
+            var response = await SendAsync(request).ConfigureAwait(false);
+            return await GetResponseContentAsync(response).ConfigureAwait(false);
+        }
+
         public async Task<string> CreatePatchRequestAsync(string host,
             string relativeUrl,
             string accessToken,

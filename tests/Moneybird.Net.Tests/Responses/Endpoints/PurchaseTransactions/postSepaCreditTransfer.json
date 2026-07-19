@@ -1,0 +1,20 @@
+[
+  {
+    "id": "492897314012137250",
+    "administration_id": "281289699686381606",
+    "financial_account_id": "492897313893648153",
+    "state": "open",
+    "identifier": "PMT20250910-SAL",
+    "created_at": "2025-09-12T00:00:00.000Z",
+    "updated_at": "2025-09-12T00:00:00.000Z"
+  },
+  {
+    "id": "492897314180958002",
+    "administration_id": "281289699686381606",
+    "financial_account_id": "492897314064566057",
+    "state": "open",
+    "identifier": "PMT20250910-STD",
+    "created_at": "2025-09-12T00:00:00.000Z",
+    "updated_at": "2025-09-12T00:00:00.000Z"
+  }
+]

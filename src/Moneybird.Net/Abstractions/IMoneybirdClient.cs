@@ -66,6 +66,11 @@ namespace Moneybird.Net.Abstractions
         IProductEndpoint Product { get; }
         
         /// <summary>
+        /// The PurchaseTransaction Endpoint.
+        /// </summary>
+        IPurchaseTransactionEndpoint PurchaseTransaction { get; }
+        
+        /// <summary>
         /// The Project Endpoint.
         /// </summary>
         IProjectEndpoint Project { get; }
