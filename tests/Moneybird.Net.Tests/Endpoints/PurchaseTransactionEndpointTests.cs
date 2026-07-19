@@ -148,4 +148,91 @@ public class PurchaseTransactionEndpointTests : PurchaseTransactionTestBase
 
         purchaseTransactionBatches.Should().BeEquivalentTo(actualPurchaseTransactionBatches);
     }
+
+    [Fact]
+    public async Task UploadSepaCreditTransferAsync_WithNullOptions_SendsNoFormFields()
+    {
+        var purchaseTransactionBatchesJson = await File.ReadAllTextAsync(PostSepaCreditTransferResponsePath);
+
+        _requester.Setup(moq => moq.CreatePostMultipartFormRequestAsync(
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<Stream>(),
+                It.IsAny<Dictionary<string, string>>()))
+            .ReturnsAsync(purchaseTransactionBatchesJson);
+
+        var file = new MemoryStream();
+        _ = await _purchaseTransactionEndpoint.UploadSepaCreditTransferAsync(AdministrationId, file, AccessToken);
+
+        _requester.Verify(moq => moq.CreatePostMultipartFormRequestAsync(
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<Stream>(),
+                It.Is<Dictionary<string, string>>(fields => fields == null)),
+            Times.Once);
+    }
+
+    [Fact]
+    public async Task UploadSepaCreditTransferAsync_WithLedgerAccountOnly_SendsOnlyLedgerField()
+    {
+        var purchaseTransactionBatchesJson = await File.ReadAllTextAsync(PostSepaCreditTransferResponsePath);
+        var options = new PurchaseTransactionSepaCreditTransferOptions
+        {
+            LedgerAccountId = "492897314064566057"
+        };
+
+        _requester.Setup(moq => moq.CreatePostMultipartFormRequestAsync(
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<Stream>(),
+                It.IsAny<Dictionary<string, string>>()))
+            .ReturnsAsync(purchaseTransactionBatchesJson);
+
+        var file = new MemoryStream();
+        _ = await _purchaseTransactionEndpoint.UploadSepaCreditTransferAsync(AdministrationId, file, AccessToken, options);
+
+        _requester.Verify(moq => moq.CreatePostMultipartFormRequestAsync(
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<Stream>(),
+                It.Is<Dictionary<string, string>>(fields =>
+                    fields.Count == 1 &&
+                    fields["ledger_account_id"] == options.LedgerAccountId)),
+            Times.Once);
+    }
+
+    [Fact]
+    public async Task UploadSepaCreditTransferAsync_WithFinancialAccountOnly_SendsOnlyFinancialField()
+    {
+        var purchaseTransactionBatchesJson = await File.ReadAllTextAsync(PostSepaCreditTransferResponsePath);
+        var options = new PurchaseTransactionSepaCreditTransferOptions
+        {
+            FinancialAccountId = "492897313893648153"
+        };
+
+        _requester.Setup(moq => moq.CreatePostMultipartFormRequestAsync(
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<Stream>(),
+                It.IsAny<Dictionary<string, string>>()))
+            .ReturnsAsync(purchaseTransactionBatchesJson);
+
+        var file = new MemoryStream();
+        _ = await _purchaseTransactionEndpoint.UploadSepaCreditTransferAsync(AdministrationId, file, AccessToken, options);
+
+        _requester.Verify(moq => moq.CreatePostMultipartFormRequestAsync(
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<Stream>(),
+                It.Is<Dictionary<string, string>>(fields =>
+                    fields.Count == 1 &&
+                    fields["financial_account_id"] == options.FinancialAccountId)),
+            Times.Once);
+    }
 }
