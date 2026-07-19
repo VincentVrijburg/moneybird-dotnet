@@ -17,7 +17,7 @@ namespace Moneybird.Net.Endpoints.Abstractions
         /// Upload a SEPA credit transfer file and create purchase transaction batches.
         /// </summary>
         /// <param name="administrationId">The administration id.</param>
-        /// <param name="body">The SEPA credit transfer file body.</param>
+        /// <param name="body">The SEPA credit transfer file body in pain.001.001.09 (Version 2019) format.</param>
         /// <param name="accessToken">The access token.</param>
         /// <param name="options">Optional upload options.</param>
         /// <returns>The created purchase transaction batches.</returns>
