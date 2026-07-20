@@ -66,6 +66,22 @@ namespace Moneybird.Net.Http
         /// </exception>
         Task CreatePostFileRequestAsync(string host, string relativeUrl, string accessToken, string fileName,
             Stream body, List<string> queryParameters = null);
+
+        /// <summary>
+        /// Create a multipart/form-data post request and send it asynchronously to the Moneybird api.
+        /// </summary>
+        /// <param name="host">The host.</param>
+        /// <param name="relativeUrl">The relative url.</param>
+        /// <param name="accessToken">The access token.</param>
+        /// <param name="body">The uploaded file body.</param>
+        /// <param name="formFields">The additional multipart form fields.</param>
+        /// <returns>The content of the response.</returns>
+        Task<string> CreatePostMultipartFormRequestAsync(
+            string host,
+            string relativeUrl,
+            string accessToken,
+            Stream body,
+            Dictionary<string, string> formFields = null);
         
         /// <summary>
         /// Create a patch request and send it asynchronously to the Moneybird api.

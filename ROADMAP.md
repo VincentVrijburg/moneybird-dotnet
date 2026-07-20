@@ -40,7 +40,7 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [x] Payments
   - [x] Products
   - [x] Projects
-  - [ ] Purchase transactions
+  - [x] Purchase transactions
   - [x] Recurring sales invoices
   - [ ] Reports
   - [x] Sales invoices (limited)
