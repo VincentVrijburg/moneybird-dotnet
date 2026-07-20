@@ -16,14 +16,14 @@ namespace Moneybird.Net.Extensions
                 filterValues.Add($"period:{options.Period}");
             }
 
-            if (!string.IsNullOrEmpty(options.State))
+            if (options.State != null && options.State.Any())
             {
-                filterValues.Add($"state:{options.State}");
+                filterValues.Add($"state:{string.Join("|", options.State.Select(s => s.ToString().ToSnakeCase()))}");
             }
 
-            if (!string.IsNullOrEmpty(options.MutationType))
+            if (options.MutationType != null && options.MutationType.Any())
             {
-                filterValues.Add($"mutation_type:{options.MutationType}");
+                filterValues.Add($"mutation_type:{string.Join("|", options.MutationType.Select(s => s.ToString().ToSnakeCase()))}");
             }
 
             if (!string.IsNullOrEmpty(options.FinancialAccountId))

@@ -1,4 +1,5 @@
 using Moneybird.Net.Endpoints.Abstractions.Options;
+using Moneybird.Net.Entities.FinancialMutations;
 
 namespace Moneybird.Net.Models.FinancialMutations
 {
@@ -6,9 +7,9 @@ namespace Moneybird.Net.Models.FinancialMutations
     {
         public string Period { get; set; }
 
-        public string State { get; set; }
+        public FinancialMutationState[] State { get; set; }
 
-        public string MutationType { get; set; }
+        public FinancialMutationType[] MutationType { get; set; }
 
         public string FinancialAccountId { get; set; }
 

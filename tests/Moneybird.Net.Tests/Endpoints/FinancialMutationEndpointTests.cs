@@ -72,8 +72,8 @@ public class FinancialMutationEndpointTests : FinancialMutationTestBase
         var filterOptions = new FinancialMutationFilterOptions
         {
             Period = "this_month",
-            State = "unprocessed|processed",
-            MutationType = "debit",
+            State = new[] { FinancialMutationState.Unprocessed, FinancialMutationState.Processed },
+            MutationType = new[] { FinancialMutationType.Debit },
             FinancialAccountId = "492897320871921275",
             AmountFrom = 10.0,
             AmountTo = 100.0
@@ -152,8 +152,8 @@ public class FinancialMutationEndpointTests : FinancialMutationTestBase
         var filterOptions = new FinancialMutationFilterOptions
         {
             Period = "this_month",
-            State = "processed",
-            MutationType = "credit"
+            State = new[] { FinancialMutationState.Processed },
+            MutationType = new[] { FinancialMutationType.Credit }
         };
 
         var actualSynchronizationFinancialMutations = await _financialMutationEndpoint
