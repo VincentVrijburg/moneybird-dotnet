@@ -1,0 +1,70 @@
+{
+  "id": "492897320603485779",
+  "administration_id": "123",
+  "amount": "100.0",
+  "code": null,
+  "date": "2026-07-17",
+  "message": "Factuur",
+  "contra_account_name": null,
+  "contra_account_number": "",
+  "state": "unprocessed",
+  "settlement_state": "settled",
+  "amount_open": "100.0",
+  "sepa_fields": {
+    "sref": "EE87231C76T83302305104OM4ADDS4QR03",
+    "isdt": "2026-07-17",
+    "benm": {
+      "name": "ADYEN NV",
+      "id": "NL37ABNA3820430049"
+    },
+    "eref": "BC6KKCQPKH82L6LW62",
+    "marf": "D24SXHV25PZJ55WN",
+    "crdb": "DBIT",
+    "remi": "Parkietje B.V. Factuur 2026-0001 van Parkietje B.V."
+  },
+  "batch_reference": null,
+  "financial_account_id": "492897320580417103",
+  "currency": "EUR",
+  "original_amount": null,
+  "created_at": "2026-07-17T10:18:57.005Z",
+  "updated_at": "2026-07-17T10:18:57.005Z",
+  "version": 1784283537,
+  "financial_statement_id": "492897320602437202",
+  "processed_at": null,
+  "account_servicer_transaction_id": null,
+  "payments": [
+    {
+      "id": "492897320682128996",
+      "administration_id": "123",
+      "invoice_type": "SalesInvoice",
+      "invoice_id": "492897320656963168",
+      "financial_account_id": "492897320580417103",
+      "user_id": "1",
+      "payment_transaction_id": null,
+      "transaction_identifier": null,
+      "price": "80.0",
+      "price_base": "80.0",
+      "payment_date": "2026-07-17",
+      "credit_invoice_id": null,
+      "financial_mutation_id": "492897320603485779",
+      "ledger_account_id": "492897320678983267",
+      "linked_payment_id": null,
+      "manual_payment_action": null,
+      "created_at": "2026-07-17T10:18:57.080Z",
+      "updated_at": "2026-07-17T10:18:57.080Z"
+    }
+  ],
+  "ledger_account_bookings": [
+    {
+      "id": "492897320625505884",
+      "administration_id": "123",
+      "financial_mutation_id": "492897320603485779",
+      "ledger_account_id": "492897320623408731",
+      "project_id": null,
+      "description": "Ledger account booking",
+      "price": "20.0",
+      "created_at": "2026-07-17T10:18:57.027Z",
+      "updated_at": "2026-07-17T10:18:57.027Z"
+    }
+  ]
+}
