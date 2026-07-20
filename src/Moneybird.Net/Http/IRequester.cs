@@ -111,5 +111,20 @@ namespace Moneybird.Net.Http
         /// Contains the Http error code and error message.
         /// </exception>
         Task<bool> CreateDeleteRequestAsync(string host, string relativeUrl, string accessToken, List<string> queryParameters = null);
+
+        /// <summary>
+        /// Create a delete request with a JSON body and send it asynchronously to the Moneybird api.
+        /// </summary>
+        /// <param name="host">The host.</param>
+        /// <param name="relativeUrl">The relative url.</param>
+        /// <param name="accessToken">The access token.</param>
+        /// <param name="body">The request body.</param>
+        /// <param name="queryParameters">The query parameters.</param>
+        /// <returns>The content of the response.</returns>
+        /// <exception cref="MoneybirdException">
+        /// Thrown if an Http error occurs.
+        /// Contains the Http error code and error message.
+        /// </exception>
+        Task<string> CreateDeleteRequestAsync(string host, string relativeUrl, string accessToken, string body, List<string> queryParameters = null);
     }
 }

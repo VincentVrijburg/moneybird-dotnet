@@ -139,5 +139,18 @@ namespace Moneybird.Net.Http
 
             return true;
         }
+
+        public async Task<string> CreateDeleteRequestAsync(
+            string host,
+            string relativeUrl,
+            string accessToken,
+            string body,
+            List<string> queryParameters = null)
+        {
+            var request = ConstructRequest(host, relativeUrl, accessToken, queryParameters, HttpMethod.Delete);
+            request.Content = new StringContent(body, Encoding.UTF8, "application/json");
+            var response = await SendAsync(request).ConfigureAwait(false);
+            return await GetResponseContentAsync(response).ConfigureAwait(false);
+        }
     }
 }

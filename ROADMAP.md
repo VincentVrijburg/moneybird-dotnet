@@ -33,7 +33,7 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [ ] Estimates
   - [x] External sales invoices (limited)
   - [x] Financial accounts
-  - [ ] Financial mutations
+  - [x] Financial mutations
   - [x] Financial statements
   - [x] Identities
   - [x] Ledger accounts
