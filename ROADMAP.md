@@ -33,14 +33,14 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [ ] Estimates
   - [x] External sales invoices (limited)
   - [x] Financial accounts
-  - [ ] Financial mutations
+  - [x] Financial mutations
   - [x] Financial statements
   - [x] Identities
   - [x] Ledger accounts
   - [x] Payments
   - [x] Products
   - [x] Projects
-  - [ ] Purchase transactions
+  - [x] Purchase transactions
   - [x] Recurring sales invoices
   - [ ] Reports
   - [x] Sales invoices (limited)

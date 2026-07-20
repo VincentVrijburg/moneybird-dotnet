@@ -12,9 +12,15 @@ namespace Moneybird.Net.Entities.FinancialMutations
 
         [JsonPropertyName("ordp")]
         public SepaDebtor Ordp { get; set; }
+        
+        [JsonPropertyName("benm")]
+        public SepaDebtor Benm { get; set; }
 
         [JsonPropertyName("eref")]
         public string Eref { get; set; }
+        
+        [JsonPropertyName("marf")]
+        public string Marf { get; set; }
 
         [JsonPropertyName("crdb")]
         public string Crdb { get; set; }

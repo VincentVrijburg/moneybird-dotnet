@@ -84,6 +84,9 @@ namespace Moneybird.Net.Entities.Contacts
         [JsonPropertyName("send_estimates_to_email")]
         public string SendEstimatesToEmail { get; set; }
 
+        [JsonPropertyName("direct_debit")]
+        public bool DirectDebit { get; set; }
+
         [JsonPropertyName("sepa_active")]
         public bool? SepaActive { get; set; }
 
@@ -131,6 +134,9 @@ namespace Moneybird.Net.Entities.Contacts
 
         [JsonPropertyName("si_identifier_type")]
         public string SiIdentifierType { get; set; }
+
+        [JsonPropertyName("moneybird_payments_mandate")]
+        public bool? MoneybirdPaymentsMandate { get; set; }
 
         [JsonPropertyName("created_at")]
         public DateTime CreatedAt { get; set; }

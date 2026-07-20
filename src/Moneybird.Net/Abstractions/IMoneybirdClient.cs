@@ -46,6 +46,11 @@ namespace Moneybird.Net.Abstractions
         IFinancialAccountEndpoint FinancialAccount { get; }
         
         /// <summary>
+        /// The FinancialMutation Endpoint.
+        /// </summary>
+        IFinancialMutationEndpoint FinancialMutation { get; }
+        
+        /// <summary>
         /// The FinancialAccount Endpoint.
         /// </summary>
         IFinancialStatementEndpoint FinancialStatement { get; }
@@ -64,6 +69,11 @@ namespace Moneybird.Net.Abstractions
         /// The Product Endpoint.
         /// </summary>
         IProductEndpoint Product { get; }
+        
+        /// <summary>
+        /// The PurchaseTransaction Endpoint.
+        /// </summary>
+        IPurchaseTransactionEndpoint PurchaseTransaction { get; }
         
         /// <summary>
         /// The Project Endpoint.
