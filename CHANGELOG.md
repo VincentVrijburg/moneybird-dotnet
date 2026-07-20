@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.22.0 | 2026-07-20
+* Add support for the `Purchase transactions` endpoint.
+* Add support for the `Financial mutations` endpoint.
+
 ## 0.21.0 | 2026-07-17
 * Add support for the `Downloads` endpoint.
 * Add support for the `Customer contact portal` endpoints.
