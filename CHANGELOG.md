@@ -2,8 +2,7 @@
 
 ## 0.23.0 | 2026-07-26
 * Add support for the `Estimates` endpoint.
-* Generalize attachment entities for invoice and estimate endpoints.
-* Generalize tax total entities.
+* Generalize attachment and tax total entities for invoice and estimate endpoints.
 
 ## 0.22.0 | 2026-07-20
 * Add support for the `Purchase transactions` endpoint.
