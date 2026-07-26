@@ -39,13 +39,14 @@ namespace Moneybird.Net.Http
             return await GetResponseContentAsync(response).ConfigureAwait(false);
         }
 
-        public async Task<Stream> CreatePostDownloadRequestAsync(
+        public async Task<Stream> CreateDownloadRequestAsync(
             string host,
             string relativeUrl,
             string accessToken,
+            HttpMethod method,
             List<string> queryParameters = null)
         {
-            var request = ConstructRequest(host, relativeUrl, accessToken, queryParameters, HttpMethod.Post);
+            var request = ConstructRequest(host, relativeUrl, accessToken, queryParameters, method);
             var response = await SendAsync(request).ConfigureAwait(false);
 
             if (response.StatusCode == HttpStatusCode.Found &&
