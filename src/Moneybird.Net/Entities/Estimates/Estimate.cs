@@ -5,6 +5,7 @@ using Moneybird.Net.Entities.Attachments;
 using Moneybird.Net.Entities.Contacts;
 using Moneybird.Net.Entities.CustomFields;
 using Moneybird.Net.Entities.Notes;
+using Moneybird.Net.Entities.TaxTotals;
 
 namespace Moneybird.Net.Entities.Estimates
 {
@@ -156,6 +157,6 @@ namespace Moneybird.Net.Entities.Estimates
         public List<Event> Events { get; set; }
         
         [JsonPropertyName("tax_totals")]
-        public List<EstimateTaxTotal> TaxTotals { get; set; }
+        public List<TaxTotal> TaxTotals { get; set; }
     }
 }

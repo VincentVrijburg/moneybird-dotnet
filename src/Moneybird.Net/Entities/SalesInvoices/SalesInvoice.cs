@@ -6,6 +6,7 @@ using Moneybird.Net.Entities.Contacts;
 using Moneybird.Net.Entities.CustomFields;
 using Moneybird.Net.Entities.Notes;
 using Moneybird.Net.Entities.Payments;
+using Moneybird.Net.Entities.TaxTotals;
 using Moneybird.Net.Entities.TimeEntries;
 
 namespace Moneybird.Net.Entities.SalesInvoices
@@ -184,7 +185,7 @@ namespace Moneybird.Net.Entities.SalesInvoices
         public List<Event> Events { get; set; }
 
         [JsonPropertyName("tax_totals")]
-        public List<SalesInvoiceTaxTotal> TaxTotals { get; set; }
+        public List<TaxTotal> TaxTotals { get; set; }
         
         [JsonPropertyName("time_entries")]
         public List<TimeEntry> TimeEntries { get; set; }
