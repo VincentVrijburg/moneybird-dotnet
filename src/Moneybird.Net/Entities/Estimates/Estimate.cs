@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using Moneybird.Net.Entities.Attachments;
 using Moneybird.Net.Entities.Contacts;
 using Moneybird.Net.Entities.CustomFields;
 using Moneybird.Net.Entities.Notes;
-using Moneybird.Net.Entities.SalesInvoices;
 
 namespace Moneybird.Net.Entities.Estimates
 {
@@ -150,7 +150,7 @@ namespace Moneybird.Net.Entities.Estimates
         public List<Note> Notes { get; set; }
         
         [JsonPropertyName("attachments")]
-        public List<SalesInvoiceAttachment> Attachments { get; set; }
+        public List<Attachment> Attachments { get; set; }
         
         [JsonPropertyName("events")]
         public List<Event> Events { get; set; }

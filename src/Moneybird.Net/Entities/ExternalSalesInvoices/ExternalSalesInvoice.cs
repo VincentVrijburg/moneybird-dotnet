@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using Moneybird.Net.Entities.Attachments;
 using Moneybird.Net.Entities.Contacts;
 using Moneybird.Net.Entities.Notes;
 using Moneybird.Net.Entities.Payments;
@@ -108,7 +109,7 @@ namespace Moneybird.Net.Entities.ExternalSalesInvoices
         public List<Note> Notes { get; set; }
 
         [JsonPropertyName("attachments")]
-        public List<SalesInvoiceAttachment> Attachments { get; set; }
+        public List<Attachment> Attachments { get; set; }
 
         [JsonPropertyName("events")]
         public List<Event> Events { get; set; }
