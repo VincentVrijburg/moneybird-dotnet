@@ -1,9 +1,9 @@
 using System;
 using System.Text.Json.Serialization;
 
-namespace Moneybird.Net.Entities.SalesInvoices;
+namespace Moneybird.Net.Entities.Attachments;
 
-public class SalesInvoiceAttachment
+public class Attachment
 {
     [JsonPropertyName("id")]
     public string Id { get; set; }
@@ -15,7 +15,7 @@ public class SalesInvoiceAttachment
     public string AttachableId { get; set; }
     
     [JsonPropertyName("attachable_type")]
-    public SalesInvoiceAttachmentType AttachableType { get; set; }
+    public AttachmentType AttachableType { get; set; }
     
     [JsonPropertyName("filename")]
     public string Filename { get; set; }

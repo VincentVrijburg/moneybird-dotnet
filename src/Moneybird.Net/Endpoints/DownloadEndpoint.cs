@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Moneybird.Net.Endpoints.Abstractions;
@@ -62,7 +63,7 @@ namespace Moneybird.Net.Endpoints
             var relativeUrl = string.Format(DownloadsIdDownloadUri, administrationId, downloadId);
 
             return await _requester
-                .CreatePostDownloadRequestAsync(_config.ApiUri, relativeUrl, accessToken)
+                .CreateDownloadRequestAsync(_config.ApiUri, relativeUrl, accessToken, HttpMethod.Post)
                 .ConfigureAwait(false);
         }
     }

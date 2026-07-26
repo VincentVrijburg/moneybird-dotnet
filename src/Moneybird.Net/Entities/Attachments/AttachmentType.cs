@@ -1,9 +1,9 @@
 using System.Text.Json.Serialization;
 
-namespace Moneybird.Net.Entities.SalesInvoices;
+namespace Moneybird.Net.Entities.Attachments;
 
 [JsonConverter(typeof(JsonStringEnumConverter))]
-public enum SalesInvoiceAttachmentType
+public enum AttachmentType
 {
     [JsonStringEnumMemberName("SalesInvoice")]
     SalesInvoice,

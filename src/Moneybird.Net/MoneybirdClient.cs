@@ -21,6 +21,7 @@ namespace Moneybird.Net
         public ICustomerContactPortalEndpoint CustomerContactPortal { get; }
         public IDocumentStyleEndpoint DocumentStyle { get; }
         public IDownloadEndpoint Download { get; }
+        public IEstimateEndpoint Estimate { get; }
         public IExternalSalesInvoiceEndpoint ExternalSalesInvoice { get; }
         public IFinancialAccountEndpoint FinancialAccount { get; }
         public IFinancialMutationEndpoint FinancialMutation { get; }
@@ -72,6 +73,7 @@ namespace Moneybird.Net
             CustomerContactPortal = new CustomerContactPortalEndpoint(Config, _requester);
             DocumentStyle = new DocumentStyleEndpoint(Config, _requester);
             Download = new DownloadEndpoint(Config, _requester);
+            Estimate = new EstimateEndpoint(Config, _requester);
             ExternalSalesInvoice = new ExternalSalesInvoiceEndpoint(Config, _requester);
             FinancialAccount = new FinancialAccountEndpoint(Config, _requester);
             FinancialMutation = new FinancialMutationEndpoint(Config, _requester);
