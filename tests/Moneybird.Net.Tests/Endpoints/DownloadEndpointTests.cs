@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -100,8 +101,8 @@ public class DownloadEndpointTests : DownloadsTestBase
     public async Task DownloadByIdAsync_ByAccessToken_Returns_DownloadStream()
     {
         var expectedContent = "id,name\r\n1,Export";
-        _requester.Setup(moq => moq.CreatePostDownloadRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
-                It.IsAny<string>(), It.IsAny<List<string>>()))
+        _requester.Setup(moq => moq.CreateDownloadRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
+                It.IsAny<string>(), It.Is<HttpMethod>(m => m == HttpMethod.Post), It.IsAny<List<string>>()))
             .ReturnsAsync(new MemoryStream(Encoding.UTF8.GetBytes(expectedContent)));
 
         using var actualDownload = await _downloadEndpoint.DownloadByIdAsync(AdministrationId, DownloadId, AccessToken);

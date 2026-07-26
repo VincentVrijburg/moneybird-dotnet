@@ -1,17 +1,15 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Moneybird.Net.Entities.Attachments;
 using Moneybird.Net.Entities.Contacts;
 using Moneybird.Net.Entities.CustomFields;
 using Moneybird.Net.Entities.Notes;
-using Moneybird.Net.Entities.Payments;
 using Moneybird.Net.Entities.TaxTotals;
-using Moneybird.Net.Entities.TimeEntries;
 
-namespace Moneybird.Net.Entities.SalesInvoices
+namespace Moneybird.Net.Entities.Estimates
 {
-    public class SalesInvoice : IMoneybirdEntity
+    public class Estimate : IMoneybirdEntity
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -31,147 +29,121 @@ namespace Moneybird.Net.Entities.SalesInvoices
         [JsonPropertyName("contact_person")]
         public ContactPerson ContactPerson { get; set; }
 
-        [JsonPropertyName("invoice_id")]
-        public string InvoiceId { get; set; }
+        [JsonPropertyName("estimate_id")]
+        public string EstimateId { get; set; }
 
-        [JsonPropertyName("recurring_sales_invoice_id")]
-        public string RecurringSalesInvoiceId { get; set; }
+        [JsonPropertyName("estimate_sequence_id")]
+        public string EstimateSequenceId { get; set; }
         
-        [JsonPropertyName("subscription_id")]
-        public string SubscriptionId { get; set; }
-
         [JsonPropertyName("workflow_id")]
         public string WorkflowId { get; set; }
-
+        
         [JsonPropertyName("document_style_id")]
         public string DocumentStyleId { get; set; }
-
+        
         [JsonPropertyName("identity_id")]
         public string IdentityId { get; set; }
-
+        
         [JsonPropertyName("draft_id")]
-        public int? DraftId { get; set; }
-
+        public string DraftId { get; set; }
+        
         [JsonPropertyName("state")]
-        public SalesInvoiceState State { get; set; }
-
-        [JsonPropertyName("invoice_date")]
-        public DateTime? InvoiceDate { get; set; }
-
+        public EstimateState State { get; set; }
+        
+        [JsonPropertyName("estimate_date")]
+        public DateTime? EstimateDate { get; set; }
+        
         [JsonPropertyName("due_date")]
-        public DateTime DueDate { get; set; }
-
-        [JsonPropertyName("payment_conditions")]
-        public string PaymentConditions { get; set; }
-
-        [JsonPropertyName("payment_reference")]
-        public string PaymentReference { get; set; }
-
-        [JsonPropertyName("short_payment_reference")]
-        public string ShortPaymentReference { get; set; }
-
+        public DateTime? DueDate { get; set; }
+        
         [JsonPropertyName("reference")]
         public string Reference { get; set; }
-
+        
         [JsonPropertyName("language")]
         public string Language { get; set; }
-
+        
         [JsonPropertyName("currency")]
         public string Currency { get; set; }
-
+        
+        [JsonPropertyName("exchange_rate")]
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+        public double? ExchangeRate { get; set; }
+        
         [JsonPropertyName("discount")]
         [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
         public double? Discount { get; set; }
-
-        [JsonPropertyName("original_sales_invoice_id")]
-        public string OriginalSalesInvoiceId { get; set; }
-
-        [JsonPropertyName("paused")]
-        public bool Paused { get; set; }
-
-        [JsonPropertyName("paid_at")]
-        public DateTime? PaidAt { get; set; }
-
+        
+        [JsonPropertyName("original_estimate_id")]
+        public string OriginalEstimateId { get; set; }
+        
+        [JsonPropertyName("show_tax")]
+        public bool ShowTax { get; set; }
+        
+        [JsonPropertyName("sign_online")]
+        public bool SignOnline { get; set; }
+        
         [JsonPropertyName("sent_at")]
         public DateTime? SentAt { get; set; }
-
+        
+        [JsonPropertyName("accepted_at")]
+        public DateTime? AcceptedAt { get; set; }
+        
+        [JsonPropertyName("rejected_at")]
+        public DateTime? RejectedAt { get; set; }
+        
+        [JsonPropertyName("archived_at")]
+        public DateTime? ArchivedAt { get; set; }
+        
         [JsonPropertyName("created_at")]
         public DateTime CreatedAt { get; set; }
-
+        
         [JsonPropertyName("updated_at")]
         public DateTime UpdatedAt { get; set; }
-
+        
         [JsonPropertyName("public_view_code")]
         public string PublicViewCode { get; set; }
-
+        
         [JsonPropertyName("public_view_code_expires_at")]
         public string PublicViewCodeExpiresAt { get; set; }
-
+        
         [JsonPropertyName("version")]
         public int Version { get; set; }
-
+        
+        [JsonPropertyName("pre_text")]
+        public string PreText { get; set; }
+        
+        [JsonPropertyName("post_text")]
+        public string PostText { get; set; }
+        
         [JsonPropertyName("details")]
-        public List<SalesInvoiceDetail> Details { get; set; }
-
-        [JsonPropertyName("payments")]
-        public List<Payment> Payments { get; set; }
-
-        [JsonPropertyName("total_paid")]
-        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-        public double TotalPaid { get; set; }
-
-        [JsonPropertyName("total_unpaid")]
-        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-        public double TotalUnpaid { get; set; }
-
-        [JsonPropertyName("total_unpaid_base")]
-        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-        public double TotalUnpaidBase { get; set; }
-
+        public List<EstimateDetail> Details { get; set; }
+        
         [JsonPropertyName("prices_are_incl_tax")]
         public bool PricesAreInclTax { get; set; }
-
+        
         [JsonPropertyName("total_price_excl_tax")]
         [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
         public double TotalPriceExclTax { get; set; }
-
+        
         [JsonPropertyName("total_price_excl_tax_base")]
         [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
         public double TotalPriceExclTaxBase { get; set; }
-
+        
         [JsonPropertyName("total_price_incl_tax")]
         [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
         public double TotalPriceInclTax { get; set; }
-
+        
         [JsonPropertyName("total_price_incl_tax_base")]
         [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
         public double TotalPriceInclTaxBase { get; set; }
-
+        
         [JsonPropertyName("total_discount")]
         [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
         public double TotalDiscount { get; set; }
-
-        [JsonPropertyName("marked_dubious_on")]
-        public string MarkedDubiousOn { get; set; }
-
-        [JsonPropertyName("marked_uncollectible_on")]
-        public string MarkedUncollectibleOn { get; set; }
-
-        [JsonPropertyName("reminder_count")]
-        public int ReminderCount { get; set; }
-
-        [JsonPropertyName("next_reminder")]
-        public string NextReminder { get; set; }
-
-        [JsonPropertyName("original_estimate_id")]
-        public string OriginalEstimateId { get; set; }
-
+        
         [JsonPropertyName("url")]
         public string Url { get; set; }
-
-        [JsonPropertyName("payment_url")]
-        public string PaymentUrl { get; set; }
-
+        
         [JsonPropertyName("custom_fields")]
         public List<CustomFieldAttribute> CustomFields { get; set; }
         
@@ -180,14 +152,11 @@ namespace Moneybird.Net.Entities.SalesInvoices
         
         [JsonPropertyName("attachments")]
         public List<Attachment> Attachments { get; set; }
-
+        
         [JsonPropertyName("events")]
         public List<Event> Events { get; set; }
-
+        
         [JsonPropertyName("tax_totals")]
         public List<TaxTotal> TaxTotals { get; set; }
-        
-        [JsonPropertyName("time_entries")]
-        public List<TimeEntry> TimeEntries { get; set; }
     }
 }

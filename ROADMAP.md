@@ -30,7 +30,7 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [ ] Documents: Purchase invoices
   - [ ] Documents: Receipts
   - [ ] Documents: Typeless documents
-  - [ ] Estimates
+  - [x] Estimates
   - [x] External sales invoices (limited)
   - [x] Financial accounts
   - [x] Financial mutations

@@ -36,6 +36,11 @@ namespace Moneybird.Net.Abstractions
         IDownloadEndpoint Download { get; }
          
         /// <summary>
+        /// The Estimate Endpoint.
+        /// </summary>
+        IEstimateEndpoint Estimate { get; }
+        
+        /// <summary>
         /// The ExternalSalesInvoice Endpoint.
         /// </summary>
         IExternalSalesInvoiceEndpoint ExternalSalesInvoice { get; }
