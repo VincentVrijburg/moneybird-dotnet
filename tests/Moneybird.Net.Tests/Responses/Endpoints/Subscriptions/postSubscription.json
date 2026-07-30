@@ -1,0 +1,15 @@
+{
+  "id": "subscription-1",
+  "administration_id": "123",
+  "start_date": "2026-07-31",
+  "end_date": null,
+  "frequency": 1,
+  "frequency_type": "month",
+  "reference": "moneybird.nl",
+  "product_id": "product-1",
+  "contact_id": "494090758106645938",
+  "contact_person_id": null,
+  "contact_person": null,
+  "subscription_products": [],
+  "recurring_sales_invoice_id": "recurring-invoice-1"
+}

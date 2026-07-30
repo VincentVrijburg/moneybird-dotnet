@@ -94,6 +94,11 @@ namespace Moneybird.Net.Abstractions
         /// The SalesInvoice Endpoint.
         /// </summary>
         ISalesInvoiceEndpoint SalesInvoice { get; }
+
+        /// <summary>
+        /// The Subscription Endpoint.
+        /// </summary>
+        ISubscriptionEndpoint Subscription { get; }
         
         /// <summary>
         /// The TaxRate Endpoint.

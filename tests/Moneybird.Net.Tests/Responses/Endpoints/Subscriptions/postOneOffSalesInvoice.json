@@ -1,0 +1,16 @@
+{
+  "id": "invoice-1",
+  "administration_id": "123",
+  "contact_id": "494090758106645938",
+  "subscription_id": "subscription-1",
+  "state": "scheduled",
+  "invoice_date": "2026-08-01",
+  "details": [],
+  "payments": [],
+  "notes": [],
+  "attachments": [],
+  "events": [],
+  "custom_fields": [],
+  "tax_totals": [],
+  "time_entries": []
+}
