@@ -1,0 +1,12 @@
+{
+  "id": "charge-1",
+  "administration_id": "123",
+  "contact_id": "494090758106645938",
+  "subscription_id": "subscription-1",
+  "product_id": "product-1",
+  "detail_id": null,
+  "amount": "5 x",
+  "price": "100.0",
+  "period": "202106..202106",
+  "description": "Transaction Costs"
+}

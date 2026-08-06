@@ -1,0 +1,21 @@
+[
+  {
+    "id": "494090758556485059",
+    "administration_id": "123",
+    "start_date": "2026-07-30",
+    "end_date": null,
+    "frequency": 1,
+    "frequency_type": "month",
+    "product_id": "product-1",
+    "contact_id": "494090758106645938",
+    "subscription_products": [
+      {
+        "start_date": "2026-07-30",
+        "end_date": null,
+        "product_id": "product-1",
+        "amount": "1 x",
+        "discount": "10.0"
+      }
+    ]
+  }
+]

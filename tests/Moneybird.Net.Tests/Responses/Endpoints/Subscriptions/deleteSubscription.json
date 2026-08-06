@@ -1,0 +1,12 @@
+{
+  "id": "subscription-1",
+  "administration_id": "123",
+  "start_date": "2026-07-30",
+  "end_date": "2026-08-01",
+  "frequency": 1,
+  "frequency_type": "month",
+  "cancelled_at": "2026-07-30T14:28:10Z",
+  "product_id": "product-1",
+  "contact_id": "494090758106645938",
+  "subscription_products": []
+}
