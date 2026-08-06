@@ -45,7 +45,7 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [ ] Reports
   - [x] Sales invoices (limited)
   - [ ] Subscription templates
-  - [ ] Subscriptions
+  - [x] Subscriptions
   - [ ] Task lists
   - [ ] Task list templates
   - [x] Tax rates
