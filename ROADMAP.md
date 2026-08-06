@@ -44,7 +44,7 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [x] Recurring sales invoices
   - [ ] Reports
   - [x] Sales invoices (limited)
-  - [ ] Subscription templates
+  - [x] Subscription templates
   - [x] Subscriptions
   - [ ] Task lists
   - [ ] Task list templates

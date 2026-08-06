@@ -99,6 +99,11 @@ namespace Moneybird.Net.Abstractions
         /// The Subscription Endpoint.
         /// </summary>
         ISubscriptionEndpoint Subscription { get; }
+
+        /// <summary>
+        /// The Subscription Template Endpoint.
+        /// </summary>
+        ISubscriptionTemplateEndpoint SubscriptionTemplate { get; }
         
         /// <summary>
         /// The TaxRate Endpoint.
