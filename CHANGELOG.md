@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.24.0 | 2026-08-06
+* Add support for the `Subscriptions` endpoint.
+
 ## 0.23.0 | 2026-07-26
 * Add support for the `Estimates` endpoint.
 * Generalize attachment and tax total entities for invoice and estimate endpoints.
