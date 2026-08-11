@@ -1,0 +1,27 @@
+[
+  {
+    "id": "494722488146593096",
+    "administration_id": "281289699686381606",
+    "workflow_id": "494722488131913026",
+    "document_style_id": "494722369162577049",
+    "mergeable": false,
+    "contact_can_update": true,
+    "products": [
+      {
+        "id": "494722488141350215",
+        "administration_id": "281289699686381606",
+        "description": "fancy product",
+        "title": null,
+        "identifier": null,
+        "price": "10.0",
+        "currency": "EUR",
+        "frequency": 1,
+        "frequency_type": "month",
+        "tax_rate_id": "494722368519799946",
+        "ledger_account_id": "494722368310084730",
+        "created_at": "2026-08-06T13:49:12.409Z",
+        "updated_at": "2026-08-06T13:49:12.409Z"
+      }
+    ]
+  }
+]
