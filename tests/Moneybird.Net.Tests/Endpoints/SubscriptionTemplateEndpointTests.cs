@@ -71,12 +71,7 @@ public class SubscriptionTemplateEndpointTests : CommonTestBase
         string body = null;
         List<string> query = null;
         _requester
-            .Setup(requester => requester.CreatePostRequestAsync(
-                It.IsAny<string>(),
-                It.IsAny<string>(),
-                AccessToken,
-                It.IsAny<string>(),
-                It.IsAny<List<string>>()))
+            .Setup(requester => requester.CreatePostRequestAsync(It.IsAny<string>(), It.IsAny<string>(), AccessToken, It.IsAny<string>(), It.IsAny<List<string>>()))
             .Callback<string, string, string, string, List<string>>((_, url, _, content, values) =>
             {
                 relativeUrl = url;
