@@ -96,7 +96,7 @@ public class SubscriptionTemplateEndpointTests : CommonTestBase
 
         relativeUrl.Should().Be($"/{AdministrationId}/subscription_templates/{TemplateId}/sales_link.json");
         body.Should().BeEmpty();
-        query.Should().Equal("contact_id=123%20456", "start_date=2026-08-15", "product_id=789");
+        query.Should().Equal("contact_id=123 456", "start_date=2026-08-15", "product_id=789");
         result.Url.Should().Be("https://checkout.moneybird.com/o/PLD9QPK5DV85");
     }
 

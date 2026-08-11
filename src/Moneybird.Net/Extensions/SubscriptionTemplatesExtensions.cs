@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Moneybird.Net.Models.SubscriptionTemplates;
 
@@ -17,7 +16,7 @@ internal static class SubscriptionTemplatesExtensions
 
         if (!string.IsNullOrWhiteSpace(options.ContactId))
         {
-            queryParameters.Add($"contact_id={Uri.EscapeDataString(options.ContactId)}");
+            queryParameters.Add($"contact_id={options.ContactId}");
         }
 
         if (options.StartDate.HasValue)
@@ -27,7 +26,7 @@ internal static class SubscriptionTemplatesExtensions
 
         if (!string.IsNullOrWhiteSpace(options.ProductId))
         {
-            queryParameters.Add($"product_id={Uri.EscapeDataString(options.ProductId)}");
+            queryParameters.Add($"product_id={options.ProductId}");
         }
 
         return queryParameters.Count > 0 ? queryParameters : null;
