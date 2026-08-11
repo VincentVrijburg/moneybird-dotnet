@@ -88,7 +88,7 @@ namespace Moneybird.Net.Endpoints
 
         public async Task<TimeEntry> UpdateByIdAsync(string administrationId, string id, TimeEntryUpdateOptions options, string accessToken)
         {
-            var relativeUrl = string.Format(TimeEntriesUri, administrationId, id);
+            var relativeUrl = string.Format(TimeEntriesIdUri, administrationId, id);
             var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
             var responseJson = await _requester
                 .CreatePatchRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
@@ -99,7 +99,7 @@ namespace Moneybird.Net.Endpoints
 
         public async Task<bool> DeleteByIdAsync(string administrationId, string id, string accessToken)
         {
-            var relativeUrl = string.Format(TimeEntriesUri, administrationId, id);
+            var relativeUrl = string.Format(TimeEntriesIdUri, administrationId, id);
             var response = await _requester
                 .CreateDeleteRequestAsync(_config.ApiUri, relativeUrl, accessToken)
                 .ConfigureAwait(false);

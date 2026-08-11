@@ -61,7 +61,7 @@ namespace Moneybird.Net.Endpoints
 
         public async Task<Product> UpdateByIdAsync(string administrationId, string id, ProductUpdateOptions options, string accessToken)
         {
-            var relativeUrl = string.Format(ProductsUri, administrationId, id);
+            var relativeUrl = string.Format(ProductsIdUri, administrationId, id);
             var body = JsonSerializer.Serialize(options, _config.SerializerOptions);
             var responseJson = await _requester
                 .CreatePatchRequestAsync(_config.ApiUri, relativeUrl, accessToken, body)
