@@ -20,7 +20,7 @@ The goal is to provide a stable version that has the basic functionality to inte
 - [ ] Support for the resource endpoints
   - [x] Administration
   - [ ] Assets
-  - [x] Contacts
+  - [x] Contacts (limited)
   - [x] Custom fields
   - [x] Customer Contact Portal
   - [x] Document styles
@@ -38,21 +38,21 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [x] Identities
   - [x] Ledger accounts
   - [x] Payments
-  - [x] Products
+  - [x] Products (limited)
   - [x] Projects
-  - [x] Purchase transactions
+  - [x] Purchase transactions (limited)
   - [x] Recurring sales invoices
   - [ ] Reports
   - [x] Sales invoices (limited)
-  - [ ] Subscription templates
+  - [x] Subscription templates
   - [x] Subscriptions
   - [ ] Task lists
   - [ ] Task list templates
   - [x] Tax rates
-  - [x] Time entries
+  - [x] Time entries (limited)
   - [x] Users
   - [x] Verifications
-  - [x] Webhooks
-  - [x] Workflows 
+  - [x] Webhooks (limited)
+  - [x] Workflows (limited)
 
 Once the features above are implemented (and ticked-off) we will release the first version in this range (i.e. v1.0.0).
