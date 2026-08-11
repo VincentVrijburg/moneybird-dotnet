@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.25.0 | 2026-08-11
+* Add support for the `Subscription templates` endpoint.
+* Fix `ProductEndpoint.UpdateByIdAsync` and `ProjectEndpoint.UpdateByIdAsync` to use their ID-specific API routes.
+* Fix `TimeEntryEndpoint.UpdateByIdAsync` and `TimeEntryEndpoint.DeleteByIdAsync` to use the ID-specific API route.
+* Fix `SalesInvoiceEndpoint.UploadAttachmentAsync` to use the sales invoice attachments API route.
+
 ## 0.24.0 | 2026-08-06
 * Add support for the `Subscriptions` endpoint.
 
