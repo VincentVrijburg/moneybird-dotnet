@@ -15,7 +15,7 @@ namespace Moneybird.Net.Endpoints
         private const string SalesInvoiceUri = "/{0}/sales_invoices.json";
         private const string SalesInvoiceIdUri = "/{0}/sales_invoices/{1}.json";
         private const string SalesInvoiceSendInvoiceUri = "/{0}/sales_invoices/{1}/send_invoice.json";
-        private const string SalesInvoiceAttachmentUri = "/{0}/external_sales_invoices/{1}/attachment";
+        private const string SalesInvoiceAttachmentUri = "/{0}/sales_invoices/{1}/attachments.json";
 
         private readonly MoneybirdConfig _config;
         private readonly IRequester _requester;
