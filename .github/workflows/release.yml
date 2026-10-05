@@ -9,28 +9,35 @@ jobs:
   release:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    permissions:
+      id-token: write
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - name: Retrieve version
         run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
-      
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 6.0.x
-      
+
       - name: Build
         run: dotnet build --configuration Release /p:Version=${VERSION}
-        
+
       - name: Test
         run: dotnet test --configuration Release /p:Version=${VERSION} --no-build
-        
+
       - name: Pack
         run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --output .
-        
-      - name: Push
-        run: dotnet nuget push Moneybird.Net.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_TOKEN}
-        env:
-          NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+
+      - name: NuGet login
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
+      - name: NuGet push
+        run: dotnet nuget push Moneybird.Net.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{steps.login.outputs.NUGET_API_KEY}}
