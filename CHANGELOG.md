@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.25.1 | 2026-10-17
+* Update `System.Text.Json` to 10.0.13.
+
 ## 0.25.0 | 2026-08-11
 * Add support for the `Subscription templates` endpoint.
 * Fix `ProductEndpoint.UpdateByIdAsync` and `ProjectEndpoint.UpdateByIdAsync` to use their ID-specific API routes.
