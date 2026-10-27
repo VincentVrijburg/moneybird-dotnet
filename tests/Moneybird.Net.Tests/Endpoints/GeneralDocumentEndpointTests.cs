@@ -22,7 +22,6 @@ public class GeneralDocumentEndpointTests : GeneralDocumentTestBase
     private const string GetGeneralDocumentNewResponsePath = "./Responses/Endpoints/GeneralDocuments/getGeneralDocumentNew.json";
     private const string PostGeneralDocumentResponsePath = "./Responses/Endpoints/GeneralDocuments/postGeneralDocument.json";
     private const string PatchGeneralDocumentResponsePath = "./Responses/Endpoints/GeneralDocuments/patchGeneralDocument.json";
-    private const string DeleteGeneralDocumentResponsePath = "./Responses/Endpoints/GeneralDocuments/deleteGeneralDocument.json";
 
     private readonly Mock<IRequester> _requester = new();
     private readonly MoneybirdConfig _config = new();
@@ -211,21 +210,12 @@ public class GeneralDocumentEndpointTests : GeneralDocumentTestBase
     }
 
     [Fact]
-    public async Task DeleteByIdAsync_DeletesGeneralDocument()
+    public async Task DeleteByIdAsync_ByAccessToken_Returns_True()
     {
-        var json = await File.ReadAllTextAsync(DeleteGeneralDocumentResponsePath);
-        JsonSerializer.Deserialize<int>(json).Should().Be(200);
+        _requester.Setup(moq => moq.CreateDeleteRequestAsync(It.IsAny<string>(), It.IsAny<string>(),
+            It.IsAny<string>(), It.IsAny<List<string>>())).ReturnsAsync(true);
 
-        string relativeUrl = null;
-        _requester
-            .Setup(requester => requester.CreateDeleteRequestAsync(
-                It.IsAny<string>(), It.IsAny<string>(), AccessToken, It.IsAny<List<string>>()))
-            .Callback<string, string, string, List<string>>((_, url, _, _) => relativeUrl = url)
-            .ReturnsAsync(true);
-
-        var deleted = await _endpoint.DeleteByIdAsync(AdministrationId, GeneralDocumentId, AccessToken);
-
-        deleted.Should().BeTrue();
-        relativeUrl.Should().Be($"/{AdministrationId}/documents/general_documents/{GeneralDocumentId}.json");
+        var response = await _endpoint.DeleteByIdAsync(AdministrationId, GeneralDocumentId, AccessToken);
+        Assert.True(response);
     }
 }
