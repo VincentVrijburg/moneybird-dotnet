@@ -25,7 +25,15 @@ The goal is to provide a stable version that has the basic functionality to inte
   - [x] Customer Contact Portal
   - [x] Document styles
   - [x] Downloads
-  - [ ] Documents: General documents
+  - [x] Documents: General documents (limited)
+    - [x] Create a new general document
+    - [x] Get general documents
+    - [x] Get general document
+    - [x] Update a general document
+    - [x] Delete a general document
+    - [ ] Synchronization
+    - [ ] Notes
+    - [ ] Attachments
   - [ ] Documents: General journal documents
   - [ ] Documents: Purchase invoices
   - [ ] Documents: Receipts
