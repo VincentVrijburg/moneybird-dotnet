@@ -1,0 +1,39 @@
+{
+  "id": "501141416958756776",
+  "administration_id": "281289699686381606",
+  "contact_id": null,
+  "contact": null,
+  "reference": "updated reference",
+  "date": "2026-10-16",
+  "due_date": null,
+  "entry_number": 2,
+  "state": "saved",
+  "exchange_rate": "1.0",
+  "created_at": "2026-10-16T10:15:19.962Z",
+  "updated_at": "2026-10-16T10:15:19.973Z",
+  "version": 1792145719,
+  "notes": [],
+  "attachments": [],
+  "events": [
+    {
+      "administration_id": "281289699686381606",
+      "user_id": "501141310939333733",
+      "action": "document_saved",
+      "link_entity_id": null,
+      "link_entity_type": null,
+      "data": {},
+      "created_at": "2026-10-16T10:15:19.963Z",
+      "updated_at": "2026-10-16T10:15:19.963Z"
+    },
+    {
+      "administration_id": "281289699686381606",
+      "user_id": "501141310939333733",
+      "action": "document_updated",
+      "link_entity_id": null,
+      "link_entity_type": null,
+      "data": {},
+      "created_at": "2026-10-16T10:15:19.974Z",
+      "updated_at": "2026-10-16T10:15:19.974Z"
+    }
+  ]
+}

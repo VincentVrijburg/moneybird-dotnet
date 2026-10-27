@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.26.0 | 2026-10-27
+* Add limited support for the `General documents` endpoint.
+
 ## 0.25.1 | 2026-10-17
 * Update `System.Text.Json` dependency to 10.0.13.
 

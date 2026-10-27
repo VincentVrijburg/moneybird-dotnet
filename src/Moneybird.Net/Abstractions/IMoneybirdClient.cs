@@ -31,6 +31,11 @@ namespace Moneybird.Net.Abstractions
         IDocumentStyleEndpoint DocumentStyle { get; }
 
         /// <summary>
+        /// The GeneralDocument Endpoint.
+        /// </summary>
+        IGeneralDocumentEndpoint GeneralDocument { get; }
+
+        /// <summary>
         /// The Download Endpoint.
         /// </summary>
         IDownloadEndpoint Download { get; }

@@ -1,0 +1,29 @@
+{
+  "id": "501141414189467018",
+  "administration_id": "281289699686381606",
+  "contact_id": null,
+  "contact": null,
+  "reference": "Contract",
+  "date": "2026-10-16",
+  "due_date": null,
+  "entry_number": 2,
+  "state": "saved",
+  "exchange_rate": "1.0",
+  "created_at": "2026-10-16T10:15:17.320Z",
+  "updated_at": "2026-10-16T10:15:17.320Z",
+  "version": 1792145717,
+  "notes": [],
+  "attachments": [],
+  "events": [
+    {
+      "administration_id": "281289699686381606",
+      "user_id": "501141310939333733",
+      "action": "document_saved",
+      "link_entity_id": null,
+      "link_entity_type": null,
+      "data": {},
+      "created_at": "2026-10-16T10:15:17.322Z",
+      "updated_at": "2026-10-16T10:15:17.322Z"
+    }
+  ]
+}
